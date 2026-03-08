@@ -34,9 +34,9 @@ Build the Python pipeline to parse TEI/XML into structured data models.
 | 5 | Image URL rewriter | `parsers/images.py` | Written |
 | 6 | Questionnaire parsers (SE, DTC, TE) | `parsers/taxonomy_*.py` | Written |
 | 7 | Taxonomy router | `parsers/taxonomy_router.py` | Written |
-| 8 | TEI parser orchestrator | `parsers/tei_parser.py` | Next |
-| 9 | Citation generators | `parsers/citations.py` | Pending |
-| 10 | Test Phase 1 against reference files | — | Pending |
+| 8 | TEI parser orchestrator | `parsers/tei_parser.py` | Written |
+| 9 | Citation generators | `parsers/citations.py` | Written |
+| 10 | Test Phase 1 against reference files | — | Done (8/8 pass) |
 
 **Phase 1 testing** must cover at minimum:
 - `sandrart-tei.xml` (SE baseline, German)
@@ -53,16 +53,16 @@ Create all HTML templates and the CSS design system.
 
 | # | Task | File(s) | Status |
 |---|---|---|---|
-| 11 | Base template (nav, footer) | `templates/base.html`, `components/nav.html`, `components/footer.html` | Pending |
-| 12 | Review template | `templates/review.html`, `components/review_sidebar.html`, `components/review_meta.html` | Pending |
-| 13 | Factsheet template | `templates/factsheet.html`, `components/factsheet_section.html` | Pending |
-| 14 | Listing templates | `templates/homepage.html`, `issues_list.html`, `issue_single.html`, `reviewers.html`, `data_overview.html`, `about.html`, `search.html` | Pending |
-| 15 | Review card component | `components/review_card.html` | Pending |
-| 16 | Citation box component | `components/citation_box.html` | Pending |
-| 17 | Main CSS (design tokens, layout, responsive) | `static/css/main.css` | Pending |
-| 18 | Review CSS | `static/css/review.css` | Pending |
-| 19 | Factsheet CSS | `static/css/factsheet.css` | Pending |
-| 20 | Print CSS | `static/css/print.css` | Pending |
+| 11 | Base template (nav, footer) | `templates/base.html`, `components/nav.html`, `components/footer.html` | Written |
+| 12 | Review template | `templates/review.html`, `components/review_sidebar.html`, `components/review_meta.html` | Written |
+| 13 | Factsheet template | `templates/factsheet.html`, `components/factsheet_section.html` | Written |
+| 14 | Listing templates | `templates/homepage.html`, `issues_list.html`, `issue_single.html`, `reviewers.html`, `data_overview.html`, `about.html`, `search.html` | Written |
+| 15 | Review card component | `components/review_card.html` | Written |
+| 16 | Citation box component | `components/citation_box.html` | Written |
+| 17 | Main CSS (design tokens, layout, responsive) | `static/css/main.css` | Written |
+| 18 | Review CSS | `static/css/review.css` | Written |
+| 19 | Factsheet CSS | `static/css/factsheet.css` | Written |
+| 20 | Print CSS | `static/css/print.css` | Written |
 
 ### Phase 3: Generators + Build
 Implement page generators and the build orchestrator.

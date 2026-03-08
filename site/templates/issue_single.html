@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Issue {{ issue.number }}: {{ issue.title }}{% endblock %}
+{% block description %}Issue {{ issue.number }} of RIDE: {{ issue.title }} – {{ issue.review_count }} reviews.{% endblock %}
+{% block og_url %}{{ issue.url }}{% endblock %}
+{% block canonical %}{{ issue.url }}{% endblock %}
+
+{% block content %}
+<header class="page-header content-width">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/issues/">Issues</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">Issue {{ issue.number }}</span>
+  </nav>
+
+  <h1>
+    <span class="badge badge-{{ issue.issue_type }}">
+      {{ issue.issue_type | replace('textcollections', 'DTC') | replace('editions', 'SE') | replace('tools', 'TE') }}
+    </span>
+    Issue {{ issue.number }}: {{ issue.title }}
+  </h1>
+
+  {% if issue.editors %}
+  <p class="issue-editors">Editors: {{ issue.editors | join(', ') }}</p>
+  {% endif %}
+
+  {% if issue.doi %}
+  <p class="issue-doi">DOI: <a href="https://doi.org/{{ issue.doi }}" rel="external">{{ issue.doi }}</a></p>
+  {% endif %}
+</header>
+
+{# Editorial #}
+{% if issue.has_editorial %}
+<section class="issue-editorial">
+  <h2>Editorial</h2>
+  {% with review = issue.editorial %}
+    {% include "components/review_card.html" %}
+  {% endwith %}
+</section>
+{% endif %}
+
+{# Reviews #}
+<section class="issue-reviews">
+  <h2>Reviews ({{ issue.review_count }})</h2>
+  <div class="review-list">
+    {% for review in issue.reviews %}
+      {% if not review.is_editorial %}
+        {% include "components/review_card.html" %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

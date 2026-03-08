@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Reviewers{% endblock %}
+{% block description %}All reviewers who have contributed to RIDE.{% endblock %}
+{% block og_url %}/reviewers/{% endblock %}
+{% block canonical %}/reviewers/{% endblock %}
+
+{% block content %}
+<header class="page-header content-width">
+  <h1>Reviewers</h1>
+  <p>{{ reviewers | length }} contributors to RIDE.</p>
+</header>
+
+<div class="reviewer-list content-width">
+  {% for reviewer in reviewers %}
+  <details class="reviewer-item">
+    <summary class="reviewer-summary">
+      <span class="reviewer-name">{{ reviewer.author.full_name }}</span>
+      {% if reviewer.author.orcid_url %}
+      <a href="{{ reviewer.author.orcid_url }}" class="orcid-link" rel="external" aria-label="ORCID profile">
+        <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16">
+      </a>
+      {% endif %}
+      {% if reviewer.author.affiliation %}
+      <span class="reviewer-affiliation">{{ reviewer.author.affiliation }}{% if reviewer.author.place %}, {{ reviewer.author.place }}{% endif %}</span>
+      {% endif %}
+      <span class="reviewer-count">{{ reviewer.reviews | length }} review{{ 's' if reviewer.reviews | length != 1 }}</span>
+    </summary>
+    <ul class="reviewer-reviews" role="list">
+      {% for review in reviewer.reviews %}
+      <li>
+        <a href="{{ review.url }}">{{ review.title }}</a>
+        <span class="reviewer-review-meta">Issue {{ review.issue_number }}, {{ review.publication_date }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </details>
+  {% endfor %}
+</div>
+{% endblock %}

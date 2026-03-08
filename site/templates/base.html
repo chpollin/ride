@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ page_lang | default('en') }}" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ page_title }}{% endblock %} &mdash; RIDE</title>
+  <meta name="description" content="{% block description %}{{ page_description | default('RIDE – A review journal for digital editions and resources') }}{% endblock %}">
+
+  {# OpenGraph #}
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+  <meta property="og:title" content="{{ self.title() }}">
+  <meta property="og:description" content="{{ self.description() }}">
+  {% if site_url %}<meta property="og:url" content="{{ site_url }}{% block og_url %}{{ request_path | default('') }}{% endblock %}">{% endif %}
+
+  {# Canonical #}
+  {% if site_url %}<link rel="canonical" href="{{ site_url }}{% block canonical %}{{ request_path | default('') }}{% endblock %}">{% endif %}
+
+  {% block meta_extra %}{% endblock %}
+
+  {# Fonts #}
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  {# Styles #}
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+  {% block css_extra %}{% endblock %}
+
+  {# Theme: prevent flash of wrong theme #}
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+  {% block progress %}{% endblock %}
+
+  {% include "components/nav.html" %}
+
+  <main id="main-content" class="{% block main_class %}container{% endblock %}">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include "components/footer.html" %}
+
+  {# Scripts #}
+  <script src="/js/theme.js" defer></script>
+  {% block js_extra %}{% endblock %}
+</body>
+</html>

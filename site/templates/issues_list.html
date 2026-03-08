@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Issues{% endblock %}
+{% block description %}All issues of RIDE – A review journal for digital editions and resources.{% endblock %}
+{% block og_url %}/issues/{% endblock %}
+{% block canonical %}/issues/{% endblock %}
+
+{% block content %}
+<header class="page-header content-width">
+  <h1>Issues</h1>
+  <p>{{ issues | length }} issues published since 2014.</p>
+</header>
+
+{# Type filter #}
+<div class="filter-bar" aria-label="Filter by type">
+  <button class="filter-btn is-active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="editions">
+    <span class="badge badge-editions">SE</span> Scholarly Editions
+  </button>
+  <button class="filter-btn" data-filter="textcollections">
+    <span class="badge badge-textcollections">DTC</span> Text Collections
+  </button>
+  <button class="filter-btn" data-filter="tools">
+    <span class="badge badge-tools">TE</span> Tools &amp; Environments
+  </button>
+</div>
+
+<div class="issue-grid">
+  {% for issue in issues | reverse %}
+  <a href="{{ issue.url }}" class="issue-card" data-type="{{ issue.issue_type }}">
+    <span class="badge badge-{{ issue.issue_type }}">
+      {{ issue.issue_type | replace('textcollections', 'DTC') | replace('editions', 'SE') | replace('tools', 'TE') }}
+    </span>
+    <span class="issue-card-number">Issue {{ issue.number }}</span>
+    <span class="issue-card-title">{{ issue.title }}</span>
+    <span class="issue-card-count">{{ issue.review_count }} review{{ 's' if issue.review_count != 1 }}</span>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% block js_extra %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var btns = document.querySelectorAll('.filter-btn');
+  var cards = document.querySelectorAll('.issue-card');
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btns.forEach(function(b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      var f = btn.dataset.filter;
+      cards.forEach(function(c) {
+        c.style.display = (f === 'all' || c.dataset.type === f) ? '' : 'none';
+      });
+    });
+  });
+});
+</script>
+{% endblock %}

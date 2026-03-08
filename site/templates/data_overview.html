@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Data{% endblock %}
+{% block description %}Aggregated questionnaire data from RIDE reviews.{% endblock %}
+{% block og_url %}/data/{% endblock %}
+{% block canonical %}/data/{% endblock %}
+
+{% block content %}
+<header class="page-header content-width">
+  <h1>Data Overview</h1>
+  <p>Aggregated questionnaire data across {{ total_reviews }} reviews in {{ total_issues }} issues.</p>
+</header>
+
+{# Filter #}
+<div class="filter-bar" aria-label="Filter by review type">
+  <button class="filter-btn is-active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="se"><span class="badge badge-editions">SE</span> Scholarly Editions ({{ counts.se }})</button>
+  <button class="filter-btn" data-filter="dtc"><span class="badge badge-textcollections">DTC</span> Text Collections ({{ counts.dtc }})</button>
+  <button class="filter-btn" data-filter="te"><span class="badge badge-tools">TE</span> Tools ({{ counts.te }})</button>
+</div>
+
+{# Score distribution #}
+<section class="data-section">
+  <h2>Score Distribution</h2>
+  <p>Percentage of "Yes" answers per review.</p>
+  <div class="chart-container" id="chart-scores" data-chart="{{ chart_data_scores }}">
+    {# Rendered by charts.js or as fallback table #}
+  </div>
+  <details class="data-table-toggle">
+    <summary>View as table</summary>
+    <table class="data-table">
+      <thead>
+        <tr><th>Score Range</th><th>Count</th></tr>
+      </thead>
+      <tbody>
+        {% for bucket in score_buckets %}
+        <tr><td>{{ bucket.label }}</td><td>{{ bucket.count }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </details>
+</section>
+
+{# Per-category breakdown #}
+<section class="data-section">
+  <h2>Criteria Breakdown</h2>
+  <p>Yes / No / N/A counts per questionnaire category.</p>
+  <div class="chart-container" id="chart-categories" data-chart="{{ chart_data_categories }}">
+  </div>
+  <details class="data-table-toggle">
+    <summary>View as table</summary>
+    <table class="data-table">
+      <thead>
+        <tr><th>Category</th><th>Yes</th><th>No</th><th>N/A</th></tr>
+      </thead>
+      <tbody>
+        {% for cat in category_data %}
+        <tr>
+          <td>{{ cat.name }}</td>
+          <td>{{ cat.yes }}</td>
+          <td>{{ cat.no }}</td>
+          <td>{{ cat.na }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </details>
+</section>
+{% endblock %}
+
+{% block js_extra %}
+<script src="/js/charts.js" defer></script>
+{% endblock %}

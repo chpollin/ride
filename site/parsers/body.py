@@ -1,12 +1,13 @@
 """TEI body → HTML converter using recursive element walking."""
 
+import re
+
 from lxml import etree
-from markupsafe import Markup
+
 from models.review import Section, Footnote
 from .images import rewrite_image_url
 
 NS = {"tei": "http://www.tei-c.org/ns/1.0"}
-TEI_NS = "http://www.tei-c.org/ns/1.0"
 
 
 class BodyParser:
@@ -151,8 +152,8 @@ class BodyParser:
         self.footnotes.append(Footnote(id=note_id, number=n, html=content))
 
         return (
-            f'<sup class="fn-ref" id="{note_id}-ref">'
-            f'<a href="#{note_id}" role="doc-noteref">{n}</a>'
+            f'<sup class="footnote-ref" id="fnref-{note_id}">'
+            f'<a href="#fn-{note_id}" role="doc-noteref">{n}</a>'
             f'</sup>'
         )
 
@@ -405,5 +406,4 @@ def _esc(text: str) -> str:
 
 def _strip_html(html: str) -> str:
     """Strip HTML tags for use in alt attributes."""
-    import re
     return re.sub(r"<[^>]+>", "", html)

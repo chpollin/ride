@@ -1,0 +1,35 @@
+{# Reusable review card for listings. Expects: review (Review object) #}
+<article class="review-card">
+  <div class="review-card-header">
+    <span class="badge badge-{{ review.issue_type }}">
+      {{ review.issue_type | replace('textcollections', 'DTC') | replace('editions', 'SE') | replace('tools', 'TE') }}
+    </span>
+    <span class="review-card-date">{{ review.publication_date }}</span>
+  </div>
+
+  <h3 class="review-card-title">
+    <a href="{{ review.url }}">{{ review.title }}</a>
+  </h3>
+
+  <p class="review-card-author">by {{ review.author_names }}</p>
+
+  {% if review.reviewed_resources %}
+  <p class="review-card-resource">
+    Reviewed: {{ review.reviewed_resources[0].title }}{% if review.reviewed_resources | length > 1 %} (+{{ review.reviewed_resources | length - 1 }} more){% endif %}
+  </p>
+  {% endif %}
+
+  {% if review.keywords %}
+  <div class="review-card-keywords">
+    {% for kw in review.keywords[:5] %}
+    <span class="keyword-tag">{{ kw }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if review.doi %}
+  <p class="review-card-doi">
+    <a href="{{ review.doi_url }}" rel="external">{{ review.doi }}</a>
+  </p>
+  {% endif %}
+</article>

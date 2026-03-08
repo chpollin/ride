@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_title }}{% endblock %}
+{% block description %}{{ page_description | default('About RIDE – A review journal for digital editions and resources.') }}{% endblock %}
+{% block og_url %}/about/{{ page_slug }}{{ '/' if page_slug }}{% endblock %}
+{% block canonical %}/about/{{ page_slug }}{{ '/' if page_slug }}{% endblock %}
+
+{% block content %}
+<article class="about-page content-width">
+  {% if page_slug %}
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/about/">About</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">{{ page_title }}</span>
+  </nav>
+  {% endif %}
+
+  <h1>{{ page_title }}</h1>
+
+  <div class="about-content">
+    {{ content | safe }}
+  </div>
+</article>
+{% endblock %}

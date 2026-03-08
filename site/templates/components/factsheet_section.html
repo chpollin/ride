@@ -1,0 +1,41 @@
+{# Render a single questionnaire section with its items #}
+<div class="fs-section">
+  <h3 class="fs-section-title">{{ section.name }}</h3>
+
+  <div class="fs-items">
+    {% for item in section.items %}
+    <div class="fs-item">
+      <div class="fs-item-header">
+        <span class="fs-indicator fs-indicator-{{ 'yes' if item.value == true else ('no' if item.value == false else 'na') }}"
+              aria-label="{{ item.value_label or ('Yes' if item.value == true else ('No' if item.value == false else 'N/A')) }}">
+        </span>
+        <span class="fs-label">{{ item.label }}</span>
+        {% if item.value_label %}
+        <span class="fs-value">{{ item.value_label }}</span>
+        {% endif %}
+      </div>
+
+      {% if item.description %}
+      <p class="fs-description">{{ item.description }}</p>
+      {% endif %}
+
+      {% if item.gloss %}
+      <p class="fs-gloss"><em>{{ item.gloss }}</em></p>
+      {% endif %}
+
+      {# Multi-select children #}
+      {% if item.children %}
+      <ul class="fs-children">
+        {% for child in item.children %}
+        <li class="fs-child{% if child.value == true %} is-selected{% endif %}">
+          <span class="fs-indicator fs-indicator-{{ 'yes' if child.value == true else ('no' if child.value == false else 'na') }}"></span>
+          {{ child.label }}
+          {% if child.gloss %}<em class="fs-gloss">({{ child.gloss }})</em>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>

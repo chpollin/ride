@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Factsheet: {{ review.title }}{% endblock %}
+{% block description %}Questionnaire factsheet for the review "{{ review.title }}" in RIDE.{% endblock %}
+{% block og_url %}{{ review.factsheet_url }}{% endblock %}
+{% block canonical %}{{ review.factsheet_url }}{% endblock %}
+
+{% block css_extra %}
+<link rel="stylesheet" href="/css/factsheet.css">
+{% endblock %}
+
+{% block content %}
+<article class="factsheet content-width">
+  <header class="factsheet-header">
+    <nav class="factsheet-breadcrumb" aria-label="Breadcrumb">
+      <a href="/issues/issue-{{ review.issue_number }}/">Issue {{ review.issue_number }}</a>
+      <span aria-hidden="true">/</span>
+      <a href="{{ review.url }}">{{ review.title }}</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Factsheet</span>
+    </nav>
+
+    <h1>Factsheet</h1>
+    <p class="factsheet-subtitle">{{ review.title }}</p>
+    <p class="factsheet-authors">by {{ review.author_names }}</p>
+
+    {% if review.reviewing_criteria_url %}
+    <p class="factsheet-criteria">
+      Based on:
+      <a href="{{ review.reviewing_criteria_url }}" rel="external">{{ review.reviewing_criteria_label or "Reviewing criteria" }}</a>
+    </p>
+    {% endif %}
+  </header>
+
+  {% for questionnaire in review.questionnaires %}
+  <div class="factsheet-questionnaire">
+    {# TE reviews: show resource heading when multiple #}
+    {% if review.questionnaires | length > 1 %}
+    <h2 class="factsheet-resource-title">
+      {{ questionnaire.resource_label or ("Resource " ~ loop.index) }}
+    </h2>
+    {% endif %}
+
+    {# Score summary #}
+    {% if questionnaire.total_answered > 0 %}
+    <div class="fs-score-summary">
+      <div class="fs-score-bar" role="meter"
+           aria-valuenow="{{ questionnaire.score_percentage | round(1) }}"
+           aria-valuemin="0" aria-valuemax="100"
+           aria-label="Score: {{ questionnaire.score_percentage | round(1) }}% criteria met">
+        <div class="fs-score-fill" style="width: {{ questionnaire.score_percentage | round(1) }}%"></div>
+      </div>
+      <div class="fs-score-stats">
+        <span class="fs-stat fs-stat-yes">{{ questionnaire.total_yes }} Yes</span>
+        <span class="fs-stat fs-stat-no">{{ questionnaire.total_no }} No</span>
+        <span class="fs-stat fs-stat-na">{{ questionnaire.total_na }} N/A</span>
+        <span class="fs-stat fs-stat-pct">{{ questionnaire.score_percentage | round(1) }}%</span>
+      </div>
+    </div>
+    {% endif %}
+
+    {# Sections #}
+    {% for section in questionnaire.sections %}
+      {% include "components/factsheet_section.html" %}
+    {% endfor %}
+  </div>
+  {% endfor %}
+
+  <div class="factsheet-back">
+    <a href="{{ review.url }}" class="btn">&larr; Back to review</a>
+  </div>
+</article>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block description %}RIDE – A review journal for digital editions and resources, published by the Institut f&uuml;r Dokumentologie und Editorik.{% endblock %}
+
+{% block content %}
+{# Hero #}
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">RIDE</h1>
+    <p class="hero-tagline">A review journal for digital editions and resources</p>
+    <a href="/search/" class="hero-search-link btn btn-primary">Search reviews</a>
+  </div>
+</section>
+
+{# Quick stats #}
+<section class="home-stats">
+  <div class="stat-item">
+    <span class="stat-number">{{ total_reviews }}</span>
+    <span class="stat-label">Reviews</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">{{ total_issues }}</span>
+    <span class="stat-label">Issues</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">{{ total_reviewers }}</span>
+    <span class="stat-label">Reviewers</span>
+  </div>
+</section>
+
+{# Latest issues #}
+<section class="home-section">
+  <h2>Latest Issues</h2>
+  <div class="issue-grid">
+    {% for issue in latest_issues %}
+    <a href="{{ issue.url }}" class="issue-card">
+      <span class="badge badge-{{ issue.issue_type }}">
+        {{ issue.issue_type | replace('textcollections', 'DTC') | replace('editions', 'SE') | replace('tools', 'TE') }}
+      </span>
+      <span class="issue-card-number">Issue {{ issue.number }}</span>
+      <span class="issue-card-title">{{ issue.title }}</span>
+      <span class="issue-card-count">{{ issue.review_count }} review{{ 's' if issue.review_count != 1 }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+{# Latest review #}
+{% if latest_review %}
+<section class="home-section">
+  <h2>Latest Review</h2>
+  {% with review = latest_review %}
+    {% include "components/review_card.html" %}
+  {% endwith %}
+</section>
+{% endif %}
+{% endblock %}

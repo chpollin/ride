@@ -1,0 +1,43 @@
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>{{ review.publication_date }}</dd>
+
+    {% if review.doi %}
+    <dt>DOI</dt>
+    <dd><a href="{{ review.doi_url }}" rel="external">{{ review.doi }}</a></dd>
+    {% endif %}
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-{{ review.issue_number }}/">
+        <span class="badge badge-{{ review.issue_type }}">{{ review.issue_type | replace('textcollections', 'DTC') | replace('editions', 'SE') | replace('tools', 'TE') }}</span>
+        Issue {{ review.issue_number }}
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>{{ review.language | upper }}</dd>
+  </dl>
+
+  {# Downloads #}
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    {% if review.pdf_url %}
+    <a href="{{ review.pdf_url }}" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    {% endif %}
+    {% if review.xml_url %}
+    <a href="{{ review.xml_url }}" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+    {% endif %}
+  </div>
+
+  {# Cite button #}
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div>

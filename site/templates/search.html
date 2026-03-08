@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Search{% endblock %}
+{% block description %}Search all RIDE reviews.{% endblock %}
+{% block og_url %}/search/{% endblock %}
+{% block canonical %}/search/{% endblock %}
+
+{% block css_extra %}
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css">
+{% endblock %}
+
+{% block content %}
+<header class="page-header content-width">
+  <h1>Search</h1>
+</header>
+
+<div id="search" class="search-container content-width"></div>
+{% endblock %}
+
+{% block js_extra %}
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    new PagefindUI({
+      element: '#search',
+      showSubResults: true,
+      showImages: false,
+    });
+  });
+</script>
+{% endblock %}

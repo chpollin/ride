@@ -1,0 +1,16 @@
+<aside class="review-sidebar" aria-label="Article navigation">
+  {# Table of Contents #}
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      {% for item in review.section_titles %}
+      <li class="toc-item toc-level-{{ item.level }}">
+        <a href="#{{ item.id }}" class="toc-link">{{ item.title }}</a>
+      </li>
+      {% endfor %}
+    </ol>
+  </nav>
+
+  {# Meta panel #}
+  {% include "components/review_meta.html" %}
+</aside>

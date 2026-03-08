@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+
+{% block title %}{{ review.title }}{% endblock %}
+{% block description %}{{ review.abstract_html | striptags | truncate(200) }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block og_url %}{{ review.url }}{% endblock %}
+{% block canonical %}{{ review.url }}{% endblock %}
+
+{% block meta_extra %}
+{# Dublin Core #}
+<meta name="DC.title" content="{{ review.title }}">
+{% for author in review.authors %}
+<meta name="DC.creator" content="{{ author.full_name }}">
+{% endfor %}
+<meta name="DC.date" content="{{ review.publication_date_iso }}">
+{% if review.doi %}<meta name="DC.identifier" content="doi:{{ review.doi }}">{% endif %}
+<meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="{{ review.language }}">
+
+{# Google Scholar #}
+<meta name="citation_title" content="{{ review.title }}">
+{% for author in review.authors %}
+<meta name="citation_author" content="{{ author.full_name }}">
+{% endfor %}
+{% if review.doi %}<meta name="citation_doi" content="{{ review.doi }}">{% endif %}
+<meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="{{ review.publication_date_iso }}">
+{% if review.pdf_url %}<meta name="citation_pdf_url" content="{{ site_url }}{{ review.pdf_url }}">{% endif %}
+
+{# Schema.org #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": {{ review.title | tojson }},
+  "author": [{% for a in review.authors %}{"@type": "Person", "name": {{ a.full_name | tojson }}{% if a.orcid_url %}, "url": {{ a.orcid_url | tojson }}{% endif %}}{% if not loop.last %}, {% endif %}{% endfor %}],
+  "datePublished": "{{ review.publication_date_iso }}",
+  {% if review.doi %}"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "{{ review.doi }}"},{% endif %}
+  "publisher": {"@type": "Organization", "name": "{{ review.publisher }}"},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+{% endblock %}
+
+{% block css_extra %}
+<link rel="stylesheet" href="/css/review.css">
+{% endblock %}
+
+{% block progress %}
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+{% endblock %}
+
+{% block main_class %}review-layout{% endblock %}
+
+{% block content %}
+<div class="review-wrapper">
+  {# Sidebar (desktop) #}
+  {% include "components/review_sidebar.html" %}
+
+  {# Article #}
+  <article class="review-article" lang="{{ review.language }}">
+    {# Header #}
+    <header class="review-header">
+      <a href="/issues/issue-{{ review.issue_number }}/" class="review-issue-link">
+        <span class="badge badge-{{ review.issue_type }}">{{ review.issue_type | replace('textcollections', 'DTC') | replace('editions', 'SE') | replace('tools', 'TE') }}</span>
+        Issue {{ review.issue_number }}: {{ review.issue_title }}
+      </a>
+
+      <h1>{{ review.title }}</h1>
+
+      <div class="review-authors">
+        {% for author in review.authors %}
+        <span class="review-author">
+          {{ author.full_name }}{% if author.orcid_url %}&nbsp;<a href="{{ author.orcid_url }}" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>{% endif %}{% if not loop.last %}, {% endif %}
+        </span>
+        {% endfor %}
+      </div>
+
+      {% if review.authors and review.authors[0].affiliation %}
+      <div class="review-affiliation">{{ review.authors[0].affiliation }}{% if review.authors[0].place %}, {{ review.authors[0].place }}{% endif %}</div>
+      {% endif %}
+
+      {# Reviewed resource(s) #}
+      {% if review.reviewed_resources %}
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+        {% for res in review.reviewed_resources %}
+        {% if res.url %}<a href="{{ res.url }}" rel="external">{{ res.title }}</a>{% else %}{{ res.title }}{% endif %}{% if not loop.last %}; {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </header>
+
+    {# Mobile TOC #}
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        {% for item in review.section_titles %}
+        <li class="toc-item toc-level-{{ item.level }}">
+          <a href="#{{ item.id }}" class="toc-link">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+      </ol>
+    </details>
+
+    {# Mobile meta bar #}
+    <div class="mobile-meta">
+      <span>{{ review.publication_date }}</span>
+      {% if review.doi %}<span><a href="{{ review.doi_url }}" rel="external">DOI</a></span>{% endif %}
+      {% if review.pdf_url %}<a href="{{ review.pdf_url }}" download class="btn btn-sm">PDF</a>{% endif %}
+      {% if review.xml_url %}<a href="{{ review.xml_url }}" download class="btn btn-sm">XML</a>{% endif %}
+    </div>
+
+    {# Abstract #}
+    {% if review.abstract_html %}
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      {{ review.abstract_html | safe }}
+    </section>
+    {% endif %}
+
+    {# Body sections #}
+    {% for section in review.sections %}
+    <section id="{{ section.id }}">
+      <h{{ section.level }}>{{ section.title }}</h{{ section.level }}>
+      {{ section.html | safe }}
+    </section>
+    {% endfor %}
+
+    {# Bibliography #}
+    {% if review.bibliography_html %}
+    <section id="bibliography" class="review-bibliography">
+      <h2>Bibliography</h2>
+      <ol class="bib-list">
+        {% for entry in review.bibliography_html %}
+        <li>{{ entry | safe }}</li>
+        {% endfor %}
+      </ol>
+    </section>
+    {% endif %}
+
+    {# Footnotes #}
+    {% if review.footnotes %}
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        {% for fn in review.footnotes %}
+        <li id="fn-{{ fn.id }}" class="footnote-item">
+          {{ fn.html | safe }}
+          <a href="#fnref-{{ fn.id }}" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+    {% endif %}
+
+    {# Citation box #}
+    {% include "components/citation_box.html" %}
+
+    {# Factsheet link #}
+    {% if review.has_questionnaire %}
+    <div class="review-factsheet-link">
+      <a href="{{ review.factsheet_url }}" class="btn btn-primary">View Factsheet</a>
+    </div>
+    {% endif %}
+  </article>
+</div>
+{% endblock %}
+
+{% block js_extra %}
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+{% endblock %}
