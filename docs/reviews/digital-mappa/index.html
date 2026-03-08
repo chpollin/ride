@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Mappa – Simple and Web-based Annotations &mdash; RIDE</title>
+  <meta name="description" content="
+            How does Digital Mappa, a browser-based annotation tool, fit into the
+               current landscape of Virtual Research Environments? How is an intuitive
+               WYSIWYG...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Digital Mappa – Simple and Web-based Annotations">
+  <meta property="og:description" content="
+            How does Digital Mappa, a browser-based annotation tool, fit into the
+               current landscape of Virtual Research Environments? How is an intuitive
+               WYSIWYG...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/digital-mappa/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/digital-mappa/">
+<meta name="DC.title" content="Digital Mappa – Simple and Web-based Annotations">
+<meta name="DC.creator" content="Tobias Hodel">
+<meta name="DC.creator" content="Anna Janka">
+<meta name="DC.creator" content="Jonas Widmer">
+<meta name="DC.date" content="2022-12">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.15.1"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="en">
+
+<meta name="citation_title" content="Digital Mappa – Simple and Web-based Annotations">
+<meta name="citation_author" content="Tobias Hodel">
+<meta name="citation_author" content="Anna Janka">
+<meta name="citation_author" content="Jonas Widmer">
+<meta name="citation_doi" content="10.18716/ride.a.15.1"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2022-12">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/digital-mappa/digital-mappa.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Digital Mappa \u2013 Simple and Web-based Annotations",
+  "author": [{"@type": "Person", "name": "Tobias Hodel", "url": "https://orcid.org/0000-0002-2071-6407"}, {"@type": "Person", "name": "Anna Janka", "url": "https://orcid.org/0000-0003-4995-8730"}, {"@type": "Person", "name": "Jonas Widmer", "url": "https://orcid.org/0000-0001-9690-5645"}],
+  "datePublished": "2022-12",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.15.1"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e.V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">Opening the review</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">Methods and Implementation</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">Usability, sustainability and maintainability</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">User interaction, GUI, and visualization</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div5" class="toc-link">Conclusion</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>December 2022</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.15.1" rel="external">10.18716/ride.a.15.1</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-15/">
+        <span class="badge badge-tools">TE</span>
+        Issue 15
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>EN</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/digital-mappa/digital-mappa.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/digital-mappa/digital-mappa-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="en">
+    <header class="review-header">
+      <a href="/issues/issue-15/" class="review-issue-link">
+        <span class="badge badge-tools">TE</span>
+        Issue 15: Tools and Environments
+      </a>
+
+      <h1>Digital Mappa – Simple and Web-based Annotations</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Tobias Hodel&nbsp;<a href="https://orcid.org/0000-0002-2071-6407" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>,         </span>
+        <span class="review-author">
+          Anna Janka&nbsp;<a href="https://orcid.org/0000-0003-4995-8730" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>,         </span>
+        <span class="review-author">
+          Jonas Widmer&nbsp;<a href="https://orcid.org/0000-0001-9690-5645" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>        </span>
+      </div>
+
+      <div class="review-affiliation">University of Bern, Bern, Switzerland Bern, Switzerland Bern, Switzerland</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="https://www.digitalmappa.org/" rel="external">Digital Mappa – Simple and Web-based Annotations</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">Opening the review</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">Methods and Implementation</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">Usability, sustainability and maintainability</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">User interaction, GUI, and visualization</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div5" class="toc-link">Conclusion</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>December 2022</span>
+<span><a href="https://doi.org/10.18716/ride.a.15.1" rel="external">DOI</a></span><a href="/reviews/digital-mappa/digital-mappa.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/digital-mappa/digital-mappa-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>How does Digital Mappa, a browser-based annotation tool, fit into the
+               current landscape of Virtual Research Environments? How is an intuitive
+               WYSIWYG graphical user interface suited for simple (scholarly) editions and
+               image-text representations? What about involving different users via
+               crowdsourcing? For this review, we took three distinct perspectives (user,
+               teacher, and backend admin) and tested the tool for text annotation but
+               furthermore for linking images with text. Digital Mappa proves to be a
+               stable, not-so-easy-to-set-up tool that covers a lot of ground concerning
+               annotation and image linking. Subsuming, we describe a mature system that
+               allows for easy editing, suitable in the classroom. Critically, it has been
+               assessed that the tool refrains from standards (such as TEI XML) and lacks
+               capabilities to involve larger groups (e.g. for crowdsourcing).</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>Opening the review</h2>
+      <h3 id="div1.1">The reviewer</h3>
+<p id="p1">This review aims to look from a multitude of perspectives at Digital
+                  Mappa 2.0 (henceforth DM). For this reason, we assembled a group of people that
+                  wanted to work with the tool as annotator (Anna Janka), scholar and teacher
+                  (Tobias Hodel), as well as system administrator and developer (Jonas Widmer).</p>
+<h3 id="div1.2">Identification of the reviewed tool</h3>
+<p id="p2">Digital Mappa 2.0 is an open-source DH platform for open-access
+                  workspaces, projects, collaborations, and scholarly publications/digital edition
+                  platforms, focusing on linking of images and text annotations. DM is well
+                  documented, and the descriptions on its <a href="https://www.digitalmappa.org/" target="_blank" rel="noopener">website</a> are exhaustive, it is
+                  hosted on <a href="https://github.com/performant-software/dm-2" target="_blank" rel="noopener">GitHub</a>.</p>
+<h3 id="div1.3">Stage of development</h3>
+<p id="p3">The first version of Digital Mappa was released in 2018 after more
+                  than a decade of development and early releases. In 2020 version 2.0 with an
+                  entirely refactored platform was released. Currently, bugs are being fixed.</p>
+<p id="p4">Due to the very recent release: This review did not take the latest
+                  features of version 2.1 (especially layering of annotations) into account!</p>
+<h3 id="div1.4">Identification of the reviewing platform</h3>
+<p id="p5">We tried to install DM on a virtual server of our own (based on Ubuntu
+                  20.04 LTS) but failed to do so due to miscommunication between the front- and the
+                  backend. Furthermore, the proposed installation involving the use of AWS as a
+                  storage hub did not lead to a working system. In the end and for this evaluation,
+                  we relied on an already running installation of the University of Zurich, hosted
+                  by “<a href="#https://web.archive.org/web/20221026163923/https:/dlf.uzh.ch/" class="crossref">Digitale Lehre und Forschung</a>”. The front end of DM was accessed through
+                  state-of-the-art browsers such as Chrome (version 94.0.4606.71) and Firefox
+                  (version 92.0.1).</p>
+<h3 id="div1.5">General introduction</h3>
+<p id="p6">Digital Mappa has been developed in order to allow for the annotation
+                  of (historical) maps. Due to the simple graphical user interface, developers as
+                  well as involved scholars quickly realized that DM could not only be used for this
+                  task but, in general, to create annotated data on any image files and even texts.
+                  This led to the development of DM with the idea of providing an exhaustive digital
+                  scholarly edition environment (in the sense of an IDE: integrated development
+                  environment). The goal of the tool remains to offer easy-to-use annotation
+                  capabilities within web browsers.</p>
+<p id="p7">The tool is thus not only suited for very specific projects (focusing
+                  on maps) but addresses, in general, the needs of the edition community, especially
+                  if the annotation of facsimile is involved. As an end-user, any scholar and
+                  student independent of pre-existing knowledge and technical expertise are
+                  envisioned.</p>
+<h3 id="div1.6">Credit and funding</h3>
+<p id="p8">The tool has been created and is <a href="https://www.digitalmappa.org/contactus" target="_blank" rel="noopener">maintained</a> by Martin Foys
+                  (University of Wisconsin-Madison) as project director in collaboration with the
+                     <a href="https://web.archive.org/web/20221026124351/http:/www.wiscprintdigital.org/" target="_blank" rel="noopener">Center for the History of Print and Digital Culture</a> (also at the
+                  University of Wisconsin-Madison) as well as the Schoenberg Institute for
+                  Manuscript Studies (University of Pennsylvania).</p>
+<p id="p9">Most of the refactoring for version 2.0, which is the focus of this
+                  review, seems to be carried out by <a href="https://web.archive.org/web/20221026124800/https:/www.performantsoftware.com/" target="_blank" rel="noopener">Performant Software Solutions</a>, a digital humanities-close software
+                  development company. The tool is available open-source and hosted on <a href="https://github.com/performant-software/dm-2" target="_blank" rel="noopener">GitHub</a>. Digital
+                  Mappa and its <a href="https://www.digitalmappa.org/history" target="_blank" rel="noopener">history and
+                     development</a> are comprehensible and well documented.</p>
+<h3 id="div1.7">Transparency</h3>
+<p id="p10">Information about the installation is available as readme on GitHub.
+                  Further information about the project is available on its <a href="https://www.digitalmappa.org" target="_blank" rel="noopener">website</a>. Digital Mappa is licensed
+                  under a <a href="https://github.com/performant-software/dm-2/blob/master/LICENSE" target="_blank" rel="noopener">GPL
+                     3.0-License</a>.</p>
+    </section>
+    <section id="div2">
+      <h2>Methods and Implementation</h2>
+      <h3 id="div2.1">State of the art</h3>
+<p id="p11">Currently and very broadly speaking, there exist two ways to create
+                  scholarly editions: On the one hand, digital editions based on TEI XML are often
+                  carried out in interdisciplinary teams creating back- and front-end parallel to
+                  the mark-up of text. On the other hand, there are also text editor-based (e. g.,
+                  MS Word or LaTeX) editions in use that mimic the typesetting of print and are –
+                  after preparation of the text – exported to professional layout and printing
+                  companies.</p>
+<p id="p12">DM has to be located in-between these two approaches, as it allows to
+                  annotate images and textual entities. For annotation and linking, no knowledge
+                  about mark-up languages is necessary. At the same time, advantages of mark-up
+                  languages (ontologies in the broadest sense) are not provided but need to be
+                  defined on a project basis. From another perspective, DM offers a WYSIWYG (what
+                  you see is what you get) approach, and all information can be accessed online
+                  right after entry. </p>
+<p id="p13">DM is a self-sufficient platform that was not built to export
+                  annotated documents. Its data model does not rely on TEI XML and DM is therefore
+                  not part of the TEI community. Very simple mark-up for text (mostly focusing on
+                  formatting, like bold/italicized) can be added, but the focus lies on marking
+                  images and connecting them to textual structures. Of course, from a technical
+                  point of view, it would be possible to export annotations, but this would require
+                  several transformation processes that needed to be prepared by future users.</p>
+<p id="p14">Very loosely, we can identify relations to manual text annotation
+                  tools (like <a href="https://web.archive.org/web/20221026164953/https:/catma.de/" target="_blank" rel="noopener">CATMA</a> or <a href="https://app.annotationstudio.org/" target="_blank" rel="noopener">Annotation
+                     Studio</a>) as well as image annotation tools (e. g. within <a href="https://github.com/ProjectMirador/mirador-annotations" target="_blank" rel="noopener">Mirador</a>).
+                  The map annotation capability is comparable to <a href="https://web.archive.org/web/20221006204214/https:/recogito.pelagios.org/" target="_blank" rel="noopener">Recogito</a> but doesn’t offer the linking to norm data. There is no
+                  automatization (e. g. recognition of named entities, identification of visual
+                  structures) currently included in Digital Mappa. The combination of text and image
+                  annotation is still a rather unique mix and, thus, a unique selling point of
+                  DM.</p>
+<h3 id="div2.2">Discipline and methodology</h3>
+<p id="p15">The tool facilitates the annotation and interlinking of images and
+                  textual entries. This again allows marking certain aspects, for example, on a
+                  historical, digitized map. Already during the development of DM 1.0, it has been
+                  realized that with the toolset also editions can be obtained that are tightly
+                  intertwined and create a close connection between a documentary edition as well as
+                  annotated images. Although such a simple, visual edition can be created through
+                  the offered toolset, certain design decisions (shortcomings for certain
+                  approaches) need to be taken into account: In order to add an apparatus, it would
+                  be necessary to either use manually added footnotes (not semantically annotated)
+                  or link text entries (which is possible but doesn’t really add to the usability of
+                  an edition). </p>
+<h3 id="div2.3">How it works</h3>
+<p id="p16">
+                  <figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="Screenshot of image annotation (right frame), text entity
+                        (left frame), and connecting annotation (pop-up right frame), provided on
+                        the DM web-page." loading="lazy"><figcaption>Fig. 1: Screenshot of image annotation (right frame), text entity
+                        (left frame), and connecting annotation (pop-up right frame), provided on
+                        the DM web-page.</figcaption></figure>As already stated, DM focuses on annotation and interlinking images with
+                  textual entities, which can be done by marking certain image areas and linking
+                  them to text boxes (<a href="#img1" class="crossref">fig. 1</a>). A check-out
+                  functionality stops the parallel processing of images or textual entities on the
+                  level of one document or one image. The functionality ensures that no entries get
+                  lost and no parallel editing occurs. The check-out modus also limits the
+                  possibility to use DM as a crowdsourcing application, since certain entries could
+                  be locked from adding text/annotations, which could be demotivating.</p>
+<p id="p17">From a technical point-of-view, DM uses Ruby-on-Rails and embeds it
+                  in a Heroku-App. Since a browser-based web solution was envisioned from the start
+                  of the project, the choice to release DM as a Heroku-App seems sensible and
+                  supports (thanks to the environment) a relatively quick setup. Right after
+                  finishing this review, further updates of DM were made which are not covered in
+                  this review; amongst other things, a docker-compose/docker-images was released to
+                  the GitHub repository.</p>
+<h3 id="div2.4">Input, output, and data modeling</h3>
+<p id="p18">Input is very limited, and images can be imported as JPEG.
+                  IIIF-compliant images can be imported directly as well. Text is typically imported
+                  through copy and paste. Output in other formats, other than in the form of the
+                  web-page, is not foreseen. Therefore, the data model of DM cannot be compared to
+                  scholarly digital editions based on TEI XML or Linked Data knowledge graphs.
+                  Unicode (UTF-8) is supported, which makes the DM language independently usable and
+                  interesting for projects involving non-western character sets.</p>
+<h3 id="div2.5">Performance</h3>
+<p id="p19">Once installed, the tool performs even on ‘slim’ virtual machines (a
+                  2 CPU, 4 GB setup was used) decently and without any problems regarding loading or
+                  processing time. Access to rather large JPEG files (~15 MB) does not pose any
+                  problems. Technically, it would be possible to embed images stored on other
+                  servers and made available via IIIF manifests. Access times to such (larger) files
+                  have not been tested.</p>
+<p id="p20">With regards to accuracy, no negative experiences were observed or
+                  have been reported by instructors or students. The website reacts as intended,
+                  clicks get recorded, and polygons (or other shapes) get drawn according to mouse
+                  movements.</p>
+<h3 id="div2.6">Logs and trackability</h3>
+<p id="p21">Logs are being generated for the installation process. Besides that,
+                  we couldn’t identify any logs.</p>
+<h3 id="div2.7">Application and results</h3>
+<p id="p22">DM features a <a href="https://www.digitalmappa.org/showcase-projects" target="_blank" rel="noopener">few showcase
+                     projects</a> on their web-page. Besides that, we did not identify further
+                  publicly available use cases. The showcases already demonstrate a wide variety of
+                  possible scenarios to use DM. From “<a href="https://sims2.digitalmappa.org/36" target="_blank" rel="noopener">Virtual Mappa</a>” (the classical
+                  use-case of DM), to a facsimile annotation of <a href="https://oepoetryfacsimile.org/" target="_blank" rel="noopener">old English poetry</a> and
+                  furthermore a <a href="https://uw.digitalmappa.org/63" target="_blank" rel="noopener">library of stains</a>
+                  that have been analysed using spectral analysis. In respect of the last example,
+                  DM was used as closely interlinked documentation with visual as well as textual
+                  components.</p>
+<p id="p23">Overall, it becomes evident that with some creativity, DM should not
+                  only be used in the intended context (annotation of images, esp. maps), as more
+                  pathways need to be explored. For art history classes (as an invented example), DM
+                  could be used to produce annotated image corpora and thus replace traditional
+                  seminar papers.</p>
+<h3 id="div2.8">Example</h3>
+<p id="p24">Using DM, our team of four people partially marked and annotated a
+                  historical map of the Bernese territorial dominion in the 16th century. In order
+                  to work with the map, a user could check out a single document file on DM (e. g.
+                  the part of the map or a textual annotation), which was then blocked for the other
+                  team members. Our map consisted of nine pages, and therefore nine single documents
+                  on DM, and because of that, our team could still work collaboratively.</p>
+<p id="p25">Our goal was to tag different geographical elements, like mountains,
+                  lakes, rivers, or woodland, as well as cities and villages under Bernese reign at
+                  the time. The tools on DM function very intuitively. Users can choose between
+                  eight colors, draw lines with the drawing tool, or select pre-made shapes
+                  (rectangle or circle) to drag and drop on the map. A difficulty our team
+                  encountered was highlighting longer entities (like rivers) because they were
+                  separated into different parts (e. g. interrupted by bridges). DM then generated different
+                  tags for every part of the river, and we had to add the annotation to every part
+                  of the river since one annotation could not be linked to multiple markings.</p>
+<p id="p26">After marking our geographical elements and localities, our team
+                  annotated them by referencing relevant text documents about the elements from the
+                  same century and websites from the present day. The annotations were relatively
+                  easy to create since the elements of the annotation tool were very basic and
+                  limited but sufficient. One could only choose between 5 different font sizes,
+                  bold/italicize/underline/highlight text, and choose between different fonts. While
+                  writing our text, we could embed website links directly in the annotation tool.
+                  The icons were the same as in well-known word processors (like MS Word or
+                  GoogleDocs), making the use very easy, straightforward, and intuitive.</p>
+    </section>
+    <section id="div3">
+      <h2>Usability, sustainability and maintainability</h2>
+      <h3 id="div3.1">Access</h3>
+<p id="p27">As already mentioned before, a <a href="https://github.com/performant-software/dm-2" target="_blank" rel="noopener">GitHub Repository</a>
+                  gives access to all necessary files, deployment as a Heroku App is foreseen.</p>
+<h3 id="div3.2">Dependencies</h3>
+<p id="p28">The GitHub-readme describes DM as a Ruby-on-Rails 5.x application.
+                  Since DM is available for deployment on Heroku, there is a good description of how
+                  to install and configure it. For Heroku deployment, the Heroku-18 stack is
+                  required.</p>
+<p id="p29">The local installation as a development environment indicates the
+                  required installation of PostgreSQL v11.1, Ruby 2.5.7, and Bundler 2.2.23. Since
+                  there are plenty of online descriptions on how to set up this stack, it is not
+                  described in the GitHub-readme. All backend dependencies are in the Gemfile
+                  (installation with Bundler). Front-end JavaScript dependencies can be installed
+                  through Yarn. Unfortunately, several dependencies are not up-to-date or
+                  deprecated, and there is the need to find fitting and working versions.</p>
+<h3 id="div3.3">Documentation</h3>
+<p id="p30">The online documentation for viewers and creators on the DM
+                  web-page is useful and accurate. The main features are described in video
+                  sequences. Some known issues and workarounds are listed, fixes in future versions
+                  are noted.</p>
+<p id="p31">The documentation and step-by-step instructions for installation and
+                  configuration focus on the Heroku deployment and are available in the
+                  GitHub-readme. As mentioned in “<a href="#p28" class="crossref">Dependencies</a>”, the Ruby-on-Rails stack installation for local
+                  deployments is not described. The local development environment deployment
+                  instructions are not well documented, and there are some skills (like setting up a
+                  PostgreSQL database) required to successfully assemble the platform.</p>
+<h3 id="div3.4">Support</h3>
+<p id="p32">For our small experiment, and since we didn’t plan to deploy the
+                  platform, we did not rely on support from the developers. The community is being
+                  maintained through a <a href="https://twitter.com/digitalmappa" target="_blank" rel="noopener">Twitter
+                     account</a> and a <a href="https://www.facebook.com/Digital-Mappa-127983461258938/" target="_blank" rel="noopener">Facebook
+                     group</a>. Due to the publication on GitHub, it is always possible to report
+                  bugs right at the source. </p>
+<h3 id="div3.5">Learnability</h3>
+<p id="p33">DM works intuitively and does not require a lot of explanation (cf.
+                  also the chapter “<a href="#p24" class="crossref">Example</a>”). Within a
+                  classroom setting, DM can be easily introduced and tested out in a 60-minute slot.
+                  Although no proper error messages are being shown (if clicks or draws are not
+                  allowed), users become quickly aware of shortcomings due to no reaction by the
+                  platform. The design follows state-of-the-art expectancies and symbols that guide
+                  users to possible pathways.</p>
+<h3 id="div3.6">Build and install</h3>
+<p id="p34">As soon as the indicated stack is fitting the current DM-version, the
+                  deployment on Heroku is simple and needs a few configurations. For local
+                  deployment, there is specific experience required, as the installation of DM is
+                  challenging. Dependencies have to be modified since they are not up-to-date: In
+                  March 2021, the dependency files were from November 2019. As already mentioned,
+                  some bug fixes were released between August and October 2021; it is, therefore,
+                  possible that the mentioned shortcomings are already fixed. Uninstallation has not
+                  been tested.</p>
+<h3 id="div3.7">Test</h3>
+<p id="p35">A basic template for testing the main features is implemented, but it
+                  is necessary to write case-specific tests. For our case, we didn’t use the test
+                  function.</p>
+<h3 id="div3.8">Portability and interoperability</h3>
+<p id="p36">As stated already, Digital Mappa is run as a webserver on a Heroku
+                  App. Heroku allows the integration of different programming languages, and in the
+                  case of Digital Mappa, the well-established Ruby-on-Rails has been chosen. Due to
+                  this, the setup ought to be highly portable and interoperable. End-user access to
+                  the platform is possible through any recent web browser (Mozilla Firefox, Google
+                  Chrome, Safari, etc.). During our evaluation, no problems from this site have been
+                  encountered.</p>
+<p id="p37">At the moment, we are not aware of any other tools that have been
+                  developed to add to the functionality of DM. We are also unsure if this is
+                  necessary since the tool is constructed as a stand-alone edition platform.</p>
+<h3 id="div3.9">Source, license, and credits</h3>
+<p id="p38">Digital Mappa 2.0 is provided open source under a <a href="https://github.com/performant-software/dm-2/blob/master/LICENSE" target="_blank" rel="noopener">GPL-3.0 Licence</a>. A free installation on any infrastructure allowing to
+                  set up a Heroku app is possible. As far as we can see, development is entirely
+                  taking place on GitHub. At this moment (October 2021), eleven branches have been
+                  created, hinting at a somewhat active but not very big community of
+                  developers. Due to the fact that most contributors are mentioned on the web page,
+                  there is no indication on who contributed in what manner (except, of course, that
+                  it would be possible to track past pushes in order to get an idea).</p>
+<h3 id="div3.10">Analysability, extensibility, reusability of the code</h3>
+<p id="p39">For this review, we didn’t analyse the provided code.</p>
+<h3 id="div3.11">Security and privacy</h3>
+<p id="p40">There is no information about data handling provided to the users,
+                  and we get no clear indication of where DM is deployed and which services are used
+                  (e. g., Heroku, AWS S3 bucket). Accordingly, we recommend deploying the system of
+                  its own servers or using DM setup by known providers (like university libraries)
+                  in order to not risk misuse of provided data. From the point of the structure of
+                  the provided framework, there is not a high risk of losing data due to
+                  breaches. </p>
+<h3 id="div3.12">Supportability and maintenance</h3>
+<p id="p41">Due to recent updates in August and October 2021 (the first part of
+                  this review was prepared in spring, the second part in autumn 2021), we reckon
+                  that version 2.1.0 (which would be called 1.0 of DM2) will fix certain problems
+                  and allow for easier deployment.</p>
+<h3 id="div3.13">Citability</h3>
+<p id="p42">The tool does not offer citations or citation guidelines.</p>
+    </section>
+    <section id="div4">
+      <h2>User interaction, GUI, and visualization</h2>
+      <h3 id="div4.1">User profile</h3>
+<p id="p43">The proto-typical user/contributor is probably a humanities scholar
+                  or student who does not want to deal with technical requirements and standards
+                  in-depth. The classroom setting has already been mentioned and allows for the
+                  quick introduction of fundamental approaches to the (digital) humanities.
+                  Annotations and especially the need to annotate images or texts is the main
+                  capability realized within the platform.</p>
+<h3 id="div4.2">Technical interfaces and GUI</h3>
+<p id="p44">The core idea of DM is to offer an easy and intuitive way to annotate
+                  images and provide textual information that can be formatted and enhanced with
+                  embedded images. The tool is web-based and offers a graphical user interface (GUI)
+                  that can be accessed through common browsers. The GUI is oriented towards current
+                  web practices and is easily understandable. In general, it needs to be stressed
+                  that the visual components of DM are its main advantages, which makes the tool
+                  ready for use in teaching and outreach settings.</p>
+<p id="p45">On the left side of the interface is a list of all the different
+                  documents in one collection. By clicking on a document, it gets displayed on the
+                  right side. The menu on the left cannot be hidden while working on or looking at a
+                  document. If one wants to work on a single page, there is a check-out box next to
+                  every file that the user can click. There are two main tools the user can work
+                  with on DM, a tagging and an annotation tool. </p>
+<p id="p46">
+                  <figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="On the left side of the interface are nine documents, of
+                        which the user chose to edit document 7. In the middle is the marking tool
+                        with the hand symbol selected (highlighted in light blue), and on the right
+                        is the annotation tool." loading="lazy"><figcaption>Fig. 2: On the left side of the interface are nine documents, of
+                        which the user chose to edit document 7. In the middle is the marking tool
+                        with the hand symbol selected (highlighted in light blue), and on the right
+                        is the annotation tool.</figcaption></figure>While tagging an element on the document, the toolbar is always visible
+                  and cannot be hidden, except for the color choices. Once one of the eight
+                  available colors is selected, the color selection can be hidden, and only the
+                  selected color appears in the toolbar. When a marking tool is selected, it is
+                  highlighted in blue, making it easy to see which tool is in use (<a href="#img2" class="crossref">fig. 2</a>). Before deleting a mark on the
+                  document, a warning pops up, the same for deleting a whole document. This enables
+                  the user to overthink his/her choice(s). On the contrary, there is no error
+                  prevention in deleting annotations. Once the user clicks on the delete button, the
+                  annotation disappears without further warning and any chance of reparation. One of
+                  the main disadvantages of the tool is that there is no Undo-Button in general, one
+                  cannot go back to previous document versions, and all changes are
+                  irreversible. </p>
+<p id="p47">The toolbars of the annotation and marking tools consist of standard
+                  symbols used in other programs, and the variety of tools is wide enough to
+                  individualize an annotation or differentiate different markings, but not too
+                  extensive. For example, a user can select between four different font sizes to
+                  write an annotation. When the user goes over a symbol with his/her mouse, the
+                  symbol's function gets explained (B = “bold selected type”). After the documents
+                  have been edited and annotations were added, the user can search for different
+                  keywords in the top right of the interface. All documents are included in the
+                  search. Once a keyword is selected, the corresponding document pops up on the
+                  screen.</p>
+<h3 id="div4.3">Visualization</h3>
+<p id="p48">DM does not provide specific visualizations. However, we would not
+                  expect such a thing in a platform like DM in the first place. Nevertheless, it is
+                  an easily individualizable tool. As a user, one can display documents and
+                  annotations that are important and hide more irrelevant parts. Additionally, the
+                  different documents can easily be moved around on the interface, and therefore it
+                  is possible to display, for example, documents 1 and 4 next to each other to
+                  compare them with each other and visualize the data in different ways.</p>
+<h3 id="div4.4">User empowerment</h3>
+<p id="p49">There is not one fixed workflow defined for the use of DM. Also, no
+                  ontologies or gazetteers are implemented in DM that need to be used. On the one
+                  hand, we encounter this as formidable liberty towards use in quite different
+                  settings. On the other hand, this means that there is no support of existing
+                  standards and solutions, e. g., towards norm data, given.</p>
+<h3 id="div4.5">Accessibility</h3>
+<p id="p50">All browser-based tools (e. g., zooming, read out loud) are
+                  supported. Besides this, we were not able to identify particular features.</p>
+    </section>
+    <section id="div5">
+      <h2>Conclusion</h2>
+      <h3 id="div5.1">General characteristics and realization of aims</h3>
+<p id="p51">DM is a mature and performant system that allows for easy and
+                  barrier-free use in different settings: from simple digital editions to in-depth
+                  text annotations, DM offers a general approach that leads to pragmatic as well as
+                  presentable results. Since it is an annotation and publication system in one,
+                  contributors will be able to inspect and share their results right away and
+                  directly through the platform. </p>
+<h3 id="div5.2">Achievements and scholarly contributions</h3>
+<p id="p52">Opposed to a multitude of recently developed tools, workbenches, and
+                  standards (e. g., ontologies), DM aims at a very general but active user group in
+                  need of easy-to-use annotation and publication tools. Specialization and
+                  implementation of the latest technological developments (read, e. g., Linked Open
+                  Data) have not been intended but somewhat sidelined, focusing on very few
+                  approaches that work flawlessly. </p>
+<p id="p53">We expect that due to DM, a variety of rather short but potentially
+                  complex digital artifacts will be created and made accessible. Therefore, DM fits
+                  in a small but essential niche for (visually appealing) documents that are not
+                  treated within large textual editions or don’t merit a stand-alone web-page.</p>
+<h3 id="div5.3">Particularities and limitations</h3>
+<p id="p54">DM demonstrates that it is possible to provide an easy-to-use
+                  platform with a solid design. Congrats to the developers for this.</p>
+<h3 id="div5.4">Suggestions for improvement</h3>
+<p id="p55">In version 0.3.2. (March 2021) the project seemed orphaned since
+                  dependencies were from November 2019. In July 2021, the development went on, and
+                  version 0.5.0 was released in August. In October, we got aware of the release of
+                  version 1.0.0.</p>
+<p id="p56">When we started using DM, we had an application in a classroom
+                  setting in mind for which the tool worked very well and flawlessly (from a viewer
+                  and contributor perspective). The implementation of norm data (e. g., support of
+                  Geonames) is, of course, possible in the form of linking, but currently, there is
+                  no clear path towards using such data. In this regard Recogito is currently ahead.
+                  At the same time, we started discussions about using DM as a crowdsourcing
+                  application in order to deeply annotate one specific historical map. At the
+                  current stage of development, DM does not seem to be an adequate tool for this
+                  approach. Although the check-out functionality hinders overwriting contributions,
+                  the user management is not really convenient (every user needs a dedicated account
+                  with an individual password). While collaborating with other users is possible,
+                  only one person can work on a document at a time. The ability to check out an
+                  annotation box instead of the whole page would make a crowdsourcing approach more
+                  feasible. Furthermore, certain text entities were envisioned in specific (fixed)
+                  structures. This is, for the moment, not supported but could be an interesting
+                  add-on. Moreover, we would like to have more possibilities with regards to
+                  extraction/export of textual files (at least in plain text, ideally as TEI
+                  XML).</p>
+    </section>
+
+
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{digital-mappa,
+  author    = {Hodel, Tobias and Janka, Anna and Widmer, Jonas},
+  title     = {Digital Mappa – Simple and Web-based Annotations},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {15},
+  year      = {2022},
+  doi       = {10.18716/ride.a.15.1},
+  url       = {https://doi.org/10.18716/ride.a.15.1},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Hodel, Tobias
+AU  - Janka, Anna
+AU  - Widmer, Jonas
+TI  - Digital Mappa – Simple and Web-based Annotations
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 15
+PY  - 2022
+DA  - 2022/12
+DO  - 10.18716/ride.a.15.1
+UR  - https://doi.org/10.18716/ride.a.15.1
+PB  - Institut für Dokumentologie und Editorik e.V.
+LA  - en
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Hodel, T., Janka, A., &amp; Widmer, J. (2022). Digital Mappa – Simple and Web-based Annotations. RIDE – A review journal for digital editions and resources, (15). https://doi.org/10.18716/ride.a.15.1</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Hodel, Tobias, et al.. &#34;Digital Mappa – Simple and Web-based Annotations.&#34; RIDE – A review journal for digital editions and resources, no. 15, 2022. https://doi.org/10.18716/ride.a.15.1.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Hodel, Tobias, Anna Janka, and Jonas Widmer. &#34;Digital Mappa – Simple and Web-based Annotations.&#34; RIDE – A review journal for digital editions and resources, no. 15 (2022). https://doi.org/10.18716/ride.a.15.1.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/digital-mappa/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

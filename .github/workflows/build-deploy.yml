@@ -1,14 +1,14 @@
-# Build the RIDE static site and deploy to GitHub Pages.
+# Validate the RIDE static site build.
 #
 # Triggers:
-#   - Push to master (deploy)
-#   - Pull request to master (build-only, no deploy)
+#   - Push to master
+#   - Pull request to master
 #   - Manual workflow_dispatch
 #
-# The build step runs site/build.py, then Pagefind for client-side search.
-# Deploy uses the official GitHub Pages actions (artifact-based, no gh-pages branch).
+# Deployment: GitHub Pages serves directly from the docs/ folder on master.
+# This workflow validates the build but does not deploy (docs/ is committed).
 
-name: Build & Deploy
+name: Validate Build
 
 on:
   push:
@@ -17,17 +17,11 @@ on:
     branches: [master]
   workflow_dispatch:
 
-# Build job only needs read; deploy permissions are scoped to deploy job.
 permissions:
   contents: read
 
-# Only one deploy at a time; cancel in-progress runs on new push.
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
 jobs:
-  build:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -39,39 +33,11 @@ jobs:
           python-version: "3.11"
           cache: pip
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
       - name: Build site
-        run: python site/build.py --output _site --site-url "https://ride.i-d-e.de"
+        run: python site/build.py --output _validate --site-url "https://ride.i-d-e.de"
 
       - name: Validate build output
-        run: test -f _site/index.html && test -f _site/sitemap.xml
-
-      - name: Index with Pagefind
-        run: npx pagefind@1.3.0 --site _site --glob "reviews/**/index.html"
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-
-  deploy:
-    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deploy
-        uses: actions/deploy-pages@v4
+        run: test -f _validate/index.html && test -f _validate/sitemap.xml

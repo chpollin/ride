@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenRefine &mdash; RIDE</title>
+  <meta name="description" content="
+            OpenRefine is an open-source tool for cleaning (meta)data. It converts unstructured
+               data into machine-readable formats and supports the integration of additional
+      ...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="OpenRefine">
+  <meta property="og:description" content="
+            OpenRefine is an open-source tool for cleaning (meta)data. It converts unstructured
+               data into machine-readable formats and supports the integration of additional
+      ...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/openrefine/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/openrefine/">
+<meta name="DC.title" content="OpenRefine">
+<meta name="DC.creator" content="Marthe Küster">
+<meta name="DC.date" content="2026-02">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.19.3"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="de">
+
+<meta name="citation_title" content="OpenRefine">
+<meta name="citation_author" content="Marthe Küster">
+<meta name="citation_doi" content="10.18716/ride.a.19.3"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2026-02">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/openrefine/openrefine.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "OpenRefine",
+  "author": [{"@type": "Person", "name": "Marthe K\u00fcster", "url": "https://orcid.org/0000-0003-2598-888X"}],
+  "datePublished": "2026-02",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.19.3"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e.V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">Reviewerin</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">Einleitung</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">Die Arbeit mit OpenRefine</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">Anpassungen an moderne Technologien</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div5" class="toc-link">Fazit</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#bibliography" class="toc-link">Bibliography</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#footnotes" class="toc-link">Notes</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>Feburary 2026</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.19.3" rel="external">10.18716/ride.a.19.3</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-19/">
+        <span class="badge badge-tools">TE</span>
+        Issue 19
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>DE</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/openrefine/openrefine.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/openrefine/openrefine-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="de">
+    <header class="review-header">
+      <a href="/issues/issue-19/" class="review-issue-link">
+        <span class="badge badge-tools">TE</span>
+        Issue 19: Tools and Environments
+      </a>
+
+      <h1>OpenRefine</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Marthe Küster&nbsp;<a href="https://orcid.org/0000-0003-2598-888X" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>        </span>
+      </div>
+
+      <div class="review-affiliation">Humboldt Universität zu Berlin, Berlin</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="https://openrefine.org" rel="external">OpenRefine</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">Reviewerin</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">Einleitung</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">Die Arbeit mit OpenRefine</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">Anpassungen an moderne Technologien</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div5" class="toc-link">Fazit</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#bibliography" class="toc-link">Bibliography</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#footnotes" class="toc-link">Notes</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>Feburary 2026</span>
+<span><a href="https://doi.org/10.18716/ride.a.19.3" rel="external">DOI</a></span><a href="/reviews/openrefine/openrefine.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/openrefine/openrefine-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>OpenRefine is an open-source tool for cleaning (meta)data. It converts unstructured
+               data into machine-readable formats and supports the integration of additional
+               information from sources such as GND or Wikidata via plugins. The scripting language
+               of OpenRefine, GREL (General Refine Expression Language), is relatively easy to learn
+               compared to programming languages like Python. One example of how OpenRefine can be
+               used is to prepare metadata in the Correspondence Metadata Interchange Format (CMIF)
+               for the web service correspSearch. OpenRefine helps to clean and standardise metadata
+               and organise information. This makes it a useful tool for digital projects with
+               historical data and scholarly editions.</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>Reviewerin</h2>
+      <p id="p1">Marthe Küster hat Bibliotheks- und Informationswissenschaft sowie
+               Geschichtswissenschaften (B.A.) und Information Science (M.A.) an der
+               Humboldt-Universität zu Berlin studiert. Von 2022 bis 2025 war sie studentische
+               Hilfskraft bei TELOTA an der Berlin-Brandenburgischen Akademie der Wissenschaften und
+               hat dort unter anderem beim Webservice "Briefeditionen durchsuchen und vernetzen"
+               mitgewirkt. Seit Dezember 2025 ist sie Wissenschaftliche Mitarbeiterin am Lehrstuhl
+               für Digital History in Berlin für das Projekt QUADRIGA Datenkompetenzzentrum.</p>
+    </section>
+    <section id="div2">
+      <h2>Einleitung</h2>
+      <p id="p2">Im Bereich der historischen Daten und der Editionswissenschaft stellt
+               sich häufig die Frage, wie die Metadaten standardisiert und maschinenlesbar gemacht
+               werden können. Das ist eine wesentliche Voraussetzung, um Daten effizient zu
+               visualisieren und zu analysieren. Ein nützliches Tool für diese Aufgabe ist
+               OpenRefine. Es eignet sich zur Bereinigung großer Datenmengen und bietet im Gegensatz
+               zu Excel Spreadsheets die Option mithilfe der General Refine Expression Language
+               (GREL) die Daten zu modellieren und mit Linked Data anzureichern. Auch ermöglicht die
+               Facettenfunktion von OpenRefine einen schnellen Überblick über die Daten zu erhalten.
+               Ein weiterer Vorteil von OpenRefine ist, dass der Quelltext open source ist und
+               kostenlos genutzt oder weiterentwickelt werden kann. Die Daten bleiben lokal auf dem
+               Rechner und es ist möglich, OpenRefine in mehreren Tabs parallel zu verwenden (<a href="#dreßen2023">Dreßen and Sacher 2023</a>). Grundsätzlich können Daten
+               auch mit Programmiersprachen wie Python bereinigt werden. OpenRefine ist jedoch durch
+               seine visuelle Oberfläche für Wissenschaftler*innen auch ohne umfangreiche
+               Programmierkenntnisse nutzbar und speziell für die Bereinigung von Daten
+               entwickelt.</p>
+<p id="p3">Die Idee für ein Open-Source-Tool zur Bereinigung großer Datenmengen
+               stammt von Metaweb Technologies und wurde von David Huynh bis Mai 2010 unter dem
+               Namen Freebase Gridworks entwickelt. Das Tool diente dazu, Daten umzuwandeln und zu
+               bereinigen, um diese in Freebase, einer Wissensdatenbank von Metaweb, zu importieren.
+               Im Juli 2010 übernahm Google Metaweb, woraufhin das Tool in Google Refine umbenannt
+               und mit zusätzlichen Funktionen erweitert wurde. Im Jahr 2012 übertrug Google die
+               Projektleitung an die Open-Source-Community, wodurch das Tool in OpenRefine umbenannt
+               und nach GitHub<sup class="footnote-ref" id="fnref-ftn1"><a href="#fn-ftn1" role="doc-noteref">1</a></sup> verschoben wurde. In den darauffolgenden
+               Jahren gewann OpenRefine zunehmend an Beliebtheit, insbesondere bei
+               Wissenschaftler*innen, Bibliotheken und Kultureinrichtungen. Seit 2017 ermöglicht ein
+               Plug-In die Anreicherung von Daten aus Wikidata. Seit 2018 erhielt OpenRefine nach
+               eigenen Angaben finanzielle Unterstützungen von der Google News Initiative, der Chang
+               Zuckerberg Initiative, der Wikimedia Foundation und der Nationalen
+               Forschungsdateninfrastruktur (NFDI).<sup class="footnote-ref" id="fnref-ftn2"><a href="#fn-ftn2" role="doc-noteref">2</a></sup>
+            </p>
+<p id="p4">OpenRefine verfügt über eine Dokumentation, die einen guten Einstieg in
+               die Arbeit mit dem Tool bietet. In der Dokumentation wird beschrieben, wie OpenRefine
+               installiert wird, worauf bei der Nutzung zu achten ist und wie ein Projekt gestartet
+               wird. Zudem werden Anleitungen zur Untersuchung, Umwandlung und zum Abgleich
+               (Reconciling) von Daten angeboten. Auch die Verwendung von Wikibase, Wikidata und
+               Wikimedia Commons im Zusammenhang mit OpenRefine wird erläutert. Abschließend wird
+               erklärt, wie Daten exportiert werden und man zur Weiterentwicklung von OpenRefine
+               beitragen kann.<sup class="footnote-ref" id="fnref-ftn3"><a href="#fn-ftn3" role="doc-noteref">3</a></sup> OpenRefine arbeitet im Browser. Laut der
+               Dokumentation sind am besten Browser geeignet, die auf WebKit basieren. Dazu gehören
+               Google Chrome, Chromium, Opera, Microsoft Edge und Safari. In dem später im Text
+               behandelten Fallbeispiel wurde allerdings mit Firefox gearbeitet und auch hier kam es
+               zu keinen Problemen aufgrund des Browsers. Ein Internetzugang ist nur nötig, um Daten
+               ins Internet zu importieren, zu exportieren oder Daten über einen Webservice
+                  abzugleichen.<sup class="footnote-ref" id="fnref-ftn4"><a href="#fn-ftn4" role="doc-noteref">4</a></sup>
+               Neben der offiziellen Dokumentation von OpenRefine gibt es Videotutorials und
+               Onlinekurse, die von verschiedenen Anbietern veröffentlicht wurden und die
+               Arbeitsschritte mit OpenRefine anhand von Fallbeispielen visualisieren.<sup class="footnote-ref" id="fnref-ftn5"><a href="#fn-ftn5" role="doc-noteref">5</a></sup></p>
+<p id="p5">Jeder Datensatz hat seine eigenen Besonderheiten und muss individuell
+               bearbeitet werden. Um ein besseres Verständnis dafür zu vermitteln, wie OpenRefine
+               unterstützen kann und wo die Grenzen dieses Tools liegen, betrachten wir ein
+               konkretes Anwendungsbeispiel: Korrespondenzmetadaten aufbereiten für correspSearch.
+               Der Webservice correspSearch ermöglicht es, Verzeichnisse verschiedener digitaler und
+               gedruckter Briefeditionen zu durchsuchen (<a href="#dumont-etal2025">Dumont et
+                  al. 2025</a>). Nutzende können nach Sender und Empfänger sowie nach Ort, Datum
+               und weiteren Faktoren wie Geschlecht oder Beruf recherchieren. CorrespSearch
+               aggregiert Briefmetadaten aus verteilten Repositorien und stellt diese auch über eine
+               offene Schnittstelle zur Verfügung. Voraussetzung ist, dass die Briefmetadaten im
+               TEI-XML-basierten „Correspondence Metadata Interchange Format” (CMIF) vorliegen, das
+               seit 2015 im Rahmen der Correspondence Special Interest Group der Text Encoding
+               Initiative entwickelt wird (<a href="#tei2025">TEI Correspondence SIG
+               2025</a>). Sind die Briefmetadaten schon maschinenlesbar, wie es bei digitalen
+               Editionen der Fall ist, ist ein Tool wie OpenRefine nicht nötig. OpenRefine kommt
+               u.a. zum Einsatz, wenn gedruckte Editionen ein Briefverzeichnis aufweisen, das in
+               PDF-Form vorliegt und mit einfachen Mitteln kopierbar ist oder die Briefe in
+               Tabellenform bereits erfasst wurden. Die basalen Informationen zum Brief
+               (Absender*in, Empfänger*in, Ort, Datum) werden mit Hilfe von OpenRefine strukturiert,
+               bereinigt und aufbereitet. Im Anschluss wird die so entstandene Tabelle mit Hilfe
+               eines weiteren Dienstes in eine CMIF-Datei konvertiert.</p>
+<p id="p6">Da OpenRefine lokal auf dem Rechner läuft, kann ein zu kleiner
+               Speicherplatz bzw. ein zu großer Datensatz das Programm stark verlangsamen.<sup class="footnote-ref" id="fnref-ftn6"><a href="#fn-ftn6" role="doc-noteref">6</a></sup>
+               In der OpenRefine-Dokumentation wird ein Datensatz als „groß“ definiert, wenn er über
+               50 Megabyte oder mehr als eine Million Zellen hat. Abhängig von der Anzahl der
+               Spalten, können mehr oder weniger Zeilen problemlos bearbeitet werden. Standardmäßig
+               verwendet OpenRefine 1 GB Arbeitsspeicher. Bei Bedarf kann das Programm aber auch so
+               konfiguriert werden, das mehr Arbeitsspeicher verwendet wird (sofern verfügbar).<sup class="footnote-ref" id="fnref-ftn7"><a href="#fn-ftn7" role="doc-noteref">7</a></sup>
+               Große Datensätze können in kleinere Datensatzeinheiten geteilt und bearbeitet werden.
+               Eine andere Möglichkeit ist ein hybrides Vorgehen, wo die erste Mustererkennung und
+               finale Bereinigung mit OpenRefine erfolgt, aber die Massenverarbeitung über andere
+               Wege, wie einem Python-Skript.</p>
+<p id="p7">Die Nutzung von OpenRefine ist sinnvoll, wenn die Daten in digitaler Form
+               vorliegen, aber wenig strukturiert und unbereinigt sind. Das bedeutet, dass die
+               Datumsangaben beispielsweise nicht in einem maschinenlesbaren Format vorliegen oder
+               die Orts- und Personennamen keine zugewiesene ID haben oder in einem ungeeigneten
+               Format sind. Die Namen sind abgekürzt, falsch geschrieben oder der Vor- und Nachname
+               ist in einer ungewünschten Reihenfolge. Das alles kann mit einfachen Mitteln mit
+               OpenRefine behoben werden. Damit die Nutzung von OpenRefine lohnenswert ist, sollte
+               es sich um eine größere Anzahl an Datensätzen handeln. Die Einarbeitungszeit für das
+               Tool ist nicht zu unterschätzen. Besonders für Plugins, die Skriptsprache GREL und
+               die Facetten sollte dabei Zeit eingeplant werden. Dennoch ist GREL als Skriptsprache
+               einfacher zu lernen, als eine Programmiersprache wie Python, die je nach
+               Fragestellung mindestens das Gleiche leisten kann wie GREL. Bei kleineren Datensätzen
+               kann das manuelle Bereinigen oder die Nutzung von regulären Ausdrücken über Notepad++
+               zeitsparender sein. Am einfachsten ist es, wenn die zu bereinigenden Metadaten im
+               CSV-Format, in zeilenbasierten Textdateien oder als Excel-Dateien vorliegen.
+               OpenRefine erlaubt auch XML, JSON oder MARC als Importformat. Diese Dateien können
+               bei der Umwandlung in ein Tabellenformat durch die Verästelung aber Probleme
+               bereiten. Aus OpenRefine können CSV-, TSV-, ODF-, HTML- und Exceldateien im
+               Tabellenformat unkompliziert exportiert werden. Des Weiteren ist es möglich Templates
+               zu erstellen, die die Tabelle in andere Dateiformate umwandeln. </p>
+<p id="p8">Schließlich kann OpenRefine dabei unterstützen große Datenmengen zu
+               standardisieren und in Wikidata neu einzuspeisen oder bereits existierende
+               Wikidataeinträge zu bearbeiten (<a href="#wikimedia">Wikimedia Foundation
+                  2024</a>). Auch bei anderen Datenbanken wie FactGrid können auf diesem Weg Daten
+               eingespeist bzw. angereichert werden (<a href="#factgrid2023">Factgrid
+               2023</a>).</p>
+    </section>
+    <section id="div3">
+      <h2>Die Arbeit mit OpenRefine</h2>
+      <p id="p9"><figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="Briefverzeichnis einer gedruckten Edition." loading="lazy"><figcaption>Fig. 1: Briefverzeichnis einer gedruckten Edition.</figcaption></figure><figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="Briefverzeichnis in einer TXT-Datei." loading="lazy"><figcaption>Fig. 2: Briefverzeichnis in einer TXT-Datei.</figcaption></figure>Der Briefwechsel Hermann Diels, Hermann Usener und Eduard Zeller, welchen
+               Dietrich Ehlers 1992 herausgab, besitzt ein solches Briefverzeichnis (<a href="#ehlers1992">Ehlers 1992</a>, 23). Die Daten können mit wenigen
+               Schritten in eine Textdatei kopiert werden (siehe Abb. 1 und 2).</p>
+<h3 id="div3.1">Spalten</h3>
+<p id="p10"><figure id="img3" class="review-figure"><img src="pictures/picture-3.png" alt="Ansicht der Importvorschau." loading="lazy"><figcaption>Fig. 3: Ansicht der Importvorschau.</figcaption></figure>
+                  <figure id="img4" class="review-figure"><img src="pictures/picture-4.png" alt="Spaltentrennung mit Separatoren." loading="lazy"><figcaption>Fig. 4: Spaltentrennung mit Separatoren.</figcaption></figure>
+                  <figure id="img5" class="review-figure"><img src="pictures/picture-5.png" alt="Entfernung der letzten Zahl." loading="lazy"><figcaption>Fig. 5: Entfernung der letzten Zahl.</figcaption></figure> OpenRefine bietet beim Importieren der Daten eine Vorschau, bei der
+                  überprüft werden kann, ob die Spaltentrennung und die Spaltenköpfe richtig
+                  übernommen sind (siehe Abb. 3). In unserem Fall haben wir eine Textdatei, die
+                  keine Überschriften enthält und an den Kommata getrennt werden soll. Allerdings
+                  kann auch hier im Nachgang nachbearbeitet und die Spalten an genau definierten
+                  Stellen getrennt werden. Das ist über den Pfeil im Spaltenkopf ➔ <em>edit column</em> ➔
+                  <em>split into several columns…</em>. möglich (siehe Abb. 4). Dabei sind Separatoren nötig
+                  wie ein Punkt „.“ oder Präpositionen wie „an“, „am“ oder „nach“. Um Wörter oder
+                  Zahlen zu entfernen, die in den Spalten immer an letzter Stelle sind, eignet sich
+                  der GREL-Ausdruck <code>value.split(" ").slice(0,-1).join(" ")</code> (siehe Abb. 5).
+                  Es handelt sich dabei um GREL, die JavaScript ähnelt und gut dafür geeignet ist,
+                  Strings umzuwandeln oder mathematische Berechnungen durchzuführen.<sup class="footnote-ref" id="fnref-ftn8"><a href="#fn-ftn8" role="doc-noteref">8</a></sup></p>
+<p id="p11">Das Correspondence Metadata Interchange Format (CMIF), das
+                  correspSearch benötigt, ist TEI-XML basiert. Um die Daten aus einer
+                  Tabellenstruktur in CMIF zu überführen wird das Skript CSV2CMI verwendet (<a href="#rettinghaus2025">Rettinghaus 2025</a>), das von der Sächsischen
+                  Akademie der Wissenschaften auch als Webservice angeboten wird (<a href="#saw">Sächsische Akademie der Wissenschaften o.J.</a>). CSV2CMI erwartet dabei
+                  standardisierte Spaltennamen und bestimmte Werte (Nummern, Text, Datumsangaben,
+                  Weblinks). Sollten Daten nicht vorhanden sein, wie für den Ort des Empfängers
+                     (<code>addresseePlace</code>), dann bleibt die Zelle in der Spalte leer. Hat
+                  eine Spalte ein bis mehrere Werte - wie es bei Personenspalten häufig ist - werden
+                  die Namen oder GND-URLs durch einen selbstgewählten Delimiter, wie den geraden
+                  Trennstrich <code>|</code>, getrennt. Vor und nach dem Delimiter sollte kein
+                  Leerzeichen stehen, ebenso wie vor und nach Einträgen in den Zellen. Ist das der
+                  Fall, können die Leerzeichen über den Pfeil im Spaltenkopf ➔ <em>edit cells</em> ➔ <em>common
+                  transforms</em> ➔ <em>trim leading and trailing whitespace</em> entfernt werden. </p>
+<p id="p12">Übersicht über die Spalten und die erwarteten Werte für den csv2cmi
+                  Webservice:
+               <div class="table-wrapper"><table><tr><td>key</td><td>Korrespondenznummer</td></tr><tr><td>edition</td><td>Edition (UUID-Nummer, die mit einem Buchstaben
+                        beginnt – die genauen Editionsangaben werden über den csv2cmi Webservice
+                        eingetragen)</td></tr><tr><td>sender</td><td>Ein bis mehrere Absender</td></tr><tr><td>senderID</td><td>Ein bis mehrere <a href="https://www.dnb.de/DE/Professionell/Standardisierung/GND/gnd_node.html" target="_blank" rel="noopener">GND</a>-URLs der Absender</td></tr><tr><td>senderPlace</td><td>Ort der Absender</td></tr><tr><td>senderPlaceID</td><td><a href="http://www.geonames.org/" target="_blank" rel="noopener">GeoNames</a> URL vom Ort des Absenders</td></tr><tr><td>senderDate</td><td>Absendedatum standardisiert (yyyy-MM-dd)</td></tr><tr><td>senderDateText</td><td>Absendedatum Text (z.B. dd.MM.yyyy)</td></tr><tr><td>addressee</td><td>Ein bis mehrere Empfänger</td></tr><tr><td>addresseeID</td><td>Ein bis mehrere <a href="https://www.dnb.de/DE/Professionell/Standardisierung/GND/gnd_node.html" target="_blank" rel="noopener">GND</a>-URLs der Empfänger</td></tr><tr><td>addresseePlace</td><td>Ort der Empfänger</td></tr><tr><td>addresseePlaceID</td><td><a href="http://www.geonames.org/" target="_blank" rel="noopener">GeoNames</a> URL vom Ort des Empfängers</td></tr><tr><td>addresseeDate</td><td>Empfangsdatum standardisiert
+                        (yyyy-MM-dd)</td></tr><tr><td>addresseeDateText</td><td>Empfangsdatum Text</td></tr><tr><td>page</td><td>Seitenzahl (Nur nötig, wenn es keine
+                        Korrespondesnummer gibt)</td></tr><tr><td>note</td><td>Anmerkung</td></tr></table></div>
+               </p>
+<h3 id="div3.2">Personen- und Ortsnamen</h3>
+<p id="p13">
+                  <figure id="img6" class="review-figure"><img src="pictures/picture-6.png" alt="Textfacette." loading="lazy"><figcaption>Fig. 6: Textfacette.</figcaption></figure> OpenRefine bietet mehrere einfache Möglichkeiten Personennamen zu
+                  vereinheitlichen. Zunächst gibt es Verzeichnisse, in denen der Absender immer
+                  gleich ist und daher nicht genannt wurde. Dann ist es nötig, eine neue Spalte für
+                  den Absender zu erstellen. Das funktioniert über den Pfeil im Spaltenkopf ➔ <em>edit
+                  column</em> ➔ <em>add column based on this column</em> ➔ <em>Expression:</em> <code>value.replace(value,
+                     "NAME DES ABSENDERS")</code>. Die Personennamen sollten keine Kürzel beinhalten
+                  und die gleiche Person gleich benannt werden. Das kann mit der Funktion Pfeil im
+                  Spaltenkopf ➔ <em>facet</em> ➔ <em>text facet</em> überprüft werden. Gibt es mehrere Empfänger oder
+                  Absender werden diese durch einen beliebigen Delimiter getrennt. Das richtige
+                  Format ist „Vorname Nachname“. Falls die Angabe umgekehrt ist („Nachname,
+                  Vorname“) kann über den GREL-Ausdruck <code>value.match(/(.*), (.*)/).reverse().join("
+                     ")</code> die Reihenfolge leicht korrigiert werden. Sollte es sich um eine
+                  Briefedition handeln, bei dem die Daten für die Spalte „sender“ oder „addressee“
+                  fehlen, weil sie im Kontext der Edition selbsterklärend sind, kann auf Basis der
+                  jeweils anderen Spalte, die Spalte erstellt werden. Das trifft zu wenn in der
+                  Edition Briefe von nur einer Person erfasst werden und nur die Empfänger gelistet
+                  sind (z.B. „An Goethe“). Oder es handelt sich um einen Briefwechsel bei dem nur
+                  die Sender aufgelistet werden (z.B. „Von Schiller). Im ersten Fall muss eine
+                  Spalte erstellt werden, die in jeder Zeile den gleichen Namen beinhalten. Im
+                  zweiten Fall wird die vorhandene Spalte dupliziert und die Namen mit dem/der
+                  Briefpartner*in ersetzt. Mit folgendem GREL-Ausdruck wird die Spalte dupliziert: Pfeil
+                  im Spaltenkopf ➔ <em>edit column</em> ➔ <em>add column based on this column</em> ➔ <em>Expression:</em>
+                     <code>value</code>. Um die Werte mit den jeweiligen Briefpartner*innen zu
+                  ersetzen, muss im Zwischenschritt auf Zahlen oder ein einmaliges Kürzel
+                  zurückgegriffen werden, da sich sonst die nachfolgenden Ausdrücke gegeneinander
+                  ausspielen: Pfeil im Spaltenkopf ➔ <em>edit column</em> ➔ <em>add column based on this column</em> ➔
+                  <em>Expression:</em> <code>value.replace("PERSON1","1").replace("PERSON2", "2")</code>.
+                  Wenn der Schritt übersprungen und ein*e Briefparter*in mit dem Namen der anderen
+                  Person ersetzt wird, findet sich in jeder Zeile die gleiche Person, weshalb der
+                  Zwischenschritt mit Kürzeln unumgänglich ist. Mit einem Klick in die gewünschte
+                  Zelle kann das Kürzel mit dem entsprechenden Namen wieder ersetzt und mit „Apply
+                  to All Identical Cells“ bestätigt werden, sodass der gewünschte Name bei allen
+                  identischen Zellen übernommen wird oder die Namen werden über die Textfacette und
+                  mit „edit“ angepasst (siehe Abb. 6).</p>
+<p id="p14">
+                  <figure id="img7" class="review-figure"><img src="pictures/picture-7.png" alt="Verknüpfung mit der GND." loading="lazy"><figcaption>Fig. 7: Verknüpfung mit der GND.</figcaption></figure>
+                  <figure id="img8" class="review-figure"><img src="pictures/picture-8.png" alt="Identifikation der Person." loading="lazy"><figcaption>Fig. 8: Identifikation der Person.</figcaption></figure>
+                  <figure id="img9" class="review-figure"><img src="pictures/picture-9.png" alt="Ermittlung der GND-Nummer." loading="lazy"><figcaption>Fig. 9: Ermittlung der GND-Nummer.</figcaption></figure> Um Personen- und Ortsnamen anzureichern, können Daten über eine
+                  Schnittstelle mit Wikidata, ORCID, VIAF<sup class="footnote-ref" id="fnref-ftn9"><a href="#fn-ftn9" role="doc-noteref">9</a></sup>
+                  oder der GND angereichert werden (<a href="#steeg2018">Steeg und Pohl
+                     2018</a>). Dafür muss zunächst das entsprechende Plugin installiert werden.
+                  Für die GND wurde der Plugin von lobid entwickelt und wird unter URL <a href="https://lobid.org/gnd/reconcile" target="_blank" rel="noopener">https://lobid.org/gnd/reconcile</a>
+                  bereitgestellt. lobid ist ein Angebot vom Hochschulbibliothekszentrum des Landes
+                  Nordrhein-Westfalen (hbz) und stellt auf Basis von Linked Open Data (LOD)
+                  Progammierschnittstellen (APIs) und Rechercheoberflächen bereit (<a href="#hbzlobid">Hochschulbibliothekszentrum des Landes NRW o. J.</a>). Der
+                  GND-Plugin kann für die Anreicherung umfangreicher Personendaten sehr nützlich
+                  sein. Bei einem Briefwechsel mit zwei bis drei Beteiligten lohnt sich das Plugin
+                  nicht. Für einen Einsatz spricht, wenn sich viele bekannte Personen im Datensatz
+                  befinden oder neben der GND-Nummer weitere Daten wie Geschlecht, Beruf oder
+                  Beschäftigung über das Plugin ergänzt werden sollen. Schließlich müssen die
+                  richtigen Personen identifiziert werden (siehe Abb. 7 und 8). Auch Namen wie
+                  „Wilhelm Schneider“, die häufig vorkommen, können Probleme bereiten. In solchen
+                  Fällen macht es Sinn über lobid.org oder die DNB zu gehen, den Datensatz in Ruhe
+                  anzuschauen und die Daten händisch zu ergänzen. Anschließend kann eine Spalte mit
+                  der GND-Nummer hinzugefügt werden (siehe Abb. 9). Das Problem dabei ist, dass
+                  meist nicht nur die Nummer, sondern die ganze URL erwartet wird. Diese muss über
+                  den GREL-Ausdruck <code>"http://d-nb.info/gnd/" + value</code> ergänzt werden. In
+                  einigen Fällen ist es auch einfacher, auf das Plugin zu verzichten, die Spalten zu
+                  duplizieren und die Namen mit den gewünschten URLs manuell zu ersetzen.</p>
+<h3 id="div3.3">Datumsangaben</h3>
+<p id="p15">
+                  <figure id="img10" class="review-figure"><img src="pictures/picture-10.png" alt="Umwandlung der Datumsangaben in ein maschinenlesbares Format." loading="lazy"><figcaption>Fig. 10: Umwandlung der Datumsangaben in ein maschinenlesbares Format.</figcaption></figure>Mit OpenRefine können Datumsangaben leicht umformatiert werden. Um wie in
+                  unserem Beispiel die Spalten „senderDate“ und „addresseeDate“ das Datum in das
+                  Format <code>yyyy-MM-dd</code> oder <code>yyyy-MM</code> oder <code>yyyy</code> zu
+                  bringen, bieten sich besonders häufig zwei Ausdrücke an. Um die Datumsangabe
+                  „02.12.1890“ nach „1890-12-02“ umzuwandeln, hilft der GREL-Ausdruck
+                     <code>value.toDate('dd.MM.yyyy')​.toString('yyyy-MM-dd')</code> (siehe
+                  Abb. 10). Bei der Datumsangabe vom „2. Dezember 1890“ nach „1890-12-02“, ist der
+                  GREL-Ausdruck <code>value.toDate('dd. MMM
+                     yyyy','dd.MM.yyyy').toString('yyyy-MM-dd')</code> nützlich. Mithilfe der
+                  Textfacette (siehe Abb. 6), können Datumsangaben auf Ihre Richtigkeit hin
+                  überprüft und manuell Angaben, die nicht automatisch umgewandelt wurden (z.B.
+                  Mitte September oder um den Tag X), korrigiert werden.</p>
+<p id="p16">Schreibweise der Attribute in CSV2CMI :
+               <div class="table-wrapper"><table><tr><td>attribute</td><td>Format</td><td>Beispiel</td></tr><tr><td>when</td><td>yyyy-MM-dd</td><td>1997-09-09</td></tr><tr><td>from-to</td><td>yyyy-MM-dd/yyyy-MM-ds</td><td>1860-03-04/1860-03-10</td></tr><tr><td>notBefore-notAfter</td><td>[yyyy-MM-dd..yyyy-MM-dd]</td><td>[1667-03-01..1667-06-15]</td></tr><tr><td>notBefore</td><td>[yyyy-MM-dd..]</td><td>[1667-09-29..]</td></tr><tr><td>notAfter</td><td>[..yyyy-MM-dd]</td><td>[..1867-09-29]</td></tr></table></div>
+               <ul><li>ermittelt: 1669-05-03~</li><li>vermutlich (?): 1667%</li></ul>
+               </p>
+    </section>
+    <section id="div4">
+      <h2>Anpassungen an moderne Technologien</h2>
+      <p id="p17">Die Fortschritte im Bereich des maschinellen Lernens greift auch die
+               OpenRefine-Community auf. Michael Markert entwickelte ein „OR-LLM-Script“, dass vor
+               allem für Spalten mit längeren Textblöcken wie etwa Kurzbiografien relevant ist und
+               lokal auf dem Rechner die Daten auswertet. Das geschieht mithilfe eines Large
+               Language Models (LLM) und einer API, die bei der Named-Entity Recognition (NER)
+               Datenbereinigung und inhaltliche Anreicherung unterstützen (<a href="#markert2024">Markert 2024</a>). Durch die Anwendung eines LLM in OpenRefine können große Mengen an
+               Textdaten automatisiert analysiert werden. Das LLM erkennt Entitäten wie Namen,
+               Datumsangaben und Orte und extrahiert diese. Für die Digital Humanities bietet das
+               die Möglichkeit Informationen auf Brieftexten oder Kurzbiografien automatisiert zu
+               erschließen. Die historischen Informationen können auf neue Weise auffindbar gemacht
+               und ausgewertet werden, was der historischen Forschung neue Perspektiven
+               aufzeigt. Ein Workflow könnte so aussehen, dass mit OpenRefine die Daten bereinigt
+               werden, mit LLMs oder NER-APIs Namen von Personen, Körperschaften, Orten und weitere
+               Entitäten erkannt werden, diese Entitäten dann mittels Reconciliation mit
+               Referenzdatensätzen von der GND oder Wikidata abgeglichen und die so aufbereiteten
+               Daten exportiert und in Datenbanken integriert werden.</p>
+    </section>
+    <section id="div5">
+      <h2>Fazit</h2>
+      <p id="p18">OpenRefine ist gut dafür geeignet große Mengen an Metadaten zu
+               bereinigen und zu strukturieren. Die Stärken von OpenRefine liegen in seiner
+               Fähigkeit, unstrukturierte Daten in strukturierte zu überführen und mit
+               Metadaten anzureichern. Auch ist die Skriptsprache GREL von OpenRefine einfacher zu
+               lernen als Programmiersprachen wie Python. Zukünftig sind weitere Entwicklungen 
+               im Bereich des maschinellen Lernens zu erwarten, die neue Möglichkeiten bei der Arbeit mit
+               OpenRefine aufzeigen werden.</p>
+<p id="p19">
+               <figure id="img11" class="review-figure"><img src="pictures/picture-11.png" alt="Tabelle mit standardisierten Metadaten." loading="lazy"><figcaption>Fig. 11: Tabelle mit standardisierten Metadaten.</figcaption></figure> Ein konkretes Beispiel seiner Anwendung ist die Aufbereitung von
+               Korrespondenzdaten als CMIF für den Webservice correspSearch. OpenRefine kann hier
+               eingesetzt werden, um Metadaten aus gedruckten oder unstrukturierten digitalen
+               Quellen zu bereinigen und zu standardisieren, bevor sie in CMIF umgewandelt werden.
+               Dabei bietet OpenRefine zahlreiche Funktionen wie das Trennen von Spalten an
+               definierten Stellen, das Anreichern von Daten über die GND oder Wikidata sowie das
+               Vereinheitlichen von Datumsangaben und Namen. Das Endergebnis ist eine Tabelle (siehe
+               Abb. 11), die problemlos über den csv2cmi Webservice in das CMIF umgewandelt und
+               anschließend in die Datenbank von correspSearch eingespeist werden kann. <sup class="footnote-ref" id="fnref-ftn10"><a href="#fn-ftn10" role="doc-noteref">10</a></sup></p>
+<p id="p20">Trotz der vielen Vorteile erfordert OpenRefine eine gewisse
+               Einarbeitungszeit. Kleinere Datensätze lassen sich möglicherweise effizienter mit
+               anderen Methoden bereinigen. Insgesamt stellt OpenRefine eine wertvolle Ressource
+               dar, um die Qualität und Interoperabilität von Metadaten zu verbessern und die Arbeit
+               mit historischen Daten und Editionen zu erleichtern.</p>
+    </section>
+
+    <section id="bibliography" class="review-bibliography">
+      <h2>Bibliography</h2>
+      <ol class="bib-list">
+        <li><span id="dreßen2023">Dreßen, Angela, Elodie Sacher. 2023. “Querying Art History
+                  Data on the Web (5): Modelling Data with OpenRefine.“ In <em>Querying Museum and
+                     Art History Data on the Web</em>. DOI: <a href="https://doi.org/10.22032/dbt.55804" target="_blank" rel="noopener">10.22032/dbt.55804</a>.</span></li>
+        <li><span id="dumont-etal2025">Dumont, Stefan, Sascha Grabsch, Jonas Müller-Laackman,
+                  Ruth Sander und Steven Sobkowski, Hg. 2025. correspSearch – Briefeditionen
+                  vernetzen (v3.1.0) [Webservice]. Berlin-Brandenburgische Akademie der
+                  Wissenschaften. <a href="https://correspSearch.net" target="_blank" rel="noopener">https://correspSearch.net</a>, abgerufen am 14.05.2025.</span></li>
+        <li><span id="ehlers1992">Ehlers, Dietrich, Hg. 1992: „Hermann Diels, Hermann Usener,
+                  Eduard Zeller: Briefwechsel”. Berlin, Boston: Akademie Verlag. DOI:<a href="https://doi.org/10.1515/9783050066752" target="_blank" rel="noopener">
+                  10.1515/9783050066752</a>.</span></li>
+        <li><span id="factgrid2023">FactGrid, Hg. 2023: „Help:OpenRefine für FactGrid”. <a href="https://web.archive.org/web/20251219093658/https://database.factgrid.de/wiki/Help:OpenRefine_f%C3%BCr_FactGrid" target="_blank" rel="noopener">https://web.archive.org/web/20251219093658/https://database.factgrid.de/wiki/Help:OpenRefine_f%C3%BCr_FactGrid</a>,
+                  abgerufen am 14.05.2025.</span></li>
+        <li><span id="github1">GitHub: OpenRefine.
+                  <a href="https://github.com/OpenRefine" target="_blank" rel="noopener">https://github.com/OpenRefine</a>, abgerufen am 31.10.2024.</span></li>
+        <li><span id="hbzlobid">Hochschulbibliothekszentrum des Landes NRW, Hg. o. J.
+                     <em>lobid.org</em>. <a href="https://lobid.org/" target="_blank" rel="noopener">https://lobid.org/</a>, abgerufen am 31.10.2024.</span></li>
+        <li><span id="markert2024">Markert, Michael. 2024. Tutorial zur Nutzung eines lokalen
+                  LLM in OpenRefine für NER, Bereinigung, Anreicherung. <a href="https://www.youtube.com/watch?v=jQLcthiOli8" target="_blank" rel="noopener">https://www.youtube.com/watch?v=jQLcthiOli8</a>, abgerufen am 31.10.2024.</span></li>
+        <li><span id="openrefine">OpenRefine (Hg.): OpenRefine user manual. <a href="https://openrefine.org/docs" target="_blank" rel="noopener">https://openrefine.org/docs</a>, abgerufen am 31.10.2024.</span></li>
+        <li><span id="rettinghaus2025">Rettinghaus, Klaus unter Mitarbeit von Uwe Kretschmer,
+                  Jana Dolan und Sophie Schneider. 2025. CSV2CMI (v2.2.1) [Software]. Zenodo. DOI: <a href="https://doi.org/10.5281/zenodo.15350911" target="_blank" rel="noopener">10.5281/zenodo.15350911</a>.
+               </span></li>
+        <li><span id="saw">Sächsische Akademie der Wissenschaften zu Leipzig, Hg. o. J.
+                     <em>csv2cmi webservice</em>. <a href="https://cmif.saw-leipzig.de/" target="_blank" rel="noopener">https://cmif.saw-leipzig.de/</a>, abgerufen am 31.10.2024.</span></li>
+        <li><span id="steeg2018">Steeg, Fabian, Adrian Pohl. 2018. „GND reconciliation for
+                  OpenRefine”. <a href="https://web.archive.org/web/20251219093136/https://blog.lobid.org/2018/08/27/openrefine.html" target="_blank" rel="noopener">https://web.archive.org/web/20251219093136/https://blog.lobid.org/2018/08/27/openrefine.html</a>.</span></li>
+        <li><span id="tei2025"> TEI Correspondence Special Interest Group, Hg. 2025.
+                  Correspondence Metadata Interchange Format (CMIF). <a href="https://github.com/TEI-Correspondence-SIG/CMIF" target="_blank" rel="noopener">https://github.com/TEI-Correspondence-SIG/CMIF</a>, abgerufen am 14.05.2025.</span></li>
+        <li><span id="wikimedia">Wikimedia Foundation, Hg. 2024. OpenRefine for Wikidata: the
+                  basics. <a href="https://app.learn.wiki/learning/course/course-v1:WikimediaFoundation+WMF_GLAM001+2024/home" target="_blank" rel="noopener">https://app.learn.wiki/learning/course/course-v1:WikimediaFoundation+WMF_GLAM001+2024/home</a>,
+                  abgerufen am 14.05.2025.</span></li>
+      </ol>
+    </section>
+
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        <li id="fn-ftn1" class="footnote-item">
+           GitHub: OpenRefine. URL: <a href="https://github.com/OpenRefine" target="_blank" rel="noopener">https://github.com/OpenRefine</a>,
+                  zuletzt geprüft am 31.10.2024.
+          <a href="#fnref-ftn1" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn2" class="footnote-item">
+          OpenRefine Project History.
+                  URL: <a href="https://web.archive.org/web/20241114231340/https://openrefine.org/openrefine_history" target="_blank" rel="noopener">https://web.archive.org/web/20241114231340/https://openrefine.org/openrefine_history</a>.
+          <a href="#fnref-ftn2" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn3" class="footnote-item">
+          OpenRefine user manual. URL: <a href="https://openrefine.org/docs" target="_blank" rel="noopener">https://openrefine.org/docs</a>, zuletzt
+                  geprüft am 31.10.2024.
+          <a href="#fnref-ftn3" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn4" class="footnote-item">
+          Installing OpenRefine. URL: <a href="https://web.archive.org/web/20241119005214/https://openrefine.org/docs/manual/installing" target="_blank" rel="noopener">https://web.archive.org/web/20241119005214/https://openrefine.org/docs/manual/installing</a>.
+          <a href="#fnref-ftn4" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn5" class="footnote-item">
+           OpenRefine: External resources. URL: <a href="https://web.archive.org/web/20251020144710/https://openrefine.org/external_resources" target="_blank" rel="noopener">https://web.archive.org/web/20251020144710/https://openrefine.org/external_resources</a>.
+          <a href="#fnref-ftn5" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn6" class="footnote-item">
+           GitHub: Large text facets are excruciatingly slow, <a href="https://web.archive.org/web/20260211094721/https://github.com/OpenRefine/OpenRefine/issues/672" target="_blank" rel="noopener">https://web.archive.org/web/20260211094721/https://github.com/OpenRefine/OpenRefine/issues/672</a>.
+          <a href="#fnref-ftn6" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn7" class="footnote-item">
+          Installing OpenRefine. URL: <a href="https://web.archive.org/web/20250521112744/https://openrefine.org/docs/manual/installing" target="_blank" rel="noopener">https://web.archive.org/web/20250521112744/https://openrefine.org/docs/manual/installing</a>.
+          <a href="#fnref-ftn7" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn8" class="footnote-item">
+          OpenRefine: General Refine Expression Language. URL: <a href="https://web.archive.org/web/20241007103332/https://openrefine.org/docs/manual/grel" target="_blank" rel="noopener">https://web.archive.org/web/20241007103332/https://openrefine.org/docs/manual/grel</a>.
+          <a href="#fnref-ftn8" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn9" class="footnote-item">
+          OpenRefine:
+                     Reconciling. URL: <a href="https://web.archive.org/web/20241011204547/https://openrefine.org/docs/manual/reconciling" target="_blank" rel="noopener">https://web.archive.org/web/20241011204547/https://openrefine.org/docs/manual/reconciling</a>.
+          <a href="#fnref-ftn9" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn10" class="footnote-item">
+          Siehe <a href="https://correspsearch.net/de/suche.html?e=eb06446e-0c72-4cbf-8c56-b06fcc252610" target="_blank" rel="noopener">
+                     https://correspsearch.net/de/suche.html?e=eb06446e-0c72-4cbf-8c56-b06fcc252610
+                  </a> für das Suchergebnis des hier konvertierten Briefverzeichnisses in
+                  correspSearch (abgerufen am 15.05.2025).
+          <a href="#fnref-ftn10" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+      </ol>
+    </section>
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{openrefine,
+  author    = {Küster, Marthe},
+  title     = {OpenRefine},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {19},
+  year      = {2026},
+  doi       = {10.18716/ride.a.19.3},
+  url       = {https://doi.org/10.18716/ride.a.19.3},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Küster, Marthe
+TI  - OpenRefine
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 19
+PY  - 2026
+DA  - 2026/02
+DO  - 10.18716/ride.a.19.3
+UR  - https://doi.org/10.18716/ride.a.19.3
+PB  - Institut für Dokumentologie und Editorik e.V.
+LA  - de
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Küster, M. (2026). OpenRefine. RIDE – A review journal for digital editions and resources, (19). https://doi.org/10.18716/ride.a.19.3</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Küster, Marthe. &#34;OpenRefine.&#34; RIDE – A review journal for digital editions and resources, no. 19, 2026. https://doi.org/10.18716/ride.a.19.3.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Küster, Marthe. &#34;OpenRefine.&#34; RIDE – A review journal for digital editions and resources, no. 19 (2026). https://doi.org/10.18716/ride.a.19.3.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/openrefine/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

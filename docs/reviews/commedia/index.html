@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Processing Dante’s Commedia: From Sanguineti’s Edition to Digital Tools &mdash; RIDE</title>
+  <meta name="description" content="
+            The Commedia project aims to investigate the manuscript transmission of
+               the poem, using Sanguineti&#39;s previous edition and checking the validity of his stemma
+          ...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Processing Dante’s Commedia: From Sanguineti’s Edition to Digital Tools">
+  <meta property="og:description" content="
+            The Commedia project aims to investigate the manuscript transmission of
+               the poem, using Sanguineti&#39;s previous edition and checking the validity of his stemma
+          ...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/commedia/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/commedia/">
+<meta name="DC.title" content="Processing Dante’s Commedia: From Sanguineti’s Edition to Digital Tools">
+<meta name="DC.creator" content="Elena Spadini">
+<meta name="DC.date" content="2015-11">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.3.2"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="en">
+
+<meta name="citation_title" content="Processing Dante’s Commedia: From Sanguineti’s Edition to Digital Tools">
+<meta name="citation_author" content="Elena Spadini">
+<meta name="citation_doi" content="10.18716/ride.a.3.2"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2015-11">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/commedia/commedia.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Processing Dante\u2019s Commedia: From Sanguineti\u2019s Edition to Digital Tools",
+  "author": [{"@type": "Person", "name": "Elena Spadini", "url": "https://orcid.org/0000-0002-4522-2833"}],
+  "datePublished": "2015-11",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.3.2"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e.V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">Editing the Commedia: a short history</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">Introduction: Shaw&#39;s edition</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">Witnesses description, transcription and encoding</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">Collation and phylogenetic analysis</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div5" class="toc-link">Judging variants. Editors vs machines?</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#bibliography" class="toc-link">Bibliography</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#footnotes" class="toc-link">Notes</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>November 2015</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.3.2" rel="external">10.18716/ride.a.3.2</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-3/">
+        <span class="badge badge-editions">SE</span>
+        Issue 3
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>EN</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/commedia/commedia.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/commedia/commedia-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="en">
+    <header class="review-header">
+      <a href="/issues/issue-3/" class="review-issue-link">
+        <span class="badge badge-editions">SE</span>
+        Issue 3: Digital Scholarly Editions
+      </a>
+
+      <h1>Processing Dante’s Commedia: From Sanguineti’s Edition to Digital Tools</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Elena Spadini&nbsp;<a href="https://orcid.org/0000-0002-4522-2833" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>        </span>
+      </div>
+
+      <div class="review-affiliation">Huygens ING - DiXiT, The Hague, Netherlands</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="http://sd-editions.com/AnaAdditional/commediaonline/home.html" rel="external">Dante Alighieri Commedia A Digital Edition</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">Editing the Commedia: a short history</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">Introduction: Shaw&#39;s edition</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">Witnesses description, transcription and encoding</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">Collation and phylogenetic analysis</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div5" class="toc-link">Judging variants. Editors vs machines?</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#bibliography" class="toc-link">Bibliography</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#footnotes" class="toc-link">Notes</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>November 2015</span>
+<span><a href="https://doi.org/10.18716/ride.a.3.2" rel="external">DOI</a></span><a href="/reviews/commedia/commedia.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/commedia/commedia-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>The <em>Commedia</em> project aims to investigate the manuscript transmission of
+               the poem, using Sanguineti's previous edition and checking the validity of his stemma
+               with computer methods. Full transcriptions of the seven selected witnesses are
+               provided alongside the corresponding facsimiles. The end results of the collation and
+               phylogenetic analysis differ from Sanguineti's edition and reshape the stemma. No new
+               critical text is provided. The edition is easy to navigate and high quality editorial
+               materials are available. A metrical markup enriches the text and the integrated VBase
+               tool allows the user to retrieve variants in different witnesses and parts of the
+               poem.</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>Editing the Commedia: a short history</h2>
+      <p id="p1">2010 saw the publication of a digital edition of the
+                  <em>Commedia</em> overseen by Prue Shaw. Written in the first quarter of the
+               14th century, Dante’s masterpiece traces the poet’s journey through the topographies
+               of the afterlife. The poem is divided into three <em>cantiche</em>
+                  (<em>Inferno</em>, <em>Purgatorio</em>, <em>Paradiso</em>), each
+               composed of 33 cantos, themselves written in hendecasyllabic tercets.</p>
+<p id="p2">The <em>Commedia</em> has a long and controversial editorial history.
+               This is hardly surprising given the work’s resonance throughout centuries and thus
+               the number of witnesses of the poem, over 600 including complete manuscripts and
+               early printed editions. Scholars have deployed a range of editorial strategies in an
+               attempt to settle on a critical text of the <em>Commedia</em>. In this section, I
+               will summarise these strategies in brief, focusing on those elements of each that
+               remain relevant to the edition under review.</p>
+<p id="p3">The length of the text and the number of witnesses has made it difficult
+               to compare versions of the text in their entirety. At the end of the 19th century,
+               Michele Barbi sought something of a compromise: he selected a series of lines – the
+               so-called <em>400 loci</em> (Bartoli, D'Ancona, and Del Lungo 1891; Barbi 1891) –
+               drawn from various points in the <em>Commedia</em>. Scholars were invited to
+               check these lines in those manuscripts of the poem to which they each had access and
+               to send a record of them to the Società Dantesca Italiana. Unfortunately, only a
+               handful of these scholars replied and Barbi’s initiative turned over very little
+               material.</p>
+<p id="p4">Following the Vandelli (Vandelli 1921) and Casella (Casella 1923)
+               editions, Giuseppe Petrocchi drafted a new <em>Edizione Nazionale</em> in 1965 on
+               the occasion of the seventh centenary of Dante's birth (Petrocchi 1965). Petrocchi
+               chose to limit his project to manuscripts that dated before 1355; the project’s
+               theoretical underpinning was that witnesses drafted after that date were likely
+               contaminated, largely because of the scribal and editorial endeavours of Giovanni
+               Boccaccio, who copied out the entire <em>Commedia</em> at least three times,
+               introducing variants from other copies. Petrocchi's critical text is an attempt to
+               reconstruct the so-called <em>antica vulgata</em> in use during the three decades
+               following Dante's death rather than an archetype; this last concept is hardly
+               applicable to a text which was almost certainly released in sections.</p>
+<p id="p5">Antonio Lanza's 1995 edition had a different aim: following Bedier's
+               prescripts, the editor reproduced a <em>bon manuscrit</em> – copied in Florence
+               in 1337 –, referring to early Florentine manuscripts in order to make amendments only
+               where strictly necessary (Lanza 1995).</p>
+<p id="p6">In 2001, Federico Sanguineti published a new edition using a small pool
+               of witnesses: seven manuscripts known as ‘the Sanguineti seven’. His stemma consists
+               of two branches: α and β; to simplify, manuscripts from Tuscany form the α branch,
+               while those from Northern Italy form the β branch. As a general rule in textual and
+               linguistic transmission, the peripheral geographical areas tend to be more
+               conservative than the centre; Florence had early on become an active centre for
+               reproductions of the <em>Commedia</em>, while northern manuscripts tended to be
+               less innovative. Sanguineti decided to use the only second branch witness – ms.
+               Urbinate Latino 366 of the Vatican Library (Urb), written in Emilia Romagna – as the
+               base-text for his critical edition. It is worth clarifying that ms. Urbinate’s
+               solitary position in the β branch is due to the limited overall number of witnesses
+               Sanguineti chose to mobilise and to his choice to move ms. Rb (now disjointed in two
+               voumes: <em>Inferno</em>, <em>Purgatorio</em> at the Biblioteca Riccardiana,
+               while <em>Paradiso</em> at Biblioteca Nazionale Braidense) from the β to the α
+               branch. Critics drawn to Sanguineti's edition have repeatedly expressed their concern
+               regarding the scarcity of readings offered as a proof of validity of his stemmatic
+               hypothesis and their distribution along small sections of the poem (e.g., Segre
+               2002).</p>
+<p id="p7">This last step in the editorial history of the <em>Commedia</em> is
+               particularly relevant to the edition under review. Sanguineti was originally part of
+               the <em>Commedia project</em>, whose goal was, in part, to test the validity of
+               his stemma. At the time of the project’s inception, the scholars involved anticipated
+               a positive result for Sanguineti. In Shaw's words, 'it seems important to emphasize
+               that the conclusions we reached are not those we expected to reach when we started
+               out on the digital <em>Commedia project</em> [...]. The result turned out to be
+               more interesting and complex'.</p>
+    </section>
+    <section id="div2">
+      <h2>Introduction: Shaw&#39;s edition</h2>
+      <p id="p8">The <em>Commedia Project</em> officially ran from 1998 to 2010, with
+               funding from The British Academy, The Arts and Humanities Research Council, The
+               Modern Humanities Research Association and the Rockefeller Foundation. The venture’s
+               main actors were Prue Shaw (editor), Jennifer Marshall (research assistant) and Peter
+               Robinson (responsible for the information technology side of the project). As
+               mentioned in the foreword to the edition, the genesis of the project dates back to
+               the early 1990s; the original idea spread between Europe and Australia, and the
+               project was finally structured between 1998 and 2001, when Federico Sanguineti's
+               edition appeared. In 2010, Shaw’s Digital Edition was released online and on DVD. The
+               present review deals only with the online edition – however, there is no difference
+               in content between the two versions.</p>
+<p id="p9">Shaw's digital edition has much to recommend it: it provides critics with
+               access to seven of the most important witnesses of the poem in both extremely
+               accurate transcription and high-definition images; it questions the soundness of
+               Sanguineti’s stemma by putting it to the test of phylogenetic analysis and
+               de-stabilizes assumptions surrounding the validity of the position of ms. Rb – the
+               basis of Sanguineti's critical text; it provides word collation and tools for
+               investigating variants distribution across the witnesses. Finally, it presents high
+               quality editorial materials on textual and technological aspects.</p>
+<p id="p10">The decision to limit the scope of the project to the Sanguineti seven
+               manuscripts alone has invited some criticism (Inglese 2012). However, the editors
+               were interested in Sanguineti's hypothesis from the offset precisely because ‘such a
+               small number of manuscripts would make a computer project a feasible possibility’
+               (see below). The selection reflects a paradox well known to textual scholars dealing
+               with large manuscript transmission and with long texts: though computers do indeed
+               allow human beings to process great quantities of data quickly, preparing materials
+               to be computer-readable might be time consuming to the degree of nullifying the
+               advantages gleaned from the former. Every project must of necessity reach a
+               compromise with its ambition (for a different strategy in applying digital
+               technologies to the edition of the <em>Commedia</em>, see Renello 2013).</p>
+    </section>
+    <section id="div3">
+      <h2>Witnesses description, transcription and encoding</h2>
+      <p id="p11">High quality images are available for all manuscript leaves, except for
+               the ms. Urb, due to copyright restrictions.</p>
+<p id="p12">The witnesses’ description is very accurate, examining codicological,
+               palaeographical and linguistic features, enriched by images illustrating the
+               discussed phenomena. <em>Ms. Transcription notes</em> on individual witnesses
+               provide further information specific to each of them.</p>
+<p id="p13">
+               <figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="Image/Text. Witness menu." loading="lazy"><figcaption>Fig. 1: Image/Text. Witness menu.</figcaption></figure> Transcription criteria are well documented in the <em>General
+                  transcription note</em>. For instance, it includes protocols for recording
+               different kinds of deletion, catchwords, interpolated lines or blank spaces. The
+               transcription is diplomatic (the text is copied without normalization, corrections or
+               emendations), it is not graphetic (different forms of the letters are not recorded)
+               and abbreviations are expanded in italics. The only exceptions to the transciption’s
+               fidelity lie in the manuscript’s punctuation, which is not recorded, and in the
+               absence of a distinction between <em>i</em> and <em>j</em>. The seven
+               manuscripts and two editions are fully transcribed.</p>
+<p id="p14">
+               <figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="Layers menu (Ash)." loading="lazy"><figcaption>Fig. 2: Layers menu (Ash).</figcaption></figure> Different layers of transcription can be shown, highlighting the
+               interventions of different hands, as in the case of the Ashburnham manuscript
+               (Florence, Biblioteca Medicea Laurenziana, Ms. Ashburnham 828).</p>
+<p id="p15">
+               <figure id="img3" class="review-figure"><img src="pictures/picture-3.png" alt="Layers menu (Mart)." loading="lazy"><figcaption>Fig. 3: Layers menu (Mart).</figcaption></figure> The Braidense witness (Milano, Biblioteca Nazionale Braidense, Aldina AP
+               XVI 25) is an edition published by Aldo Manuzio in 1515, and annotated thirty years
+               later by Luca Martini with variants from an early manuscript no longer in existence.
+               The Aldine text and Martini’s additions can be seen either together or
+               separately.</p>
+<p id="p16">The witnesses are fully transcribed and encoded. It is worth mentioning
+               another major web resource for scholars interested in reading Dante in manuscripts:
+               the Dante online portal of the Società Dantesca Italiana. The only manuscript fully
+               transcribed in both projects is the Trivulziano (Milan, Biblioteca dell'Archivio
+               storico civico e Trivulziana, Ms. Trivulziano 1080).<sup class="footnote-ref" id="fnref-ftn1"><a href="#fn-ftn1" role="doc-noteref">1</a></sup>
+            </p>
+<p id="p17">Barbara Bordalejo has authored the introductory chapter on the encoding
+               system. The edition provides numerous examples of the encoding of scribal deletion,
+               problematic readings, glosses and alternative readings, substitution of one reading
+               for another, aspects of layout, etc. The texts have been encoded in Collate-style
+               markup (specific to the collation tool <em>Collate</em>, see below), and later
+               transformed into a customized version of XML-TEI. Starting from the transcription
+               guidelines elaborated by the Società Dantesca Italiana for the <em>Dante
+                  Online</em> website, the project created a model with which to separate 'the
+               text of the document' and 'the variant states of the text'. Bordalejo observes that <blockquote><p>the main goal of this new transcription system is to present a clear
+                     distinction between the text of the document (i.e. what goes in the
+                        <em>lit</em> tag: the exact series of marks upon the page) and how the
+                     editor (or the transcriber) interprets the different stages of development of
+                     the text (i.e. our understanding of the text as originally written and then
+                     altered).</p><footer>Bordalejo, Commedia, Appendices: The Encoding System</footer></blockquote>
+            </p>
+<p id="p18">Here is an example: <figure id="code1" class="review-figure"><img src="" alt="" loading="lazy"><figcaption></figcaption></figure> The first and second reading tags (<code>&lt;rdg&gt;</code>) mark the
+               variant states of the text: the original and the corrected. The third
+                  <code>&lt;rdg&gt;</code> registers the text of the document. TEI elements have not
+               here been used as suggested by the TEI Guidelines and little use is made of the TEI
+               Representation of Primary Sources module.</p>
+<p id="p19">
+               <figure id="img4" class="review-figure"><img src="pictures/picture-4.png" alt="Word collation. Metrical analysis." loading="lazy"><figcaption>Fig. 4: Word collation. Metrical analysis.</figcaption></figure> Another level of markup regards the metrical system. David Robey's
+               independent work on the encoding has been incorporated and is available with a click
+               on each line. It is the editor's intention that this should help the reader
+               understand the effect different variants might have on the scansion of the line. The
+               marked phenomena are accented syllables, synalephas, the opposite dialephas and
+               diaereses (for an extended discussion of Dante's poetic practice, see Robey
+               2000).</p>
+    </section>
+    <section id="div4">
+      <h2>Collation and phylogenetic analysis</h2>
+      <p id="p20">
+               <figure id="img5" class="review-figure"><img src="pictures/picture-5.png" alt="Word Collation. Original spelling forms." loading="lazy"><figcaption>Fig. 5: Word Collation. Original spelling forms.</figcaption></figure> Collating texts of witnesses drawn from different regions and periods
+               inevitably yields variations in spelling. Shaw chose to delete these variations for
+               the collation, standardizing the texts’ spelling in accordance with Petrocchi's
+               critical text – since Sanguineti's own critical text is based on a manuscript
+               containing linguistic forms specific to Northern Italy. Problems concerning spelling,
+               segmentation, rhyme and editorial practices are discussed in detail in the Word
+               Collation chapter. Original spelling forms can be seen immediately by selecting the
+               corresponding button in the Word Collation page.</p>
+<p id="p21">
+               <figure id="img6" class="review-figure"><img src="pictures/picture-6.png" alt="Image/Text. Apparatus." loading="lazy"><figcaption>Fig. 6: Image/Text. Apparatus.</figcaption></figure> The collation process is run with Collate, a program developed by Peter
+               Robinson in the late 1980s (Robinson 1989). The complete collation results can be
+               seen in the Apparatus, available from any word of any manuscript.</p>
+<p id="p22">
+               <figure id="img7" class="review-figure"><img src="pictures/picture-7.png" alt="Word collation." loading="lazy"><figcaption>Fig. 7: Word collation.</figcaption></figure> Collation results are also displayed in the Word Collation section, line by
+               line and using Petrocchi's edition as the base-text.</p>
+<p id="p23">The collation generates a single XML-encoded file containing the
+               collation result for the entire <em>Commedia</em>. Data is then stored in
+               standard NEXUS file format for processing with PAUP (Phylogenetic Analysis Using
+               Parsimony). The program uses the record of agreements and disagreements among the
+               witnesses ('taxa', in evolutionary biology) at precise sites of variation
+               ('characters'), to generate a phylogram: an unrooted tree. The length of the branches
+               corresponds to the degree of divergence between witnesses. PAUP, which has proven to
+               be particularly suited to the purposes of textual critics, uses sophisticated methods
+               to find the most 'parsimonious' evolutionary tree: considering all possible
+               bifurcating trees, it identifies the one that requires the smallest number of changes
+               (Windram et al. 2008; Roos, Teemu, and Heikkila 2009; Young 2014). It is worth
+               remembering that evolutionary trees are unrooted, i.e. they have no orientation. For
+               the purposes of textual criticism, this means that the computer fails to provide
+               answers at the highest levels of the stemma.</p>
+<p id="p24">
+               <figure id="img8" class="review-figure"><img src="pictures/picture-8.png" alt="Variant map." loading="lazy"><figcaption>Fig. 8: Variant map.</figcaption></figure> For every line, a Variant Map is available, showing the result of the
+               phylogenetic analysis.</p>
+<p id="p25">The data is processed multiple times: once for the entire poem, again
+               for each <em>cantica</em> and yet again for sections within each
+                  <em>cantica</em>. The phylogenetic analysis shows that there is no divergence
+               in 88% of the <em>Commedia</em> text. It also produces trees for
+                  <em>Inferno</em> and <em>Purgatorio</em> that are 'indistinguishable from
+               those for the whole text, while the tree for <em>Paradiso</em> shows a slight
+               variation' (<em>Introduction</em>). On the basis of their experience with the
+               materials and the analytical method, the editors state:<blockquote><p>however, one could not assert that part-publication [...] of these
+                        <em>cantiche</em> of the <em>Commedia</em> [...] did not happen at
+                     all. Simply, the phylogenetic analysis suggests no evidence for it.</p><footer>Shaw, Commedia, Introduction</footer></blockquote>
+            </p>
+<p id="p26">A comprehensive account of the conclusions drawn from phylogenetic
+               analyses is beyond the scope of this review; following an exhaustive account of the
+               editorial history and textual problems of the poem, philological results are
+               presented on the <em>Introduction</em> page (and particularly in the
+                  <em>Manuscripts and computers</em> chapter and the following chapters) and on
+               the <em>Phylogenetic analysis</em> page. In Shaw's words, the project’s most
+               significant finding is<blockquote><p>the clarification of the position of Rb: Rb is shown unequivocally to be a
+                     collaterale of Urb, and not a member of α as Sanguineti maintains. This
+                     inevitably has important knock-on effects for the <em>restitutio
+                        textus</em>.</p><footer>Shaw, Commedia, Introduction</footer></blockquote>
+            </p>
+<p id="p27">In his review, Giorgio Inglese adds nuance to this conclusion,
+               suggesting that 'the appearance of a peculiar relation [between the manuscripts Urb
+               and Rb] is just a consequence of the selection of the witnesses' (Inglese 2012). A
+               reading which seems specific to those two manuscripts can in fact appear in others
+               which are not taken into account in the edition. Inglese highlights the value of the
+               electronic collation that allows for an in-depth evaluation analysis by providing
+               readers with the chance to check the editor's conclusions. He follows to observe
+               that, as far as it regards the <em>restitutio textus</em>, Shaw’s hypothesis (Rb
+               has a β text) leads to the same results than his own (Rb has an α text, contaminated
+               with β): Rb and Urb agreement represents β.</p>
+    </section>
+    <section id="div5">
+      <h2>Judging variants. Editors vs machines?</h2>
+      <p id="p28">A frequent question in Digital Humanities is whether digital
+               technologies have altered methods of scholarship and, if so, how. For instance, how
+               does one reckon with textual variants in the field of scholarly edition? The question
+               inevitably arises wherever scholars seek to track the transmission of a work and to
+               produce a critical text. In the so-called Lachmannian tradition, the editor is
+               required to distinguish between variants and errors and to consider only the latter
+               in drawing relations between witnesses. The trees produced in textual criticism using
+               evolutionary biology methods, however, draw upon all the evidence – that is variants
+               which may or may not include errors. For instance, in her analysis of the
+               relationship between the ms. Urb and the ms. Rb, Shaw presents the following
+               evidence: errors in common (counted as errors by Petrocchi but accepted by
+               Sanguineti) and errors <em>separativi</em> of α (which isolates Urb and Rb),
+               which amount to ten 'monogenetic variants linking Rb and Urb'. In addition, the
+               editor considers small errors and variants according to the following useful taxonomy
+               (for a similar list of types of polygenetic variants, see Brandoli 2007):
+               substitution of a word, change in word order, addition or omission of the definite
+               article, addition or omission of the first person pronoun <em>io</em> and/or the
+               third person pronoun <em>el</em>, addition or omission of a small word, singular
+               for plural or vice versa, variants with an extra or missing syllable which affects
+               scansion, resulting in a metrical error or not, different forms of the verb,
+               retouching of short phrases. As Shaw points out,<blockquote><p>some of these categories are not especially significant in themselves.
+                     Singly, they mean next to nothing. But it is the presence of a long series of
+                     them uniformly right across the text in a very small number of manuscripts
+                     which is striking (and this is surely what Petrocchi’s phrase ‘foltezza di
+                     statistica’ refers to at least in part) [...] If the results of the computer
+                     analysis are accepted as valid for mss. AHMT and L, there is no reason that
+                     they should not be accepted as valid for mss. R and U.</p><footer>Shaw, Commedia, Introduction</footer></blockquote>
+            </p>
+<p id="p29">A coherent agreement or divergence between witnesses alongside the text,
+               including errors and variants, is evidence that has to be taken into account. Shaw's
+               assertions are less persuasive, however, where she argues that <blockquote><p>this ability of phylogenetics to create hypotheses of relationships which
+                     do not require any prior judgments as to originality is one of its greatest
+                     strengths for textual scholars. In classical stemmatics, as formulated by Paul
+                     Maas, analysis must be based on shared error alone. Therefore, one must
+                     determine at each point which reading is “original", which is “error", before
+                     analysis can begin. As well as the difficulty of determining the “original"
+                     reading, there is the argument elegantly expressed by Talbot Donaldson: if one
+                     can determine the original reading at every point, then why bother with any
+                     further analysis?</p><footer>Shaw, Commedia, Phylogenetic Analysis</footer></blockquote>
+            </p>
+<p id="p30">However, determining which reading is an error in traditional stemmatics
+               does not amount to identifying the original reading. For instance, an editor can
+               establish that a reading that breaks the metrical scheme is an error and still have
+               other witnesses with different, and potentially correct, readings; or a <em>lectio
+                  difficilior</em> might be 'trivialized' by all scribes, in the so-called
+               ‘diffraction <em>in absentia</em>’, such that it remains extremely difficult to
+               'guess' which reading is the original and correct one. Thus what Shaw considers a
+               matter of interpretation, avoidable by recourse to 'new methodology', in fact remains
+               the domain of scholar's expertise.</p>
+<p id="p31">Fortunately, Shaw seems to contradict her previous statement, declaring
+               that 'assessing the significance of variants is a large part of the editorial
+               process'. Doing it with digital technologies might be a promising field of
+               investigation, which, to my knowledge, has only been pursued beyond the stage of
+               theoretical assertions by few scholars (Barabucci, Di Iorio and Vitali 2014; Cadioli
+               Forthcoming; a work in progress as part of the DiXiT Marie-Curie Network).</p>
+<h3 id="div5.1">VBase integrated tool</h3>
+<p id="p32">The edition contains an integrated tool, VBase. The tool is used to
+                  retrieve variants according to their distribution across the witnesses. Though not
+                  immediately intuitive, the user is able to perform complex searches and have
+                  immediate results after only a short training (cf. Trovato 2014, 209). The
+                  importance of this tool is underlined by Trovato, who proved his skepticism on the
+                  value of the edition as a whole (Trovato 2010).</p>
+<p id="p33">A query consists in asking for variants which only appear in one or
+                  more selected manuscripts. Furthermore, it is possible to specify whether those
+                  readings should not be present in other witnesses and to restrict the query to
+                  specific parts of the text. In each query, the number of results (readings) per
+                  single witness is available by checking the 'Count the hits in every witness' box.
+                  Eight variant groups – sets of variants characteristic of a particular group of
+                  witnesses, as a couple of manuscripts, a branch of the tradition, the editions,
+                  etc. – have been defined; variant groups can be deployed in order to perform
+                  searches within a single group or to have a witness react to a group. </p>
+<p id="p34">The editors used VBase to visualize and analyse the collation
+                  results. In the section devoted to Phylogenetic Analysis, a number of VBase
+                  queries are discussed in detail; for example, according to VBase results, the
+                  agreements and disagreements of Rb with the variant groups show that the
+                  manuscript is a member of the β family, but shares many more readings with the α
+                  branch than Urb does (note that Shaw's conclusion, in contrast with Sanguineti's,
+                  is that Rb is a β witness; while Inglese considers Rb an α manuscript contaminated
+                  with β).</p>
+<p id="p35">
+                  <figure id="img9" class="review-figure"><img src="pictures/picture-9.png" alt="VBase." loading="lazy"><figcaption>Fig. 9: VBase.</figcaption></figure> As an example of VBase functionalities, here is a query for readings
+                  peculiar to manuscripts Urb and Rb, only in <em>Paradiso</em>:</p>
+<h3 id="div5.2">Publication and copyrights</h3>
+<p id="p36">The edition is powered by <em>Anastasia</em>, a publication tool
+                  that allows users to process and search large SGML/XML documents. The application
+                  was developed by Peter Robinson in 2000, as a successor to DynaText, and
+                  extensively renovated by him and Andrew West over the following years. In 2004 it
+                  was released open source. The advantages of <em>Anastasia</em> are that it
+                  bundles the server, parsing, searching, and display handling into a single
+                  package; it also assumes that any document is composed of a series of events which
+                  are defined not only by their hierarchical relation, but also by their
+                  left-to-right relation in the document stream. This last feature is significantly
+                  different from other XML systems. New developments by the same team have flowed
+                  into the <em>SDPublisher</em> publication system of the Scholarly Digital
+                  Editions (SDE) company. The system inherited the same basic model as
+                     <em>Anastasia</em>, with some major changes: it is not limited to Apache
+                  servers, it uses Python rather than TCL for scripting and uses a database to
+                  enable dynamic representations of texts. There are currently eleven editions
+                  available on the SDE portal – all of them powered by
+                     <em>Anastasia/SDPublisher</em>. Since 2010, no further developments have
+                  been planned for this tool. Peter Robinson, its main promoter, has moved on to
+                  different projects concerning the making and publishing of digital editions. On
+                  the publication side, his dedication to Chaucer's work has resulted in the
+                     <em>CantApp</em>, a digital edition of the Canterbury Tales for mobile
+                  devices. As far as regards the creation of digital editions, his new venture is
+                  the <em>TextualCommunities</em> portal; it aims to create free available
+                  editions, in collaboration with many people and in a web-based system that does
+                  not require extensive computer skills.</p>
+<h3 id="div5.3">Presentation and usability</h3>
+<p id="p37">The edition is easy to navigate. The reader can select the portion of
+                  the text of interest (<em>cantica</em>, <em>canto</em> and verse), the
+                  witness and the kind of visualization: image/text, transcription or word
+                  collation.</p>
+<p id="p38">All editorial materials are available from a drop-down menu.
+                  Moreover, an entire section is dedicated to 'Using this edition'; here the user
+                  can find help pages summarising the different functionalities and views, including
+                  information about printing facilities. A detailed table of contents always remains
+                  visible on the left side of the screen to orient the reader within the text. A
+                  simple search functionality is provided on the whole text and yields results as
+                  words in context.</p>
+<p id="p39">Editorial materials include a list of abbreviations, a rich
+                  bibliography divided into sections and an appendix devoted to the list of Barbi's
+                  above mentioned 400 <em>loci critici</em>, with direct links to word collation
+                  for all of them.</p>
+<p id="p40">However, a select few but nevertheless important facilities are
+                  missing: there are no citation guidelines and, on the technical side, it is not
+                  possible to download raw data, such as the XML files with transcriptions and
+                  related schemas.</p>
+<p id="p41">A limited portion of the Shaw edition’s editorial materials are
+                  freely accessible on the web, as the collaborations and images that went into the
+                  project have left copyright owners concerned. All transcripts, collations and
+                  editorial materials are available under the Creative Commons
+                  'Attribution-NonCommercial-ShareAlike 3.0' license.</p>
+<h3 id="div5.4">Conclusion</h3>
+<p id="p42">Shaw makes several suggestions for the edition’s improvement. One of
+                  them concerns the Landiano manuscript (Piacenza, Biblioteca Comunale Passerini
+                  Landi, Landiano 190), which has not been included in the project, and the prospect
+                  of producing for it a transcription that includes the <em>scriptura
+                     inferior</em>, in the manner of the Ashburnam and Laurenziano manuscripts.
+                  Moreover, in light of the interesting results achieved on the basis of the
+                  manuscript Rb, a further controversial witness – the Madrid manuscript (Madrid,
+                  Biblioteca Nacional, ms. 10186) – would be worth analysing. </p>
+<p id="p43">To conclude, the <em>Commedia</em> digital edition is not a
+                  precious resource for Dante scholars alone, but also, more broadly, for anyone
+                  interested in medieval manuscripts and in textual scholarship. It provides readers
+                  of Dante with an easy access to the manuscripts containing his work. The tools and
+                  the methodology applied are experimental and yield high quality results. The
+                  reader may or may not agree with the editor's conclusions, but the significant
+                  element of the project is that the reader is at liberty to verify those
+                  conclusions herself, by reading the explanation of any statement, comparing
+                  transcriptions with facsimiles, comparing every reading of any line and
+                  visualizing variant maps for them, testing the editor's hypothesis and formulating
+                  new ones using VBase. This is the essential scholarly value of Shaw's project.</p>
+<p id="p44">It is unfortunate, then, that according to the WorldCat catalogue,
+                  fewer than thirty libraries in the world are in possession of the DVD or have
+                  complete online access. Moreover, libraries such as the British Library, the
+                  Bibliothèque nationale de France, or Cambridge University Library do not number
+                  among them. The libraries which provide access to Shaw’s edition are fourteen in
+                  Italy, seven in the USA, three in England, one in Spain, one in France and one in
+                  Germany. Shaw's edition certainly deserves a wider distribution.</p>
+    </section>
+
+    <section id="bibliography" class="review-bibliography">
+      <h2>Bibliography</h2>
+      <ol class="bib-list">
+        <li>Anastasia: Analytical System Tools and SGML/XML Integration Applications.
+                  Scholarly Digital Editions, Leicester. Version 1.0, 2000; 2.0 2003. <a href="http://anastasia.sourceforge.net/" target="_blank" rel="noopener">http://anastasia.sourceforge.net/</a>.</li>
+        <li>Barbi, Michele. 1891. ‘Canone di luoghi scelti per lo spoglio dei mss. della
+                  Divina Commedia’. <em>Bullettino della Società Dantesca Italiana</em> 5-6:
+                  28-38.</li>
+        <li>Barbi, Michele, Ernesto Giacomo Parodi, Flaminio Pellegrini, Ermenegildo
+                  Pistelli, Pio Rajna, E. Rostagno, Giuseppe Vandelli and Mario Casella, eds. 1921.
+                     <em>Le Opere di Dante. Testo critico della Società Dantesca Italiana</em>.
+                  Firenze: R. Bemporad e Figlio.</li>
+        <li>Barabucci, Gioele, Angelo Di Iorio and Fabio Vitale. 2014. ‘Stemma codicum:
+                  analisi e generazione semi-automatica’. In <em>Digital Humanities: progetti
+                     italiani ed esperienze di convergenza multidisciplinare. Atti del convegno
+                     annuale dell'Associazione per l’Informatica Umanistica e la Cultura Digitale
+                     (AIUCD) Firenze, 13-14 dicembre 2012</em>, ed. Fabio Ciotti. 129-45. Roma:
+                  Sapienza Università Editrice.</li>
+        <li>Bartoli, Adolfo, Alessandro D’Ancona and Isidoro Del Lungo. 1891. ‘Per
+                  l’edizione critica della Divina Commedia’. <em>Bullettino della Società Dantesca
+                     Italiana</em> 5-6: 25-7.</li>
+        <li>Brandoli, Caterina. 2007. ‘Due canoni a confronto: i luoghi di Barbi e lo
+                  scrutinio di Petrocchi’. In <em>Nuove prospettive sulla tradizione della</em>
+                  Commedia. <em>Una guida filologico linguistica al poema dantesco</em>, ed.
+                  Paolo Trovato, 99-214. Firenze: Cesati.</li>
+        <li>Cadioli, Luca. Forthcoming. ‘Grounded Theory, Atlas.ti and the <em>Queste del
+                     Saint Graal</em>: a feasibility test’. In <em>Constiutio textus:
+                     establishing the crical text. Fourth Meeting in Digital Philology</em>,
+                  Verona 13-15 september 2012. Berlin: De Gruyter.</li>
+        <li>Casella, Mario, ed. 1923. La Divina Commedia. Bologna: Zanichelli.</li>
+        <li>
+                  <em>Collate</em>. Computer Program. Version 1.0, Oxford 1991; 2.0 1994;
+                  revisions at Leicester 1996-2005, Birmingham 2005.</li>
+        <li>
+                  <em>CollateX</em>
+                  <a href="http://web.archive.org/web/20150220112911/http://collatex.net" target="_blank" rel="noopener">http://web.archive.org/web/20150220112911/http://collatex.net</a>. </li>
+        <li>Inglese, Giorgio. 2012. ‘Rev. of <em>Dante Alighieri. Commedia. A Digital
+                     Edition</em>, ed. Prue Shaw.’ <em>Giornale storico della letteratura
+                     italiana</em> 189.627: 453-5.</li>
+        <li>Petrocchi, Giorgio. ed. 1966-1967. <em>Dante Alighieri. La commedia secondo
+                     l'antica vulgata</em>. Milano: Mandadori.</li>
+        <li>Renello, Gian Paolo. 2013. ‘Un programma per la classificazione 'computer
+                  assisted' delle copie della <em>Commedia</em> e di altre tradizioni
+                  sovrabbondanti’. In <em>Nuove prospettive sulla tradizione della</em>
+                  Commedia. <em>Seconda serie</em> (2008-2013), eds. Paolo Trovato and
+                  Elisabetta Tonello. Padova: Libreria Universitaria. 207-22.</li>
+        <li>Robey, David. 2000. <em>Sound and Structure in the ‘Divine Comedy’</em>.
+                  Oxford: Oxford University Press.</li>
+        <li>Robinson, Peter. 1989. ‘The Collation and Textual Criticism of Icelandic
+                  Manuscripts (1): Collation’. <em>Literary and Linguistic Computing</em> 4.2:
+                  99–105.</li>
+        <li>Roos, Teemu and Tuomas Heikkilä. 2009. ‘Evaluating methods for
+                  computer-assisted stemmatology using artificial benchmark data’. Literary and
+                  linguistic computing 24.4: 417-33.</li>
+        <li>Sanguineti, Federico, ed. 2001. <em>Dantis Alagherii Comedia</em>. Firenze:
+                  Edizioni del Galluzzo.</li>
+        <li>SDPublisher. <a href="http://web.archive.org/web/20150220165545/http://www.sd-editions.com/about/index.html" target="_blank" rel="noopener">http://web.archive.org/web/20150220165545/http://www.sd-editions.com/about/index.html</a>. </li>
+        <li>Segre, Cesare. 2002. ‘Postilla sull'edizione Sanguineti della
+                     <em>Commedia</em> di Dante’. <em>Strumenti critici</em> 2:
+                  312-4.</li>
+        <li>Trovato, Paolo. 2010. ‘La doppia Monarchia di Prue Shaw (con una postilla sulla
+                     <em>Commedia</em>)’. <em>Ecdotica</em> 7: 193-207.</li>
+        <li>Trovato, Paolo. 2014. <em>Everything you always wanted to know about
+                     Lachmann's method</em>. Padova: Libreria Universitaria.</li>
+        <li>Windram, Heather F., Prue Shaw, Peter Robinson, and Christopher J. Howe. 2008.
+                  ‘Dante's Monarchia as a test case for the use of phylogenetic methods in stemmatic
+                  analysis’. <em>Literary and linguistic computing</em> 23.4: 443-62.</li>
+        <li>Young, Christopher. 2014. <em>Readings in computational stemmatology</em>.
+                     <a href="http://web.archive.org/web/20141014214101/http://chrisyoung.net/reading/computational-stemmatology.html" target="_blank" rel="noopener">http://web.archive.org/web/20141014214101/http://chrisyoung.net/reading/computational-stemmatology.html</a>.</li>
+      </ol>
+    </section>
+
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        <li id="fn-ftn1" class="footnote-item">
+          The double
+                  check may be useful, at least for spelling details: e.g., Inf, II, 2: DO toglieua
+                  vs SHAW togleua; and Shaw is more consistent in the preservation of the u/v
+                  instability. Nevertheless, considering the time needed to transcribe the whole
+                  poem, it is worth discussing whether it is worth having two projects independently
+                  carry out this task.
+          <a href="#fnref-ftn1" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+      </ol>
+    </section>
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{commedia,
+  author    = {Spadini, Elena},
+  title     = {Processing Dante’s Commedia: From Sanguineti’s Edition to Digital Tools},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {3},
+  year      = {2015},
+  doi       = {10.18716/ride.a.3.2},
+  url       = {https://doi.org/10.18716/ride.a.3.2},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Spadini, Elena
+TI  - Processing Dante’s Commedia: From Sanguineti’s Edition to Digital Tools
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 3
+PY  - 2015
+DA  - 2015/11
+DO  - 10.18716/ride.a.3.2
+UR  - https://doi.org/10.18716/ride.a.3.2
+PB  - Institut für Dokumentologie und Editorik e.V.
+LA  - en
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Spadini, E. (2015). Processing Dante’s Commedia: From Sanguineti’s Edition to Digital Tools. RIDE – A review journal for digital editions and resources, (3). https://doi.org/10.18716/ride.a.3.2</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Spadini, Elena. &#34;Processing Dante’s Commedia: From Sanguineti’s Edition to Digital Tools.&#34; RIDE – A review journal for digital editions and resources, no. 3, 2015. https://doi.org/10.18716/ride.a.3.2.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Spadini, Elena. &#34;Processing Dante’s Commedia: From Sanguineti’s Edition to Digital Tools.&#34; RIDE – A review journal for digital editions and resources, no. 3 (2015). https://doi.org/10.18716/ride.a.3.2.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/commedia/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

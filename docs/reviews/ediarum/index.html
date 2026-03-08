@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ediarum. A toolbox for editors and developers &mdash; RIDE</title>
+  <meta name="description" content="
+            
+               ediarum.DB, ediarum.BASE.edit and
+                        ediarum.REGISTER.edit are the three currently released modules
+                    of the ediarum editing...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Ediarum. A toolbox for editors and developers">
+  <meta property="og:description" content="
+            
+               ediarum.DB, ediarum.BASE.edit and
+                        ediarum.REGISTER.edit are the three currently released modules
+                    of the ediarum editing...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/ediarum/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/ediarum/">
+<meta name="DC.title" content="Ediarum. A toolbox for editors and developers">
+<meta name="DC.creator" content="Andreas Mertgens">
+<meta name="DC.date" content="2020-01">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.11.4"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="en">
+
+<meta name="citation_title" content="Ediarum. A toolbox for editors and developers">
+<meta name="citation_author" content="Andreas Mertgens">
+<meta name="citation_doi" content="10.18716/ride.a.11.4"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2020-01">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/ediarum/ediarum.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Ediarum. A toolbox for editors and developers",
+  "author": [{"@type": "Person", "name": "Andreas Mertgens", "url": "https://orcid.org/0000-0003-4665-2226"}],
+  "datePublished": "2020-01",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.11.4"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e. V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">Introduction</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">Methodology and Implementation</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">An example usecase</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">Deployment and learning curve</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div5" class="toc-link">Open Source and extensibility</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div6" class="toc-link">User interaction &amp; GUI</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div7" class="toc-link">Conclusion</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#bibliography" class="toc-link">Bibliography</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#footnotes" class="toc-link">Notes</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>Januar 2020</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.11.4" rel="external">10.18716/ride.a.11.4</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-11/">
+        <span class="badge badge-tools">TE</span>
+        Issue 11
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>EN</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/ediarum/ediarum.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/ediarum/ediarum-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="en">
+    <header class="review-header">
+      <a href="/issues/issue-11/" class="review-issue-link">
+        <span class="badge badge-tools">TE</span>
+        Issue 11: Tools and Environments
+      </a>
+
+      <h1>Ediarum. A toolbox for editors and developers</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Andreas Mertgens&nbsp;<a href="https://orcid.org/0000-0003-4665-2226" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>        </span>
+      </div>
+
+      <div class="review-affiliation">University of Cologne, Cologne, Germany</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="http://www.bbaw.de/telota/software/ediarum" rel="external">ediarum</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">Introduction</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">Methodology and Implementation</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">An example usecase</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">Deployment and learning curve</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div5" class="toc-link">Open Source and extensibility</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div6" class="toc-link">User interaction &amp; GUI</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div7" class="toc-link">Conclusion</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#bibliography" class="toc-link">Bibliography</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#footnotes" class="toc-link">Notes</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>Januar 2020</span>
+<span><a href="https://doi.org/10.18716/ride.a.11.4" rel="external">DOI</a></span><a href="/reviews/ediarum/ediarum.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/ediarum/ediarum-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>
+               <em>ediarum.DB</em>, <em>ediarum.BASE.edit</em> and
+                        <em>ediarum.REGISTER.edit</em> are the three currently released modules
+                    of the ediarum editing environment developed by the TELOTA initiative at the
+                    BBAW in Berlin. The set of two frameworks for the <em>Oxygen XML Editor</em>
+                    and one <em>exist-db</em> application aims to support digital scholarly
+                    editors in generating and annotating TEI-XML Data. The frameworks offer a
+                    graphical interface within <em>Oxygen XML Editor</em> to add mark-up and
+                    metadata for a subset of TEI elements without the need of manually editing XML
+                    files. The modules are open-source and intended to be used as a starting point
+                    or toolbox for other developers to create project-specific customized
+                    frameworks. Despite some parts of the modules only being available in German as
+                    of this moment, and some need for improved documentation, the ediarum modules
+                    already offer a flexible and open way for researchers to edit their TEI data and
+                    a resource for other developers to build upon in their projects.</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>Introduction</h2>
+      <p id="p1">This review examines three tools: <em>ediarum.DB</em>,
+                        <em>ediarum.BASE.edit</em> and <em>ediarum.REGISTER.edit</em>, which
+                    are part of the continuously developed "work and publication environment for
+                    scholarly editing" <em>ediarum</em>
+               <sup class="footnote-ref" id="fnref-ftn1"><a href="#fn-ftn1" role="doc-noteref">1</a></sup>
+                    developed by the Berlin-Brandenburg Academy of Sciences and Humanities
+                    (Berlin-Brandenburgische Akademie der Wissenschaften, BBAW). The first release
+                    from the ediarum software environment was <em>ediarum.JAR</em> in December
+                    2013, a module which is now integrated into the three modules reviewed. The
+                    modules discussed here were released throughout 2018. For this review I am using
+                        <em>ediarum.DB 3.2.5</em>
+               <sup class="footnote-ref" id="fnref-ftn2"><a href="#fn-ftn2" role="doc-noteref">2</a></sup>,
+                        <em>ediarum.BASE.edit 1.1.1</em>
+               <sup class="footnote-ref" id="fnref-ftn3"><a href="#fn-ftn3" role="doc-noteref">3</a></sup>, and
+                        <em>ediarum.REGISTER.edit 1.0.1</em>. Integrated into those modules is
+                        <em>ediarum.JAR 3.1.0</em>. As indicated by the leading version number,
+                    they can be considered as ‘ready for production’, although, as is the nature of
+                    continuously developed software, are likely to be further developed and improved
+                    in the future. Further modules (eg. for print and web publication) of
+                        <em>ediarum</em> have been announced and are internally already being
+                    used (Dumont and Fechner 2019) but have not yet been released publicly and will
+                    therefore not be the subject of this review which will limit itself to the three
+                    modules available at this time. These three tools are also what I will be
+                    referring to as <em>ediarum</em> in this article. For the purpose of this
+                    review, I used a MacOS 10 System with Java Runtime Environment 8, <em>Oxygen
+                        XML Editor</em> version 21 and <em>eXist-db</em> version 4.4.</p>
+<p id="p2">
+               <em>Ediarum</em>, at its core, is a set of extensions for two other
+                    applications, namely the <em>Oxygen XML Editor</em>
+               <sup class="footnote-ref" id="fnref-ftn4"><a href="#fn-ftn4" role="doc-noteref">4</a></sup>
+                    and <em>eXist-db</em>
+               <sup class="footnote-ref" id="fnref-ftn5"><a href="#fn-ftn5" role="doc-noteref">5</a></sup>. These two applications are widely used by
+                    projects in the context of digital scholarly editions and <em>ediarum</em>
+                    aims to provide an environment optimized for working with transcriptions and the
+                    markup of these transcriptions within those tools. It allows the user to work
+                    with XML data, specifically TEI, by using a graphical user interface without
+                    having to manually write XML in a text editor. <em>ediarum.BASE.edit</em>
+                    and <em>ediarum.REGISTER.edit</em> are so-called ‘frameworks’ for the Author
+                    mode of <em>Oxygen</em>. The Author mode is an alternative way to display
+                    XML files that allows users to edit the documents in a way that is much closer
+                    to a WYSIWYG editor or a word processor. The two ‘edit’ modules of
+                        <em>ediarum</em> are customized to offer the most common functionality
+                    an editor of TEI XML Data would need, such as the easy generation of metadata
+                    fields, markup of structural text elements, textual phenomena and entities.
+                    These are supplemented by the <em>ediarum.DB</em> module, which uses the
+                        <em>eXist-db</em> database to provide a central repository for the XML
+                    data, and for central indexes of entities that can then be directly looked up
+                    and referenced from <em>Oxygen</em>. In addition to this, it allows the
+                    sharing of this data via a REST API or via WebDAV. It should be noted that
+                        <em>ediarum</em> is not intended and marketed as a plug-and-play
+                    solution for any particular usecase, but rather a toolbox<sup class="footnote-ref" id="fnref-ftn6"><a href="#fn-ftn6" role="doc-noteref">6</a></sup> that can be adapted for the specific uses of any one
+                        project.<sup class="footnote-ref" id="fnref-ftn7"><a href="#fn-ftn7" role="doc-noteref">7</a></sup>
+            </p>
+<p id="p3">It is being developed by the TELOTA (The Electronic Life Of The
+                    Academy) initiative at the BBAW in Berlin by lead developers Stefan Dumont,
+                    Martin Fechner, and Sascha Grabsch. After being used for projects at the BBAW
+                    internally for many years, modules are released successively to the public via a
+                    GitHub repository<sup class="footnote-ref" id="fnref-ftn8"><a href="#fn-ftn8" role="doc-noteref">8</a></sup>, which includes all relevant
+                    contact information, licenses, and acknowledgments.</p>
+    </section>
+    <section id="div2">
+      <h2>Methodology and Implementation</h2>
+      <p id="p4">At a high level of methodological abstraction, one can ask in what
+                    part of the scientific, in this instance, the editorial process a tool attempts
+                    to support the researcher. In the case of <em>ediarum</em>, it is the idea
+                    of generating knowledge by explicating information present in source documents.
+                    A source document, in this case, would, for example, be a letter. A
+                    transcription of such a letter in its most rudimentary form has only linguistic
+                    information, as it is only a string of text, if it were transcribed line by line
+                    it would already have rudimentary structural information. While this might be
+                    sufficient for projects with pure archival or collection goal, the next step in
+                    the editorial workflow would be the markup and therefore the explicit
+                    manifestation of structural information, of known entities within the text and
+                    the addition of metadata. All this with the aim of making the implicit
+                    structures and relations within a text or a corpus of texts explicit and to
+                    allow further interpretation and research to be done on the basis of this
+                    information. XML, specifically the TEI standard has established itself as the
+                    most widely used technical solution for this problem but using it to its full
+                    potential requires a certain degree of technical familiarity and willingness to
+                    work with XML. <em>Ediarum</em> attempts to bridge the gap between
+                    humanities researchers and the possibilities of XML markup, to empower them to
+                    perform the above-mentioned task of explicating and adding information to
+                    documents without having to familiarize themselves with the technicalities of
+                    XML and TEI.</p>
+<p id="p5">Comparing <em>ediarum</em> in relation to other tools that tackle
+                    this problem, it becomes evident that its solution is a unique one. While there
+                    are many text annotation tools, the majority focuses on linguistic annotation
+                    for Natural Language Processing (NLP) and Machine Learning. Others like
+                    Annotation Studio<sup class="footnote-ref" id="fnref-ftn9"><a href="#fn-ftn9" role="doc-noteref">9</a></sup>
+                    offers only very simplistic text annotation for literary/archival texts in a web
+                    interface. The Classical Text Editor<sup class="footnote-ref" id="fnref-ftn10"><a href="#fn-ftn10" role="doc-noteref">10</a></sup> offers a vast array of possibilities for editors in a
+                    related field, but is a closed commercial application with the option to export
+                    TEI/XML. A tool that, on the surface, has some similarities is <em>FuD</em>,
+                    the research environment developed by the University of Trier.<sup class="footnote-ref" id="fnref-ftn11"><a href="#fn-ftn11" role="doc-noteref">11</a></sup>
+               <em>FuD</em> is a stand-alone piece of software which intentions far exceed
+                    those of <em>ediarum</em> but it also includes a central repository for data
+                    and indexes, metadata input on file creation and text markup and annotation. As
+                    opposed to <em>ediarum</em>, <em>FuD</em>, developed by a large team
+                    since 2004, is marketed as a fully featured software solution for small to large
+                    projects. Individualized frameworks and environments are developed on demand for
+                    larger customers. On a technical level, the key difference here is the
+                    integration into the XML text editing workflow. <em>Ediarum</em> is not an
+                    application that creates XML Data, it is instead an additional layer on top of
+                    the actual data with manual text editing possible at any point. It is based not
+                    on the paradigm of an abstract input form that eventually outputs the final data
+                    format, but on the idea of being an additional aid and tool for an editor to use
+                    while working directly in the data. The aim of <em>ediarum</em> is to make
+                    the editing workflow easier and more comfortable, especially for those
+                    researchers, that do not have a background or an affinity to XML code. It offers
+                    a cleaner way to working with the texts while at the same keeping the entire
+                    depth of complexity of XML Data at close reach. </p>
+<p id="p6">Looking at the work of developers in DH projects, instead of editors
+                    and researchers, one can see another process that <em>ediarum</em>
+                    potentially can have an impact on. Staying within the ‘toolbox’ metaphor,
+                        <em>ediarum</em> not only can be seen as a toolbox for editors but also
+                    as a toolbox for other developers to be used in their projects. Developers can
+                    use <em>ediarum</em> in its default configuration or with only minor
+                    adjustments or they can use only select functionality and integrate it into
+                    their own custom frameworks. Due to the open-source nature of the project and
+                    the separate availability of <em>ediarum.JAR</em>, which includes the core
+                    methods used in the other three modules, both types of reuse are actively
+                    encouraged. Therefore the paradigm at play here is not that of software as a
+                    fully packaged service or solution shipped to consumers, but as tools and
+                    smaller applications to be integrated into individual workflows.</p>
+<p id="p7">As mentioned before, the tools are extensions of the pre-existing
+                    software and thus obviously have a dependency on both. While
+                        <em>eXist-db</em> is fully open source, <em>Oxygen XML Editor</em>
+                    is a closed source commercial application. It seems at first problematic to make
+                    an open-source tool dependent on commercial software, especially since
+                        <em>ediarum</em> itself explicitly supports the idea of it being adapted
+                    and modified by other developers. In defense, the case could be made, that since
+                        <em>Oxygen</em> is such a predominant and ubiquitous tool, its
+                    availability can be seen as a given for any project or researchers within the
+                    field. The benefit of depending and building on <em>Oxygen</em> is the
+                    familiarity that many developers and researcher will have with it. This close
+                    relation to both <em>eXist-db</em> and <em>Oxygen</em> also determines
+                    the in- and output format for <em>ediarum</em>. XML is, of course, the main
+                    format as both its base programs are designed for it and it is the de facto
+                    standard for the relevant usecase. Any conversion possibility is the domain of
+                    the base <em>Oxygen</em> software. An XML file created with
+                        <em>ediarum</em> is per definition not different from any XML file,
+                    ‘written by hand’ and thus all the possibilities of conversion, character
+                    encoding, export and import functions into other workflows are those of
+                        <em>Oxygen</em> and <em>eXist-db</em> respectively. </p>
+<p id="p8">In addition to that, the <em>ediarum.DB</em> application for
+                        <em>eXist-db</em> offers the possibility of interfacing with the indexes
+                    by means of a REST API, so any other web application can make use of the indexes
+                    created with <em>ediarum</em> as they are being created. Another possibility
+                    of interoperability is the interface that exists with <em>Zotero </em>
+                    bibliographies which can be synchronized with the indexes (<a href="#img1" class="crossref">Fig. 1</a>).</p>
+<p id="p9">
+               <figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="The three ediarum modules in relation to their base
+                            software and to each other." loading="lazy"><figcaption>Fig. 1: The three ediarum modules in relation to their base
+                            software and to each other.</figcaption></figure> In terms of versioning, logging, and performance, <em>ediarum</em>
+                    also depends on the features of <em>Oxygen</em> and <em>eXist-db</em>.
+                    The Author mode frameworks do not seem to impact the performance of the
+                        <em>Oxygen XML Editor</em> at all compared to the text editor and
+                    switching between the text and the author view is instantaneous. The only
+                    functionality with a noticeable performance impact seems to be the opening of
+                    very large indexes. In a test with 25.000 person names and ids, there was a
+                    short delay of about two seconds noticeable before the list was displayed and
+                    one could interact with it.</p>
+<p id="p10">Due to its history as an internal tool of the BBAW,
+                        <em>ediarum</em> has been employed in many of their academy projects
+                    such as: ‘Schleiermacher in Berlin 1808-1834. Briefwechsel, Tageskalender,
+                        Vorlesungen’<sup class="footnote-ref" id="fnref-ftn12"><a href="#fn-ftn12" role="doc-noteref">12</a></sup>, ‘Alexander von Humboldt auf Reisen. Wissenschaft
+                    aus der Bewegung’<sup class="footnote-ref" id="fnref-ftn13"><a href="#fn-ftn13" role="doc-noteref">13</a></sup>
+                    and the ‘Marx-Engels-Gesamtausgabe’<sup class="footnote-ref" id="fnref-ftn14"><a href="#fn-ftn14" role="doc-noteref">14</a></sup> to name a few. In those cases, other
+                    modules e.g. for web publication have also been used that have, as of yet, not
+                    been released to the public. Beyond those internal projects, it is unclear if
+                    the three modules released in late 2018 have already seen use in projects from
+                    other institutions but due to developer workshops taking place in 2019 they will
+                    likely see further application. I have personally used some of the functions of
+                    the <em>ediarum.JAR</em> modules in my development of a custom framework
+                    even before the three more fully developed modules were released. </p>
+    </section>
+    <section id="div3">
+      <h2>An example usecase</h2>
+      <p id="p11">Let us assume the following usecase. A project that already includes
+                    some letters and indexes of places or persons. The editor now wants to add a new
+                    transcription to the project. They will use the Data Source Explorer within
+                        <em>Oxygen</em> to create a new file by selecting the ‘letter’ template
+                    that comes with the default <em>ediarum</em> framework (in addition to a
+                    template for introductory texts, and manuscripts). Before the file is created,
+                    the editor can enter the name of the archive and collection and the signature of
+                    the letter. This will then create an XML file with the basic elements like the
+                    teiHeader and body elements like ‘opener’, ‘salute’ etc. already in place (<a href="#img2" class="crossref">Fig. 2</a>).</p>
+<p id="p12">
+               <figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="The empty template of a letter." loading="lazy"><figcaption>Fig. 2: The empty template of a letter.</figcaption></figure> Further metadata can be added through the menus ‘Metadaten’ and
+                    ‘Briefmetadaten’ in the toolbar directly above the editor window. These
+                    correspond to the ‘fileDesc’ and ‘profileDesc’ information of the teiHeader. For
+                    simple metadata fields, these functions will prompt pop-up windows prompting the
+                    editor to enter the relevant data which will then be written into the file in
+                    the appropriate TEI Element in the correct position. For some fields like e.g.
+                    the name of the author of the letter this will trigger a call to the person
+                    index in the <em>ediarum.DB</em>. application which will be displayed as a
+                    list of names. Selecting one, will insert both the name and the corresponding
+                    xml:id into the document. </p>
+<p id="p13">The text of the letter can be inserted into the pre-existing
+                    structural elements. Once the raw text has been copied into the file, the
+                    mark-up functions can be used. These include different types of deletions and
+                    additions, types of emphasis and comments. The indexes can also be used here to
+                    markup entities in the text, by selecting them in the editor and then selecting
+                    the corresponding entry from the index (<a href="#img3" class="crossref">Fig.
+                        3</a>).</p>
+<p id="p14">
+               <figure id="img3" class="review-figure"><img src="pictures/picture-3.png" alt="Different kinds of markup can be seen in the letter with
+                            the selection window for the person index open." loading="lazy"><figcaption>Fig. 3: Different kinds of markup can be seen in the letter with
+                            the selection window for the person index open.</figcaption></figure> These indexes can also be edited from within Oxygen through the
+                        <em>ediarum.REGISTER.edit</em> framework which operates analogously to
+                    this example. In this way, a new person can be added to the index of persons and
+                    immediately be referenced in a letter without having to leave the graphical
+                    interface or application.</p>
+    </section>
+    <section id="div4">
+      <h2>Deployment and learning curve</h2>
+      <p id="p15">The modules are available on individual public GitHub repositories.
+                    The <em>ediarum.DB</em> repository includes a documentation that explains
+                    the installation process, the integration into <em>eXist-db</em> as well as
+                    the GUI and how to implement advanced functionality. Assuming prior experience
+                    with the basic functionalities of <em>eXist-db</em>, the setup of
+                        <em>ediarum.DB</em> is very straightforward. The documentation sections
+                    of <em>ediarum.BASE.edit</em> and <em>ediarum.REGISTER.edit</em> only
+                    offer a ‘tba’ placeholder as of the time of this review. Therefore, while the
+                    setup process of <em>ediarum.DB</em> is sufficiently documented, the
+                    specifics of how the frameworks have to be integrated into the local
+                        <em>Oxygen</em> installation, how to connect and interface with the
+                    database are not documented.<sup class="footnote-ref" id="fnref-ftn15"><a href="#fn-ftn15" role="doc-noteref">15</a></sup> A developer
+                    attempting to set-up or customize <em>ediarum.BASE.edit</em> and
+                        <em>REGISTER.edit</em> will need to have solid knowledge of the
+                        <em>Oxygen Author mode</em> and CSS to be able to adapt the frameworks
+                    for a specific usecase. By means of GitHub technical support can easily be found
+                    by using the issue system. The developers seem to respond quickly on these
+                    channels and also offer an additional mailing list.</p>
+<p id="p16">Looking at the learning curve of the tools, let’s consider first the
+                    developer, who wants to install and/or customize <em>ediarum</em> for their
+                    project. The initial set-up of the database portion is straight forward thanks
+                    to the documentation. The <em>eXist-db</em> module in the form of a ‘.xar’
+                    file is ready for use after an import in the local <em>eXist-db</em>
+                    installation. The user interface of the <em>exist-db</em> application is
+                    clear and the initialization of indexes, the set-up of user accounts and other
+                    administration tasks can be learned quickly. On the side of <em>Oxygen</em>,
+                    some knowledge of the framework system and specifically the Author mode view is
+                    necessary when customizing the <em>ediarum.BASE</em> and
+                        <em>REGISTER</em> framework for a specific project. The requirements to
+                    the developer scale with the depth of the desired customizations. One example
+                    ‘letter’ that exhibits various type of mark-up and metadata is shown the
+                    implementation of these functions. This can be used as a starting point for
+                    testing and customization, and combined with a study of the source code will
+                    give developer insight into how they can add and modify the framework for their
+                    purposes.</p>
+<p id="p17">From the point of view of the ‘end user’, the non-DH researcher and
+                    editor, navigation and use of the framework, once it is installed, is largely
+                    self-explanatory and intuitive. All specific additional functionality is
+                    available through the <em>Oxygen</em> GUI, primarily a custom toolbar
+                    through which the various functions are available. Even a user with no
+                    experience in using <em>Oxygen</em> will quickly find themselves at home, as
+                    similar toolbars and icons are found in any office suite. </p>
+<p id="p18">Due to the nature of both <em>Oxygen </em> and
+                        <em>eXist-db</em> as JAVA-based and cross-platform applications, the
+                    user experience is identical across Windows, MacOS and Linux. Any system
+                    supported by the <em>Oxygen XML Editor</em> will be able to run
+                        <em>ediarum</em> (It is optimized for Oxygen XML Editor version 20.1.).
+                    Any instance of <em>eXist-db</em>, independent from the system on which it
+                    is installed on, can install the <em> ediarum.DB</em> module
+                        (<em>eXist-db</em> version 3.5 and 4.4. are explicitly supported).
+                    Interoperability with external applications is provided via the REST API of
+                        <em>eXist-db</em> through which the indexes can be accessed. There is
+                    also a specific API connection to Zotero provided which will keep indexes in
+                    synchronization with Zotero bibliographies.</p>
+    </section>
+    <section id="div5">
+      <h2>Open Source and extensibility</h2>
+      <p id="p19">The source code is openly available on GitHub<sup class="footnote-ref" id="fnref-ftn16"><a href="#fn-ftn16" role="doc-noteref">16</a></sup> and is distributed under and the
+                    terms of the GNU General Public License 3<sup class="footnote-ref" id="fnref-ftn17"><a href="#fn-ftn17" role="doc-noteref">17</a></sup> (or &gt;
+                    later) although it makes use of some third-party software that is separately
+                    licensed under different terms, such as Bootstrap (MIT License) or the ‘tei.jar’
+                    module and licenses under the 3-clause BSD licenses.<sup class="footnote-ref" id="fnref-ftn18"><a href="#fn-ftn18" role="doc-noteref">18</a></sup> This is
+                    clearly and properly stated in the readme files /&gt; as well as license files
+                    included in the repository. In addition to GitHub,
+                        <em>ediarum.BASE.edit</em> and <em>ediarum.DB</em> are also
+                    available on the research repository Zenodo using their system of software
+                        citation.<sup class="footnote-ref" id="fnref-ftn19"><a href="#fn-ftn19" role="doc-noteref">19</a></sup> This ensures &gt;
+                    that specific versions of the tools have unique DOI and thus can be referred to
+                    and cited precisely and equivalently to written research contributions.</p>
+<p id="p20">
+               <em>Ediarum</em> is explicitly intended to be extensible and reusable. Even
+                    through the use of the <em>eXist-db</em> GUI, as well as the
+                        <em>Oxygen</em> Author mode menus, significant customization can be
+                    achieved (e.g. setting up new indexes of entities and allowing reference to
+                    these in <em>Oxygen</em>, allowing the addition of arbitrary XML fragments
+                    into documents via buttons or short cuts). In case deeper customization is
+                    desired, the folder structure and files in the source code are clearly
+                    structured and named, a random sampling of files also revealed clear function
+                    names and/or commenting. This extends to projects not using
+                        <em>exist-db</em> or even projects not using TEI. The
+                        <em>ediarum.JAR</em> module, which is integrated into the two framework
+                    modules, is also available on its own. It extends the default
+                        <em>Oxygen</em> Author mode actions with function related to inserting
+                    data from indexes. These actions can be used in any framework build for the
+                    Author mode. </p>
+<p id="p21">As the code is complex, it will still require some studying and
+                    analysis but a developer fluent in the relevant languages (X-technologies, CSS,
+                    potentially also JAVA) will know where to inject custom functionalities and how
+                    to integrate it with existing functions. Again, it has to be noted that the
+                    developers are continually working on the modules themselves and GitHub presents
+                    a platform for anyone wishing to extend and adapt the code. Judging by recent
+                    presentations (Dumont and Fechner 2019), the three modules that have so far been
+                    the focus of this review will be accompanied in the future by further modules
+                    that will provide functionality related to publication in web and print. </p>
+    </section>
+    <section id="div6">
+      <h2>User interaction &amp; GUI</h2>
+      <p id="p22">Both Author mode frameworks employ the GUI of the <em>Oxygen XML
+                        Editor</em>, specifically, they provide their functionality by using menus
+                    and toolbars. The main toolbar (see <a href="#img4" class="crossref">Fig.
+                        4</a>) contains both icons and text, most of which intuitively represent
+                    the functionality they provide. Using one of these buttons often opens a
+                    pop-menu with more detailed options. (e.g. the function to mark up a ‘deletion’
+                    in the text will allow the user to specify if the deletion was by eraser, by
+                    strikethrough or by overwriting). These will then create the corresponding TEI
+                    Element and/or attributes.</p>
+<p id="p23">
+               <figure id="img4" class="review-figure"><img src="pictures/picture-4.png" alt="The two toolbars of the ediarum.BASE.edit
+                            module integrate into the regular Oxygen toolbars. The
+                            functions are also accessible through the ‘ediarum’ menu in the top menu
+                            bar." loading="lazy"><figcaption>Fig. 4: The two toolbars of the <em>ediarum.BASE.edit</em>
+                            module integrate into the regular <em>Oxygen</em> toolbars. The
+                            functions are also accessible through the ‘ediarum’ menu in the top menu
+                            bar.</figcaption></figure> In the current version, all text elements of the GUI are exclusively
+                    German. Due to the origin of <em>ediarum</em> as an internal tool at the
+                    BBAW that is only now successively being made public, this is understandable.
+                    Nevertheless, this limits the possible use and reach of these tools, as within
+                    the <em>Oxygen</em> Framework only a part of the functionalities is
+                    visualized by icons. Many deeper markup and editing functions are only described
+                    in German text.</p>
+<p id="p24">
+               <figure id="img5" class="review-figure"><img src="pictures/picture-5.png" alt="The purely text-based administrative ‘dashboard’ of
+                                ediarum.DB." loading="lazy"><figcaption>Fig. 5: The purely text-based administrative ‘dashboard’ of
+                                <em>ediarum.DB</em>.</figcaption></figure> The module <em>ediarum.DB</em> uses a custom GUI based on a simple
+                    and clear bootstrap framework. This GUI is exclusively text-based and allows
+                    easy and structured access to the administrative functions of the database
+                    module (<a href="#img5" class="crossref">Fig. 5</a>). This text, also, is
+                    in German. This would require an international project deciding to use
+                        <em>ediarum</em> to dedicate a certain effort to translate those
+                    text-elements of the GUI both in the <em>eXist-db</em> and
+                        <em>Oxygen</em> portions of the tools. </p>
+    </section>
+    <section id="div7">
+      <h2>Conclusion</h2>
+      <p id="p25">Recalling the stated intention of <em>ediarum</em> to be a
+                    ‘toolbox’ for scholarly editors and their project teams, one must acknowledge
+                    that, despite its only partial release, these tools still manage to go very far
+                    in providing just that. Projects dealing with the transcription of corpora of
+                    text or letters that want to make use of the full depth of XML markup will find
+                        <em>ediarum</em> empowering. Humanities scholars and researchers in
+                    those projects will be able to add rich markup to their data without having to
+                    get acquainted with XML on a technical level. Developers working with those
+                    scholars will find a starting point in the development of an appropriate custom
+                    framework and, if <em>eXist-db</em> is employed for the backend, even a
+                    rudimentary solution to allow collaborative work, data storage, backups, etc.
+                    Depending on how close these projects fall in line with the default
+                    configuration of <em>ediarum</em>, i.e. the specific sub-schema of TEI used
+                    at the BBAW and/or the predefined types of indexes, this adaptation process will
+                    take varying amounts of effort and time, but will in any case be preferable to
+                    starting from scratch. Even projects far removed from the specific TEI usecase
+                    can exploit some functionality from <em>ediarum</em>, as the core functions
+                    offered by the core <em>ediarum.JAR</em> module will work for any XML data
+                    standard.</p>
+<p id="p26">While forms for data input and even basic transcription/markup tools
+                    are nothing new, the key advantage and contribution is the fact that this
+                    interface is integrated as a layer on top of <em>Oxygen XML Editor</em>,
+                    which is, of course, an extremely powerful tool. This allows for and encourages
+                    a layered or hybrid workflow. One can use the Author mode frameworks for easier
+                    work with the text itself, for access to indexes, for shortcut actions that can
+                    inject arbitrarily large and complex XML fragments into the document with one
+                    mouse click while at the same time, having the actual XML code and all the power
+                    of XPath, XSLT, XQuery etc. at hand without having to switch to another tool or
+                    the need to export the data into another format. This is an approach to software
+                    that seems tailor-made for digital humanities projects as they often include
+                    researchers that possess varying degrees of technical knowledge and have varying
+                    need for complexity all working on the same dataset. </p>
+<p id="p27">What is holding back <em>ediarum</em> in its current state, is
+                    the lack of an English language interface for the default configuration and the
+                    lack of documentation for the two main modules. Non-German language projects
+                    either have to restrict themselves to using only the core JAVA functions
+                    provided by the <em>ediarum.JAR</em> modules or, if they choose to adopt the
+                    more developed frameworks, will have to provide their own translations. Since
+                    the developers are transparent about the fact that these modules do only form
+                    part of a larger system, and their integration into the long-term TELOTA
+                    initiative, one can be certain that ediarum will be developed further and these
+                    drawbacks will likely be addressed in future releases, some of which have
+                    already been hinted at, like <em>ediarum.GUIDE</em>, or
+                        <em>ediarum.WEB</em>. Such further development would make this ‘toolbox’
+                    even more versatile and accessible.</p>
+    </section>
+
+    <section id="bibliography" class="review-bibliography">
+      <h2>Bibliography</h2>
+      <ol class="bib-list">
+        <li>Dumont, Stefan, and Martin Fechner. 2015. “Bridging the Gap: Greater
+                        Usability for TEI encoding”, <em>Journal of the Text Encoding Initiative
+                            [Online], Issue 8</em> | December 2014 - December 2015, Online since
+                        09 June 2015, connection on 31 May 2019. DOI: 10.4000/jtei.1242. URL: <a href="http://journals.openedition.org/jtei/1242" target="_blank" rel="noopener">http://journals.openedition.org/jtei/1242</a>. </li>
+        <li>Dumont, Stefan, and Martin Fechner. 2019. “ediarum – Arbeits- und
+                        Publikationsumgebung für digitale Editionsvorhaben” last modified April 2.
+                        Zenodo. <a href="http://doi.org/10.5281/zenodo.2621062" target="_blank" rel="noopener">http://doi.org/10.5281/zenodo.2621062</a>. </li>
+        <li>Dumont, Stefan, Sascha Grabsch, and Martin Fechner. 2019, March 19.
+                            <em>ediarum/ediarum.BASE.edit: ediarum.BASE.edit 1.1.1 (Version
+                            v1.1.1)</em>. Zenodo. <a href="http://doi.org/10.5281/zenodo.2598148" target="_blank" rel="noopener">http://doi.org/10.5281/zenodo.2598148</a>. </li>
+        <li>Fechner, Martin. 2019, March 15. <em>ediarum/ediarum.DB: ediarum.DB
+                            3.2.5 (Version v3.2.5)</em>. Zenodo. <a href="http://doi.org/10.5281/zenodo.25947" target="_blank" rel="noopener">http://doi.org/10.5281/zenodo.25947</a>. </li>
+      </ol>
+    </section>
+
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        <li id="fn-ftn1" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20190531085527/http://www.bbaw.de/telota/software/ediarum" target="_blank" rel="noopener">https://web.archive.org/web/20190531085527/http://www.bbaw.de/telota/software/ediarum</a>.
+          <a href="#fnref-ftn1" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn2" class="footnote-item">
+          
+                  <a href="https://doi.org/10.5281/zenodo.2594779" target="_blank" rel="noopener">https://doi.org/10.5281/zenodo.2594779</a>.
+          <a href="#fnref-ftn2" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn3" class="footnote-item">
+          
+                  <a href="https://doi.org/10.5281/zenodo.2598148" target="_blank" rel="noopener">https://doi.org/10.5281/zenodo.2598148</a>.
+          <a href="#fnref-ftn3" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn4" class="footnote-item">
+          
+                  <a href="http://web.archive.org/web/20190606184223/https://www.oxygenxml.com/" target="_blank" rel="noopener">http://web.archive.org/web/20190606184223/https://www.oxygenxml.com/</a>.
+          <a href="#fnref-ftn4" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn5" class="footnote-item">
+          
+                  <a href="http://exist-db.org/exist/apps/homepage/news.xql" target="_blank" rel="noopener">http://exist-db.org/exist/apps/homepage/news.xql (last accessed: May
+                            30, 2019)</a>.
+          <a href="#fnref-ftn5" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn6" class="footnote-item">
+          
+                  <a href="https://doi.org/10.5281/zenodo.2621061" target="_blank" rel="noopener">https://doi.org/10.5281/zenodo.2621061 (last accessed: May 30,
+                            2019)</a>.
+          <a href="#fnref-ftn6" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn7" class="footnote-item">
+          My academic background is in Scholarly Editing
+                        and Documentology but I have been working as a developer on various DH and
+                        digital edition projects since. Therefore my perspective on these tools is
+                        both that of someone who has experience in transcribing and annotating
+                        documents as a humanities scholar and of someone who is building an
+                        environment for other researchers to perform these tasks. In my development
+                        work, I have been using parts of ediarum for some years.
+          <a href="#fnref-ftn7" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn8" class="footnote-item">
+          
+                  <a href="https://github.com/ediarum" target="_blank" rel="noopener">https://github.com/ediarum (last
+                            accessed: May 30, 2019)</a>.
+          <a href="#fnref-ftn8" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn9" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20190612163247/https://www.annotationstudio.org/" target="_blank" rel="noopener">https://web.archive.org/web/20190612163247/https://www.annotationstudio.org/</a>.
+          <a href="#fnref-ftn9" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn10" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20190612191653/http://cte.oeaw.ac.at/" target="_blank" rel="noopener">https://web.archive.org/web/20190612191653/http://cte.oeaw.ac.at/
+                            s</a>.
+          <a href="#fnref-ftn10" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn11" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20190613055623/https://fud.uni-trier.de/" target="_blank" rel="noopener">https://web.archive.org/web/20190613055623/https://fud.uni-trier.de/</a>.
+          <a href="#fnref-ftn11" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn12" class="footnote-item">
+          
+                  <a href="https://schleiermacher-digital.de/index.xql" target="_blank" rel="noopener">https://schleiermacher-digital.de/index.xql (last accessed: June 10,
+                            2019)</a>.
+          <a href="#fnref-ftn12" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn13" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20190612201610/https://edition-humboldt.de/" target="_blank" rel="noopener">https://web.archive.org/web/20190612201610/https://edition-humboldt.de/</a>.
+          <a href="#fnref-ftn13" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn14" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20190612201339/http://megadigital.bbaw.de/index.xql" target="_blank" rel="noopener">https://web.archive.org/web/20190612201339/http://megadigital.
+                            bbaw.de/index.xql</a>.
+          <a href="#fnref-ftn14" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn15" class="footnote-item">
+          A module called ediarum.GUIDE
+                        has been announced that will hopefully fill this gap. <a href="https://doi.org/10.5281/zenodo.2621061" target="_blank" rel="noopener">https://doi.org/10.5281/zenodo.2621061</a>.
+          <a href="#fnref-ftn15" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn16" class="footnote-item">
+          
+                  <a href="https://github.com/ediarum" target="_blank" rel="noopener">https://github.com/ediarum (last
+                            accessed: May 30, 2019)</a>.
+          <a href="#fnref-ftn16" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn17" class="footnote-item">
+          
+                  <a href="https://www.gnu.org/licenses/licenses.en.html" target="_blank" rel="noopener">https://www.gnu.org/licenses/licenses.en.html</a>.
+          <a href="#fnref-ftn17" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn18" class="footnote-item">
+          
+                  <a href="https://opensource.org/licenses/BSD-3-Clause" target="_blank" rel="noopener">https://opensource.org/licenses/BSD-3-Clause</a>.
+          <a href="#fnref-ftn18" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn19" class="footnote-item">
+          
+                  <a href="https://doi.org/10.5281/zenodo.2598148" target="_blank" rel="noopener">https://doi.org/10.5281/zenodo.2598148</a> and <a href="https://doi.org/10.5281/zenodo.2594779" target="_blank" rel="noopener">https://doi.org/10.5281/zenodo.2594779</a>.
+          <a href="#fnref-ftn19" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+      </ol>
+    </section>
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{ediarum,
+  author    = {Mertgens, Andreas},
+  title     = {Ediarum. A toolbox for editors and developers},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {11},
+  year      = {2020},
+  doi       = {10.18716/ride.a.11.4},
+  url       = {https://doi.org/10.18716/ride.a.11.4},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Mertgens, Andreas
+TI  - Ediarum. A toolbox for editors and developers
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 11
+PY  - 2020
+DA  - 2020/01
+DO  - 10.18716/ride.a.11.4
+UR  - https://doi.org/10.18716/ride.a.11.4
+PB  - Institut für Dokumentologie und Editorik e. V.
+LA  - en
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Mertgens, A. (2020). Ediarum. A toolbox for editors and developers. RIDE – A review journal for digital editions and resources, (11). https://doi.org/10.18716/ride.a.11.4</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Mertgens, Andreas. &#34;Ediarum. A toolbox for editors and developers.&#34; RIDE – A review journal for digital editions and resources, no. 11, 2020. https://doi.org/10.18716/ride.a.11.4.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Mertgens, Andreas. &#34;Ediarum. A toolbox for editors and developers.&#34; RIDE – A review journal for digital editions and resources, no. 11 (2020). https://doi.org/10.18716/ride.a.11.4.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/ediarum/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deutsches Textarchiv &mdash; RIDE</title>
+  <meta name="description" content="
+            Owing to its well documented TEI subset and highly accurate transcriptions
+                    usually based on the first edition of a text, the German Textarchive (=
+                ...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Deutsches Textarchiv">
+  <meta property="og:description" content="
+            Owing to its well documented TEI subset and highly accurate transcriptions
+                    usually based on the first edition of a text, the German Textarchive (=
+                ...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/dta/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/dta/">
+<meta name="DC.title" content="Deutsches Textarchiv">
+<meta name="DC.creator" content="Dario Kampkaspar">
+<meta name="DC.date" content="2017-09">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.6.8"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="de">
+
+<meta name="citation_title" content="Deutsches Textarchiv">
+<meta name="citation_author" content="Dario Kampkaspar">
+<meta name="citation_doi" content="10.18716/ride.a.6.8"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2017-09">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/dta/dta.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Deutsches Textarchiv",
+  "author": [{"@type": "Person", "name": "Dario Kampkaspar", "url": "https://orcid.org/0000-0002-0118-0811"}],
+  "datePublished": "2017-09",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.6.8"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e.V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">Einleitung</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">Das Kernkorpus</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">Texterfassung und Formate</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">Generelle Benutzerführung</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div5" class="toc-link">Textansichten</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div6" class="toc-link">DTA Erweiterungskorpus (DTAE)</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div7" class="toc-link">Zugänglichkeit und Nachnutzung</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div8" class="toc-link">Abschließende Bemerkungen</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#bibliography" class="toc-link">Bibliography</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#footnotes" class="toc-link">Notes</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>September 2017</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.6.8" rel="external">10.18716/ride.a.6.8</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-6/">
+        <span class="badge badge-textcollections">DTC</span>
+        Issue 6
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>DE</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/dta/dta.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/dta/dta-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="de">
+    <header class="review-header">
+      <a href="/issues/issue-6/" class="review-issue-link">
+        <span class="badge badge-textcollections">DTC</span>
+        Issue 6: Digital Text Collections
+      </a>
+
+      <h1>Deutsches Textarchiv</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Dario Kampkaspar&nbsp;<a href="https://orcid.org/0000-0002-0118-0811" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>        </span>
+      </div>
+
+      <div class="review-affiliation">Herzog August Bibliothek / Austrian Centre for Digital Humanities an der Österreichischen Akademie der Wissenschaften, Wolfenbüttel, Germany</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="http://www.deutschestextarchiv.de/" rel="external">Deutsches Textarchiv</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">Einleitung</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">Das Kernkorpus</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">Texterfassung und Formate</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">Generelle Benutzerführung</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div5" class="toc-link">Textansichten</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div6" class="toc-link">DTA Erweiterungskorpus (DTAE)</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div7" class="toc-link">Zugänglichkeit und Nachnutzung</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div8" class="toc-link">Abschließende Bemerkungen</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#bibliography" class="toc-link">Bibliography</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#footnotes" class="toc-link">Notes</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>September 2017</span>
+<span><a href="https://doi.org/10.18716/ride.a.6.8" rel="external">DOI</a></span><a href="/reviews/dta/dta.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/dta/dta-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>Owing to its well documented TEI subset and highly accurate transcriptions
+                    usually based on the first edition of a text, the German Textarchive (=
+                    Deutsches Textarchiv, DTA) is currently one of the best corpora for historical
+                    German texts (1600-1900), albeit not necessarily the most extensive. To date
+                    (August 2017) it contains around 3260 works. The full texts of the corpus are
+                    enhanced by digital facsimiles and encoded with regard to their visual features
+                    (e.g. layout, fonts) as well as annotated linguistically (e.g. PoS-tagging). The
+                    search engine focuses on linguistic features and allows for searching both exact
+                    spellings as well as spelling variants of a word. Due to its goal of providing a
+                    corpus for historical linguistics and the underlying selection criteria of the
+                    collection, no further comments or variants in other editions of one work than
+                    the first print are given. Even though there are minor points of criticism, due
+                    to the quality of its textual sources and the accurate documentation the DTA can
+                    be seen as a point of reference for other corpora.</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>Einleitung</h2>
+      <p id="p1">Das Deutsche Textarchiv (DTA) entstand als Projekt an der
+                    Berlin-Brandenburgischen Akademie der Wissenschaften (BBAW) und wurde von 2007
+                    bis 2016 von der Deutschen Forschungsgemeinschaft (DFG) unter der Leitung von
+                    Wolfgang Klein und Alexander Geyken gefördert. Mit derzeit (August 2017) über
+                    620.000 Seiten aus mehr als 3.260 verschiedenen Werken aus der Zeit zwischen ca.
+                    1600 und 1900<sup class="footnote-ref" id="fnref-ftn1"><a href="#fn-ftn1" role="doc-noteref">1</a></sup> gehört das DTA zwar nicht zu den
+                    größten Textkorpora, doch dies ist gar nicht sein Anspruch. Die übergreifende
+                    Leitlinie wird dem Nutzer gleich auf der Startseite mitgeteilt:<sup class="footnote-ref" id="fnref-ftn2"><a href="#fn-ftn2" role="doc-noteref">2</a></sup> „Grundlage für ein Referenzkorpus der neuhochdeutschen Sprache“ oder,
+                    detaillierter, in den Leitlinien:<sup class="footnote-ref" id="fnref-ftn3"><a href="#fn-ftn3" role="doc-noteref">3</a></sup> „Ziel des Deutschen Textarchivs (DTA) ist die Erstellung eines
+                    disziplinenübergreifenden Volltextkorpus deutschsprachiger Texte“. In diesem
+                    Sinne geht es mehr um die Erreichung und Einhaltung einer verlässlichen Qualität
+                    der Texterfassung, insbesondere was die sprachlichen Eigenarten eines Textes
+                    angeht. Neben dieses ‚Kernkorpus‘ treten noch die sogenannten
+                        DTA-Erweiterungen.<sup class="footnote-ref" id="fnref-ftn4"><a href="#fn-ftn4" role="doc-noteref">4</a></sup> Hierbei handelt
+                    es sich um Texte, die teils unter anderen Gesichtspunkten ausgewählt und
+                    digitalisiert wurden (siehe Abschnitt zum DTA Erweiterungskorpus DTAE).</p>
+    </section>
+    <section id="div2">
+      <h2>Das Kernkorpus</h2>
+      <p id="p2">Aus der Zielsetzung des Kernkorpus ergeben sich viele der
+                    Eigenschaften des Deutschen Textarchivs, allen voran der Umstand, dass bei der
+                    Textauswahl und -aufbereitung hauptsächlich linguistische Gesichtspunkte im
+                    Vordergrund standen. Die Werke im DTA wurden nicht nach thematischen
+                    Gesichtspunkten ausgewählt, sondern, dem Ziel des Korpus entsprechend, wurde auf
+                    eine ausgewogene Zusammenstellung nach Textgenres geachtet und auf eine
+                    historisch-kritische Kommentierung der Texte verzichtet. Zur bestmöglichen
+                    Dokumentation des Sprachstandes wird überwiegend die erste verfügbare Ausgabe
+                    wiedergegeben.</p>
+<p id="p3">
+               <figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="Zeitliche Verteilung der Texte." loading="lazy"><figcaption>Fig. 1: Zeitliche Verteilung der Texte.</figcaption></figure>
+               <figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="Texte nach Genre." loading="lazy"><figcaption>Fig. 2: Texte nach Genre.</figcaption></figure> Auch wenn der Anspruch einer ausgewogenen Textauswahl zur Abbildung
+                    des Neuhochdeutschen Sprachstandes und seiner Entwicklung nachvollziehbar ist,
+                    ist die Dokumentation, in der die Kriterien dieser Auswahl beschrieben
+                        werden,<sup class="footnote-ref" id="fnref-ftn5"><a href="#fn-ftn5" role="doc-noteref">5</a></sup> etwas dünn. So heißt es: Es wurden „mehrere Quellen herangezogen“, wobei
+                    „ausgewählte Literaturgeschichten“ und „Empfehlungen der Mitglieder der BBAW“
+                    explizit genannt werden. Die Dokumentation der Textauswahl enthält zwei
+                    Graphiken: eine zur zeitlichen Verteilung der Werke (<a href="#img1" class="crossref">Abb. 1</a>), die zur Zeit nur bedingt als gleichmäßig
+                    angesprochen werden kann, und eine zur Verteilung der Texte nach Genre (<a href="#img2" class="crossref">Abb. 2</a>), wobei hier ‚Belletristik‘,
+                    ‚Gebrauchsliteratur‘, ‚Wissenschaft‘ und ‚Zeitung‘ genannt werden.<sup class="footnote-ref" id="fnref-ftn6"><a href="#fn-ftn6" role="doc-noteref">6</a></sup>
+            </p>
+<p id="p4">Scheint die Verteilung unter den ersten drei Gruppen noch recht
+                    gleichmäßig zu sein, stellt eine detailliertere Betrachtung<sup class="footnote-ref" id="fnref-ftn7"><a href="#fn-ftn7" role="doc-noteref">7</a></sup>
+                    ein etwas anderes Bild dar: So enthält die Gruppe ‚Belletristik‘<sup class="footnote-ref" id="fnref-ftn8"><a href="#fn-ftn8" role="doc-noteref">8</a></sup> beispielsweise eine Untergruppe ‚Briefe‘ mit mehreren Bänden
+                        Briefsammlungen<sup class="footnote-ref" id="fnref-ftn9"><a href="#fn-ftn9" role="doc-noteref">9</a></sup> (sowie einem Tagebuch!), während die
+                    Untergruppe ‚Novelle‘ deutlich mehr Werke verschiedener Personen umfasst (mit
+                    einem auffälligen Übergewicht auf den Werken Theodor Storms). Auch andere
+                    Untergruppen wie etwa ‚Lyrik; Prosa‘ zeigen, dass hier gegebenenfalls noch etwas
+                    Klassifizierungs- wie Aufteilungsarbeit geleistet werden könnte.</p>
+    </section>
+    <section id="div3">
+      <h2>Texterfassung und Formate</h2>
+      <p id="p5">Das DTA versucht, bei den Texten des Kernkorpus eine möglichst hohe
+                    Erfassungsgenauigkeit zu erreichen. Neben der initialen Erfassung der Texte, die
+                    laut den Leitlinien in der Regel per <em>Double Keying</em> erfolgt, steht
+                    eine eigene browserbasierte Umgebung zur Qualitätskontrolle
+                    (DTA-Qualitätssicherung, DTAQ<sup class="footnote-ref" id="fnref-ftn10"><a href="#fn-ftn10" role="doc-noteref">10</a></sup>) zur Verfügung.
+                    Über DTAQ können registrierte Benutzer Korrekturen und Annotationen am Text
+                    anbringen, die dann von Mitarbeitern des DTA geprüft und gegebenenfalls in die
+                    Texte eingearbeitet werden. Detailliert ausgearbeitete und sehr gut
+                    dokumentierte Regeln zur Transkription erlauben eine sehr verlässliche
+                    Auswertung der Texte, was auch durch das zugrunde gelegte Datenmodell
+                    unterstützt wird. Hierbei wurde basierend auf TEI P5 das DTA-Basisformat
+                        (DTA-Bf)<sup class="footnote-ref" id="fnref-ftn11"><a href="#fn-ftn11" role="doc-noteref">11</a></sup> erstellt, das ebenfalls vorbildlich dokumentiert ist. Dieses Format
+                    wurde dementsprechend auch von der DFG als Format für historische Texte
+                        empfohlen.<sup class="footnote-ref" id="fnref-ftn12"><a href="#fn-ftn12" role="doc-noteref">12</a></sup>
+            </p>
+<p id="p6">Der Fokus des Formates und der Erfassungsarbeit liegt auf der exakten
+                    Erfassung der Textstruktur sowie der originalen Schreibweisen und damit dem
+                    Aufbau eines Korpus historischer Wortformen. Für die weitergehende linguistische
+                    Bearbeitung wird auf das im Kontext von CLARIN-D entwickelte Text Corpus Format
+                        (TCF)<sup class="footnote-ref" id="fnref-ftn13"><a href="#fn-ftn13" role="doc-noteref">13</a></sup> zurückgegriffen.</p>
+<p id="p7">Wie bereits angesprochen kann die Dokumentation der Texterfassung und
+                    Modellierung des DTA in weiten Teilen als vorbildlich angesehen werden. Neben
+                    verschiedenen thematischen Zugängen (so zum Beispiel Metadaten und formale wie
+                    inhaltliche Erschließung) gibt es Übersichten zu den verwendeten Elementen und
+                    eine Suche innerhalb der Dokumentation. Da die Einhaltung dieser Regeln im
+                    Rahmen der Qualitätskontrolle DTAQ gesichert wird, sind die Texte des Kernkorpus
+                    in vielen Belangen der Goldstandard im Hinblick auf die weitere Verwendbarkeit.
+                    Ebenfalls positiv anzumerken ist, dass auch die Bestandteile der Dokumentation
+                    durch die Lizenz CC BY-SA 3.0 frei verfügbar sind.</p>
+    </section>
+    <section id="div4">
+      <h2>Generelle Benutzerführung</h2>
+      <p id="p8">Der Zugriff auf die Texte ist auf mehreren Wegen möglich. Am
+                    auffälligsten ist dabei direkt auf der Startseite die Suchmöglichkeit, die bei
+                    einer Volltextsuche innerhalb des Korpus auch linguistische Verfeinerungen
+                    erlaubt.</p>
+<p id="p9">Als linguistische Suchengine wird DDC (‚Dialing/DWDS-Concordancer‘)
+                    verwendet, das umfangreiche linguistische Abfragen bietet. Unterstützt wird
+                    diese durch CAB (‚Cascaded Analysis Broker‘), ein Tool zur Findung moderner
+                    Wortformen zu historischen Schreibungen. Auch die (im Vergleich zu einfachen
+                    Volltextsuchen natürlich umfangreichere) Syntax der Engine ist mit Beispielen
+                        dokumentiert.<sup class="footnote-ref" id="fnref-ftn14"><a href="#fn-ftn14" role="doc-noteref">14</a></sup> Einige Features sind dabei die lexembasierte Suche (durch CAB gefundene
+                    Formen zu einem Grundlexem), Suche nach einer genauen Form mit oder ohne
+                    Trunkierung und die Suche von Phrasen (genaue Phrasen oder auch Wörter mit
+                    bestimmten Abständen zueinander) oder eine Suche aufgrund der Wortart. Diese
+                    Suchmöglichkeiten können für komplexe Anfragen miteinander kombiniert
+                    werden.</p>
+<p id="p10">
+               <figure id="img3" class="review-figure"><img src="pictures/picture-3.png" alt="Ergebnisansicht der Suche." loading="lazy"><figcaption>Fig. 3: Ergebnisansicht der Suche.</figcaption></figure> In der Ergebnisansicht (<a href="#img3" class="crossref">Abb.
+                        3</a>) werden die Treffer im Kontext ihres Satzes angezeigt, wobei jeder
+                    Eintrag in der Liste einem Treffer entspricht (mehrere Treffer auf der gleichen
+                    Seite erzeugen standardmäßig jeweils eigene Einträge).<sup class="footnote-ref" id="fnref-ftn15"><a href="#fn-ftn15" role="doc-noteref">15</a></sup> Ebenfalls angeboten wird eine Verlaufskurve der gesuchten
+                    Form innerhalb des (gewählten Teil-)Korpus, wobei die Zahl der Treffer je einer
+                    Million Tokens über der Zeit angegeben wird. Ein Klick auf diese Graphik führt
+                    zu einer detaillierteren Ansicht.</p>
+<p id="p11">Neben der Volltextsuche gibt es in der Seitenspalte der Startseite
+                    die Möglichkeit zum ‚Stöbern im DTA‘, unter der alle Texte nach dem Jahrhundert
+                    der Veröffentlichung sowie nach der Textgattung (hier sehr weit gefasst in die
+                    drei Gruppen ‚Belletristik‘, ‚Gebrauchsliteratur‘ und ‚Wissenschaft‘; eine
+                    feinere Aufteilung erfolgt auf den jeweiligen Unterseiten) gruppiert werden.
+                    Dazu kommt im Menü ‚Texte‘ eine Zeitleiste, die die Titel nach ihrem
+                    Erscheinungsjahr zusammengefasst aufführt. Wer Werke eines bestimmten Verfassers
+                    sucht, muss entweder die Suche in den Titeldaten bemühen oder – weniger
+                    offensichtlich – in der Seitenspalte unter ‚Neue Werke im DTA‘ dem Link ‚alle
+                    Titel …‘ folgen.</p>
+    </section>
+    <section id="div5">
+      <h2>Textansichten</h2>
+      <p id="p12">
+               <figure id="img4" class="review-figure"><img src="pictures/picture-4.png" alt="Einstiegsseite eines Textes." loading="lazy"><figcaption>Fig. 4: Einstiegsseite eines Textes.</figcaption></figure> Die Einstiegsseite eines Textes (<a href="#img4" class="crossref">Abb. 4</a>) bietet bibliographische Angaben, weitere Metadaten, den
+                    Zugang zu den Ansichten des Textes, verschiedene Download-Optionen sowie
+                    Statistiken und Links zu einigen Tools (zur Zeit Wortwolken sowie die Übergabe
+                    des transliterierten, normalisierten oder lemmatisierten Textes an <em>Voyant
+                        Tools</em>). Die bibliographischen Angaben enthalten die üblichen
+                    Titelangaben, die URN des Textes zur permanenten Adressierung sowie
+                    Informationen zu dem für die Transkription verwendeten Exemplar. Die Metadaten
+                    sind neben anderen Formaten als TEI-Header und Dublin Core verfügbar, während
+                    für den Volltext verschiedene Versionen angeboten werden: erfasster Volltext als
+                    XML (im DTA-Bf), eine HTML-Ansicht, Plain Text, sowie linguistische Annotationen
+                    verschiedenen Umfanges als TCF. Die Download-Option ‚HTML‘ gibt zwar den
+                    gesamten Text als HTML wieder, bietet diesen aber tatsächlich zum Speichern an;
+                    den Volltext in einer einzigen HTML-Datei online einzusehen, scheint nicht
+                    vorgesehen zu sein.</p>
+<p id="p13">
+               <figure id="img5" class="review-figure"><img src="pictures/picture-5.png" alt="Parallelansicht einer Seite." loading="lazy"><figcaption>Fig. 5: Parallelansicht einer Seite.</figcaption></figure> Der Standard-Zugang zum Text ist die Text-Bild-Ansicht, die eine
+                    seitenweise Parallelansicht bietet (<a href="#img5" class="crossref">Abb.
+                        5</a>). Die auf der Einstiegsseite gebotenen Optionen sind hier (bei
+                    ausreichender Fensterbreite) am rechten Seitenrand zu finden. Die parallele
+                    Ansicht stellt Digitalisat und Transkription nebeneinander, wobei für die
+                    Transkription verschiedene Anzeigeformate gewählt werden können: das originale
+                    XML, eine HTML-Ansicht der getreuen Abschrift oder verschiedene
+                    Normalisierungen. Leider sind die Größen der Seitenbestandteile fix vorgegeben,
+                    sodass teils sogar bei kurzen Seiten innerhalb der Transkription gescrollt oder
+                    die Schriftgröße angepasst werden muss, um den gesamten Text einer einzelnen
+                    Textseite zu lesen. Die Informationen zum gesamten Werk sind auch hier jederzeit
+                    abrufbar und es werden außerdem der Link zum gesamten Werk, zur einzelnen Seite
+                    (nicht aber jeweiligen Ansicht) und eine Zitationshilfe mitgegeben. Verschiedene
+                    Versionen des Textes, der sich durch die Qualitätssicherung DTAQ ändern könnte,
+                    sind nicht abrufbar. Zwar ist durch die bereits vor der Veröffentlichung
+                    greifenden Kontrollmechanismen nicht von großen Änderungen auszugehen, doch ist
+                    gerade bei den oft feinfühligen linguistischen Suchen hier das Problem der
+                    fehlenden Nachvollziehbarkeit einer Aussage, die auf einem älteren Datenstand
+                    basiert, nicht von der Hand zu weisen. Bislang noch nicht umgesetzt, aber eine
+                    denkbare Erweiterung wären, sind Möglichkeiten zur Anbringung privater
+                    Annotationen oder Lesezeichen sowie Möglichkeiten zur Adressierung von
+                    Textauszügen, zum Beispiel unter Nutzung der Tokenisierung.</p>
+    </section>
+    <section id="div6">
+      <h2>DTA Erweiterungskorpus (DTAE)</h2>
+      <p id="p14">
+               <figure id="img6" class="review-figure"><img src="pictures/picture-6.png" alt="Ausschnitt der Seite zum DTAE." loading="lazy"><figcaption>Fig. 6: Ausschnitt der Seite zum DTAE.</figcaption></figure> Die derzeit (August 2017) knapp 165.000 Seiten im
+                        Erweiterungskorpus<sup class="footnote-ref" id="fnref-ftn16"><a href="#fn-ftn16" role="doc-noteref">16</a></sup> stammen aus
+                    externen Quellen, wobei es sich um Korpora einzelner Institutionen wie der
+                    Wolfenbütteler Digitalen Bibliothek (WDB), der Herzog August Bibliothek
+                    Wolfenbüttel (HAB), Kooperationsprojekte wie ‚AEDit‘ (HAB, BBAW und Akademie der
+                    Wissenschaften und Literatur in Mainz) oder Einzelprojekte wie ‚Semantic
+                    Blumenbach‘ an der Akademie der Wissenschaften in Göttingen handeln kann (<a href="#img6" class="crossref">Abb. 6</a>). Ergänzt wird das DTAE durch
+                    weitere Volltexte, die aus digitalen Archiven (überwiegend Wikisource)
+                    übernommen und in das DTA-Bf überführt wurden.</p>
+<p id="p15">Ausführlichere Informationen zu den einzelnen Quellen der
+                    übernommenen Texte sind nicht auf derselben Seite zu finden – unter der Graphik
+                    sind nur kurze Informationen zu den Kooperationen aufgeführt –, sondern unter
+                    ,Textquellen‘ in der Dokumentation.<sup class="footnote-ref" id="fnref-ftn17"><a href="#fn-ftn17" role="doc-noteref">17</a></sup> Hier erst findet man die Erklärung, dass sich unter dem Beiträger ‚DTAE‘
+                    (wie er in der Grafik in <a href="#img6" class="crossref">Abb. 6</a>
+                    auftritt) kein Zirkelschluss verbirgt, sondern eine Zusammenfassung kleinerer
+                    Einzelquellen ohne genaue Zuordnung zu einer Institution.</p>
+<p id="p16">In der rechten Spalte lässt sich auch eine Übersicht der Texte
+                    aufrufen, die aus den einzelnen Projekten übernommen sind. Eine Angabe, zu
+                    welchem Zeitpunkt und in welcher Form (Bilddigitalisat, Volltexte) Daten von
+                    einer Quelle übernommen wurde, sucht man hier wie auch in der Kurzbeschreibung
+                    vergebens. Die Liste enthält alle übernommenen Texte, auch wenn sie noch nicht
+                    kontrolliert wurden. Es ist nicht erkennbar, welche Links zu einem Volltext
+                    führen und welche zum DTAQ. Eine deutlichere Kennzeichnung wäre für den Benutzer
+                    hilfreich.</p>
+    </section>
+    <section id="div7">
+      <h2>Zugänglichkeit und Nachnutzung</h2>
+      <p id="p17">Die Texte werden in der Regel unter verschiedenen freien Lizenzen
+                    zur Verfügung gestellt. Genauere Angaben lassen sich auf den jeweiligen Seiten
+                    einzelner Werke entnehmen. Die verschiedenen zur Verfügung gestellten
+                    Downloadformate und Lizenzen erlauben eine Weiterverwendung in verschiedenen
+                    Forschungskontexten.</p>
+<p id="p18">Als einfachste Variante der Übernahme ist ein Download des gesamten
+                    Korpus (nur Kernkorpus oder Kern- und Ergänzungskorpus) wie auch der einzelnen
+                    Gruppen, wie sie unter ‚Stöbern‘ zu finden sind, möglich. Eine Gruppierung der
+                    Texte durch den Nutzer ist zurzeit nicht umgesetzt. Es werden außerdem einzelne
+                    ‚Versionen‘ dieser Download-Optionen angeboten, wenngleich diese eher den
+                    Charakter von Snapshots mit schwankendem zeitlichen Abstand von teils fast zwei
+                    Jahren haben und so nur als grobe Versionierung der Texte dienen können.</p>
+<p id="p19">Die bei der Erstellung des Korpus verwendete Software wird im Rahmen
+                    der Dokumentation ebenfalls knapp beschrieben,<sup class="footnote-ref" id="fnref-ftn18"><a href="#fn-ftn18" role="doc-noteref">18</a></sup> wobei aber nicht immer klar ist, ob und inwiefern es sich um
+                    Eigenentwicklungen handelt. Teile der Software sind für die eigene Nutzung
+                    verfügbar, doch ist bei den externen Links oft nicht ersichtlich, in welchem
+                    Umfang und unter welcher Lizenz diese Software-Stücke genutzt werden können. Für
+                    die Verwendung im XML-Editor oXygen wird eine auf das DTA-Bf zugeschnittene
+                    Anpassung zur Verfügung gestellt, die mit einer Veröffentlichung im November
+                    2013 aber auf einer nicht mehr aktuellen Version von oXygen basiert.</p>
+<p id="p20">Erfreulich ist das Angebot an APIs. Neben einer OAI-PMH
+                    Schnittstelle wird auch eine API zu CAB angeboten.<sup class="footnote-ref" id="fnref-ftn19"><a href="#fn-ftn19" role="doc-noteref">19</a></sup> Etwas
+                    dürftig ist allerdings die ‚Dokumentation‘ der APIs ausgefallen, beschränkt sie
+                    sich doch auf eine einfache Aufzählung von Links. Ohne weitere Unterscheidung
+                    stehen hier Atom-Feeds neben einem Link zur OAI-PMH-Schnittstelle oder einem
+                    OpenSearch-Wrapper für die oben beschriebene Suche. Ergänzende Informationen
+                    könnten an dieser Stelle hilfreich sein.</p>
+    </section>
+    <section id="div8">
+      <h2>Abschließende Bemerkungen</h2>
+      <p id="p21">Das Deutsche Textarchiv bietet seinem Anspruch entsprechend
+                    qualitativ hochwertig aufbereitete Texte, die insbesondere, aber nicht nur für
+                    die linguistische Nachnutzung einen ausgezeichneten Standard bilden. Die
+                    Dokumentation vor allem des verwendeten Datenformates kann mit Fug und Recht als
+                    vorbildlich bezeichnet werden. Kleinere Eigenarten der Benutzerführung oder der
+                    zur Verfügung gestellten Ansichts-, Browsing- oder Downloadoptionen stellen
+                    keine gravierenden Probleme dar und werden vom Projektteam im Rahmen ihrer
+                    Möglichkeiten sicherlich auch angegangen werden.</p>
+<p id="p22">Es steht zu hoffen, dass auch in Zukunft das hohe Niveau der
+                    Textaufbereitung gehalten und das Textkorpus sukzessive weiter ausgebaut werden
+                    kann. Leider ist der Webseite nicht zu entnehmen, wie sich die weitere Zukunft
+                    des DTA gestalten wird, nachdem die Förderung durch die DFG 2016 ausgelaufen
+                    ist. Genauso fehlen Angaben, ob die Vorhaltung der Texte dauerhaft gesichert
+                    ist. Zwar ist davon auszugehen, dass ein solch prominentes Projekt einer
+                    Akademie nicht sang- und klanglos verschwinden wird, doch sollten nach Ablauf
+                    eines Projektes zumindest kurze Hinweise zu Fragen der Archivierung und
+                    langfristigen Verfügbarkeit gegeben und möglichst sichtbar platziert werden.</p>
+<p id="p23">Der weitere Ausbau des Korpus auch durch externe Kooperationspartner
+                    lässt hoffen, dass sich die Datengrundlage noch deutlich erweitern wird.
+                    Kleinere hier angeführte Wermutstropfen schmälern die Leistung nicht und werden
+                    durch das Projektteam sicher geprüft werden. Durch die Qualität der Texte, aber
+                    insbesondere auch durch die Dokumentation des DTA-Basisformates hat das DTA
+                    Vorbildcharakter für viele andere Projekte.</p>
+    </section>
+
+    <section id="bibliography" class="review-bibliography">
+      <h2>Bibliography</h2>
+      <ol class="bib-list">
+        <li>DTA: Deutsches Textarchiv. 2007-2017. Berlin-Brandenburgische Akademie der
+                        Wissenschaften. <a href="http://deutschestextarchiv.de/" target="_blank" rel="noopener">http://deutschestextarchiv.de/</a>. </li>
+      </ol>
+    </section>
+
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        <li id="fn-ftn1" class="footnote-item">
+          Die Angaben sind der auf der Startseite recht
+                        prominent platzierten Statistik entnommen, die einen guten Überblick über
+                        die laufende Arbeit am Korpus gibt.
+          <a href="#fnref-ftn1" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn2" class="footnote-item">
+          DTA, Startseite: <a href="https://web.archive.org/web/20170830180801/http://deutschestextarchiv.de/" target="_blank" rel="noopener">https://web.archive.org/web/20170830180801/http://deutschestextarchiv.de/</a>.
+                    
+          <a href="#fnref-ftn2" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn3" class="footnote-item">
+          DTA, Leitlinien: <a href="https://web.archive.org/web/20170526105849/http://www.deutschestextarchiv.de/doku/leitlinien" target="_blank" rel="noopener">https://web.archive.org/web/20170526105849/http://www.deutschestextarchiv.de/doku/leitlinien</a>.
+                    
+          <a href="#fnref-ftn3" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn4" class="footnote-item">
+          DTA, DTAE: <a href="http://www.deutschestextarchiv.de/dtae" target="_blank" rel="noopener">http://www.deutschestextarchiv.de/dtae</a>. 
+          <a href="#fnref-ftn4" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn5" class="footnote-item">
+          DTA, Dokumentation: <a href="https://web.archive.org/web/20170526085322/http://www.deutschestextarchiv.de/doku/textauswahl" target="_blank" rel="noopener">https://web.archive.org/web/20170526085322/http://www.deutschestextarchiv.de/doku/textauswahl</a>.
+                    
+          <a href="#fnref-ftn5" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn6" class="footnote-item">
+          ‚Zeitung‘ als ‚Genre‘ taucht allerdings in der
+                        gattungsorientierten Auswahl auf der Startseite nicht auf.
+          <a href="#fnref-ftn6" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn7" class="footnote-item">
+          Eine Übersicht über die Texte der Gruppen ist allerdings von hier aus nicht
+                        möglich; sie kann stattdessen von der Startseite aus erreicht werden.
+          <a href="#fnref-ftn7" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn8" class="footnote-item">
+          DTA, Genre Belletristik <a href="https://web.archive.org/web/20170526103123/http://www.deutschestextarchiv.de/list/browse?genre=Belletristik" target="_blank" rel="noopener">https://web.archive.org/web/20170526103123/http://www.deutschestextarchiv.de/list/browse?genre=Belletristik</a>.
+                    
+          <a href="#fnref-ftn8" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn9" class="footnote-item">
+          Unter anderem Bettina von Arnims ‚Goethes
+                        Briefwechsel‘, eher ein Briefroman als eine unverfäschte Briefsammlung, und
+                        Ludwig Börnes ‚Briefe aus Paris‘, die auf Basis der früheren Edition der
+                        BBAW wiedergegeben wurden.
+          <a href="#fnref-ftn9" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn10" class="footnote-item">
+          DTA, DTAQ: <a href="http://www.deutschestextarchiv.de/dtaq" target="_blank" rel="noopener">http://www.deutschestextarchiv.de/dtaq</a>. 
+          <a href="#fnref-ftn10" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn11" class="footnote-item">
+          DTA, Basisformat: <a href="https://web.archive.org/web/20170526111458/http://www.deutschestextarchiv.de/doku/basisformat/" target="_blank" rel="noopener">https://web.archive.org/web/20170526111458/http://www.deutschestextarchiv.de/doku/basisformat/</a>.
+                    
+          <a href="#fnref-ftn11" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn12" class="footnote-item">
+          
+                  <a href="http://www.dfg.de/download/pdf/foerderung/grundlagen_dfg_foerderung/informationen_fachwissenschaften/geisteswissenschaften/standards_sprachkorpora.pdf" target="_blank" rel="noopener">http://www.dfg.de/download/pdf/foerderung/grundlagen_dfg_foerderung/informationen_fachwissenschaften/geisteswissenschaften/standards_sprachkorpora.pdf</a>
+                        und <a href="http://www.dfg.de/download/pdf/foerderung/grundlagen_dfg_foerderung/informationen_fachwissenschaften/geisteswissenschaften/foerderkriterien_editionen_literaturwissenschaft.pdf" target="_blank" rel="noopener">http://www.dfg.de/download/pdf/foerderung/grundlagen_dfg_foerderung/informationen_fachwissenschaften/geisteswissenschaften/foerderkriterien_editionen_literaturwissenschaft.pdf</a>.
+                    
+          <a href="#fnref-ftn12" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn13" class="footnote-item">
+          Weblicht, TCF-Format: <a href="https://weblicht.sfs.uni-tuebingen.de/weblichtwiki/index.php/The_TCF_Format" target="_blank" rel="noopener">http://weblicht.sfs.uni-tuebingen.de/weblichtwiki/index.php/The_TCF_Format</a>.
+                    
+          <a href="#fnref-ftn13" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn14" class="footnote-item">
+          DTA, DDC-Suche: <a href="https://web.archive.org/web/20170526123024/http://www.deutschestextarchiv.de/doku/DDC-suche_hilfe" target="_blank" rel="noopener">https://web.archive.org/web/20170526123024/http://www.deutschestextarchiv.de/doku/DDC-suche_hilfe</a>.
+                    
+          <a href="#fnref-ftn14" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn15" class="footnote-item">
+          Nach
+                        der Dokumentation der Suche sollten die Ergebnisse „alphabetisch nach dem
+                        Titel der Werke, in dem die Ergebnisse gefunden wurden, sortiert“ werden
+                        (vgl. <a href="https://web.archive.org/web/20170821082531/http://www.deutschestextarchiv.de/doku/DDC-suche_hilfe" target="_blank" rel="noopener">https://web.archive.org/web/20170821082531/http://www.deutschestextarchiv.de/doku/DDC-suche_hilfe</a>).
+                        Die Kopfzeile einer einfachen Suche nennt eine Sortierung nach Datum. Ohne
+                        weitere Eingriffe scheint jedoch, wie im abgebildeten Beispiel zu sehen,
+                        keine dieser Aussagen korrekt zu sein. Über die auf der Seite gegebenen
+                        Links oder über Parameter in der Suche kann zumindest eine Sortierung nach
+                        Datum erzwungen werden, eine alphabetische Anordnung ließ sich im Test nicht
+                        erreichen.
+          <a href="#fnref-ftn15" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn16" class="footnote-item">
+          DTA, DTAE: <a href="http://www.deutschestextarchiv.de/dtae" target="_blank" rel="noopener">http://www.deutschestextarchiv.de/dtae</a>. 
+          <a href="#fnref-ftn16" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn17" class="footnote-item">
+          DTA, Textquellen: <a href="https://web.archive.org/web/20170526092945/http://www.deutschestextarchiv.de/doku/textquellen" target="_blank" rel="noopener">https://web.archive.org/web/20170526092945/http://www.deutschestextarchiv.de/doku/textquellen</a>.
+                    
+          <a href="#fnref-ftn17" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn18" class="footnote-item">
+          DTA,
+                        Software: <a href="https://web.archive.org/web/20170526122208/http://www.deutschestextarchiv.de/doku/software" target="_blank" rel="noopener">https://web.archive.org/web/20170526122208/http://www.deutschestextarchiv.de/doku/software</a>.
+                    
+          <a href="#fnref-ftn18" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn19" class="footnote-item">
+          DTA,
+                        Dokumentation der APIs: <a href="https://web.archive.org/web/20170529084103/http://www.deutschestextarchiv.de/api" target="_blank" rel="noopener">https://web.archive.org/web/20170529084103/http://www.deutschestextarchiv.de/api</a>,
+                        API zu CAB im Detail: <a href="http://odo.dwds.de/~moocow/software/DTA-CAB/" target="_blank" rel="noopener">http://odo.dwds.de/~moocow/software/DTA-CAB/</a>.
+          <a href="#fnref-ftn19" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+      </ol>
+    </section>
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{dta,
+  author    = {Kampkaspar, Dario},
+  title     = {Deutsches Textarchiv},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {6},
+  year      = {2017},
+  doi       = {10.18716/ride.a.6.8},
+  url       = {https://doi.org/10.18716/ride.a.6.8},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Kampkaspar, Dario
+TI  - Deutsches Textarchiv
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 6
+PY  - 2017
+DA  - 2017/09
+DO  - 10.18716/ride.a.6.8
+UR  - https://doi.org/10.18716/ride.a.6.8
+PB  - Institut für Dokumentologie und Editorik e.V.
+LA  - de
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Kampkaspar, D. (2017). Deutsches Textarchiv. RIDE – A review journal for digital editions and resources, (6). https://doi.org/10.18716/ride.a.6.8</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Kampkaspar, Dario. &#34;Deutsches Textarchiv.&#34; RIDE – A review journal for digital editions and resources, no. 6, 2017. https://doi.org/10.18716/ride.a.6.8.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Kampkaspar, Dario. &#34;Deutsches Textarchiv.&#34; RIDE – A review journal for digital editions and resources, no. 6 (2017). https://doi.org/10.18716/ride.a.6.8.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/dta/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

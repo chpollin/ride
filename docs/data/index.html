@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data &mdash; RIDE</title>
+  <meta name="description" content="Aggregated questionnaire data from RIDE reviews.">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Data">
+  <meta property="og:description" content="Aggregated questionnaire data from RIDE reviews.">
+<meta property="og:url" content="https://ride.i-d-e.de/data/">
+<link rel="canonical" href="https://ride.i-d-e.de/data/">
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/">Issues</a></li>
+        <li><a href="/data/" aria-current="page">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="container">
+<header class="page-header content-width">
+  <h1>Data Overview</h1>
+  <p>Aggregated questionnaire data across 107 reviews in 21 issues.</p>
+</header>
+
+<div class="filter-bar" aria-label="Filter by review type">
+  <button class="filter-btn is-active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="se"><span class="badge badge-editions">SE</span> Scholarly Editions (72)</button>
+  <button class="filter-btn" data-filter="dtc"><span class="badge badge-textcollections">DTC</span> Text Collections (20)</button>
+  <button class="filter-btn" data-filter="te"><span class="badge badge-tools">TE</span> Tools (18)</button>
+</div>
+
+<section class="data-section">
+  <h2>Score Distribution</h2>
+  <p>Percentage of "Yes" answers per review.</p>
+  <div class="chart-container" id="chart-scores" data-chart="{&#34;labels&#34;: [&#34;0\u201310%&#34;, &#34;10\u201320%&#34;, &#34;20\u201330%&#34;, &#34;30\u201340%&#34;, &#34;40\u201350%&#34;, &#34;50\u201360%&#34;, &#34;60\u201370%&#34;, &#34;70\u201380%&#34;, &#34;80\u201390%&#34;, &#34;90\u2013100%&#34;], &#34;values&#34;: [0, 0, 25, 53, 32, 0, 0, 0, 0, 0]}">
+  </div>
+  <details class="data-table-toggle">
+    <summary>View as table</summary>
+    <table class="data-table">
+      <thead>
+        <tr><th>Score Range</th><th>Count</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>0–10%</td><td>0</td></tr>
+        <tr><td>10–20%</td><td>0</td></tr>
+        <tr><td>20–30%</td><td>25</td></tr>
+        <tr><td>30–40%</td><td>53</td></tr>
+        <tr><td>40–50%</td><td>32</td></tr>
+        <tr><td>50–60%</td><td>0</td></tr>
+        <tr><td>60–70%</td><td>0</td></tr>
+        <tr><td>70–80%</td><td>0</td></tr>
+        <tr><td>80–90%</td><td>0</td></tr>
+        <tr><td>90–100%</td><td>0</td></tr>
+      </tbody>
+    </table>
+  </details>
+</section>
+
+<section class="data-section">
+  <h2>Criteria Breakdown</h2>
+  <p>Yes / No / N/A counts per questionnaire category.</p>
+  <div class="chart-container" id="chart-categories" data-chart="{&#34;labels&#34;: [&#34;Documentation&#34;, &#34;Contents&#34;, &#34;Access modes&#34;, &#34;Aims and methods&#34;, &#34;Technical accessability&#34;, &#34;General Information&#34;, &#34;Aims&#34;, &#34;Content&#34;, &#34;Composition&#34;, &#34;Data Modelling&#34;, &#34;Provision&#34;, &#34;User Interface&#34;, &#34;Preservation&#34;, &#34;General information&#34;, &#34;Methods and implementation&#34;, &#34;Documentation and support&#34;, &#34;Usability and sustainability&#34;, &#34;Analysability, extensibility, reusability of the code&#34;, &#34;User interaction, GUI and visualization&#34;], &#34;yes&#34;: [701, 1017, 499, 634, 427, 52, 147, 200, 194, 174, 61, 73, 116, 90, 228, 214, 209, 73, 158], &#34;no&#34;: [235, 1623, 737, 1571, 1589, 8, 373, 680, 326, 226, 139, 27, 184, 0, 420, 578, 554, 197, 132], &#34;na&#34;: [0, 24, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 0]}">
+  </div>
+  <details class="data-table-toggle">
+    <summary>View as table</summary>
+    <table class="data-table">
+      <thead>
+        <tr><th>Category</th><th>Yes</th><th>No</th><th>N/A</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Documentation</td>
+          <td>701</td>
+          <td>235</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Contents</td>
+          <td>1017</td>
+          <td>1623</td>
+          <td>24</td>
+        </tr>
+        <tr>
+          <td>Access modes</td>
+          <td>499</td>
+          <td>737</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td>Aims and methods</td>
+          <td>634</td>
+          <td>1571</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Technical accessability</td>
+          <td>427</td>
+          <td>1589</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>General Information</td>
+          <td>52</td>
+          <td>8</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Aims</td>
+          <td>147</td>
+          <td>373</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Content</td>
+          <td>200</td>
+          <td>680</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Composition</td>
+          <td>194</td>
+          <td>326</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Data Modelling</td>
+          <td>174</td>
+          <td>226</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Provision</td>
+          <td>61</td>
+          <td>139</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>User Interface</td>
+          <td>73</td>
+          <td>27</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Preservation</td>
+          <td>116</td>
+          <td>184</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>General information</td>
+          <td>90</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Methods and implementation</td>
+          <td>228</td>
+          <td>420</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Documentation and support</td>
+          <td>214</td>
+          <td>578</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Usability and sustainability</td>
+          <td>209</td>
+          <td>554</td>
+          <td>11</td>
+        </tr>
+        <tr>
+          <td>Analysability, extensibility, reusability of the code</td>
+          <td>73</td>
+          <td>197</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>User interaction, GUI and visualization</td>
+          <td>158</td>
+          <td>132</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+</section>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/charts.js" defer></script>
+</body>
+</html>

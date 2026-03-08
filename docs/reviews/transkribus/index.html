@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transkribus: Reviewing HTR training on (Greek) manuscripts &mdash; RIDE</title>
+  <meta name="description" content="
+            Transkribus is a fully developed GUI (graphical user interface) platform offering (among others) the possibility to train HTR models with AI. It supports auto-transcription and...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Transkribus: Reviewing HTR training on (Greek) manuscripts">
+  <meta property="og:description" content="
+            Transkribus is a fully developed GUI (graphical user interface) platform offering (among others) the possibility to train HTR models with AI. It supports auto-transcription and...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/transkribus/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/transkribus/">
+<meta name="DC.title" content="Transkribus: Reviewing HTR training on (Greek) manuscripts">
+<meta name="DC.creator" content="Elpida Perdiki">
+<meta name="DC.date" content="2022-12">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.15.6"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="en">
+
+<meta name="citation_title" content="Transkribus: Reviewing HTR training on (Greek) manuscripts">
+<meta name="citation_author" content="Elpida Perdiki">
+<meta name="citation_doi" content="10.18716/ride.a.15.6"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2022-12">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/transkribus/transkribus.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Transkribus: Reviewing HTR training on (Greek) manuscripts",
+  "author": [{"@type": "Person", "name": "Elpida Perdiki", "url": "https://orcid.org//"}],
+  "datePublished": "2022-12",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.15.6"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e.V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">Introduction</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">Methodology and implementation</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">An instance of Transkrib-ing</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">Usability and user’s support</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div5" class="toc-link">Interaction, GUI, and visualisation</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div6" class="toc-link">Conclusion-Desiderata</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#bibliography" class="toc-link">Bibliography</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#footnotes" class="toc-link">Notes</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>December 2022</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.15.6" rel="external">10.18716/ride.a.15.6</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-15/">
+        <span class="badge badge-tools">TE</span>
+        Issue 15
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>EN</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/transkribus/transkribus.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/transkribus/transkribus-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="en">
+    <header class="review-header">
+      <a href="/issues/issue-15/" class="review-issue-link">
+        <span class="badge badge-tools">TE</span>
+        Issue 15: Tools and Environments
+      </a>
+
+      <h1>Transkribus: Reviewing HTR training on (Greek) manuscripts</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Elpida Perdiki&nbsp;<a href="https://orcid.org//" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>        </span>
+      </div>
+
+      <div class="review-affiliation">Democritus University of Thrace, Komotini, Greece</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="https://transkribus.eu/" rel="external">Transkribus</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">Introduction</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">Methodology and implementation</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">An instance of Transkrib-ing</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">Usability and user’s support</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div5" class="toc-link">Interaction, GUI, and visualisation</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div6" class="toc-link">Conclusion-Desiderata</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#bibliography" class="toc-link">Bibliography</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#footnotes" class="toc-link">Notes</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>December 2022</span>
+<span><a href="https://doi.org/10.18716/ride.a.15.6" rel="external">DOI</a></span><a href="/reviews/transkribus/transkribus.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/transkribus/transkribus-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>Transkribus is a fully developed GUI (graphical user interface) platform offering (among others) the possibility to train HTR models with AI. It supports auto-transcription and searching of historical documents and is oriented towards Archives, Libraries, and researchers. This review describes most of Transkribus’ features by outlining the results of a project researching HTR on Greek manuscripts. Transkribus proves to be a useful solution for painlessly implementing state-of-the-art technology on Humanities, regardless of technical expertise or resources’ limitations. Any discussion in this review for further development of the platform is only provided given some of the Greek manuscripts’ peculiarities.</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>Introduction</h2>
+      <p id="p1">OCR and most recently HTR technologies have proven to be of assistance in several scientific fields offering ever-evolving solutions for off-/online text recognition. Among those, Humanities and especially research on manuscript tradition(s) could benefit a lot from the progress of such technologies. Transkribus is one of the very few projects which have fully developed a ready-to-use tool for training HTR models via ΑΙ (Artificial Intelligence) to automate historical documents’ transcription.<sup class="footnote-ref" id="fnref-ftn1"><a href="#fn-ftn1" role="doc-noteref">1</a></sup> This review of the Transkribus platform is mostly based on personal experience with the software, gained through research regarding my PhD. I have extensively used Transkribus for testing automatic transcription of large document data sets, with a case study of witnesses containing John Chrysostom’s <em>Homilies</em> of Saint Paul’s <em>Epistles to Titus</em>. Part of my research results has been published at <em>Classics@ </em>18, “Ancient Manuscripts and Virtual Research Environments” issue (<a href="#perdikietal2021" class="crossref">Perdiki and Konstantinidou 2021</a>). All points of this review take into consideration mostly the usability of the software in my field. No technical details are reviewed, as a result, an expert could cover that aspect.</p>
+<p id="p2">Initially developed by the University of Innsbruck in 2013 and the Horizon 2020 EU research project READ in 2016  (<a href="#kahleetal2027" class="crossref">Kahle et al. 2017</a>), Transkribus is a cross-platform ecosystem continually being developed since 2019 by the READ-COOP SCE, a European Cooperative Society to sustain and evolve the project.<sup class="footnote-ref" id="fnref-ftn2"><a href="#fn-ftn2" role="doc-noteref">2</a></sup> Although not fully open source, its code can be found both in GitHub and in GitLab repositories, where is now solely stored  (<a href="#kahleetal2027" class="crossref">Kahle et al. 2017</a>).<sup class="footnote-ref" id="fnref-ftn3"><a href="#fn-ftn3" role="doc-noteref">3</a></sup> Transkribus offers two main solutions for the automation of manuscript transcription. One could either work with the “Expert Client”,<sup class="footnote-ref" id="fnref-ftn4"><a href="#fn-ftn4" role="doc-noteref">4</a></sup> which has a very rich in features GUI (graphical user interface), or the “Transkribus Lite” option on a web browser,<sup class="footnote-ref" id="fnref-ftn5"><a href="#fn-ftn5" role="doc-noteref">5</a></sup> with a cleaner interface, yet a lack of some tools. In the course of my research, I have extensively used both solutions and specifically I have been working with “Expert Client” versions 1.10.0-1.16.1 on Windows (10 &amp; 11, 64bit, Intel® Core™ i5-8265U 1.60GHz, 8GB RAM) and Linux (Mint 19.00, 32 bit, Intel Pentium T3200 dual-core processor 2GHz, 3GB RAM) and with versions 1.0.7-1.3.1 of “Transkribus Lite” on a Chrome browser (versions 93.0.4577.63-97.0.4692.99). Transkribus’ “Expert Client” requires a minimum Java version 8 to be properly executed.<sup class="footnote-ref" id="fnref-ftn6"><a href="#fn-ftn6" role="doc-noteref">6</a></sup> Apart from that, no other software or hardware dependency is necessary for the platform to be fully functional.</p>
+<p id="p3">In general, Transkribus has been offered to the public as a freemium model, meaning that all versions (GUI and web-based) come free to use in most of their functionality, except for the ability to automatically transcribe documents with already trained HTR models. For that purpose, all signed up users acquire 500 free credits (equal to a 400 pages transcription) upon subscription and then move on to a payment method depending on their research needs. Other than that, Transkribus offers a scholarship programme as well, for selected students.<sup class="footnote-ref" id="fnref-ftn7"><a href="#fn-ftn7" role="doc-noteref">7</a></sup>
+            </p>
+    </section>
+    <section id="div2">
+      <h2>Methodology and implementation</h2>
+      <p id="p4">The need of accessing ancient/historical documents goes back to the first historians. People and especially scientists advance by studying sources of existing knowledge. It goes without saying that in recent years a lot of progress has been made in the field of text recognition – especially HTR, as a means to retrieve more quickly and efficiently historical documents. Transkribus builds upon that progress by integrating into one platform advanced technology tools such as HTR and layout analysis via neural network training, text to image matching, keyword spotting, TEI/XML mark-up tool, and even online collaboration on same document collections, as a form of a Virtual Research Environment (<a href="#perdikietal2021" class="crossref">Perdiki and Konstantinidou 2021</a>). Similar projects are a) eScriptorium,<sup class="footnote-ref" id="fnref-ftn8"><a href="#fn-ftn8" role="doc-noteref">8</a></sup> which seems to offer the same features but as a fully open-source application, b) python systems implemented with TensorFlow library,<sup class="footnote-ref" id="fnref-ftn9"><a href="#fn-ftn9" role="doc-noteref">9</a></sup> c) Kraken, an OCR system for historical documents,<sup class="footnote-ref" id="fnref-ftn10"><a href="#fn-ftn10" role="doc-noteref">10</a></sup> and d) Tesseract, the OCR engine developed by Google and mostly used in many projects.<sup class="footnote-ref" id="fnref-ftn11"><a href="#fn-ftn11" role="doc-noteref">11</a></sup> All the latter however presuppose advanced knowledge of coding and CLI (command-line interface).</p>
+<p id="p5">So, if one would seek for Transkribus’ innovation in the field, they should not focus specifically on HTR technology and the applied algorithm (yet not to be denied of course), but rather on the possibility of HTR to be exploited by a vast majority of researchers. Due to its effective and user-friendly environment, researchers, archives/collections, and research centres across the linguistic variety of the world could easily access and make effective use of Transkribus’ features leading to general progress in Humanities. Ancient documents, undiscovered for many years, could now be massively and automatically studied, regardless of the language they are written in. As a result, valuable historical, literary, and linguistic information could be retrieved much quicker than in the past. More importantly, despite offering state-of-the-art tools as the pioneering possibility to train your neural network for text recognition at any historical document, emphasis should lay on the fact that this very function is completely possible even with a low-power hardware machine such as a 32- or 63bit laptop and few GBs of RAM (see ibid. “Introduction”, for the technical specifications). That software’s performance proves to be liberating for independent researchers or scientific projects with a low budget/workforce (<a href="#perdikietal2021" class="crossref">Perdiki and Konstantinidou 2021</a>).</p>
+<p id="p6">
+               <figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="Rollback to specific versions option." loading="lazy"><figcaption>Fig. 1: Rollback to specific versions option.</figcaption></figure>Behind the convenient GUI platform or the web portal of Transkribus lies a compact backend architecture that consists of interconnection between several Java applications, an Apache Tomcat and an Oracle Database  (its visual representation can be found at <a href="#kahleetal2027" class="crossref">Kahle et al. 2017</a>). Subscribed users log in to the platform and import selected documents images to private collections, which are only shared with their collaborators to whom the collections manager assigns custom roles of full or restricted access under permission. File images are imported on a server via a) local folder, b) FTP, c) URL of DFG Viewer METS or d) URL of IIIF manifest. Those files are called documents and are organised in collections created by the user. Then a PAGE XML with a unique key is generated for each image – a format framework that stores documents’ structural information and image characteristics for recording and evaluating document analysis workflow  (<a href="#pletschacheretal2010" class="crossref">Pletschacher and Antonacopoulos 2010</a>; <a href="#kahleetal2027" class="crossref">Kahle et al. 2017</a>). That PAGE XML file, along with relevant metadata of the document stored in the database, is augmented to a new document version every time editing progress is saved. As a result, users can roll back to whichever version, if needed – there is a specific button for that purpose on the main panel of the software, by which users can select from a detailed list of all saved versions (see <a href="#img1" class="crossref">fig. 1</a>) </p>
+<p id="p7">An Apache Solr indexing solution provides keyword spotting through full-text search. The interface has been written in Java and C++ alongside OpenCV and JNI. All this workflow is documented in detail in the paper “Transkribus - a Service Platform for Transcription, Recognition and Retrieval of Historical Documents”  (<a href="#kahleetal2027" class="crossref">Kahle et al. 2017</a>). For layout analysis, certain tools are deployed provided by the National Centre of Scientific Research ”Demokritos” (NCSR), the Computer Vision Lab (CVL) of the Technical University Vienna, and the Computational Intelligence Technology Laboratory (CITlab) at the University of Rostock  (more on the matter can be found at Kahle et al. 2017). Text recognition is offered in two different ways: a) ABBYY FineReader 11 SDK is used for OCR (Optical Character Recognition) of printed texts and b) offline HTR engines provide manuscripts transcriptions via HMM (Hidden Markov Models) and language models, or RNN (Recurrent Neural Networks) and no language models, through developments from the Pattern Recognition and Human Language Technology (PRHLT) research centre, University of Valencia (UPVLC) and the CITlab and PLANET intelligent systems GmbH respectively  (<a href="#kahleetal2027" class="crossref">Kahle et al. 2017</a>). All systems described above are responsible for the neural model training on the data provided by the users. Users annotate via Transkribus GUI relevant points of the manuscript images and provide ground truth data of transcription. Both segmented images and their transcriptions are then considered to be training data and, when selected, can be used to train an HTR model at a certain manuscript collection. A portion of the same data is defined by the user as the validation set, which is used post-training to evaluate the HTR performance of the model  (<a href="#kahleetal2027" class="crossref">Kahle et al. 2017</a>). </p>
+    </section>
+    <section id="div3">
+      <h2>An instance of Transkrib-ing</h2>
+      <p id="p8">
+               <figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="Setting user roles and permission in collections." loading="lazy"><figcaption>Fig. 2: Setting user roles and permission in collections.</figcaption></figure>An example of usage would showcase more vividly Transkribus’ possibilities. So, once logged in (one cannot download the platform unless signing up for an account), a user can import manuscript images organised in collections (as described in the “Methodology and implementation” section ibid.). Each collection can be modified by more than one user, if users’ roles and permissions are assigned (i. e., administrator, editor, viewer etc. – see <a href="#img2" class="crossref">fig. 2</a>).</p>
+<p id="p9">
+               <figure id="img3" class="review-figure"><img src="pictures/picture-3.png" alt="Transkribus automatic layout analysis." loading="lazy"><figcaption>Fig. 3: Transkribus automatic layout analysis.</figcaption></figure>
+               <figure id="img4" class="review-figure"><img src="pictures/picture-4.png" alt="Transkribus manual layout analysis." loading="lazy"><figcaption>Fig. 4: Transkribus manual layout analysis.</figcaption></figure>That feature ensures that a researcher could work collaboratively with a group of other researchers, or even a crowdsourcing team, without risking any meddling with the training data and most importantly with expediting the research progress. All data in collaborative collections are seamlessly synchronised and connected via the Transkribus server, so any document changes are almost instantly visible (a refresh of the environment is of course required, though, should any recent change happen, a pop-up window informs the user anyhow). From that point on, users can continue to the most important step of the HTR training. Image files should be segmented to define the baseline of the text, a process known as layout analysis, which can be either automatic (see <a href="#img3" class="crossref">fig. 3</a>) or manual (see <a href="#img4" class="crossref">fig. 4</a>).</p>
+<p id="p10">
+               <figure id="img5" class="review-figure"><img src="pictures/picture-5.png" alt=" Transcription and Text2Image tool." loading="lazy"><figcaption>Fig. 5:  Transcription and Text2Image tool.</figcaption></figure>After segmentation is complete, the user may provide line per line diplomatic transcriptions of the depicted text, again either manually or automatically via “Text2Image” tool, by importing a .txt file (which must be named exactly like the image file, so Transkribus can successfully synchronise image and relevant transcription – see <a href="#img5" class="crossref">fig. 5</a>).</p>
+<p id="p11">Some discussion has arisen on how much data and epochs (number of times a learning algorithm sees the complete dataset) are necessary for successful training of any neural network really but also regarding HTR  (<a href="#stroebeletal2020" class="crossref">Ströbel, Clematide, and Volk 2020</a>). For instance, Transkribus guidelines recommend a minimum transcription of 5,000–15,000 words and 50 epochs, depending on the format of the text;<sup class="footnote-ref" id="fnref-ftn12"><a href="#fn-ftn12" role="doc-noteref">12</a></sup> printed texts require less data than manuscripts, due to the uniformity of the script style. Other researchers have experimented successfully with less data (<a href="#perdikietal2021" class="crossref">Perdiki and Konstantinidou 2021</a>) or have argued about why and when more data and more epochs could result in overfitting, meaning to worsen the HTR results  (<a href="#rabus2019" class="crossref">Rabus 2019</a>). Decision on the matter should be made after taking into consideration <ol><li>the quality of the images, </li><li>the uniformity of the script and/or the existence of more than one scribes (<a href="#perdikietal2021" class="crossref">Perdiki and Konstantinidou 2021</a>), </li><li>the utilisation of an already fully trained model in the same language (as a base model), which could boost up the training process, and </li><li>the research goals; a searchable text requires less HTR accuracy than a text to be included in a critical edition (some of those aspects are discussed at <a href="#perdikietal2021" class="crossref">Perdiki and Konstantinidou 2021)</a>. </li></ol>
+            </p>
+<p id="p12">
+               <figure id="img6" class="review-figure"><img src="pictures/picture-6.png" alt="Training an HTR model with AI." loading="lazy"><figcaption>Fig. 6: Training an HTR model with AI.</figcaption></figure>For most projects, an average of 10,000 words should suffice for a successful model. With that step completed the user can proceed to the training of the model. A relevant button can be found at the “Tools” section of the panel and a second window prompts the user to define the details of the training, such as: <ol><li>name and description of the model, </li><li>the language in which text is written [really any language at all or even more than one in the same document – I have already successfully trained models for Greek manuscripts from the 10th–14th c. A.D. (<a href="#perdikietal2021" class="crossref">Perdiki and Konstantinidou 2021</a>) and there are also few projects, that have worked with non-Latin scripts as Arabic or with multiple languages in the same model<sup class="footnote-ref" id="fnref-ftn13"><a href="#fn-ftn13" role="doc-noteref">13</a></sup>, </li><li>desired Nr. of epochs (system default is 50) and </li><li>setting the pages that will be utilised as a training set and those to be used in validation (see <a href="#img6" class="crossref">fig. 6</a>) </li></ol>
+            </p>
+<p id="p13">
+               <figure id="img7" class="review-figure"><img src="pictures/picture-7.png" alt=" Possible output formats of Transkribus documents." loading="lazy"><figcaption>Fig. 7:  Possible output formats of Transkribus documents.</figcaption></figure>If needed, one could easily benefit from an existing model in the same language, as a base model. That can be used as a means of data augmentation, as it helps train the model much faster if one has not had enough training data  (<a href="#perdikietal2021" class="crossref">Perdiki and Konstantinidou 2021</a>). Depending on the size of the data set, the training will be efficiently completed within a few hours or days. Because training is executed on Transkribus servers, during the training period the user can freely continue to use this or any other software, or even shut down his/her computer, which frees up resources and delivers a performance that does not influence interface responsiveness. Upon completion, Transkribus notifies the user via email of the training progress, and models can be successfully applied at manuscripts transcriptions, further improved if needed and even publicly published for the benefit of the whole community. Transcribed collections can be easily exported to many formats: from simple .txt files to PDF documents or even a fully structured TEI file (see <a href="#img7" class="crossref">fig. 7</a>). Exports can be sent via the platform’s server to the user’s email or saved locally to a selected folder.</p>
+<p id="p14">The accuracy and efficiency of Transkribus as a complete solution of HTR emerge from the high number of DH projects (independent researchers and archive collections) that have successfully applied the software to research related to historical documents.<sup class="footnote-ref" id="fnref-ftn14"><a href="#fn-ftn14" role="doc-noteref">14</a></sup> Moreover, Transkribus has been researched by scholars of non-Latin alphabet scripts, such as Greek or Cyrillic alphabets, enlightening thus the methodology relevant to the implementation of HTR technology  (<a href="#rabus2019" class="crossref">Rabus 2019</a>; <a href="#perdikietal2021" class="crossref">Perdiki and Konstantinidou 2021</a>; <a href="#burlacuetal2021" class="crossref">Burlacu and Rabus 2021</a>). Despite, individual differences originating from the distinctiveness of every historical collection/script, all those projects feature one common conclusion: HTR technology, especially when provided in a user-friendly environment, can and will undoubtedly speed up and facilitate research in Humanities.</p>
+    </section>
+    <section id="div4">
+      <h2>Usability and user’s support</h2>
+      <p id="p15">The scope and the length of this review do not allow for further, more detailed demonstration of all aspects and possibilities Transkribus can provide to manuscripts research. Yet, because of the richness of the platform’s tools and the sense of complexity these tools may develop to any user, the Transkribus team has provided extensive and sustained documentation of the platform titled “Resource Centre”<sup class="footnote-ref" id="fnref-ftn15"><a href="#fn-ftn15" role="doc-noteref">15</a></sup>. What used to be a wiki database, is now an .html format of all relevant information, which inform beginners or expert users for every aspect of the software. From installation instructions (covered by relevant step to step screenshots) to how-to guides of most sophisticated features, FAQs, glossary, and even YouTube video tutorials, Transkribus knowledge is gathered in one efficient portal. The same “Help” function is also available in a button form, from the GUI of both “Expert Client” as well as “Transkribus Lite.” An extra section of the documentation offers more information on the REST API provided by Transkribus, should any user like to implement it in another software.<sup class="footnote-ref" id="fnref-ftn16"><a href="#fn-ftn16" role="doc-noteref">16</a></sup> In the occasion that none of this documentation offers enough help, users could easily contact the Transkribus team via a relevant email address. From my own experience, a member of the team usually gets back to you within a day and kindly offers a solution or at least guidance towards one. If there are absolutely no solutions to a specific problem or in the case of a malfunction, users can easily report a bug or request a feature directly from the GUI of “Expert Client.” A similar feature is not currently available at “Transkribus Lite” version. Apart from that functionality, users cannot provide any actual contribution to the enhancement of the platform. All maintenance is developed under the READ project  (<a href="#kahleetal2027" class="crossref">Kahle et al. 2017</a>) and the READ-COOP SCE – hence the freemium model, fundings of which supports Transkribus’ further development.<sup class="footnote-ref" id="fnref-ftn17"><a href="#fn-ftn17" role="doc-noteref">17</a></sup>
+            </p>
+<p id="p16">
+               <figure id="img8" class="review-figure"><img src="pictures/picture-8.png" alt="Indication of multiple users working simultaneously on the same document/collection." loading="lazy"><figcaption>Fig. 8: Indication of multiple users working simultaneously on the same document/collection.</figcaption></figure>In the mentioned above documentation, there is extended information on the installation and execution of the software. Windows users can expect a flawless installation, yet I have encountered some instances in which installation was successful, but the software could not be executed. Transkribus provides guidance for that issue as well, but further action could be to temporarily disable any antivirus software. For Linux users, no issues should impact installation as it is straightforward, provided that one has experience with the Linux terminal and follows religiously Transkribus’ instructions. Uninstalling the software is as easy if needed, and updates are automatic and sound. I have no experience with Transkribus on Mac OS (Operating System), so I could not possibly offer insight on the matter. The web version of the platform, “Transkribus Lite”, requires only a sign-in step and no other plugin is needed for it to work properly. That portability of Transkribus is the main reason the platform proves to be an excellent VRE solution, especially for small research groups  (<a href="#perdikietal2021" class="crossref">Perdiki and Konstantinidou 2021</a>). Since all progress is saved in Transkribus servers, users can work simultaneously on collections and each editing version is marked up with the username of either one (see <a href="#img8" class="crossref">fig. 8</a>). The same functionality is available at “Transkribus Lite” as well. The potential of input and output multiple types offers a certain amount of interoperability, given the fact that due to the built-in text annotation feature, one could easily use exported files as data to another software. That is especially true when it concerns the TEI/XML files, which are fully machine-readable and could be used either in text mining techniques as NLP algorithms, or even in the preparation of a digital edition by encoding and structuring the transcription. </p>
+<p id="p17">The other side of Transkribus’ portability and interoperability comes (although not seamlessly) in the form of users’ data management. Treatment of all users’ data is described and determined in the relevant “General terms and conditions” page of Transkribus website,<sup class="footnote-ref" id="fnref-ftn18"><a href="#fn-ftn18" role="doc-noteref">18</a></sup> but it can be summarised under the statement: “A collection is private by default. […] Transkribus team has the right to use uploaded material for testing and improving its services.”  (<a href="#kahleetal2027" class="crossref">Kahle et al. 2017</a>). An issue may arise regarding that policy because all data is stored and handled in Innsbruck, Austria, servers, meaning that any usage of the platform must comply with the EU GDPR law (General Data Protection Regulation). According to §8.3 of the “General Terms and Conditions” Transkribus page,<sup class="footnote-ref" id="fnref-ftn19"><a href="#fn-ftn19" role="doc-noteref">19</a></sup> users can delete uploaded training and non-personal data, yet READ-COOP SCE may preserve copies of it. Considering the debatable section of GDPR “Data Deletion and Modification”  (<a href="#hacqueetal2021" class="crossref">Haque et al. 2021</a>), as well as the discussion on whether AI training data might be/contain personal data  (<a href="#liuetal2021" class="crossref">Liu et al. 2021</a>), Transkribus’ handling of users’ content seems questionable. Equally, unresolved is §8.5 in which is stated that users must ensure copyright licences for all uploaded data. That is a fair point, but a question arises on whether or not one conflicts with copyright law by using protected data in an AI training process, without distributing in public the data per se but only the research results derived from those data – a question partially answered by the §8.4, which declares that READ-COOP SCE “[…] grants the Customer all exclusive, transferable, sublicensable, worldwide indefinite rights […]” when recognition results concern copyrighted material. Although no violation of data seems to take place, researchers should carefully read “General Terms and Conditions” before deciding if they accept the management of their data.	 </p>
+    </section>
+    <section id="div5">
+      <h2>Interaction, GUI, and visualisation</h2>
+      <p id="p18">Whilst normally training neural networks requires technical expertise, firm knowledge of programming languages and coding in general, Transkribus provides the user with a compact, fully-featured, yet easy to grasp graphical environment. With the supplement of the detailed documentation, no expert knowledge is necessary for a user to start training an AI model. Thus, Transkribus’ users could either be experienced scholars/librarians or even inexperienced, simple users (students or else), which could provide valuable crowdsourcing input.</p>
+<p id="p19">
+               <figure id="img9" class="review-figure"><img src="pictures/picture-9.png" alt="Transkribus’ GUI on a Windows OS." loading="lazy"><figcaption>Fig. 9: Transkribus’ GUI on a Windows OS.</figcaption></figure>The interface of the “Expert Client” version might seem a little too complicated at the beginning, due to the small size of the numerous buttons (see <a href="#img9" class="crossref">fig. 9</a>). Although no function allows searching for a certain tool (which would be fairly appreciated, regarding the compact buttons panel), features are arranged in five (5) main tabs: server, overview, layout, metadata, and tools, which imply the relevant group of functionalities. In spite of that functionality structure, even experienced users might develop some difficulties in discovering the appropriate tool for each action. However, documentation provides useful insight for almost every aspect of the platform, so the interface becomes eventually familiar. At certain points of editing collections or training progress, prompting pop-up windows might appear, which explain functionality or remind the user of crucial steps, such as saving or refreshing documents, error messages, etc. </p>
+<p id="p20">
+               <figure id="img10" class="review-figure"><img src="pictures/picture-10.png" alt="Transkribus Lite (web version) GUI." loading="lazy"><figcaption>Fig. 10: Transkribus Lite (web version) GUI.</figcaption></figure>As mentioned earlier (see ibid. “Introduction” section), “Transkribus Lite” has a much cleaner and easy to grasp interface, which seems to be more helpful with inexperienced users (see <a href="#img10" class="crossref">fig. 10</a>).</p>
+<p id="p21">Up until recently one could only view and transcribe documents in the web version of the platform. Yet in the recent updates more functions became available and for the moment the following are possible: a) collections’ management, b) images’ uploading, c) documents’ view and editing/transcribing, d) text searching, e) HTR training or/and recognition, f) jobs viewing (as in tasks progress) and g) credit manager (as in checking credits’ balance).<sup class="footnote-ref" id="fnref-ftn20"><a href="#fn-ftn20" role="doc-noteref">20</a></sup> Lastly, despite offering the aforementioned rich in features graphical interface and the web-based version, there is also a possibility to make good use of Transkribus’ functions within third-party applications through a RESTful API  <a href="#kahleetal2027" class="crossref">(Kahle et al. 2017</a>). Full documentation of it is provided at the Resources Centre of Transkribus, as mentioned above (see ibid. “Usability and user’s support” section). </p>
+<p id="p22">
+               <figure id="img11" class="review-figure"><img src="pictures/picture-11.png" alt="Keyword spotting feature with returned results." loading="lazy"><figcaption>Fig. 11: Keyword spotting feature with returned results.</figcaption></figure>
+               <figure id="img12" class="review-figure"><img src="pictures/picture-12.png" alt="Visualisation of the HTR validation." loading="lazy"><figcaption>Fig. 12: Visualisation of the HTR validation.</figcaption></figure>
+               <figure id="img13" class="review-figure"><img src="pictures/picture-13.png" alt="Text comparison of ground truth and HTR prediction’s errors." loading="lazy"><figcaption>Fig. 13: Text comparison of ground truth and HTR prediction’s errors.</figcaption></figure>It becomes obvious then, that the possibilities of the platform are not solely restricted to training HTR models, although this is the most important feature. Transkribus offers a lot of features and tools in the compact form of a simple GUI, some of which are: a) keyword spotting, which returns results both in text and image form as well (see <a href="#img11" class="crossref">fig. 11</a>), b) TEI export of the completed transcription, c) comparison of text versions, etc. Especially, the text comparison feature proves to be particularly important to the visualisation of HTR accuracy, as it provides detailed statistics and relevant graphics of the CER [Character Error Rate] (see <a href="#img12" class="crossref">fig. 12</a>). and a ground truth-validation comparison image with colour marking of HTR errors (see <a href="#img13" class="crossref">fig. 13</a>). All these tools are helpful to evaluate the behaviour and progress of the model and thus decide further steps. </p>
+    </section>
+    <section id="div6">
+      <h2>Conclusion-Desiderata</h2>
+      <p id="p23">In the era of an exponential development of technology and under the real influence of AI in every aspect of the modern world, exploitation of state-of-the-art software/hardware in Humanities comes as a necessity. Accumulated historical knowledge of the past is patiently waiting in archives and collections to be researched. But human experts could not be enough to manually transcribe all that big data of Humanities. With that in mind projects that develop software for HTR, or any other form of ancient text mining are particularly welcome.</p>
+<p id="p24">However real the need for technical assistance in the field of manuscripts’ research, scholars do not always prove to be tech-savvy. On the other hand, because software is mostly produced (as expected) by developers-experts in their field, most DH projects are technically sophisticated and cannot thus be mainstream. What is not fully understood or difficult to use, most probably will not be used at all (see for instance the distinction between Windows and Linux users, despite Linux proving to be equally, if not more, efficient). Transkribus differentiation from similar projects is exactly the fact that the platform successfully empowered simple users with the potential of neural networks training. It offered AI in a simple and functional package, which already proves to move forward research in Humanities, as small research groups or independent researchers liberated themselves from expensive or complicated technology.</p>
+<p id="p25">Transkribus capability to be trained in reading any language is of course expected due to the technical architecture of the software (i. e., recognise characters structure and not language semantics), it is admirable nevertheless, especially with non-Latin alphabets. Greek manuscripts, which are the sole core of my experiments with Transkribus, have many peculiarities in style and format. Regardless of the wide chronological range of my data (10th–14th c. A.D.) and experiments with small datasets, Transkribus performance was always formidable. The factor of uniformity that characterises Greek medieval manuscripts was of course helpful to that direction. Even in the case of low-quality manuscript images, automatic layout analysis was hardly erroneous and upon several required transcription data, models would perform in the worst case under 20% of CER. For projects that do not necessitate high accuracy results, or for those with small datasets, that percentage of CER is more than accepted; it is usable.</p>
+<p id="p26">
+               <figure id="img14" class="review-figure"><img src="pictures/picture-14.png" alt="Ligatures’ annotation and recognition." loading="lazy"><figcaption>Fig. 14: Ligatures’ annotation and recognition.</figcaption></figure>In contrast, the very universality of Transkribus leads to some limitations regarding certain palaeographic peculiarities of Greek manuscripts. One of these aspects is about ligatures and abbreviations. When it comes to defining (and so recognising) ligatures in Greek manuscripts, often it happens to come upon a ligature in which some of the letters are written just above the others, sort of <em>supra scripsit</em>. In those cases, despite annotating the characters as <em>superscript</em> (an annotation tag offered in Transkribus toolbox), often HTR (indeed not always) fails to understand such combinations of letters – unless the user clearly defines their baseline as separate (see <a href="#img14" class="crossref">fig. 14</a>). From a point of view, that phaenomenon is not a Transkribus’ shortcoming per se, but more of a general HTR issue. One should experiment a lot before choosing the best methodology for any project. </p>
+<p id="p27">In the same context, the already existing and extremely useful virtual keyboard of special characters could be further enriched in collaboration with palaeographers. For the moment it is possible to add custom Unicode characters that will represent ligatures or other non-Latin characters of the manuscripts, but Greek ligatures are underrepresented and could be further supplemented. That way one would not have to use incorrect symbols or letters, because in that case there is the risk to confuse the neural network by teaching it to read the same letter in multiple instances: i. e. I was transcribing the ligature representing the word <em>καὶ </em>with a combination of characters, the most visibly similar <em>ς` </em>(see <a href="#img14" class="crossref">fig. 14</a>). Eventually, that choice proved to be successful, but surely it was counterproductive as well. Such minor implementations could be extremely beneficial for end-users, who prefer a complete-suit software as Transkribus than a CLI package.</p>
+<p id="p28">
+               <figure id="img15" class="review-figure"><img src="pictures/picture-15.png" alt="Baseline vs hanging line misconception." loading="lazy"><figcaption>Fig. 15: Baseline vs hanging line misconception.</figcaption></figure>Improvements could also be made in the field of layout analysis, in regard to Greek manuscripts. Segmentation of the image is completed, as stated earlier, by annotating manually or automatically the baseline of a manuscript. Yet there exist instances of Greek medieval manuscripts (mainly from the 14th c. A.D.) that form their text from a hanging line instead of a baseline  (<a href="#coulsonetal2020" class="crossref">Coulson and Babcock 2020</a>). Most surprisingly, Transkribus’ automatic analysis captured that peculiar characteristic, however, because software presupposes that a baseline is needed, line region was misplaced in the void area <em>supra script </em>(see <a href="#img15" class="crossref">fig. 15</a>). The issue was corrected by manually annotating the layout of the document, but this option would not have been practical for larger collections.</p>
+<p id="p29">Finally, as DH projects do make progress in and exploit the field of AI, we should move on to research the validity of the trained models. It is common practice to evaluate HTR models on the CER percentage of validation sets. Although, due to the complexity of real, raw data, which have not been previously curated by a researcher, evaluation of HTR models probably should not rely only on CER of validation sets, but could also include explanation techniques that may help us decide further steps on the research  (<a href="#ribeiro2016" class="crossref">Ribeiro, Singh, and Guestrin 2016</a>). The main questions are: a) how do we know if these metrics are correct or misleading and b) how easy is it to inspect training or validation data when dealing with big manuscript data? Researchers, we, should be able to trust the (trained by us) models.</p>
+    </section>
+
+    <section id="bibliography" class="review-bibliography">
+      <h2>Bibliography</h2>
+      <ol class="bib-list">
+        <li><span id="burlacuetal2021">Burlacu, Constanța, and Achim Rabus. 2021. ‘Digitising (Romanian) Cyrillic Using Transkribus: New Perspectives’. Diacronia 2021 (14): A196–A196. <a href="https://doi.org/10.17684/i14A196en" target="_blank" rel="noopener">https://doi.org/10.17684/i14A196en</a>.</span></li>
+        <li><span id="coulsonetal2020">Coulson, Frank T., and Babcock, eds. 2020. The Oxford Handbook of Latin Palaeography. The Oxford Handbook of Latin Palaeography. Oxford University Press. <a href="https://doi.org/10.1093/oxfordhb/9780195336948.001.0001" target="_blank" rel="noopener">https://doi.org/10.1093/oxfordhb/9780195336948.001.0001</a>.</span></li>
+        <li><span id="hacqueetal2021">Haque, Akm Bahalul, A. K. M. Najmul Islam, Sami Hyrynsalmi, Bilal Naqvi, and Kari Smolander. 2021. ‘GDPR Compliant Blockchains–A Systematic Literature Review’. IEEE Access 9: 50593–606. <a href="https://doi.org/10.1109/ACCESS.2021.3069877" target="_blank" rel="noopener">https://doi.org/10.1109/ACCESS.2021.3069877</a>.</span></li>
+        <li><span id="kahleetal2027">Kahle, Philip, Sebastian Colutto, Gunter Hackl, and Gunter Muhlberger. 2017. ‘Transkribus - A Service Platform for Transcription, Recognition and Retrieval of Historical Documents’. In 2017 14th IAPR International Conference on Document Analysis and Recognition (ICDAR), 19–24. Kyoto: IEEE. <a href="https://doi.org/10.1109/ICDAR.2017.307" target="_blank" rel="noopener">https://doi.org/10.1109/ICDAR.2017.307</a>.</span></li>
+        <li><span id="liuetal2021">Liu, Bo, Ming Ding, Sina Shaham, Wenny Rahayu, Farhad Farokhi, and Zihuai Lin. 2021. ‘When Machine Learning Meets Privacy: A Survey and Outlook’. ACM Computing Surveys 54 (2): 31:1-31:36. <a href="https://doi.org/10.1145/3436755" target="_blank" rel="noopener">https://doi.org/10.1145/3436755</a>.</span></li>
+        <li><span id="perdikietal2021">Perdiki, Elpida, and Maria Konstantinidou. 2021. ‘Handling Big Manuscript Data’. Edited by Claire Clivaz and V. Allen Garrick. Classics@ 18 (Ancient Manuscripts and Virtual Research Environments, special issue). <a href="https://classics-at.chs.harvard.edu/classics18-perdiki-and-konstantinidou/" target="_blank" rel="noopener">https://classics-at.chs.harvard.edu/classics18-perdiki-and-konstantinidou/</a>.</span></li>
+        <li><span id="pletschacheretal2010">Pletschacher, Stefan, and Apostolos Antonacopoulos. 2010. ‘The PAGE (Page Analysis and Ground-Truth Elements) Format Framework’. In 2010 20th International Conference on Pattern Recognition, 257–60. Istanbul, Turkey: IEEE. <a href="https://doi.org/10.1109/ICPR.2010.72" target="_blank" rel="noopener">https://doi.org/10.1109/ICPR.2010.72</a>.</span></li>
+        <li><span id="rabus2019">Rabus, Achim. 2019. ‘Recognizing Handwritten Text in Slavic Manuscripts: A Neural-Network Approach Using Transkribus’. Scripta &amp; E-Scripta 19: 9–32.</span></li>
+        <li><span id="ribeiro2016">Ribeiro, Marco Tulio, Sameer Singh, and Carlos Guestrin. 2016. ‘“Why Should I Trust You?”: Explaining the Predictions of Any Classifier’. ArXiv:1602.04938 [Cs, Stat], August. <a href="http://arxiv.org/abs/1602.04938" target="_blank" rel="noopener">http://arxiv.org/abs/1602.04938</a>.</span></li>
+        <li><span id="stroebeletal2020">Ströbel, Phillip Benjamin, Simon Clematide, and Martin Volk. 2020. ‘How Much Data Do You Need? About the Creation of a Ground Truth for Black Letter and the Effectiveness of Neural OCR’. In Proceedings of the 12th Language Resources and Evaluation Conference, 3551–59. Marseille, France: European Language Resources Association. <a href="https://www.aclweb.org/anthology/2020.lrec-1.436" target="_blank" rel="noopener">https://www.aclweb.org/anthology/2020.lrec-1.436</a>.</span></li>
+      </ol>
+    </section>
+
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        <li id="fn-ftn1" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20211108183341/https:/readcoop.eu/transkribus/" target="_blank" rel="noopener">https://web.archive.org/web/20211108183341/https:/readcoop.eu/transkribus/</a>
+               
+          <a href="#fnref-ftn1" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn2" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20211213175714/https://readcoop.eu/about/" target="_blank" rel="noopener">https://web.archive.org/web/20211213175714/https://readcoop.eu/about/</a>
+               
+          <a href="#fnref-ftn2" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn3" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20211213181217/https://github.com/transkribus/" target="_blank" rel="noopener">https://web.archive.org/web/20211213181217/https://github.com/transkribus/</a> and <a href="https://web.archive.org/web/20211213184430/https://gitlab.com/readcoop/transkribus" target="_blank" rel="noopener">https://web.archive.org/web/20211213184430/https://gitlab.com/readcoop/transkribus</a> respectively.
+          <a href="#fnref-ftn3" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn4" class="footnote-item">
+          
+                  <a href="http://web.archive.org/web/20211113063459/https:/readcoop.eu/transkribus/download/" target="_blank" rel="noopener">http://web.archive.org/web/20211113063459/https://readcoop.eu/transkribus/download/</a>
+               
+          <a href="#fnref-ftn4" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn5" class="footnote-item">
+          
+                  <a href="http://web.archive.org/web/20220119164148/https:/transkribus.eu/lite/" target="_blank" rel="noopener">http://web.archive.org/web/20220119164148/https://transkribus.eu/lite/</a>
+               
+          <a href="#fnref-ftn5" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn6" class="footnote-item">
+           See “Supported Operating Systems” at: <a href="https://web.archive.org/web/20220123181926/https:/readcoop.eu/transkribus/howto/how-to-download-install-and-run-transkribus/" target="_blank" rel="noopener">https://web.archive.org/web/20220123181926/https://readcoop.eu/transkribus/howto/how-to-download-install-and-run-transkribus/</a>.
+          <a href="#fnref-ftn6" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn7" class="footnote-item">
+           More about pricing options, studentship and credits’ management can be found at: <a href="http://web.archive.org/web/20211118014952/https:/readcoop.eu/transkribus/credits/" target="_blank" rel="noopener">http://web.archive.org/web/20211118014952/https://readcoop.eu/transkribus/credits/</a>.
+          <a href="#fnref-ftn7" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn8" class="footnote-item">
+           More information about the project can be found at: <a href="https://web.archive.org/web/20220102050954/https://escriptorium.fr/" target="_blank" rel="noopener">https://web.archive.org/web/20220102050954/https://escriptorium.fr/</a>
+                  .
+               
+          <a href="#fnref-ftn8" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn9" class="footnote-item">
+           See for instance “SimpleHTR” project at: <a href="https://web.archive.org/web/20220124180144/https:/github.com/githubharald/SimpleHTR" target="_blank" rel="noopener">https://web.archive.org/web/20220124180144/https://github.com/githubharald/SimpleHTR</a>.
+          <a href="#fnref-ftn9" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn10" class="footnote-item">
+           More information about the project are available at: <a href="https://web.archive.org/web/20220129152558/http:/kraken.re/master/index.html" target="_blank" rel="noopener">https://web.archive.org/web/20220129152558/http://kraken.re/master/index.html</a>.
+          <a href="#fnref-ftn10" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn11" class="footnote-item">
+           Tesseract repository can be found at GitHub: <a href="https://web.archive.org/web/20220125061256/https:/github.com/tesseract-ocr/tesseract" target="_blank" rel="noopener">https://web.archive.org/web/20220125061256/https://github.com/tesseract-ocr/tesseract</a>.
+          <a href="#fnref-ftn11" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn12" class="footnote-item">
+           As defined in Transkribus’ documentation: <a href="https://web.archive.org/web/20220130213434/https://readcoop.eu/transkribus/howto/use-transkribus-in-10-steps/" target="_blank" rel="noopener">https://web.archive.org/web/20220130213434/https://readcoop.eu/transkribus/howto/use-transkribus-in-10-steps/</a>. 
+          <a href="#fnref-ftn12" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn13" class="footnote-item">
+          See for instance the multi-language model trained on 6 different languages and centuries data:  <a href="https://web.archive.org/web/20220130101732/https://readcoop.eu/model/transkribus-print-multi-language-dutch-german-english-finnish-french-swedish-etc/" target="_blank" rel="noopener">https://web.archive.org/web/20220130101732/https://readcoop.eu/model/transkribus-print-multi-language-dutch-german-english-finnish-french-swedish-etc/</a>, or the experiments conducted on Arabic manuscripts by Dr Adi Keinan-Schoonbaert, Digital Curator for Asian and African Collections, British Library: <a href="https://web.archive.org/web/20210416133914/https://blogs.bl.uk/digital-scholarship/2020/01/using-transkribus-for-arabic-handwritten-text-recognition.html" target="_blank" rel="noopener">https://web.archive.org/web/20210416133914/https://blogs.bl.uk/digital-scholarship/2020/01/using-transkribus-for-arabic-handwritten-text-recognition.html</a>.
+          <a href="#fnref-ftn13" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn14" class="footnote-item">
+           Transkribus has dedicated a page informing for such projects at: <a href="https://web.archive.org/web/20220129182000/https:/readcoop.eu/success-stories/" target="_blank" rel="noopener">https://web.archive.org/web/20220129182000/https://readcoop.eu/success-stories/</a>. See also the crowdsourcing UCL’s Bentham Project: <a href="https://web.archive.org/web/20220130135024/https://www.ucl.ac.uk/news/2019/aug/transcribing-brunels-illegible-handwriting-using-ai/" target="_blank" rel="noopener">https://web.archive.org/web/20220130135024/https://www.ucl.ac.uk/news/2019/aug/transcribing-brunels-illegible-handwriting-using-ai/</a>. 
+          <a href="#fnref-ftn14" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn15" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20220130141552/https://readcoop.eu/transkribus/resources/" target="_blank" rel="noopener">https://web.archive.org/web/20220130141552/https://readcoop.eu/transkribus/resources/</a>.
+          <a href="#fnref-ftn15" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn16" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20220130144402/https://readcoop.eu/transkribus/docu/rest-api/" target="_blank" rel="noopener">https://web.archive.org/web/20220130144402/https://readcoop.eu/transkribus/docu/rest-api/</a>.
+          <a href="#fnref-ftn16" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn17" class="footnote-item">
+           See ibid. “Introduction” and note 3.
+          <a href="#fnref-ftn17" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn18" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20211106145137/https://readcoop.eu/terms-and-conditions/" target="_blank" rel="noopener">https://web.archive.org/web/20211106145137/https://readcoop.eu/terms-and-conditions/</a>. 
+          <a href="#fnref-ftn18" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn19" class="footnote-item">
+           See ibid note 18.
+          <a href="#fnref-ftn19" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn20" class="footnote-item">
+           All functions along with relevant screenshots are available at: <a href="https://web.archive.org/web/20220121150815/https://transkribus.eu/lite/" target="_blank" rel="noopener">https://web.archive.org/web/20220121150815/https://transkribus.eu/lite/</a>. 
+          <a href="#fnref-ftn20" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+      </ol>
+    </section>
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{transkribus,
+  author    = {Perdiki, Elpida},
+  title     = {Transkribus: Reviewing HTR training on (Greek) manuscripts},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {15},
+  year      = {2022},
+  doi       = {10.18716/ride.a.15.6},
+  url       = {https://doi.org/10.18716/ride.a.15.6},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Perdiki, Elpida
+TI  - Transkribus: Reviewing HTR training on (Greek) manuscripts
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 15
+PY  - 2022
+DA  - 2022/12
+DO  - 10.18716/ride.a.15.6
+UR  - https://doi.org/10.18716/ride.a.15.6
+PB  - Institut für Dokumentologie und Editorik e.V.
+LA  - en
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Perdiki, E. (2022). Transkribus: Reviewing HTR training on (Greek) manuscripts. RIDE – A review journal for digital editions and resources, (15). https://doi.org/10.18716/ride.a.15.6</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Perdiki, Elpida. &#34;Transkribus: Reviewing HTR training on (Greek) manuscripts.&#34; RIDE – A review journal for digital editions and resources, no. 15, 2022. https://doi.org/10.18716/ride.a.15.6.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Perdiki, Elpida. &#34;Transkribus: Reviewing HTR training on (Greek) manuscripts.&#34; RIDE – A review journal for digital editions and resources, no. 15 (2022). https://doi.org/10.18716/ride.a.15.6.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/transkribus/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

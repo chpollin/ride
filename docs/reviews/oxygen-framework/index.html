@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untangling Data Complexity: Custom Oxygen Frameworks for Edition Projects &mdash; RIDE</title>
+  <meta name="description" content="
+            Consistency and coherence in annotated and enriched data are vital to the success of
+               any digital edition project. Custom frameworks within the oXygen XML Editor provide...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Untangling Data Complexity: Custom Oxygen Frameworks for Edition Projects">
+  <meta property="og:description" content="
+            Consistency and coherence in annotated and enriched data are vital to the success of
+               any digital edition project. Custom frameworks within the oXygen XML Editor provide...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/oxygen-framework/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/oxygen-framework/">
+<meta name="DC.title" content="Untangling Data Complexity: Custom Oxygen Frameworks for Edition Projects">
+<meta name="DC.creator" content="Jennifer Bunselmeier">
+<meta name="DC.creator" content="Sina Krottmaier">
+<meta name="DC.date" content="2024-12">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.19.2"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="en">
+
+<meta name="citation_title" content="Untangling Data Complexity: Custom Oxygen Frameworks for Edition Projects">
+<meta name="citation_author" content="Jennifer Bunselmeier">
+<meta name="citation_author" content="Sina Krottmaier">
+<meta name="citation_doi" content="10.18716/ride.a.19.2"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2024-12">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/oxygen-framework/oxygen-framework.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Untangling Data Complexity: Custom Oxygen Frameworks for Edition Projects",
+  "author": [{"@type": "Person", "name": "Jennifer Bunselmeier", "url": "https://orcid.org/0000-0001-8011-2376"}, {"@type": "Person", "name": "Sina Krottmaier", "url": "https://orcid.org/0000-0002-7966-7996"}],
+  "datePublished": "2024-12",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.19.2"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e.V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">The Reviewer</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">Introduction</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">Identification of the Tool</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">Technical Aspects</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div5" class="toc-link">Creating a Framework</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div6" class="toc-link">Conclusion</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#bibliography" class="toc-link">Bibliography</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#footnotes" class="toc-link">Notes</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>December 2024</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.19.2" rel="external">10.18716/ride.a.19.2</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-19/">
+        <span class="badge badge-tools">TE</span>
+        Issue 19
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>EN</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/oxygen-framework/oxygen-framework.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/oxygen-framework/oxygen-framework-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="en">
+    <header class="review-header">
+      <a href="/issues/issue-19/" class="review-issue-link">
+        <span class="badge badge-tools">TE</span>
+        Issue 19: Tools and Environments
+      </a>
+
+      <h1>Untangling Data Complexity: Custom Oxygen Frameworks for Edition Projects</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Jennifer Bunselmeier&nbsp;<a href="https://orcid.org/0000-0001-8011-2376" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>,         </span>
+        <span class="review-author">
+          Sina Krottmaier&nbsp;<a href="https://orcid.org/0000-0002-7966-7996" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>        </span>
+      </div>
+
+      <div class="review-affiliation">University of Wuppertal, Wuppertal</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/authoring_customization.html" rel="external">Custom Oxygen Frameworks</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">The Reviewer</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">Introduction</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">Identification of the Tool</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">Technical Aspects</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div5" class="toc-link">Creating a Framework</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div6" class="toc-link">Conclusion</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#bibliography" class="toc-link">Bibliography</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#footnotes" class="toc-link">Notes</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>December 2024</span>
+<span><a href="https://doi.org/10.18716/ride.a.19.2" rel="external">DOI</a></span><a href="/reviews/oxygen-framework/oxygen-framework.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/oxygen-framework/oxygen-framework-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>Consistency and coherence in annotated and enriched data are vital to the success of
+               any digital edition project. Custom frameworks within the oXygen XML Editor provide a
+               user-friendly approach for editors to interact directly with XML data, thus lowering
+               entry barriers and ensuring consistency across datasets. Drawing on our experiences as customisers, this review explores the benefits and
+               limitations of these custom frameworks, highlighting their potential for
+               interdisciplinary teams with varying levels of XML expertise. We critically examine
+               the technical requirements for creating and maintaining custom frameworks, as well as
+               the current state of documentation. We also discuss challenges that users may face
+               with oXygen’s complex interface. Once implemented, frameworks facilitate uniform data
+               input, allow for the automation of repetitive annotation tasks, and integrate
+               seamlessly with project workflows, thereby enabling users to focus on annotation
+               tasks in an environment tailored to the specific needs of each project. In our 
+               opinion, despite being underutilised and insufficiently promoted within the
+               oXygen platform, custom frameworks offer extensive functionalities that meet the
+               needs of a wide variety of edition projects.</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>The Reviewer</h2>
+      <p id="p1">Dr Jennifer Bunselmeier is a Digital Humanities research assistant in the
+               digital edition projects ‘Rhodomanologia’ (classical philology) and ‘Niklas
+               Luhmann-Archiv’ (sociology) at the University of Wuppertal. Her expertise lies in
+               data modelling, data curation, frontend design, and workflow management. She has been
+               developing and maintaining custom oXygen frameworks for five years.</p>
+<p id="p2">Sina Krottmaier is a research assistant in the project ‘History as a
+               Visual Concept Peter of Poitiers’ Compendium historiae’ at the Department of Digital
+               Humanities at the University of Graz. In this project, she is currently developing
+               and maintaining a custom oXygen framework to simplify and streamline the process of
+               collecting metadata for users. </p>
+    </section>
+    <section id="div2">
+      <h2>Introduction</h2>
+      <p id="p3">Consistency and coherence of annotated and enriched data are crucial for
+               successful edition projects. To extract necessary information from the data, it must
+               be encoded in accordance with established standards. However, when dealing with large
+               amounts of data, this can be a challenging task, particularly when an
+               interdisciplinary project team with varying levels of editorial and XML expertise is
+               involved. In some cases, ensuring uniformity and consistency of data can pose a
+               significant challenge in a project. </p>
+<p id="p4">This review examines a very powerful, yet regrettably ‘hidden tool’ in
+               the oXygen XML Editor (see <a href="#syncro2024m" class="crossref">SyncRo Soft
+                  2002–2024m</a>): custom oXygen frameworks. First, we will provide a brief
+               overview of the tool’s advantages and disadvantages. Then the technical aspects,
+               particularly the installation process, necessary conceptual steps and the tool’s GUI,
+               documentation, and learnability will be discussed, including an overview of relevant
+               functionalities and the relevant terminology. Finally, we summarise the tool’s
+               strengths and weaknesses and evaluate its usefulness for digital edition
+               projects.</p>
+    </section>
+    <section id="div3">
+      <h2>Identification of the Tool</h2>
+      <p id="p5">Custom oXygen frameworks (hereafter referred to as
+               <em>framework</em>) are an integrated feature of the oXygen XML Editor (hereafter
+               referred to as <em>oXygen</em>). The proprietary editor, which has been
+               continuously developed and maintained by SyncRo Soft SRL since 2002, specialises in
+               XML-heavy authoring, developing and annotating tasks. It is widely used not only in
+               the private sector (see <a href="#syncro2024g" class="crossref">ibid.
+                  2002–2024g</a>), but also in the Digital Humanities community. Due to the
+               proprietary nature of oXygen (see <a href="#syncro2024g" class="crossref">ibid.</a>), the creation and especially the use of frameworks is only possible
+               once the software has been purchased by all users, meaning that functionality depends
+               on possessing a valid oXygen software license<sup class="footnote-ref" id="fnref-ftn1"><a href="#fn-ftn1" role="doc-noteref">1</a></sup>.</p>
+<p id="p6">There are two types of frameworks integrated into oXygen: predefined
+               frameworks for various XML specifications (e.g. TEI<sup class="footnote-ref" id="fnref-ftn2"><a href="#fn-ftn2" role="doc-noteref">2</a></sup> or DITA<sup class="footnote-ref" id="fnref-ftn3"><a href="#fn-ftn3" role="doc-noteref">3</a></sup>), and custom frameworks, which are created from scratch for
+               specific requirements. The integration of the custom frameworks option can be traced back at least to version 13.2 of oXygen, published in 2012.
+               Since then, the functionality has continuously evolved, with the latest
+               changes introduced in Version 25.1 in 2023 (see <a href="#syncro2023" class="crossref">SyncRo Soft SRL 2023</a>). </p>
+<p id="p7">This review concentrates on the second type – the option to construct
+               frameworks from scratch. It assesses the effort required from the perspective of a
+               user-developer (hereafter <em>customiser</em>). However, to comprehensively
+               address this, it is essential to also evaluate the tool’s output – the crafted
+               framework – as perceived by the <em>user</em><sup class="footnote-ref" id="fnref-ftn4"><a href="#fn-ftn4" role="doc-noteref">4</a></sup>. The review will use the term
+                  <em>tool</em> to refer to the features for creating a framework, while also
+               considering the created framework as a tool to facilitate XML annotation.</p>
+<p id="p8">Furthermore, it is important to note, that working with oXygen frameworks
+               not automatically means working with ediarum (see <a href="#telota2024a" class="crossref">Berlin-Brandenburgische Akademie der Wissenschaften, and
+                  TELOTA - IT/DH 2024a</a>; <a href="#dumontetal2021" class="crossref">Dumont
+                  et al. 2021</a>). Ediarum is an environment that enables collaborative working
+               and publishing of edition projects. The environment consists of multiple software
+               components, one of which specifically utilises the framework tool of oXygen and
+               expands it by adding additional functionalities. It also incorporates a database
+                  (eXist-db<sup class="footnote-ref" id="fnref-ftn5"><a href="#fn-ftn5" role="doc-noteref">5</a></sup>) which,
+               when set up on a server, enables collaborative working on and publishing of edition
+               projects. Alternatively, it is possible to include the ediarum.jar in an existing
+               framework to add additional java operations. (<a href="#telota2024b" class="crossref">Berlin-Brandenburgische Akademie der Wissenschaften, and
+                  TELOTA - IT/DH 2024b</a>; <a href="#telota2024b" class="crossref">ibid.
+                  2024c</a>; <a href="#fechner2023" class="crossref">Fechner 2023</a>)</p>
+<p id="p9">So, while ediarum can be broadly described as a large-scale working
+               environment, frameworks are a feature in the oXygen editor itself. Therefore, oXygen
+               frameworks are not the same as ediarum, but ediarum utilises the oXygen framework
+               functionality and incorporates it into its working environment. Since creating custom
+               oXygen frameworks is entirely sufficient for our project work, our review will focus
+               specifically on this aspect: the creation and usefulness of custom oXygen frameworks
+               for edition projects.<sup class="footnote-ref" id="fnref-ftn6"><a href="#fn-ftn6" role="doc-noteref">6</a></sup></p>
+<h3 id="div3.1">What Is an oXygen Framework?</h3>
+<p id="p10">When editing an XML file, oXygen enables users to seamlessly switch
+                  between an XML view (Text mode), displaying the raw XML code, and a visual editing
+                  environment (Author mode). In Author mode, the code is presented in a visually
+                  enhanced format. A framework is a configuration or set of rules defining how XML
+                  documents are structured, presented, and edited.</p>
+<p id="p11">The advantage of the Author mode is that it enables users with little
+                  or no knowledge of XML to work with XML files without having to engage directly
+                  with the XML code, as it is hidden from them. For example, the editing process can
+                  be made more controlled and streamlined by displaying only those fields (elements)
+                  that are to be filled with content, or by implementing dropdown menus that allow
+                  only certain predefined values to be added to the XML file. Users can insert,
+                  modify, or delete XML fragments using various functionalities without accessing
+                  the actual source code. Hiding the source code behind a form-like appearance
+                  minimises errors and inconsistencies, such as inserting elements in the wrong
+                  place or the accidental deletion of elements. </p>
+<p id="p12">A framework can be as simple or as complex as required, varying
+                  greatly in the number of functionalities and features provided. Frameworks can
+                  therefore be tailored to different data complexities and requirements, and are not
+                  limited to specific use cases. </p>
+<p id="p13">It is crucial to note that the framework options are both extensive
+                  and powerful, mirroring the capabilities of oXygen. However, this review will only
+                  focus on and assess the functionalities we deem useful for projects working on
+                  digital editions, as shown in section ‘Creating a Framework’.</p>
+    </section>
+    <section id="div4">
+      <h2>Technical Aspects</h2>
+      <p id="p14">This section focuses on the technical aspects of installing and using
+               the tool.</p>
+<h3 id="div4.1">General Technical Aspects</h3>
+<p id="p15">oXygen and its functionalities are written in Java. However, as
+                  oXygen is designed for editing and processing XML data, customisers only require Java
+                  skills if they wish to modify or expand core functionalities or write their own
+                  operations. The integrated functionalities should be sufficient to handle most use
+                  cases. Moreover, since XML is the designated data format, all operations related
+                  to XML data (such as XPath, XQuery, XSLT transformations, schemata) are fully
+                     supported.<sup class="footnote-ref" id="fnref-ftn7"><a href="#fn-ftn7" role="doc-noteref">7</a></sup></p>
+<p id="p16">Performance issues emerge in larger files (initially observed in a
+                  1.3 MB file), especially when combined with complex CSS rendering and continuous
+                  background validation. The framework’s response time noticeably slows down,
+                  impacting processes like inserting fragments or navigating from one fillable form
+                  field to another. As of now, the exact cause and potential countermeasures have
+                  not yet been determined, as this issue has not been systematically analysed.</p>
+<h3 id="div4.2">Installation and Building Process</h3>
+<p id="p17">
+                  <figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="Initial folder structure of a framework." loading="lazy"><figcaption>Fig. 1: Initial folder structure of a framework.</figcaption></figure>
+                  <figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="Referencing of the framework in the Document Type
+                        Association tab." loading="lazy"><figcaption>Fig. 2: Referencing of the framework in the Document Type
+                        Association tab.</figcaption></figure>
+                  oXygen allows users and customisers to create and use frameworks, regardless of the
+                  operating system used<sup class="footnote-ref" id="fnref-ftn8"><a href="#fn-ftn8" role="doc-noteref">8</a></sup>. However, it is important to note that the editor’s
+                  interface and the layout of the created framework, including spacing and field
+                  size, may vary. The steps required for installing a framework depend on the person’s
+                  role, whether they are a customiser (i.e. technical personnel) or a user (i.e.
+                  involved in editing the texts).</p>
+<p id="p18">For customisers, in order to create a framework for a project, a few
+                  preparatory steps and configurations are necessary.<sup class="footnote-ref" id="fnref-ftn9"><a href="#fn-ftn9" role="doc-noteref">9</a></sup> Those include: <ul><li>The creation of a specific folder hierarchy (e.g., Demo/framework), as
+                        well as folders for icons, templates and a CSS file (<a href="#img1" class="crossref">fig. 1</a>).</li><li>The referencing of the folder structure as a Location in the Document
+                        Type Association Tab in oXygen (<a href="#img2" class="crossref">fig. 2</a>).</li><li>The actual creation process of a new framework (Document Type) in the
+                        Document Type Association Tab.</li></ul></p>
+<p id="p19"><figure id="img3" class="review-figure"><img src="pictures/picture-3.png" alt="Association rules of a framework." loading="lazy"><figcaption>Fig. 3: Association rules of a framework.</figcaption></figure>During this creation process, the framework is named, the previously
+                  created folders and files (framework folder, template folder, and CSS) are
+                  assigned, and the criteria on the basis of which a framework is applied to a file
+                  (association rules) are defined by the customiser. 
+               </p>
+<p id="p20">For instance, <a href="#img3" class="crossref">fig. 3</a> shows the association rules for a Demo framework
+                  specifying that it is applicable to all TEI files with the attribute <code>@rendition</code>
+                  and the value ‘demo’ in the <code>&lt;TEI&gt;</code> root element. </p>
+<p id="p21"><figure id="img4" class="review-figure"><img src="pictures/picture-4.png" alt="Framework folder structure after all configurations." loading="lazy"><figcaption>Fig. 4: Framework folder structure after all configurations.</figcaption></figure>After all these configurations, the newly created framework will be
+                  visible in the Document Type Association list. It is crucial that customisers
+                  initialise the framework by clicking on ‘Apply’. This will automatically generate
+                  a *.<em>framework</em> file in the chosen directory, containing all the
+                  framework’s information (<a href="#img4" class="crossref">fig. 4</a>). </p>
+<p id="p22">Once these steps have been completed, customisers can start editing
+                  the framework. It is recommended to create an oXygen project for the development
+                  process (see <a href="#syncro2024d" class="crossref">SyncRo Soft SRL
+                     2002–2024d</a>), as this allows for quicker access to the files.</p>
+<p id="p23">To use a framework, all users need to do is associate it in oXygen.
+                  For this, customisers can either package the framework as an add-on for users to
+                  integrate or implement a GitHub (see <a href="#github2024" class="crossref">GitHub Inc. 2024</a>) or GitLab (see <a href="#gitlab2024" class="crossref">GitLab B.V. 2024</a>) workflow for file sharing, which
+                  has proven effective for us<sup class="footnote-ref" id="fnref-ftn10"><a href="#fn-ftn10" role="doc-noteref">10</a></sup>. If the latter is set up, users can simply: <ul><li>Clone the framework repository from GitHub (or GitLab).</li><li>Open oXygen, navigate to the Document Type Association Tab, and add the
+                        cloned folder structure as a Location.</li></ul>The framework is then added to oXygen, and any file containing the
+                  defined attribute-value pair in the root element will automatically be rendered
+                  using the framework’s layout and have all its features.</p>
+    </section>
+    <section id="div5">
+      <h2>Creating a Framework</h2>
+      <p id="p24">This section focuses on the process of creating a framework and
+               highlights its most important components. This includes technical and conceptual
+               prerequisites, an evaluation of the tool’s graphical user interface (GUI) and
+               documentation, and examples showcasing core features and functionalities.</p>
+<h3 id="div5.1">Technical Know-How</h3>
+<p id="p25">For customisers, proficiency in CSS is essential for the design, as
+                  XML is translated into the visually appealing and user-friendly display of the
+                  Author mode through CSS. To selectively address and manipulate individual elements
+                  within the – sometimes intricate – XML structure or to insert a fragment at a
+                  context-dependent location, the ability to navigate the XML tree using XPath
+                  expressions is also necessary.<sup class="footnote-ref" id="fnref-ftn11"><a href="#fn-ftn11" role="doc-noteref">11</a></sup>
+               </p>
+<p id="p26">While not strictly necessary, an understanding of the concept of
+                  variables and skills in XSL, XQuery, or JavaScript are helpful for making full use
+                  of the tool, as it supports the inclusion of scripts via dedicated Author Mode
+                  operations (e.g. JSOperation, XSLTOperation, and XQueryOperation<sup class="footnote-ref" id="fnref-ftn12"><a href="#fn-ftn12" role="doc-noteref">12</a></sup>). This allows for more complex XML
+                  manipulations for which the tool does not provide build-in operations. </p>
+<p id="p27">Finally, knowledge of and the use of schemata such as XML Schema (see
+                     <a href="#w3cetal2004" class="crossref">W3C, Fallside, and Walmsley
+                     2004</a>) or RelaxNG (see <a href="#relax2014" class="crossref">“RELAX NG
+                     Home Page” 2014</a>) facilitate control over the data, preventing issues such
+                  as proliferation of attribute values, and ensuring that fragments are only
+                  inserted in valid places.</p>
+<h3 id="div5.2">Conceptual Know-How</h3>
+<p id="p28">Before commencing framework development, the project’s conceptual
+                  objectives, requirements, and prerequisites must be established. This is vital for
+                  creating a tailored framework that meets the project’s specific needs. The process
+                  involves a comprehensive analysis of the source material and identification of
+                  existing groundwork (e.g. existing annotations of the data and / or defined data
+                  model) and requirements for the framework (e.g. how should it support users, what
+                  should be recorded and how). It also requires addressing questions related to the
+                  depth of information, features of the published (digital) edition, and any
+                  research questions the project aims to answer.</p>
+<p id="p29">Guided by these conceptual considerations and building upon a data
+                     model<sup class="footnote-ref" id="fnref-ftn13"><a href="#fn-ftn13" role="doc-noteref">13</a></sup>, customisers
+                  can create template XML files, which are then accessible to users through oXygen’s
+                  ‘New Document’ option.<sup class="footnote-ref" id="fnref-ftn14"><a href="#fn-ftn14" role="doc-noteref">14</a></sup> Templates provide the project’s individual XML
+                  structure and placeholders for data entry, ensuring uniformity across all
+                  files.</p>
+<h3 id="div5.3">Technical Interface and GUI</h3>
+<p id="p30">Once created, the framework is stored in a .<em>framework</em>
+                  file, which is a configuration XML file that encapsulates all the settings and
+                  resources needed to work with XML-based documents associated through document type
+                  association. This means, it can be manually accessed and edited in oXygen, just
+                  like any other XML file. Alternatively, the tool provides a graphical user
+                  interface (GUI). It primarily consists of classical dialogue boxes for creating
+                  and editing the framework.</p>
+<p id="p31"><figure id="img5" class="review-figure"><img src="pictures/picture-5.png" alt="Action configuration options in the framework options
+                     dialogue box." loading="lazy"><figcaption>Fig. 5: Action configuration options in the framework options
+                     dialogue box.</figcaption></figure>The GUI generally poses no obstacle for customisers familiar with
+                  working with oXygen. It has the advantage of providing framework variables and
+                  displaying all possible options for selection, making it easier to configure
+                  settings without needing to know the exact XML syntax. However, the tool follows a
+                  logically formal arrangement of options, which regrettably causes essential
+                  settings to be somewhat hidden. It might be helpful if fundamental configuration
+                  options were more prominently placed or highlighted. For example, while actions
+                  are the core features of each framework, their configuration options are found
+                  only in the fourth tab within the second submenu of the dialogue box (<a href="#img5" class="crossref">fig. 5</a>).
+                     
+               </p>
+<p id="p32"><figure id="img6" class="review-figure"><img src="pictures/picture-6.png" alt="Options to create a custom oXygen toolbar (here
+                           ‘Rhodomanologia’)." loading="lazy"><figcaption>Fig. 6: Options to create a custom <em>oXygen toolbar (here
+                           ‘Rhodomanologia’)</em>.</figcaption></figure>
+                  <figure id="img7" class="review-figure"><img src="pictures/picture-7.png" alt="Example of a framework’s custom toolbar and menu with
+                        individual icons and descriptions." loading="lazy"><figcaption>Fig. 7: Example of a framework’s custom toolbar and menu with
+                        individual icons and descriptions.</figcaption></figure>The same applies to the valuable option of integrating the
+                  framework’s actions into a new custom oXygen toolbar or menu<sup class="footnote-ref" id="fnref-ftn15"><a href="#fn-ftn15" role="doc-noteref">15</a></sup> (<a href="#img6" class="crossref">fig. 6</a>, <a href="#img7" class="crossref">7</a>). 
+               </p>
+<p id="p33"><figure id="img8" class="review-figure"><img src="pictures/picture-8.png" alt="XML fragment inserted via an input field in the dialogue
+                     box." loading="lazy"><figcaption>Fig. 8: XML fragment inserted via an input field in the dialogue
+                     box.</figcaption></figure>
+                  <figure id="img9" class="review-figure"><img src="pictures/picture-9.png" alt="XML fragment inserted directly into the framework file’s
+                        source code." loading="lazy"><figcaption>Fig. 9: XML fragment inserted directly into the framework file’s
+                        source code.</figcaption></figure>While the GUI proves to be sufficient and comfortable for most tasks,
+                  there are instances where direct access to the framework file is a more effective
+                  approach. For instance, if modifications are required in later stages of framework
+                  development, such as altering the name of an element that is used in multiple
+                  instances, the XML framework file can easily be searched, ensuring comprehensive
+                  changes across all fragments. In contrast, in the GUI each action dialogue box
+                  needs to be opened, checked and edited manually. Additionally, due to the
+                  restricted size of the input field for fragments in the dialogue box (<a href="#img8" class="crossref">fig. 8</a>),
+                  directly inserting content into the XML file may be easier. However, the fragment
+                  is inserted as a plain text string without any code markup, which significantly
+                  reduces readability (<a href="#img9" class="crossref">fig. 9</a>). 
+               </p>
+<h3 id="div5.4">Terminology and Functionalities – Overview</h3>
+<p id="p34">oXygen provides a variety of built-in functionalities that can be
+                  used in either the CSS file or the framework file to facilitate interaction
+                  between the user and the document. The following is an overview of options deemed
+                  most useful, some of which will be explored in more detail later on.</p>
+<p id="p35">                  <figure id="img10" class="review-figure"><img src="pictures/picture-10.png" alt="Action dialogue box with form-like design." loading="lazy"><figcaption>Fig. 10: Action dialogue box with form-like design.</figcaption></figure><strong>Author Mode Action</strong><sup class="footnote-ref" id="fnref-ftn16"><a href="#fn-ftn16" role="doc-noteref">16</a></sup>: used in the framework file. Actions are the core
+                  feature of the framework. Their main elements (<a href="#img10" class="crossref">fig. 10</a>) are: <ul><li>ID – to identify each action and make it invocable from anywhere in the
+                        framework, such as the CSS file or other actions.</li><li>Description – a plain text description of the action’s functionality to
+                        be displayed to the user on mouseover.</li><li>Icon – to visually represent the action when it is displayed as a button,
+                        for example in the toolbar.</li><li>Keyboard shortcut – to call the action using a keyboard shortcut.</li><li>Operation – the operation to be performed and its arguments.</li><li>XPath constraint – to enable or disable application of the action in
+                        certain parts of the document.<sup class="footnote-ref" id="fnref-ftn17"><a href="#fn-ftn17" role="doc-noteref">17</a></sup></li></ul>
+               </p>
+<p id="p36"><strong>Author Mode Operations</strong><sup class="footnote-ref" id="fnref-ftn18"><a href="#fn-ftn18" role="doc-noteref">18</a></sup>: used in Author Mode Actions; serving as
+                  the primary task to be performed, for example: <ul><li><code>DeleteElementOperation</code> – deletes an element.</li><li><code>ExecuteMultipleActionsOperation</code> – consecutively calls and executes a list
+                        of actions via their ID.</li><li><code>ExecuteValidationScenarioOperation</code> and
+                        <code>ExecuteTransformationScenariosOperation</code> – validates or transforms the
+                        document using a scenario already configured in oXygen’s validation /
+                        transformation settings.</li><li><code>InsertFragmentOperation</code> – inserts an XML fragment.</li><li><code>XSLTOperation</code> – executes an XSL transformation either referencing an
+                        external XSL file or providing the entire script in the action’s script
+                        argument.</li></ul></p>
+<p id="p37"><strong>Form Controls</strong><sup class="footnote-ref" id="fnref-ftn19"><a href="#fn-ftn19" role="doc-noteref">19</a></sup>: used in the CSS file to provide graphical user
+                  interfaces, for example: <ul><li><code>oxy_browser()</code> – to integrate an HTML frame.</li><li><code>oxy_checkbox()</code> – a checkbox to select or de-select an option.</li><li><code>oxy_combobox()</code> – a dropdown menu with predefined values.</li><li><code>oxy_datePicker()</code> – a calendar (with the option to specify the desired
+                        date format).</li><li><code>oxy_textfield()</code> – a plain text input field.</li><li><code>oxy_video()</code> – to integrate a video.</li></ul>
+               </p>
+<p id="p38"><strong>Custom CSS Functions</strong><sup class="footnote-ref" id="fnref-ftn20"><a href="#fn-ftn20" role="doc-noteref">20</a></sup>: used in the CSS file to enhance the layout for
+                  users and perform specific operations on values, for example: <ul><li><code>oxy_action()</code> – calls a predefined action from the framework or defines an
+                        action directly. </li><li><code>oxy_concat()</code> – concatenates strings. </li><li><code>oxy_editor()</code><sup class="footnote-ref" id="fnref-ftn21"><a href="#fn-ftn21" role="doc-noteref">21</a></sup> – used in combination
+                        with oxy_label() to style forms.</li><li><code>oxy_label()</code> – supplies a display label for the edited segment.</li><li><code>oxy_xpath()</code> – evaluates an XPath expression.</li></ul>
+               </p>
+<p id="p39"><strong>Additional CSS Properties</strong><sup class="footnote-ref" id="fnref-ftn22"><a href="#fn-ftn22" role="doc-noteref">22</a></sup>: used in the CSS file to control
+                  the appearance or behaviour of elements, for example: <ul><li><code>-oxy-collapse-text</code> – to hide the text content of an element, for example,
+                        when it is already rendered using a function such as oxy_editor() (otherwise
+                        the content would be displayed twice).</li><li><code>-oxy-editable</code> – to enable or prohibit editing the content of an
+                        element.</li><li><code>-oxy-foldable</code> – to make elements foldable, for example, the metadata or
+                        facsimile section at the beginning of a TEI document.</li><li><code>-oxy-placeholder-content</code> – to show a placeholder for empty elements to
+                        let the users know what kind of input is expected (particularly useful when
+                        a form-like layout with labels is not feasible).</li></ul>
+               </p>
+<p id="p40"><strong>Editor Variables</strong><sup class="footnote-ref" id="fnref-ftn23"><a href="#fn-ftn23" role="doc-noteref">23</a></sup>: used in the framework file to define reusable
+                  values and thereby facilitate flexible interactions between users and the
+                  framework, for example: <ul><li><code>${ask}</code> – to ask users to provide more input or to choose from a given set
+                        of options before an XML fragment is inserted, e.g., values for attributes. </li><li><code>${caret}</code> – current cursor location, e.g., to set the next editable
+                        position inside or after an inserted XML fragment.</li><li><code>${date}</code> – to insert or display the current date.</li><li><code>${framework}</code> – the path of the current framework directory, e.g., to set
+                        a relative path to the folder containing icons used in the framework.</li><li><code>${id}</code> and <code>${uuid}</code> – application-level or universally unique identifier,
+                        e.g., to generate IDs to insert into the XML file or to use only during
+                        processing.</li><li><code>${selection}</code> – currently selected text, e.g., to surround it with an XML
+                        fragment.</li></ul></p>
+<h3 id="div5.5">Design and Visualisation (CSS)</h3>
+<p id="p41">The design of the final framework is entirely in the hands of the
+                  customiser. Whether users consider a framework practical or not depends on how the
+                  customiser shapes the framework and utilises the capabilities provided by the
+                  tool. It must therefore be noted in all subsequent considerations that only the
+                  presence of a function in the tool or its implementation effort should be
+                  understood as part of this paper’s tool critique, not the actual realisation and
+                  configuration in the individual framework.</p>
+<p id="p42">In our experience, a framework’s acceptance among users and
+                  non-technical personnel is improved by visual proximity to familiar programmes.
+                  For instance, aligning the layout with widely-used word processing programmes such
+                  as MS Word lowers the entry barrier due to familiarity and facilitates intuitive
+                  use. Actions such as highlighting text and applying formatting through a toolbar
+                  button, for example, to mark headings or italicisation, are well-known to users.
+                  The tool allows customisers to create buttons in a similar manner, group them in a
+                  toolbar, and assign them individual actions. This layout is particularly suitable
+                  for projects or documents where predominantly prose text is generated, such as
+                  transcripts or introductory sections. </p>
+<p id="p43">Regarding the rendering<sup class="footnote-ref" id="fnref-ftn24"><a href="#fn-ftn24" role="doc-noteref">24</a></sup> of the XML file, essentially anything styleable using CSS is
+                     possible<sup class="footnote-ref" id="fnref-ftn25"><a href="#fn-ftn25" role="doc-noteref">25</a></sup>, such as
+                  Word-like page layouts, frames, colours, and more. However, CSS rendering has its
+                  limitations. Since no transformation or programming language is involved, each
+                  element is simply output where it appears in the document. Re-ordering or
+                  repositioning elements, such as numbered footnotes, or grouping and sorting
+                  metadata for neater input, is not possible, whereas in web development, CSS is
+                  widely used for these tasks. Furthermore, context-dependent styling is limited to
+                  the capabilities of CSS selectors: an element can be styled differently, for
+                  example, depending on its ancestor elements (parent / ancestor selector) or when
+                  it differs in terms of attributes or attribute values (attribute selector).
+                  However, it is not possible to conditionally output or style elements based on the
+                  presence of specific descendant elements.<sup class="footnote-ref" id="fnref-ftn26"><a href="#fn-ftn26" role="doc-noteref">26</a></sup></p>
+<p id="p44"><figure id="img11" class="review-figure"><img src="pictures/picture-11.png" alt="Example of an XML file rendered as form fields for users to
+                     fill in (here bibliographic metadata)." loading="lazy"><figcaption>Fig. 11: Example of an XML file rendered as form fields for users to
+                     fill in (here bibliographic metadata).</figcaption></figure>Beyond conventional CSS styling options, the tool provides additional
+                  oXygen-specific CSS functionalities that broaden the spectrum. For instance,
+                  clearly structured and self-explanatory form fields can be designed through the
+                  <code>oxy_editor()</code> function (generating an input field that can be filled in by the
+                  users, adding either element content or attribute values), and explanatory labels
+                  can be provided through the <code>oxy_label()</code> function (<a href="#img11" class="crossref">fig. 11</a>). As users are usually
+                  familiar with filling in forms, this approach combines intuitive form completion
+                  with standardised input formats, ensuring good data quality. In our projects, we
+                  found the form approach particularly useful in areas where traditionally highly
+                  formalised information is provided, such as metadata, bibliographic details,
+                  indices, or object descriptions. 
+               </p>
+<p id="p45">Especially in digital edition projects, where data is traditionally
+                  published online both as data and as a digital edition, there is also the
+                  opportunity to tailor the framework’s design to align with the online
+                  presentation. This way, users can already visualise the future presentation of the
+                  edited text during the editing process, which is often perceived as helpful. For
+                  instance, elements that will later be presented as links can already be displayed
+                  in blue and underlined in the framework, elements denoting quotations can be
+                  surrounded by quotation marks, and text justification, indentation, or different
+                  font sizes can already be implemented.</p>
+<p id="p46">One last aspect not to be underestimated is the ability to hide
+                  elements from the XML file that are relevant only for technical personnel, not for
+                  users, such as sections related to copyright and rights. This ensures a cleaner
+                  look and prevents accidental alterations to sections that should not be
+                  edited.</p>
+<h3 id="div5.6">Functionality (Framework)</h3>
+<p id="p47"><figure id="img12" class="review-figure"><img src="pictures/picture-12.png" alt="Three versions for date insertion: calendar, automatic
+                     insertion of current date, and text input field." loading="lazy"><figcaption>Fig. 12: Three versions for date insertion: calendar, automatic
+                     insertion of current date, and text input field.</figcaption></figure>There are often multiple ways through which a single action can be
+                  realised (<a href="#img12" class="crossref">fig. 12</a>). For instance, when a date value needs to be inserted into the
+                  document, the tool offers the option to open a calendar dialog box
+                  (<code>oxy_datePicker()</code>). Users can then select the date from the calendar, and it is
+                  automatically inserted in the desired, predefined format. Additionally, there is
+                  the option to insert the current date directly through an editor variable
+                  (<code>${date}</code>). And, of course, a free text field can also be created, allowing users
+                  to manually input the date (<code>oxy_textfield()</code>). All three options have legitimate
+                  use cases, and the choice made by the customiser depends not on limitations of the
+                  tool, but on the specific needs of the project. For new customisers, it would be
+                  helpful if more projects shared their examples, specific use cases, and
+                  experiences online. This would provide a broader understanding of the advantages
+                  and disadvantages associated with different implementation approaches.
+               </p>
+<p id="p48">It is important to note that the person customising the framework is
+                  often not the one using it. We therefore consider the need for communication
+                  between customiser and user as an essential part of working with the tool.
+                  Ideally, users express a desire for workflow improvement or highlight a cumbersome
+                  step, and the customiser provides a solution by implementing a suitable action
+                  from the tool.</p>
+<p id="p49">Following is a selection of settings, operations, form controls, and
+                  variables, which have proven particularly useful for working on digital editions. 
+                  As mentioned earlier, the capability to design buttons through which
+                  users can trigger actions is a central feature of the tool. They can be freely
+                  arranged in the toolbar, visually sorted using separators, or grouped thematically
+                  in dropdown submenus. The <code>oxy_action()</code> function in CSS allows buttons to be
+                  directly output within the text. This option is particularly useful when an action
+                  only makes sense at specific points in the document, such as when users should be
+                  able to delete an optional element. Icons can be custom-designed, and a freely
+                  formulated mouseover message can inform users about the action triggered by the
+                  button. </p>
+<p id="p50">When there is a need to add content to existing elements, dropdown
+                  menus can be easily styled using the <code>oxy_combobox()</code> function. While the primary
+                  use case likely involves adding attribute values, it is also possible to provide a
+                  list of text content to choose from. This is particularly useful when standardised
+                  values are frequently repeated but should be inserted as a text node rather than
+                  an attribute value. For example, if the text genre in the metadata section isn’t
+                  manually inserted but can be selected from a list of options and then applied as a
+                  text node, it reduces the user’s typing workload, ensures consistency, and
+                  eliminates the risk of typographical errors.</p>
+<p id="p51">When combined with the <code>oxy-xpath()</code> function, a dropdown menu doesn’t
+                  necessarily require a fixed, predefined list of values; instead, it can
+                  dynamically fetch and display values based on the provided path. For instance, in
+                  a section where the user must specify a location, the list of values can import
+                  the project’s index file and offer only those entries that are discernible as
+                  place names.</p>
+<p id="p52">To assist users in using the framework correctly, external points of
+                  reference can be included. For example, <code>oxy_video()</code> allows the embedding of
+                  locally stored or remote videos (such as YouTube tutorials), providing guidance
+                  for users throughout the editing process. The <code>oxy_browser()</code> form control
+                  facilitates the integration of web pages, enabling customisers to link parts of a
+                  documentation to the framework. Customisers proficient in Java coding can also
+                  create their own custom form controls (see <a href="#syncro2024k" class="crossref">SyncRo Soft SRL 2002–2024k</a>). </p>
+<p id="p53">One of the most frequently used operations is to insert an XML
+                  fragment, for example, to create a new empty entry in an index file, which can
+                  then be filled in by the user (<code>InsertFragmentOperation</code>). The insert position is
+                  freely selectable (before / after, as the first / last child) and the insert
+                  location (any element in the document) can be specified via XPath. Thus, it does
+                  not necessarily have to happen at the point from which the action is
+                  triggered.</p>
+<p id="p54">If the fragment is not only to be inserted but also to replace the
+                  selected content or surround it with markup, there are two closely related
+                  alternatives to achieve just that (<code>InsertOrReplaceFragmentOperation</code> and
+                  <code>SurroundWithFragmentOperation</code>). These are useful when it is necessary to add
+                  markup to existing text or elements, for instance, to mark a selected text as an
+                  entity, such as person or place, and surround it with the corresponding XML
+                  markup.</p>
+<p id="p55"><figure id="img13" class="review-figure"><img src="pictures/picture-13.png" alt="Example of using the ${ask} variable in the dialogue box,
+                     asking the user to choose between two attribute values before the XML code
+                     is inserted." loading="lazy"><figcaption>Fig. 13: Example of using the <code>${ask}</code> variable in the dialogue box,
+                     asking the user to choose between two attribute values before the XML code
+                     is inserted.</figcaption></figure>The XML fragment to be inserted or wrapped around the selected text
+                  is stored in the framework file and is output as is. However, there are instances
+                  where it proves beneficial to permit users to augment the fragment before it is
+                  inserted. This involves options such as selecting from a predefined list of
+                  attribute values to categorise an entity as either a person or a place. This
+                  approach enables key parts of the fragment to be determined dynamically without
+                  the need to customise separate actions for each variant. To facilitate this,
+                  editor variables can be used in the XML fragment. While powerful, these variables
+                  can be intricate to write in the input field due to their complexity. For
+                  instance, the <code>${ask}</code> variable can be used to create a dialogue box, prompting
+                  users to choose from a list of predefined values in a radio menu<sup class="footnote-ref" id="fnref-ftn27"><a href="#fn-ftn27" role="doc-noteref">27</a></sup> before inserting the XML fragment with
+                  the selected values. A simple fragment (<code>&lt;entity&gt;</code>) with only two values
+                  (‘person’ and ‘place’) for the <code>@type</code> attribute might look as shown in <a href="#img13" class="crossref">fig. 13</a>.
+               </p>
+<p id="p56">Customisers can specify a title for the dialogue box, telling users
+                  what kind of information they need to provide (‘Choose type of entity’), along
+                  with a list of values to be inserted into the fragment, a label to display in the
+                  dialogue box (‘Person’ and ‘Place’), and a default value, pre-selecting the option
+                  in the radio menu (‘person’).</p>
+<p id="p57">The importance of the default value argument must not be
+                  underestimated. It allows users to swiftly proceed through dialogue boxes by
+                  pressing ‘Enter’ if the most common option is pre-selected. Day-to-day use has
+                  shown that these seemingly minor simplifications can significantly enhance work
+                  efficiency. The <code>${ask}</code> editor variable has proven useful and very
+                  popular among users, as manually entering the sometimes quite technical attribute
+                  values can be tiresome. Moreover, it reduces the necessity for displaying separate
+                  input fields for each attribute, contributing to a cleaner framework. This is
+                  especially useful for projects that rely heavily on storing standardised
+                  information in attributes instead of textual element content.</p>
+<p id="p58">Particularly for complex encoding it may not always be possible to
+                  achieve the desired result in a single action. The ExecuteMultipleActionsOperation
+                  allows listing multiple actions that are then triggered consecutively. For
+                  example, the first action might insert a <code>&lt;graphic&gt;</code> element to the XML file,
+                  asking users to provide an ID and an URL to the image file. A second action could
+                  then execute an XSL script using the <code>XSLTOperation</code> to update a corresponding
+                  facsimile section of the document. The <code>XSLTOperation</code> is a powerful operation, as
+                  it allows for complex manipulations of the XML file which are not possible with
+                  the build-in operations. It must be noted, however, that the tool’s interface only
+                  provides a small input field for providing XML fragments or scripts. Due to the
+                  window’s limited size and without most of oXygen’s usual code support, such as
+                  colours and indentation, debugging and maintenance can be difficult. It is
+                  therefore recommended to store XSL scripts as separate files. </p>
+<p id="p59">Alternatively, the <code>ExecuteTransformationScenariosOperation</code> could be
+                  employed, which references and triggers a transformation scenario already
+                  configured in the transformation settings, thus including all the scenario’s
+                  arguments, such as defining an output file path for the resulting document.</p>
+<p id="p60">Another highly advantageous configuration option involves the ability
+                  to mark text content, entire elements, attribute values, or suggested values in
+                  dropdown menus as either editable or non-editable by setting the editable argument
+                  of the function to either true or false. This way, more technical segments, such
+                  as IDs, metadata, or attribute values, can be selected and displayed but not
+                  altered. If entire elements should be displayed for review but not edited, the CSS
+                  property <code>-oxy-editable</code> can be set to false.</p>
+<p id="p61">And finally, for clarity of layout, the <code>:empty</code> (and
+                     <code>:not(:empty)</code>) selector in CSS has proven particularly effective.
+                  It enables the customiser to reduce the display to relevant parts of the XML file
+                  or to present action buttons in the text only when they are contextually
+                  appropriate, such as displaying an ‘open link in browser’ icon only once a URL has
+                  been provided. It enhances clarity when specific elements or actions are revealed
+                  to the user only after a higher-level value has been selected or entered.
+                  Moreover, empty fields can be highlighted in colour, or specific placeholder
+                  content can be displayed using the <code>-oxy-placeholder-content</code> CSS
+                  property, drawing the user’s attention to missing inputs.</p>
+<h3 id="div5.7">Documentation and Learnability</h3>
+<p id="p62">oXygen’s website provides a comprehensive guide (see <a href="#syncro2024j" class="crossref">SyncRo Soft SRL 2002–2024j</a>) for
+                  creating custom frameworks, with additional resources available in various
+                  webinars on oXygen ‘s official YouTube channel (see <a href="#syncro2004" class="crossref">SyncRo Soft SRL and @oxygenxml 2004</a>). However, these
+                  materials provide only a basic overview. The webinars primarily focus on
+                  customising the DITA framework or addressing specific use cases. The website
+                  documentation outlines the functions of individual options but lacks clear
+                  implementation instructions and examples. This information gap is particularly
+                  noticeable regarding the built-in Author Mode operations.</p>
+<p id="p63">In some cases, unexpected issues may arise, such as with the
+                  <code>SurroundWithFragmentOperation</code> and the <code>InsertOrReplaceFragmentOperation</code>. The
+                  intention was to display a button in the text, triggering the action of
+                  surrounding a selected passage of text with XML markup (indicated by explicitly
+                  including the <code>${selection}</code> variable). However, the action was not applied to the
+                  selected text. Instead, an empty element fragment was inserted where the button
+                  was displayed. Apparently, the text selection was shifted to the button’s position
+                  when it was clicked. This issue could only be resolved by relocating the button to
+                  the toolbar. Instances like these highlight the need for more comprehensive
+                  documentation and additional examples.</p>
+<p id="p64"><figure id="img14" class="review-figure"><img src="pictures/picture-14.png" alt="CSS code using oxy_editor() for creating a dropdown menu
+                     for the values of the @type attribute." loading="lazy"><figcaption>Fig. 14: CSS code using <code>oxy_editor()</code> for creating a dropdown menu
+                     for the values of the <code>@type</code> attribute.</figcaption></figure>
+                  <figure id="img15" class="review-figure"><img src="pictures/picture-15.png" alt="CSS code using oxy_combobox() for creating a dropdown menu
+                        for the values of the @type attribute." loading="lazy"><figcaption>Fig. 15: CSS code using <code>oxy_combobox()</code> for creating a dropdown menu
+                        for the values of the <code>@type</code> attribute.</figcaption></figure>In other sections the documentation omits the explanation of
+                  functions that seem to be deprecated but still work, as exemplified by the
+                  <code>oxy_editor()</code> function. It was introduced to the framework in 2012 (see <a href="#syncro2012" class="crossref">SyncRo Soft SRL 2012</a>) to facilitate
+                  form-based layouts. As noted before, the <code>oxy_editor()</code> function can include any
+                  form control as an argument, such as comboboxes. The two code snippets shown in <a href="#img14" class="crossref">fig. 14</a> and <a href="#img15" class="crossref">15</a>
+                  are therefore functionally identical.
+               </p>
+<p id="p65">Both versions create a dropdown menu, offering the values A, B, C, D
+                  for the <code>@type</code> attribute of the <code>&lt;p&gt;</code> element. The value selected by the user
+                  will then be used as the attribute value. The <code>oxy_editor()</code> function is widely used
+                  in webinars, yet it is missing from the current documentation. This means new
+                  customisers cannot find any information on the arguments associated with this
+                  function.</p>
+<p id="p66">In our opinion, the documentation could be improved by adopting a
+                  more user-friendly style and intuitive navigation system. Currently, it adheres to
+                  the formal structure of the GUI dialogue boxes, making it difficult to find
+                  important features. The table of contents can also be challenging to navigate,
+                  especially for first-time users who are not familiar with form controls, CSS
+                  functions, and other technical distinctions. Improving the clarity and structure
+                  of the documentation would help customisers access the information they need.</p>
+<p id="p67">In summary, learning to use custom frameworks can be challenging and
+                  requires extensive research through written documentation and video tutorials. The
+                  full potential of the tool may only become apparent through interactions with
+                  experienced customisers and users who actively use frameworks, as they can often
+                  identify areas for improvement by addressing tedious or laborious processes that
+                  may not be immediately apparent to new customisers. </p>
+    </section>
+    <section id="div6">
+      <h2>Conclusion</h2>
+      <p id="p68">Custom oXygen frameworks are a powerful tool to enable users with little
+               or no knowledge of XML to engage directly with XML files, thereby lowering the
+               barrier for non-technical personnel to work in digital edition projects. Creating and maintaining frameworks requires a certain level of
+               technical knowledge from the customiser, including proficiency in CSS, schema
+               languages, XPath, and XSL. For users of a framework, a significant challenge may
+               arise from the complexity of the oXygen XML Editor itself, as it can initially feel
+               overwhelming with its numerous features and functionalities. However, once the hurdle
+               of setting up and familiarising oneself with oXygen are overcome, the benefits of
+               using frameworks in projects become clear. They significantly reduce the need for
+               specialised technical and digital annotation knowledge by visually replicating
+               familiar systems (e.g., designing the framework as a form or making it resemble known
+               text editors like Word). This allows users to focus on their annotation work in a
+               familiar environment while producing high-quality data.</p>
+<p id="p69">Frameworks integrate well into existing project workflows and processes,
+               as diverse techniques and project materials can be seamlessly and flexibly combined
+               to create a comprehensive working environment that encompasses content creation,
+               validation, and documentation. Data quality is reliably ensured, as the data inserted
+               through the framework is uniform, and illegitimate or missing content can be
+               highlighted and easily spotted by users. The built-in actions and functions meet the
+               majority of editing requirements and can even be expanded and customised when
+               necessary. </p>
+<p id="p70">Regrettably, the custom frameworks tool is not prominently featured in
+               the oXygen environment, and its potential is not effectively communicated. A more
+               user-friendly documentation and more real-world examples from other users and
+               customisers would significantly improve visibility and accessibility.</p>
+<p id="p71">While the term ‘framework’ is often used interchangeably with ‘ediarum’,
+               it is crucial to recognise that they are not synonymous. Ediarum is a large-scale
+               working environment that relies on oXygen frameworks, whereas using the oXygen custom
+               framework tool directly to create project specific frameworks is a highly effective
+               and less technically demanding solution. The broad range of functionalities and
+               options available cover all of our projects’ use cases. Even knowing or using only a
+               basic set of the tool’s features, some of which were explored in this paper, is still
+               sufficient to meet the tailored needs of most edition projects.</p>
+<p id="p72">To conclude, in our project experience, both the customisers and the
+               users consider oXygen frameworks to be an effective, recommendable tool that
+               significantly improves the editing workflow.</p>
+    </section>
+
+    <section id="bibliography" class="review-bibliography">
+      <h2>Bibliography</h2>
+      <ol class="bib-list">
+        <li><span id="telota2024a">Berlin-Brandenburgische Akademie der Wissenschaften, and
+                  TELOTA - IT/DH. 2024a. “ediarum. Digitale Editionen Erstellen Und Publizieren.”
+                  ediarum. Digitale Editionen erstellen und publizieren. Accessed September 6, 2024.
+                     <a href="https://web.archive.org/web/20240917072449/https://www.ediarum.org/index.html" target="_blank" rel="noopener">https://web.archive.org/web/20240917072449/https://www.ediarum.org/index.html</a>.</span></li>
+        <li><span id="telota2024b">———. 2024b. “ediarum.JAR”: GitHub. Accessed September 6,
+                  2024. <a href="https://web.archive.org/web/20240917072314/https://github.com/ediarum/ediarum.JAR" target="_blank" rel="noopener">https://web.archive.org/web/20240917072314/https://github.com/ediarum/ediarum.JAR</a>.</span></li>
+        <li><span id="telota2024c">———. 2024c. “Features.” ediarum. Accessed September 6,
+                  2024. <a href="https://web.archive.org/web/20240917072606/https://www.ediarum.org/features.html" target="_blank" rel="noopener">https://web.archive.org/web/20240917072606/https://www.ediarum.org/features.html</a>.</span></li>
+        <li><span id="dumontetal2021">Dumont, Stefan, Nadine Arndt, Sascha Grabsch, and Lou
+                  Klappenbach. 2021. ediarum.BASE.edit v2.0.0 (v2.0.0). Zenodo. <a href="https://doi.org/10.5281/zenodo.5897100" target="_blank" rel="noopener">https://doi.org/10.5281/zenodo.5897100</a>.</span></li>
+        <li><span id="exist2018">eXist Solutions. 2018. “eXistdb.” eXist. Accessed September
+                  9, 2024. <a href="https://exist-db.org/exist/apps/homepage/index.html" target="_blank" rel="noopener">https://exist-db.org/exist/apps/homepage/index.html</a>. </span></li>
+        <li><span id="fechner2023">Fechner, Martin. 2023. ediarum.JAR (v3.2.1). Zenodo. <a href="https://doi.org/10.5281/zenodo.7941448" target="_blank" rel="noopener">https://doi.org/10.5281/zenodo.7941448</a></span></li>
+        <li><span id="github2024">Github Inc. 2024. “GitHub.” Software development platform.
+                  Accessed January 18, 2024. <a href="https://web.archive.org/web/20240913063037/https://github.com/" target="_blank" rel="noopener">https://web.archive.org/web/20240913063037/https://github.com/</a>.</span></li>
+        <li><span id="gitlab2024">GitLab B.V. 2024. “GitLab.” Software development platform.
+                  Accessed January 18, 2024. <a href="https://web.archive.org/web/20240917071638/https://about.gitlab.com/" target="_blank" rel="noopener">https://web.archive.org/web/20240917071638/https://about.gitlab.com/</a>.</span></li>
+        <li><span id="mertgens2019">Mertgens, Andreas. “Ediarum. A toolbox for
+                  editors and developers” <em>RIDE</em> 11 (2019). Accessed September 6 2024.
+                     <a href="https://doi.org/10.18716/ride.a.11.4" target="_blank" rel="noopener">https://doi.org/10.18716/ride.a.11.4.</a></span></li>
+        <li><span id="oasis2018">OASIS Open. 2018. “DITA Version 1.3 Specification.” OASIS.
+                  Accessed January 16, 2024.<a href="https://web.archive.org/web/20240116105406/http://docs.oasis-open.org/dita/dita/v1.3/dita-v1.3-part0-overview.html" target="_blank" rel="noopener">https://web.archive.org/web/20240116105406/http://docs.oasis-open.org/dita/dita/v1.3/dita-v1.3-part0-overview.html</a>. </span></li>
+        <li><span id="relax2014">“RELAX NG Home Page.” 2014. RELAX NG Home Page. Accessed
+                  January 18, 2024. <a href="https://web.archive.org/web/20240118070611/https://relaxng.org/" target="_blank" rel="noopener">https://web.archive.org/web/20240118070611/https://relaxng.org/</a>. </span></li>
+        <li><span id="syncro2024a">SyncRo Soft SRL. 2002–2024a. “Additional CSS Properties.”
+                  Documentation. oXygen XML Editor. Accessed January 18, 2024. <a href="http://web.archive.org/web/20240118071706/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/dg-css-additional-properties.html" target="_blank" rel="noopener">http://web.archive.org/web/20240118071706/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/dg-css-additional-properties.html</a>. </span></li>
+        <li><span id="syncro2024b">———. 2002–2024b. “Built-in Author Mode Operations.”
+                  Documentation. oXygen XML Editor. Accessed January 18, 2024. <a href="http://web.archive.org/web/20240118071822/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/dg-default-author-operations.html" target="_blank" rel="noopener">http://web.archive.org/web/20240118071822/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/dg-default-author-operations.html</a>. </span></li>
+        <li><span id="syncro2024c">———. 2002–2024c. “Creating a Framework through the
+                  Configuration Dialog.” Documentation. oXygen XML Editor. Accessed January 16,
+                  2024. <a href="https://web.archive.org/web/20240116111755/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/framework-customization-extending.html" target="_blank" rel="noopener">https://web.archive.org/web/20240116111755/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/framework-customization-extending.html</a>. </span></li>
+        <li><span id="syncro2024d">———. 2002–2024d. “Creating a New Project.” Documentation.
+                  oXygen XML Editor. Accessed January 18, 2024. <a href="https://web.archive.org/web/20240118063352/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/create-new-project.html" target="_blank" rel="noopener">https://web.archive.org/web/20240118063352/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/create-new-project.html</a>. </span></li>
+        <li><span id="syncro2024e">———. 2002–2024e. “Creating and Customizing Author Mode
+                  Actions for a Framework.” Documentation. oXygen XML Editor. Accessed January 18,
+                  2024. <a href="https://web.archive.org/web/20240118070808/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/dg-create-custom-actions.html" target="_blank" rel="noopener">https://web.archive.org/web/20240118070808/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/dg-create-custom-actions.html</a>. </span></li>
+        <li><span id="syncro2024f">———. 2002–2024f. “Custom CSS Functions.” Documentation.
+                  oXygen XML Editor. Accessed January 18, 2024. <a href="http://web.archive.org/web/20240118071502/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/dg-oxygen-css-functions.html" target="_blank" rel="noopener">http://web.archive.org/web/20240118071502/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/dg-oxygen-css-functions.html</a>. </span></li>
+        <li><span id="syncro2024g">———. 2002–2024g. “Customers.” oXygen XML Editor. Accessed
+                  January 16, 2024. <a href="https://web.archive.org/web/20240116104421/https://www.oxygenxml.com/customers.html" target="_blank" rel="noopener">https://web.archive.org/web/20240116104421/https://www.oxygenxml.com/customers.html</a>. </span></li>
+        <li><span id="syncro2024h">———. 2002–2024h. “Editor Variables.” Documentation. oXygen
+                  XML Editor. Accessed January 18, 2024. <a href="http://web.archive.org/web/20240118071843/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/editor-variables.html#editor-variables" target="_blank" rel="noopener">http://web.archive.org/web/20240118071843/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/editor-variables.html#editor-variables</a>. </span></li>
+        <li><span id="syncro2024i">———. 2002–2024i. “Form Controls.” Documentation. oXygen
+                  XML Editor. Accessed January 18, 2024. <a href="http://web.archive.org/web/20240118071348/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/form-controls.html" target="_blank" rel="noopener">http://web.archive.org/web/20240118071348/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/form-controls.html</a>. </span></li>
+        <li><span id="syncro2024j">———. 2002–2024j. “Framework and Author Mode
+                  Customization.” Documentation. oXygen XML Editor. Accessed January 18, 2024. <a href="http://web.archive.org/web/20240118072955/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/authoring_customization.html" target="_blank" rel="noopener">http://web.archive.org/web/20240118072955/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/authoring_customization.html</a>. </span></li>
+        <li><span id="syncro2024k">———. 2002–2024k. “Implementing Custom Form Controls.”
+                  Documentation. oXygen XML Editor. Accessed January 18, 2024. <a href="http://web.archive.org/web/20240118072107/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/implementing-custom-form-controls.html" target="_blank" rel="noopener">http://web.archive.org/web/20240118072107/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/implementing-custom-form-controls.html</a>. </span></li>
+        <li><span id="syncro2024l">———. 2002–2024l. “Oxygen XML Editor - Academic Edition.”
+                  oXygen XML Editor. Accessed October 3, 2024.
+                  <a href="https://web.archive.org/web/20241003103831/https://www.oxygenxml.com/buy_academic_edition.html" target="_blank" rel="noopener">https://web.archive.org/web/20241003103831/https://www.oxygenxml.com/buy_academic_edition.html</a>.</span></li>
+        <li><span id="syncro2024m">———. 2002–2024m. <em>oXygen XML Editor</em> (version
+                  23.1). Windows, MacOS, Linux. Romania: SyncRo Soft SRL. Accessed December 18,
+                  2023. <a href="https://web.archive.org/web/20231218081955/https://www.oxygenxml.com/xml_editor.html" target="_blank" rel="noopener">https://web.archive.org/web/20231218081955/https://www.oxygenxml.com/xml_editor.html</a>. </span></li>
+        <li><span id="syncro2024n">———. 2002–2024n. “Sharing a Framework.” Topic. oXygen XML
+                  Editor. Accessed January 18, 2024. <a href="https://web.archive.org/web/20240118064556/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/author-document-type-extension-sharing.html" target="_blank" rel="noopener">https://web.archive.org/web/20240118064556/https://www.oxygenxml.com/doc/versions/26.0/ug-editor/topics/author-document-type-extension-sharing.html</a>. </span></li>
+        <li><span id="syncro2024o">———. 2002–2024o. “Standard W3C CSS Supported Features.”
+                  oXygen XML Editor. Accessed October 3, 2024.
+                  <a href="https://www.oxygenxml.com/doc/versions/26.1/ug-editor/topics/dg-standard-css-support.html" target="_blank" rel="noopener">https://www.oxygenxml.com/doc/versions/26.1/ug-editor/topics/dg-standard-css-support.html</a>.</span></li>
+        <li><span id="syncro2012">———. 2012. “Oxygen XML Editor 14.1.” Version History.
+                  oXygen XML Editor. Accessed January 18, 2024. <a href="http://web.archive.org/web/20240118074418/https://www.oxygenxml.com/xml_editor/whatisnew14.1.html" target="_blank" rel="noopener">http://web.archive.org/web/20240118074418/https://www.oxygenxml.com/xml_editor/whatisnew14.1.html</a>. </span></li>
+        <li><span id="syncro2023">———. 2023. “What’s New in Oxygen XML Editor 25.1.” oXygen
+                  XML Editor. Accessed January 16, 2024. <a href="https://web.archive.org/web/20240116104953/https://www.oxygenxml.com/xml_editor/whatisnew25.1.html" target="_blank" rel="noopener">https://web.archive.org/web/20240116104953/https://www.oxygenxml.com/xml_editor/whatisnew25.1.html</a>. </span></li>
+        <li><span id="syncro2004">SyncRo Soft SRL, and @oxygenxml. 2004. <em>oXygen XML
+                     Channel</em>. Webinars and conference recordings. YouTube: oXygen XML
+                  Channel. Accessed January 18, 2024. <a href="https://www.youtube.com/@oxygenxml/search?query=Framework" target="_blank" rel="noopener">https://www.youtube.com/@oxygenxml/search?query=Framework</a>. </span></li>
+        <li><span id="tei">TEI Consortium. n.d. “TEI: Text Encoding Initiative.” Accessed
+                  January 16, 2024. <a href="https://web.archive.org/web/20240116105707/https://tei-c.org/" target="_blank" rel="noopener">https://web.archive.org/web/20240116105707/https://tei-c.org/</a>. </span></li>
+        <li><span id="w3cetal2024">W3C, and Bert Bos. 2024. “CSS Specifications.”
+                  Documentation. W3C – Description of All CSS Specifications. Accessed January 18,
+                  2024. <a href="https://web.archive.org/web/20240118065122/https://www.w3.org/Style/CSS/specs.en.html" target="_blank" rel="noopener">https://web.archive.org/web/20240118065122/https://www.w3.org/Style/CSS/specs.en.html</a>. </span></li>
+        <li><span id="w3cetal2004">W3C, David C. Fallside, and Priscilla Walmsley. 2004. “XML
+                  Schema Part 0: Primer Second Edition.” Documentation. W3C Recommendation. Accessed
+                  January 18, 2024. <a href="https://web.archive.org/web/20240118070415/https://www.w3.org/TR/xmlschema-0/" target="_blank" rel="noopener">https://web.archive.org/web/20240118070415/https://www.w3.org/TR/xmlschema-0/</a>. </span></li>
+        <li><span id="w3cetal2017">W3C, Jonathan Robie, Michael Dyck, and Josh Spiegel. 2017.
+                  “XML Path Language (XPath) 3.1.” Documentation. W3C Recommendations. Accessed
+                  January 18, 2024. <a href="https://web.archive.org/web/20240118065535/https://www.w3.org/TR/xpath-31/" target="_blank" rel="noopener">https://web.archive.org/web/20240118065535/https://www.w3.org/TR/xpath-31/</a>. </span></li>
+        <li><span id="w3schools2024a">W3schools. 1999–2024a. “CSS Tutorial.” Tutorial.
+                  W3schools. Accessed January 18, 2024. <a href="https://web.archive.org/web/20240118070014/https://www.w3schools.com/css/default.asp" target="_blank" rel="noopener">https://web.archive.org/web/20240118070014/https://www.w3schools.com/css/default.asp</a>. </span></li>
+        <li><span id="w3schools2024b">———. 1999–2024b. “XPath Tutorial.” Tutorial. W3schools.
+                  Accessed January 18, 2024. <a href="https://web.archive.org/web/20240118070143/https://www.w3schools.com/xml/xpath_intro.asp" target="_blank" rel="noopener">https://web.archive.org/web/20240118070143/https://www.w3schools.com/xml/xpath_intro.asp</a>.
+               </span></li>
+      </ol>
+    </section>
+
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        <li id="fn-ftn1" class="footnote-item">
+           While the licenses
+                  for the private sector are rather expensive, SyncRo Soft SRL accommodates the
+                  academic sector with relatively inexpensive academic licenses (see <a href="#syncro2024l" class="crossref">SyncRo Soft SRL
+               2002–2024l</a>).
+          <a href="#fnref-ftn1" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn2" class="footnote-item">
+           For more
+                  information on the TEI Standard, see <a href="#tei" class="crossref">TEI
+                     Consortium n.d.</a>
+          <a href="#fnref-ftn2" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn3" class="footnote-item">
+           For more information
+                  on the DITA Standard, see <a href="#oasis2018" class="crossref">OASIS Open
+                     2018</a>.
+          <a href="#fnref-ftn3" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn4" class="footnote-item">
+           To avoid
+                  confusion, the term ‘user’ will be employed when discussing the person engaged in
+                  the editing process, as distinct from the term ‘editor’, which refers to the
+                  oXygen XML Editor programme.
+          <a href="#fnref-ftn4" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn5" class="footnote-item">
+           For more information on eXist-db, see <a href="#exist2018" class="crossref">eXist Solutions 2018</a>.
+          <a href="#fnref-ftn5" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn6" class="footnote-item">
+           A detailed review of ediarum can be found
+                  in RIDE Issue 11 (see <a href="#mertgens2019" class="crossref">Mertgens
+                     2019</a>), for anyone interested in a working and publishing environment for
+                  their project.
+          <a href="#fnref-ftn6" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn7" class="footnote-item">
+           It should be noted that oXygen also supports
+                     many other formats, such as JSON, HTML or JavaScript. However, these play a
+                     subordinate role in the creation of and work with frameworks, which is why
+                     other formats and functionalities are not discussed in this review.
+          <a href="#fnref-ftn7" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn8" class="footnote-item">
+           oXygen is available for Windows, MacOS,
+                     and Linux. 
+          <a href="#fnref-ftn8" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn9" class="footnote-item">
+           For
+                     step-by-step instructions, see <a href="#syncro2024c" class="crossref">SyncRo Soft SRL 2002–2024c</a>. However, it should be noted that the
+                     documentation does not include visual illustrations of individual steps, which
+                     may pose challenges for new customisers during the initial configuration
+                     process.
+          <a href="#fnref-ftn9" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn10" class="footnote-item">
+           For alternative methods of
+                     sharing a framework, such as via an add-on, and detailed instructions, see <a href="#syncro2024n" class="crossref">SyncRo Soft SRL 2002–2024n</a>.
+                  
+          <a href="#fnref-ftn10" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn11" class="footnote-item">
+           Both CSS and XPath are
+                     thoroughly documented, and numerous tutorials are available online for
+                     beginners as well as for more advanced requirements. See, for example,
+                     <a href="#w3schools2024a" class="crossref">W3schools 1999–2024a</a>; 
+                     <a href="#w3schools2024b" class="crossref">ibid. 1999–2024b</a>; 
+                     <a href="#w3cetal2017" class="crossref">W3C et al. 2017</a>; 
+                     <a href="#w3cetal2004" class="crossref">W3C and Bos 2004</a>.
+          <a href="#fnref-ftn11" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn12" class="footnote-item">
+           In this review we do not delve deeply into these operations, as
+                     they have played only a limited role in our projects. For a full description,
+                     see <a href="#syncro2024b" class="crossref">SyncRo Soft SRL 2002-2024b</a>.
+          <a href="#fnref-ftn12" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn13" class="footnote-item">
+           It is strongly recommended to commence work on the
+                     framework and deploy it in productive editorial work only when the data model
+                     is largely finalised and no more significant changes are anticipated, as late
+                     or frequent changes to the data model require significant post-work in the
+                     framework. Additionally, using a schema enables schema-aware restrictions of
+                     actions, preventing users from inadvertently inserting XML fragments in places
+                     where they are not allowed, according to the data model.
+          <a href="#fnref-ftn13" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn14" class="footnote-item">
+           The complexity of the project
+                     determines the number of template files needed. For instance, a homogeneous set
+                     of documents like letters might require just one template file. Conversely,
+                     projects dealing with diverse content types, such as transcriptions of diverse
+                     source material (e.g., manuscripts, letters, poems) and editorial content
+                     (e.g., bibliographic items, indices, introductory texts), may necessitate
+                     multiple template files.
+          <a href="#fnref-ftn14" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn15" class="footnote-item">
+          
+                     The menu option is particularly suitable for complex frameworks and projects
+                     where numerous actions need to be nested and grouped, and displaying all
+                     options in the toolbar would be overwhelming.
+          <a href="#fnref-ftn15" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn16" class="footnote-item">
+           For the full list of Author
+                     Mode Actions, see <a href="#syncro2024e" class="crossref">SyncRo Soft SRL
+                        2002–2024e</a>. 
+          <a href="#fnref-ftn16" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn17" class="footnote-item">
+           The usefulness of XPath
+                           constraints cannot be overstated. It allows customisers to control action
+                           execution, ensuring that only valid XML data is generated. Entire actions
+                           can be restricted to the cursor being placed in the right place in the
+                           document. For example, a toolbar button triggering an action for encoding
+                           reading variants in a manuscript transcription could appear grey and
+                           unclickable if the cursor is placed in a section where this action is not
+                           applicable, such as the metadata section.
+          <a href="#fnref-ftn17" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn18" class="footnote-item">
+           For the full list of
+                     Author Mode Operations, see <a href="#syncro2024b" class="crossref">SyncRo
+                        Soft SRL 2002–2024b</a>. 
+          <a href="#fnref-ftn18" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn19" class="footnote-item">
+           For the full list of Form
+                     Controls, see <a href="#syncro2024i" class="crossref">SyncRo Soft SRL
+                        2002–2024i</a>. 
+          <a href="#fnref-ftn19" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn20" class="footnote-item">
+           For the full list of Custom
+                     CSS Functions, see <a href="#syncro2024f" class="crossref">SyncRo Soft SRL
+                        2002–2024f</a>. 
+          <a href="#fnref-ftn20" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn21" class="footnote-item">
+           oxy_editor() is an alternative,
+                           possibly deprecated, method of using form controls as they can be taken
+                           as an argument; see section 'Documentation and Learnability', <a href="#p64" class="crossref">p. 64</a> for more details.
+          <a href="#fnref-ftn21" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn22" class="footnote-item">
+           For the full list of
+                     Additional CSS Properties, see <a href="#syncro2024a" class="crossref">SyncRo Soft SRL 2002–2024a</a>. 
+          <a href="#fnref-ftn22" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn23" class="footnote-item">
+           For the full list of editor
+                     variables, see <a href="#syncro2024h" class="crossref">SyncRo Soft SRL
+                        2002–2024h</a>. 
+          <a href="#fnref-ftn23" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn24" class="footnote-item">
+           This section focuses
+                     solely on <em>rendering</em> the XML file using CSS. The options for
+                        <em>modifying</em> the XML content will be discussed in the next
+                     section.
+          <a href="#fnref-ftn24" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn25" class="footnote-item">
+           Note that while CSS display commonly varies by
+                     machine, browser, or platform, oXygen generally maintains a consistent display
+                     across different environments. However, not all typical CSS features and
+                     selectors are supported. For a full list, see <a href="#syncro2024o" class="crossref">SyncRo Soft SRL 2002–2024o</a>.
+          <a href="#fnref-ftn25" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn26" class="footnote-item">
+           For example, it is
+                     possible to style <code>&lt;note&gt;</code> elements differently based on their ancestor,
+                     such as <code>teiHeader note {...}</code> vs. <code>text note {...}</code>, or based on their
+                     attributes, like <code>note[type="footnote"]</code> vs. <code>note[type="endnote"]</code>. However,
+                     it is not possible, for instance, to change a note’s text colour from red to
+                     green once a certain descendant element has been added by the user.
+          <a href="#fnref-ftn26" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn27" class="footnote-item">
+           In addition to radio buttons, the <code>${ask}</code> editor variable also
+                     supports creating dropdown menus or fields for free text entry in the dialogue
+                     box. These can be used, for example, to prompt the user to provide the number
+                     of a footnote as a text value, or to select the language of a text from a list
+                     of standardised language codes.
+          <a href="#fnref-ftn27" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+      </ol>
+    </section>
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{oxygen-framework,
+  author    = {Bunselmeier, Jennifer and Krottmaier, Sina},
+  title     = {Untangling Data Complexity: Custom Oxygen Frameworks for Edition Projects},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {19},
+  year      = {2024},
+  doi       = {10.18716/ride.a.19.2},
+  url       = {https://doi.org/10.18716/ride.a.19.2},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Bunselmeier, Jennifer
+AU  - Krottmaier, Sina
+TI  - Untangling Data Complexity: Custom Oxygen Frameworks for Edition Projects
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 19
+PY  - 2024
+DA  - 2024/12
+DO  - 10.18716/ride.a.19.2
+UR  - https://doi.org/10.18716/ride.a.19.2
+PB  - Institut für Dokumentologie und Editorik e.V.
+LA  - en
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Bunselmeier, J., &amp; Krottmaier, S. (2024). Untangling Data Complexity: Custom Oxygen Frameworks for Edition Projects. RIDE – A review journal for digital editions and resources, (19). https://doi.org/10.18716/ride.a.19.2</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Bunselmeier, Jennifer, and Sina Krottmaier. &#34;Untangling Data Complexity: Custom Oxygen Frameworks for Edition Projects.&#34; RIDE – A review journal for digital editions and resources, no. 19, 2024. https://doi.org/10.18716/ride.a.19.2.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Bunselmeier, Jennifer, and Sina Krottmaier. &#34;Untangling Data Complexity: Custom Oxygen Frameworks for Edition Projects.&#34; RIDE – A review journal for digital editions and resources, no. 19 (2024). https://doi.org/10.18716/ride.a.19.2.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/oxygen-framework/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

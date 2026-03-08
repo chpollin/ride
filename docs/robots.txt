@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ride.i-d-e.de/sitemap.xml

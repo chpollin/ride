@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Print Stylesheet
+   Single column, no interactive elements, URLs visible
+   ========================================================================== */
+
+@media print {
+  /* Hide interactive/navigational elements */
+  .site-header,
+  .site-footer,
+  .review-sidebar,
+  .mobile-toc,
+  .mobile-meta,
+  .reading-progress,
+  .theme-toggle,
+  .lightbox,
+  .footnote-popover,
+  .citation-box,
+  .review-factsheet-link,
+  .btn-download,
+  .btn-cite,
+  .filter-bar,
+  .nav-toggle {
+    display: none !important;
+  }
+
+  /* Reset layout */
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #000;
+    background: #fff;
+  }
+
+  .review-wrapper {
+    display: block;
+  }
+
+  .review-article,
+  .container,
+  .content-width {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    page-break-after: avoid;
+  }
+  h1 { font-size: 18pt; }
+  h2 { font-size: 14pt; }
+  h3 { font-size: 12pt; }
+
+  p {
+    max-width: 100%;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Links: show URL */
+  a[href] {
+    color: #000;
+    text-decoration: underline;
+  }
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555;
+  }
+  /* Don't show URL for fragment links or ORCID icons */
+  a[href^="#"]::after,
+  a.orcid-link::after,
+  a.footnote-ref::after,
+  a.footnote-backref::after,
+  a.nav-logo::after {
+    content: none;
+  }
+
+  /* Figures */
+  figure {
+    break-inside: avoid;
+    background: none !important;
+    border: 1px solid #ccc;
+    padding: 4pt;
+  }
+  figure img {
+    max-width: 100%;
+  }
+
+  /* Tables */
+  table {
+    font-size: 9pt;
+  }
+
+  /* Footnotes */
+  .review-footnotes {
+    border-top: 1pt solid #ccc;
+    font-size: 9pt;
+  }
+
+  /* Bibliography */
+  .review-bibliography {
+    border-top: 1pt solid #ccc;
+    font-size: 9pt;
+  }
+
+  /* Page breaks */
+  h2 {
+    break-before: avoid;
+  }
+  section {
+    break-inside: avoid;
+  }
+
+  /* Badges */
+  .badge {
+    border: 1px solid #999;
+    background: none !important;
+    color: #000 !important;
+  }
+}

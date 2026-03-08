@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The William Blake Archive (Upgrade) &mdash; RIDE</title>
+  <meta name="description" content="
+            This review addresses the redesign of the William Blake Archive (WBA), which launched
+               12 December 2016, updating our previous
+                  review of the Archive,...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The William Blake Archive (Upgrade)">
+  <meta property="og:description" content="
+            This review addresses the redesign of the William Blake Archive (WBA), which launched
+               12 December 2016, updating our previous
+                  review of the Archive,...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/wba_upgrade/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/wba_upgrade/">
+<meta name="DC.title" content="The William Blake Archive (Upgrade)">
+<meta name="DC.creator" content="Kendal Crawford">
+<meta name="DC.creator" content="Michelle Levy">
+<meta name="DC.date" content="2017-12">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.7.5"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="en">
+
+<meta name="citation_title" content="The William Blake Archive (Upgrade)">
+<meta name="citation_author" content="Kendal Crawford">
+<meta name="citation_author" content="Michelle Levy">
+<meta name="citation_doi" content="10.18716/ride.a.7.5"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2017-12">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/wba_upgrade/wba_upgrade.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "The William Blake Archive (Upgrade)",
+  "author": [{"@type": "Person", "name": "Kendal Crawford"}, {"@type": "Person", "name": "Michelle Levy", "url": "https://orcid.org/0000-0002-2375-2059"}],
+  "datePublished": "2017-12",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.7.5"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e. V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">Introduction</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">Upgrade strategy and execution</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">Overview of changes to user experience</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">Changes to publication and presentation</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div5" class="toc-link">Mobile</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div6" class="toc-link">Technical Accessibility</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div7" class="toc-link">Questions of Legacy</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div8" class="toc-link">Conclusion</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>December 2017</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.7.5" rel="external">10.18716/ride.a.7.5</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-7/">
+        <span class="badge badge-editions">SE</span>
+        Issue 7
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>EN</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/wba_upgrade/wba_upgrade.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/wba_upgrade/wba_upgrade-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="en">
+    <header class="review-header">
+      <a href="/issues/issue-7/" class="review-issue-link">
+        <span class="badge badge-editions">SE</span>
+        Issue 7: Digital Scholarly Editions
+      </a>
+
+      <h1>The William Blake Archive (Upgrade)</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Kendal Crawford,         </span>
+        <span class="review-author">
+          Michelle Levy&nbsp;<a href="https://orcid.org/0000-0002-2375-2059" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>        </span>
+      </div>
+
+      <div class="review-affiliation">Simon Fraser University, Burnaby, Canada Burnaby, Canada</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="http://www.blakearchive.org" rel="external">The William Blake Archive</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">Introduction</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">Upgrade strategy and execution</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">Overview of changes to user experience</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">Changes to publication and presentation</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div5" class="toc-link">Mobile</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div6" class="toc-link">Technical Accessibility</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div7" class="toc-link">Questions of Legacy</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div8" class="toc-link">Conclusion</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>December 2017</span>
+<span><a href="https://doi.org/10.18716/ride.a.7.5" rel="external">DOI</a></span><a href="/reviews/wba_upgrade/wba_upgrade.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/wba_upgrade/wba_upgrade-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>This review addresses the redesign of the William Blake Archive (WBA), which launched
+               12 December 2016, updating our <a href="http://ride.i-d-e.de/issues/issue-5/the-william-blake-archive/" target="_blank" rel="noopener">previous
+                  review</a> of the Archive, published in early 2017. Through this update,
+               described as ‘a complete and transformative redesign,’ all of the content of the
+               previous site has been retained, with improvements to the overall aesthetic appeal
+               and functionality. These functionality updates principally consist of a modernized
+               navigation system; a redesigned Object View page that organizes WBA’s scholarly tools
+               within a matrix of panels; and a more comprehensive archival search engine. These new
+               features provide users with enhanced opportunities for interacting with the objects
+               contained in the archive. The notable shortcoming of this update is that the many of
+               WBA’s formerly comprehensive help documentation and tutorial features have not been
+               updated. Both new and veteran users would benefit from the reintroduction of clear,
+               organized documentation to explain the Archive’s new features.</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>Introduction</h2>
+      <p id="p1">On December 12 2016, the William Blake Archive (WBA) released a
+               substantial update to its website, described as ‘a complete and transformative
+               redesign.’ This redesign retains all content of the previous site (as described in
+               our <a href="http://ride.i-d-e.de/issues/issue-5/the-william-blake-archive/" target="_blank" rel="noopener">pre-update review</a>) while improving upon its overall aesthetic appeal and
+               several key issues of functionality. These functionality updates principally consist
+               of: <ul><li>a modernized navigation system,</li><li>a redesigned Object View page that organizes WBA’s scholarly tools within a
+                     matrix of panels, and</li><li>a more comprehensive archival search engine, which integrates the formerly
+                     separate image description and text-based search methods.</li></ul>
+            </p>
+<p id="p2">The notable shortcoming of this update is that the WBA’s formerly
+               comprehensive help documentation and tutorial features were not fully updated at the
+               time of the site’s relaunch. While some of the user interface improvements are
+               intuitive enough to require no explanation, others are considerably more complex –
+               such as the new Object View page and its dual viewing ‘modes.’ As this review goes to
+               press, we are pleased to see some <a href="http://www.blakearchive.org/staticpage/archiveataglance?p=techsummary" target="_blank" rel="noopener">additional technical documentation</a> has been added to the site’s Technical
+               Summary, including some discussion of the two viewing modes. We believe this
+               information should be highlighted and made more accessible for users. Guidance for
+               non-technical users is currently provided through the help (‘?’) icon, but its detail
+               is limited. Both new and veteran users would benefit from the reintroduction of
+               clear, non-technical documentation to explain the Archive’s features and new system
+               of organization. Improvements in this area would enable WBA’s considerable aesthetic
+               and functional updates to become fully accessible and useful to its audience as an
+               improved Scholarly Digital Edition (SDE).</p>
+    </section>
+    <section id="div2">
+      <h2>Upgrade strategy and execution</h2>
+      <p id="p3">The Archive’s redesign team was headed by co-editor Joseph Viscomi.
+               Ashley Reed served as the Consultant on Special Projects and former Project Manager,
+               Joseph Fletcher as the Managing Editor, and Michael Fox as the Assistant Editor and
+               system architect of the upgrade’s front and back end. For more information on the
+               individuals and organizations involved in the upgrade, please see WBA’s <a href="http://www.blakearchive.org/staticpage/update?p=update-2016-12-16" target="_blank" rel="noopener">formal
+                  update announcement</a> from 12 December 2016.</p>
+<p id="p4">The Editors began directing the process of architecting a new site in
+               late 2013, and in early 2014 partnered with UNC’s Libraries and ITS Research
+               Computing to re-conceptualize the public face of the Archive so that it would ‘again
+               set the gold standard for digital humanities projects’ (WBA, <a href="http://www.blakearchive.org/staticpage/update?p=update-2016-12-16" target="_blank" rel="noopener">12 Dec
+                  2016</a>). The new back end was built using the open source, object-relational
+               database system, <a href="https://web.archive.org/web/20170509010458/https://www.postgresql.org/about/" target="_blank" rel="noopener">PostgreSQL</a>, in combination with the open source enterprise search platform,
+               Solr. The new front end was created using the <a href="https://docs.angularjs.org/misc/faq" target="_blank" rel="noopener">AngularJS framework</a>, a
+               structural framework meant to assist developers in building dynamic, single-page
+               applications. In recent months, WBA published a more detailed summary on its new
+               system architecture and basic front-end navigation in its <a href="http://www.blakearchive.org/staticpage/archiveataglance?p=techsummary" target="_blank" rel="noopener">Technical Summary</a>.</p>
+    </section>
+    <section id="div3">
+      <h2>Overview of changes to user experience</h2>
+      <p id="p5">The updated WBA features a visually appealing, high-quality colour
+               homepage, with a rotating series of images from Blake’s work displayed in a tiled
+               form. One of the greatest improvements to the site is its static drop-down top menu
+               (and anchored bottom screen menu), now accessible from the homepage and every other
+               page within the site. The reading and gallery modes offer two different systems for
+               interacting with the objects in the archive, enabling various scholarly tasks.</p>
+<p id="p6">There is no longer a separate page for help documentation; instead,
+               navigational instructions, searching instructions, or an explanation regarding the
+               use of different viewing modes is available in the help (‘?’) icon depending upon
+               which page-type the user is visiting. It was not clear to us immediately that the
+               information contained in the help icon was dynamic, changing based on wherever one
+               was on the site. Although this dynamic icon provides important information, we
+               believe it would be useful to have all site documentation gathered in a single place
+               as well, including both site-usage methods and terminology. A series of short video
+               tutorials could also greatly enhance user accessibility and full utilization of the
+               archive.</p>
+    </section>
+    <section id="div4">
+      <h2>Changes to publication and presentation</h2>
+      <h3 id="div4.1">Site appearance and structure</h3>
+<p id="p7">
+                  <figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="The new homepage." loading="lazy"><figcaption>Fig. 1: The new homepage.</figcaption></figure> Aesthetically, the front-facing user interface has greatly improved. It
+                  has a modern and responsive page layout, an attractive color scheme, and a dynamic
+                  homepage which loads a freshly randomized gallery of artifact thumbnails with each
+                  user visit.</p>
+<p id="p8">Structurally, the AngularJS framework has been leveraged to improve
+                  upon the Object View page. Each artifact’s scholarly tools and editorial
+                  supplementation are now accessible within the Object View page, organized in a
+                  matrix of panels. This change addresses our primary criticism of the original
+                  site, which was programmed to open these features in new, individual browser
+                  windows. Now, rather than having to navigate and arrange many additional windows
+                  in order to view comprehensive information about an object, informed users are
+                  able to quickly and easily navigate between panels and view all object-associated
+                  information within a single page. This transformation allows the complexities of
+                  Blake's works to be better viewed, explored, and compared.</p>
+<h3 id="div4.2">Navigation</h3>
+<p id="p9">Another major shortcoming of the former WBA site was its lack
+                  consistent navigation features. With this upgrade, the problem has been addressed.
+                  New to WBA are two banner menus, permanently anchored to the top and bottom of the
+                  site at all times. The top menu helps users navigate archival content, while the
+                  bottom links users to the WBA’s associated works, meta writings, and scholarly
+                  material.</p>
+<p id="p10">The top menu is now the user’s sole navigatory tool to explore WBA’s
+                  archive of digital artifacts. It consists of the following: <ul><li>A search bar, which requires the user to enter a keyword in order to
+                        initiate a search and be redirected to the the filter-reliant Search Results
+                        page.</li><li>An expandable hamburger menu of five main tabs (illuminated books,
+                        commercial book illustrations, separate prints and prints in series,
+                        drawings and paintings, manuscripts and typographic works) that usefully
+                        organize Blake’s works. Within each submenu are chronological indices of
+                        Blake’s works, divided into the Editor’s medium-based categories. Clicking
+                        on the title of a work will open its Work Information page, from which
+                        individual copies/objects can be opened in the Object View page.</li><li>A toggle button between the letters ‘G’ and ‘R’ that allows the user to
+                        alternate between two ‘modes’ for experiencing the Object View page –
+                        Gallery mode and Reading mode.</li><li>A help icon, demarcated by a question mark (‘?’). When clicked, this icon
+                        will open a panel which contains explanatory information about Gallery and
+                        Reading mode, and additional information specific to the type of page the
+                        user currently has loaded. This means the contents of the help icon panel
+                        changes based on whether the user is on the homepage, the Object View page,
+                        the Search Results page, etc.</li></ul>
+               </p>
+<p id="p11">The bottom menu directs users to the Archive’s supplementary
+                  scholarly material and information about the site, highlighting: <ul><li>WBA’s official blog, which has also received a substantial UI
+                        update</li><li>The ‘Blake / An Illustrated Quarterly’ archive</li><li>‘The Complete Poetry And Prose Of William Blake, David Erdman’: an
+                        electronic version of Erdman’s revised 1998 scholarly edition of Blake’s
+                        poetical works, and a feature of the original site which has been given new
+                        prominence here</li></ul>
+               </p>
+<p id="p12">The bottom menu also sub-hierarchically links to the site’s other
+                  features, such as its biographical information on Blake, the detailed and
+                  important ‘About the Archive’ section, WBA’s recommended resources for further
+                  research, and so on. All content of the original site appears to have been
+                  preserved in these static pages, with the exception of the site’s Virtual Lightbox
+                  applet, Help page, and now outdated java-based tutorial, the ‘Tour of the
+                  Archive.’ At the time of update, there was no indication if or when the Virtual
+                  Lightbox and/or its function as a digital workspace would be redeveloped and
+                  reintroduced to the updated site. In September 2017, however WBA appended a note
+                  to their Technical Summary section announcing that in the near future it will be
+                  adding two substantive additions to the site: A revamped Lightbox application and
+                  a new exhibition space for the publication of peer-reviewed exhibitions.
+                  Meanwhile, the absence of a renewed Help page is more immediately concerning. The
+                  help documentation provided by the help icon panel is considerably more limited
+                  than its historical precedent. Hopefully this issue will be addressed in the near
+                  future to help new and old users become acquainted with the new site’s design.</p>
+<h3 id="div4.3">Object View</h3>
+<p id="p13">Objects in the Archive now open in the central panel of the website’s
+                  responsive page layout. As mentioned, there are two different ‘modes’ of view that
+                  can be toggled between on the Object View page. These modes represent two
+                  different remediations of the editorial features affixed to its archived objects.
+                  Rather than isolating an object’s relevant editorial features into individual
+                  pop-up windows, as was previously the case, the site’s new framework-based model
+                  allows users to mix and match the information they want to see within a matrix of
+                  panels and according to a ‘Gallery’ or ‘Reading’-based visual ‘mode.’</p>
+<p id="p14">
+                  <figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="Gallery Mode." loading="lazy"><figcaption>Fig. 2: Gallery Mode.</figcaption></figure> In Gallery mode, the digital facsimile of the selected object opens in
+                  the central panel. Located at the left and right edges of the central panel are
+                  clickable thumbnails of the previous and subsequent objects in the copy – allowing
+                  users to progress forwards and backwards through the work. Directly beneath the
+                  facsimile is a line of copyright information, and a toolbar that allows users to
+                  visually manipulate the image for closer examination – offering them the option
+                  to: rotate, magnify, restore to true size, enlarge in a new window, and open the
+                  object’s diplomatic transcription at right.</p>
+<p id="p15">Below the central panel is a container that allows the user to tab
+                  between the following panels: <ul><li>Objects in Copy – this panel presents thumbnails of all the objects that
+                        exist in the open copy of the work. These objects will open in the central
+                        panel when clicked.</li><li>Object from the Same Matrix – if multiple copies of an object exist, this
+                        panel is present and showcases the thumbnails of all its existing copies
+                        (openable in the central panel when clicked). These thumbnails can also be
+                        selected via a corner checkbox for side-by-side comparison in the central
+                        panel – a remediation of the former WBA’s important ‘Compare’
+                        feature.</li><li>Copy Information – this panel presents the available bibliographic
+                        information of the copy to which the object belongs.</li><li>Electronic Edition Information – this panel presents the copy’s full
+                        digitization record.</li></ul>
+               </p>
+<p id="p16">The rest of WBA’s scholarly features are appended to the left of the
+                  page within a small yellow ‘i’ tab (presumably for ‘Information’). When clicked
+                  upon, this tab expands a panel on the left containing the object’s Illustration
+                  Description, Editor’s Notes, and (in its second placement on this page) the
+                  Diplomatic Transcription. As the name suggests, by design Gallery Mode treats the
+                  digital photo-facsimiles as central, and makes readily available the tools that
+                  assist with viewing (rotate, magnify, view full size) and descriptions relevant
+                  (such as the “illustration description) and editor’s note on the original object
+                  itself. The Gallery Mode allows for the diplomatic transcription to be viewed
+                  either to the right (when the bottom diplomatic display button is displayed) and
+                  to the left (when the left-hand button is clicked). It is not clear why this
+                  redundancy has been introduced.</p>
+<p id="p17">
+                  <figure id="img3" class="review-figure"><img src="pictures/picture-3.png" alt="Reading Mode." loading="lazy"><figcaption>Fig. 3: Reading Mode.</figcaption></figure> In Reading mode, objects open alongside their diplomatic transcription
+                  in a horizontally-scrollable central panel which contains the fully-loaded work.
+                  Scrolling left to right lets users pass through all objects of their selected copy
+                  in sequential order (backwards or forwards) without clicking on a new object to
+                  open (as happens in Gallery Mode). This allows for continuous reading and a truer
+                  experience of engaging with the original material. The centrality of the
+                  diplomatic transcription (where relevant) also emphasizes that this mode has been
+                  designed for reading. </p>
+<p id="p18">Reading mode also has a line of buttons along the bottom of the
+                  central panel that gives users the option to replace the default Diplomatic
+                  Transcription with the following features: <ul><li>Illustration Description</li><li>Editors’ Notes</li><li>Images Only</li><li>Compare with another Copy. Here, the Compare feature acts by presenting
+                        all selected copies of each object uncollated and in chronological
+                        order.</li></ul> There is also a button to view the current object at its true size, and a
+                  localized magnifying glass feature that can be directed using the mouse. These
+                  options reintroduce some elements that are accessible in Gallery mode.</p>
+<p id="p19">Reading mode excludes some of the object-based critical tools of
+                  Gallery mode: most noticeably the Copy Information and Electronic Edition
+                  Information, as well as the extent of its image manipulation tools. However, in
+                  the case of Blake’s illuminated books, it allows users to read through the entire
+                  copy of a work in a closer format to how it was meant to be consumed. The
+                  horizontal, scrollable format makes an optical ‘reading’ of Blake a much more
+                  feasible and authentic experience than the formerly object-isolating iteration of
+                  the Archive allowed.</p>
+<p id="p20">WBA presents these two modes without suggestion as to how either
+                  might be used for distinctive activities, but according to our assessment: <ul><li>Gallery mode appears to be intended for material scholars who want to
+                        engage with Blake on an artifact-by-artifact level, and who want to be able
+                        to examine his creative objects with all the scholarly tools and material
+                        associated them.</li></ul> and <ul><li>Reading mode appears to exist for scholarship that involves viewing a
+                        work as a whole, and for consuming Blake’s works as literature and/or in
+                        their entirety.</li></ul>
+               </p>
+<h3 id="div4.4">Search engine</h3>
+<p id="p21">
+                  <figure id="img4" class="review-figure"><img src="pictures/picture-4.png" alt="Search." loading="lazy"><figcaption>Fig. 4: Search.</figcaption></figure> The WBA’s previously separate text and image search functions are now
+                  combined into a single engine that is accessible from site’s top-anchored search
+                  bar. The search results now return objects that contain the search query in any of
+                  their attached editorial information fields. These results are then presented in
+                  separate sections according to the type of field the keywords were found in (e.g.
+                  Title, Transcription, Illustration Description, etc.). As this review goes to
+                  print, a button labeled ‘IT’ for ‘Image Tags’ has also been added to the right of
+                  the search bar. When clicked, the IT button opens a panel featuring a list of all
+                  searchable image keywords for user reference. After submitting one or more
+                  keywords in the search bar, users are given the option to craft a more advanced
+                  search query, by being provided with a three filter system to sift through their
+                  initial search results. The filters work as follows: <ul><li>Date – Restricts the results by composition and/or printing date, or
+                        range of dates.</li><li>Type – Limits the search for the user’s keywords to one or more of the
+                        following information fields: Title, Transcription, Image Tag, Editors’
+                        Note, Illustration Description, Copy Information, and Work
+                        Information.</li><li>Medium – Limits the search results to one or more of the medium-based
+                        categories of Blake’s works that appear in the upper menu: Illuminated
+                        Books, Commercial Book Illustrations, Separate Prints, Drawings and
+                        Paintings, Manuscripts and Typographic Editions.</li></ul> Selecting an object from the search results will then open a preview
+                  panel, which contains the object’s digital facsimile on the left, and the
+                  information field in which the keyword was found on the right (with the search
+                  keyword(s) specially highlighted). In this preview panel, users can move between
+                  matching objects from multiple copies, and switch copies as desired. By clicking
+                  directly on the previewed text or facsimile thumbnail, user’s can navigate to
+                  either the Work or Object View page.</p>
+<h3 id="div4.5">Help documentation and tutorials</h3>
+<p id="p22">The most prominent shortcoming of the new site is its lack of a
+                  centralized location for help documentation and best practices. The Help page and
+                  Tour of the Archive tutorial from the site’s previous iteration were both removed,
+                  rather than updated. All that exists in terms of explicit help documentation now
+                  is an anchored help icon with dynamic contents. When clicked, this help icon
+                  expands an overlay panel onto the page with a short explanation of the Mode toggle
+                  and a short explanation of how to use whichever page the user is currently using.
+                  Specifically, these contents change according to three different page types – the
+                  Homepage, Object View, Search Results, Work Information, and the Archive’s static
+                  pages (e.g. ‘About of the Archive’, ‘About Blake’, etc.). Unfortunately, the icon
+                  gives no written or visual indication to the user that its contents change based
+                  on the page-type, which can preclude users from bothering to open the function
+                  again when they get lost or confused.</p>
+<p id="p23">While intuitive interface design has been for the most part
+                  successfully employed in the site update, the lack of a new introduction to and
+                  thorough explanation of WBA’s scholarly tools and their placement in its user
+                  interface creates an unneeded barrier for both new and old users attempting to
+                  find their bearings.</p>
+    </section>
+    <section id="div5">
+      <h2>Mobile</h2>
+      <p id="p24">
+               <figure id="img5" class="review-figure"><img src="pictures/picture-5.png" alt="On mobile devices." loading="lazy"><figcaption>Fig. 5: On mobile devices.</figcaption></figure> The site can now be used on mobile, albeit with certain limitations. On
+               mobile, Gallery Mode is stripped of the visual manipulation toolbar and the
+               information tab, although the four tabs below the central panel (Objects in Copy,
+               Objects from the Same Matrix, Copy Information, and Electronic Information) are still
+               present. The ‘Compare’ feature still functions, but its usefulness is limited due to
+               the fact that one must swipe between the ‘compared’ objects in the central panel, and
+               cannot view them side-by-side simultaneously. Reading mode is stripped of all its
+               supplementary button options and consists solely of each object paired with its
+               Diplomatic Transcription and presented in a vertical scrolling format, not
+               horizontal, regardless of one’s phone-orientation. There are also several formatting
+               bugs and loading issues that crop up from time to time based on one’s page location,
+               browser, or mobile device, so optimization still has a way to go in this area.</p>
+    </section>
+    <section id="div6">
+      <h2>Technical Accessibility</h2>
+      <p id="p25">While not readily apparent upon its initial upgrade, WBA has revealed
+               improved technical accessibility several months into its new iteration. XML files are
+               now directly attached to each object for view under its Electronic Edition
+               Information, and an <a href="http://www.blakearchive.org/staticpage/archiveataglance?p=api" target="_blank" rel="noopener">API
+                  tab</a> has been added to the About the Archive section for users who wish to
+               mine WBA’s data. Finally, in its Technical Summary, WBA now links to the open source
+               repositories of its <a href="https://github.com/blakearchive/" target="_blank" rel="noopener">github
+                  organization, blakearchive</a>. This improved access to basic site data is a
+               boon both to web developers and data analysts in the digital humanities field.</p>
+    </section>
+    <section id="div7">
+      <h2>Questions of Legacy</h2>
+      <p id="p26">This upgrade was not formerly announced to the public until the new site
+               was launched on December 12, 2016, entirely replacing the previous iteration of the
+               site. While some of the Archive’s static pages have been preserved and are accessible
+               via entries on <a href="https://web.archive.org/" target="_blank" rel="noopener">Internet Archive's Wayback
+                  Machine</a> (some of which are linked in our review of the old site) WBA has not
+               made it clear if a legacy version of the website pre-upgrade still exists, and/or if
+               it will ever again be accessible by public users. The removal of the old site raises
+               certain questions about the conservation of legacy digital projects: might it have
+               been beneficial for the longest running iteration of one of digital humanities’
+               longest running SDEs to still be accessible, even if it is no longer the most up to
+               date iteration of the project? While outdated in terms of modern website standards,
+               WBA’s former incarnation was a powerful and fascinating demonstration of early SDE
+               development. Arguably, the decision to take down one of the earliest and most
+               influential work of digital humanities’ scholarship represents a loss. An appending
+               question of legacy relates to the fact that due to its current programming and
+               design, WBA’s current incarnation prevents its web pages from being easily archived
+               by the public using Internet Archive’s Wayback Machine. With this development, how
+               difficult will it be for most public observers to track changes and progress in WBA
+               and similar digital humanities projects? And is this something the field should be
+               concerned about?</p>
+    </section>
+    <section id="div8">
+      <h2>Conclusion</h2>
+      <p id="p27">This upgrade to the WBA preserves the project’s extensive and rigorous
+               collection of scholarly-mediated objects, while radically reinventing its front-end
+               into a framework-based structure. This structure remediates scholarly features
+               previously openable in pop-up windows into a collection of mix-and-match panels or
+               tabs—better presenting WBA’s archived objects in tandem with their scholarly context.
+               Many of the site’s new features, like horizontal scrolling and large image display,
+               deliver appreciable improvements for the academic study of Blake as an artist and
+               poet. However, the site requires renewed documentation to provide new and continuing
+               users with clear instructions on how to use the site.</p>
+<p id="p28">The upgrade has also improved WBA’s technical accessibility - improving
+               access to object XML, introducing a site API for data mining, and making public its
+               open-source github repositories. These additions provide digital humanities
+               technologists with new ways to inspect and interact with the WBA project. The removal
+               of the old site also raises important questions about the cultural legacy of digital
+               humanities sites, and whether elements of the original interface should be preserved
+               along with the project’s data.</p>
+    </section>
+
+
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{wba_upgrade,
+  author    = {Crawford, Kendal and Levy, Michelle},
+  title     = {The William Blake Archive (Upgrade)},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {7},
+  year      = {2017},
+  doi       = {10.18716/ride.a.7.5},
+  url       = {https://doi.org/10.18716/ride.a.7.5},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Crawford, Kendal
+AU  - Levy, Michelle
+TI  - The William Blake Archive (Upgrade)
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 7
+PY  - 2017
+DA  - 2017/12
+DO  - 10.18716/ride.a.7.5
+UR  - https://doi.org/10.18716/ride.a.7.5
+PB  - Institut für Dokumentologie und Editorik e. V.
+LA  - en
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Crawford, K., &amp; Levy, M. (2017). The William Blake Archive (Upgrade). RIDE – A review journal for digital editions and resources, (7). https://doi.org/10.18716/ride.a.7.5</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Crawford, Kendal, and Michelle Levy. &#34;The William Blake Archive (Upgrade).&#34; RIDE – A review journal for digital editions and resources, no. 7, 2017. https://doi.org/10.18716/ride.a.7.5.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Crawford, Kendal, and Michelle Levy. &#34;The William Blake Archive (Upgrade).&#34; RIDE – A review journal for digital editions and resources, no. 7 (2017). https://doi.org/10.18716/ride.a.7.5.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/wba_upgrade/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

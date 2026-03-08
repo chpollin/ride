@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEI Publisher &mdash; RIDE</title>
+  <meta name="description" content="
+            The TEI Publisher is an open-source tool designed to simplify the
+               publication of TEI encoded texts for researchers without extensive programming
+              ...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="TEI Publisher">
+  <meta property="og:description" content="
+            The TEI Publisher is an open-source tool designed to simplify the
+               publication of TEI encoded texts for researchers without extensive programming
+              ...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/tei-publisher/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/tei-publisher/">
+<meta name="DC.title" content="TEI Publisher">
+<meta name="DC.creator" content="Nadine Sutor">
+<meta name="DC.creator" content="Andreas Mertgens">
+<meta name="DC.date" content="2024-12">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.19.1"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="de">
+
+<meta name="citation_title" content="TEI Publisher">
+<meta name="citation_author" content="Nadine Sutor">
+<meta name="citation_author" content="Andreas Mertgens">
+<meta name="citation_doi" content="10.18716/ride.a.19.1"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2024-12">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/tei-publisher/tei-publisher.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "TEI Publisher",
+  "author": [{"@type": "Person", "name": "Nadine Sutor", "url": "https://orcid.org/0000-0002-2071-6407"}, {"@type": "Person", "name": "Andreas Mertgens", "url": "https://orcid.org/0000-0003-0577-4470"}],
+  "datePublished": "2024-12",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.19.1"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e.V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">Eröffnung des Reviews</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">Methoden und Implementierung</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">Benutzerfreundlichkeit, Nachhaltigkeit und Wartbarkeit</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">Userinteraktion, GUI and Visualisierungen</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div5" class="toc-link">Fazit</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#bibliography" class="toc-link">Bibliography</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#footnotes" class="toc-link">Notes</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>December 2024</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.19.1" rel="external">10.18716/ride.a.19.1</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-19/">
+        <span class="badge badge-tools">TE</span>
+        Issue 19
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>DE</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/tei-publisher/tei-publisher.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/tei-publisher/tei-publisher-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="de">
+    <header class="review-header">
+      <a href="/issues/issue-19/" class="review-issue-link">
+        <span class="badge badge-tools">TE</span>
+        Issue 19: Tools and Environments
+      </a>
+
+      <h1>TEI Publisher</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Nadine Sutor&nbsp;<a href="https://orcid.org/0000-0002-2071-6407" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>,         </span>
+        <span class="review-author">
+          Andreas Mertgens&nbsp;<a href="https://orcid.org/0000-0003-0577-4470" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>        </span>
+      </div>
+
+      <div class="review-affiliation">University of Wuppertal, Wuppertal</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="https://teipublisher.com" rel="external">TEI Publisher. The Instant Publishing Toolbox</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">Eröffnung des Reviews</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">Methoden und Implementierung</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">Benutzerfreundlichkeit, Nachhaltigkeit und Wartbarkeit</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">Userinteraktion, GUI and Visualisierungen</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div5" class="toc-link">Fazit</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#bibliography" class="toc-link">Bibliography</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#footnotes" class="toc-link">Notes</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>December 2024</span>
+<span><a href="https://doi.org/10.18716/ride.a.19.1" rel="external">DOI</a></span><a href="/reviews/tei-publisher/tei-publisher.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/tei-publisher/tei-publisher-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>The <em>TEI Publisher</em> is an open-source tool designed to simplify the
+               publication of TEI encoded texts for researchers without extensive programming
+               knowledge. It allows users to transform XML data into web-based digital editions
+               using predefined templates and custom styles. Developed by eXist-Solutions, it
+               integrates with the eXist-db XML database to store and organize data, offering
+               flexibility for different use cases. Initially launched in 2015, the tool is under
+               continuous development, with regular updates introducing new features and
+               improvements. In this review, we examine how <em>TEI Publisher</em> balances ease
+               of use with deep customization options. We demonstrate how scholars are empowered to
+               produce digital editions rapidly and how researchers can experiment with various
+               re-presentations of their data using a graphical interface and a set of predefined
+               configurations. We also discuss how, while it lowers barriers for less technical
+               users, it nevertheless requires a solid understanding of TEI and proficiency with XML
+               technologies for more complex customization. Using a small practical example, we will
+               demonstrate some of the core functions of the <em>TEI Publisher</em> and
+               highlight both the advantages and drawbacks affecting its presentation and usability.
+               TEI Publisher proves to be a mature and easy-to-use tool for projects with moderate
+               technical demands, suited for researchers seeking rapid results. However, it falls
+               short in accessibility, citability, and adaptability for highly customized use cases,
+               revealing areas for future improvement in usability and inclusivity.</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>Eröffnung des Reviews</h2>
+      <h3 id="div1.1">Die ReviewerInnen</h3>
+<p id="p1">Die Rezension über den <em>TEI Publisher</em> wurde von zwei
+                  AutorInnen verfasst. Mit ihrem abgeschlossenen Bachelorstudium der
+                  Kulturwissenschaften sowie dem absolvierten Masterstudium der Editions- und
+                  Dokumentwissenschaften, hat die Autorin fachlich einen geisteswissenschaftlichen
+                  Hintergrund. Das Abschlussprojekt der Masterarbeit setzte sie im Sommer 2019 mit
+                  dem <em>TEI Publisher</em> um. Am Lehrstuhl für Digital Humanities an der
+                  Bergischen Universität Wuppertal hat sich die Autorin verstärkt mit digitalen
+                  Technologien, Tools und Publikationsworkflows auseinandergesetzt. Die Reviewerin
+                  ist in diesem Sinne keine Webentwicklerin, sondern eine klassische Userin des
+                  rezensierten Tools. </p>
+<p id="p2">Der Co-Autor hat nach einem Bachelor in Anglistik und
+                  Wirtschaftswissenschaft ebenfalls den Master der Editions- und
+                  Dokumentwissenschaft abgeschlossen und arbeitet seit 2016 in den Digital
+                  Humanities. Zunächst am Cologne Center for eHumanities, seit 2020 am Lehrstuhl für
+                  Digital Humanities an der Bergischen Universität Wuppertal hat er an mehreren
+                  Projekten mitgearbeitet, deren Kern die Publikation von XML Daten war und dabei
+                  auch mehrere Portale mit <em>eXist-db</em> erstellt und administriert. </p>
+<h3 id="div1.2">Identifizierung des Tools</h3>
+<p id="p3">Der <em>TEI Publisher</em> identifiziert sich selbst als
+                  sogenannte <em>Instant Publishing Toolbox</em>.<sup class="footnote-ref" id="fnref-ftn1"><a href="#fn-ftn1" role="doc-noteref">1</a></sup>
+                  Benannt wird das Tool häufig in abgekürzter Form als <em>Publisher</em>. Das
+                  Ziel ist es, den ForscherInnen und WissenschaftlerInnen mit dem <em>TEI
+                     Publisher</em> ein effizientes und robustes Tool an die Hand zu geben, das
+                  ohne umfangreiche Programmierkenntnisse die Publikation von Daten und Quellen
+                     ermöglicht.<sup class="footnote-ref" id="fnref-ftn2"><a href="#fn-ftn2" role="doc-noteref">2</a></sup>
+                  Im Rahmen der produktiven Arbeit mit dem <em>TEI Publisher </em>können
+                  NutzerInnen mehrere vorgefertigte Templates sowie Konfigurations- und
+                  Transformationsskripte selbst konfigurieren. Für individuelle Zwecke und je nach
+                  Projektkontext kann die technische Infrastruktur des <em>TEI Publisher
+                  </em>also bis zu einem gewissen Umfang angepasst werden. „<em>TEI
+                     Publisher</em> allows you to publish XML without becoming a programmer and
+                  without pushing you into a one-size-fits-all framework.“<sup class="footnote-ref" id="fnref-ftn3"><a href="#fn-ftn3" role="doc-noteref">3</a></sup>
+                  Mit dem <em>TEI Publisher</em> lassen sich vereinzelt umfangreiche
+                  Programmierarbeiten reduzieren, sodass auch erfahrene WebentwicklerInnen von
+                  diesem Tool profitieren können. </p>
+<p id="p4">Entwickelt wurde der <em>TEI Publisher</em> von
+                     eXist-Solutions,<sup class="footnote-ref" id="fnref-ftn4"><a href="#fn-ftn4" role="doc-noteref">4</a></sup> einer GmbH, die
+                  technischen Support, Beratung, Schulung und Hosting für eXist-Datenbanksysteme
+                  anbietet und inzwischen auch aktiv bei der Weiterentwicklung des <em>TEI
+                     Publishers</em> mitwirkt. „Full service for all your eXist-db and <em>TEI
+                     Publisher</em> needs.“<sup class="footnote-ref" id="fnref-ftn5"><a href="#fn-ftn5" role="doc-noteref">5</a></sup> Zu den primären
+                  EntwicklerInnen zählen Magdalena Turska und Wolfgang Meier. Vor der produktiven
+                  Arbeit mit dem <em>TEI Publisher </em>ist zunächst die Einrichtung einer
+                  XML-Datenbank (<em>eXist-db</em>) erforderlich. Sie dient als storage engine
+                  für jegliche <em>eXist</em>-Anwendungen. Über den „Package-Manager“, eine Art
+                  „App-Store“ für <em>eXist</em>-Anwendungen, kann der <em>TEI
+                     Publisher</em> als Webapplikation heruntergeladen werden. Als Backend
+                  speichert und organisiert <em>eXist-db</em> die Daten in mehreren
+                     <em>collections. </em>Die Versionsnummer des <em>TEI Publisher
+                  </em>wird bei der Installation automatisch angegeben. NutzerInnen können im
+                  Vorfeld nur bedingt selbst bestimmen, welche Version dieses Tools sie einrichten
+                  und verwenden möchten. Die Versionsnummer des <em>TEI Publisher</em> muss
+                  kompatibel mit der Version der Datenbank sein, wie in dem projekteigenen
+                  GitHub-Repository hingewiesen wird: „Important: <em>TEI Publisher</em> from
+                  version 5.0.0 requires eXist-db 5.0.0 or later.“<sup class="footnote-ref" id="fnref-ftn6"><a href="#fn-ftn6" role="doc-noteref">6</a></sup>
+                  In dem Repository wird auch das Veröffentlichungsdatum einer jeden Version des
+                     <em>TEI Publisher </em>dokumentiert. Das Repository ist zugleich globaler
+                  Speicherort für sämtliche Ressourcen der EntwicklerInnen. Hier werden alle
+                  Änderungen, Revisionsschritte und Updates dokumentiert und veröffentlicht. </p>
+<h3 id="div1.3">Stand der Entwicklung</h3>
+<p id="p5">
+                  <figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="Interface der Testinstanz des TEI Publisher
+                        unter Version 8.0.0." loading="lazy"><figcaption>Fig. 1: Interface der Testinstanz des <em>TEI Publisher
+                        </em>unter Version 8.0.0.</figcaption></figure>
+                  <figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="Aktuelle Versionsnummer der Testinstanz des TEI
+                           Publisher." loading="lazy"><figcaption>Fig. 2: Aktuelle Versionsnummer der Testinstanz des <em>TEI
+                           Publisher</em>.</figcaption></figure>Seit Projektstart im Jahr 2015 befinden sich der <em>TEI
+                     Publisher</em> und alle seine Komponenten in aktiver Weiterentwicklung.
+                     Unter<em> Tagged „release“</em><sup class="footnote-ref" id="fnref-ftn7"><a href="#fn-ftn7" role="doc-noteref">7</a></sup> werden alle, insbesondere technischen Updates in Form von Blogeinträgen
+                  publiziert. Ein bis zwei Mal pro Jahr veröffentlichen die EntwicklerInnen eine
+                  neue Hauptversion, die um neue Funktionen und Features erweitert wird. Nach
+                  Auffassung der EntwicklerInnen kann der <em>TEI Publisher</em> dadurch in
+                  möglichst vielen unterschiedlichen Use-Cases zum Einsatz kommen. Weniger
+                  umfangreiche Updates werden unregelmäßig und in kürzeren Abständen veröffentlicht.
+                  Dazu zählen beispielsweise Verbesserungen, aber auch Fehlerkorrekturen. In einem
+                     Blogpost<sup class="footnote-ref" id="fnref-ftn8"><a href="#fn-ftn8" role="doc-noteref">8</a></sup>
+                  vom März 2023 wird die aktuelle Version 8.0.0 und die dort neu implementierten
+                  Features kurz vorgestellt. Seit Februar 2024<sup class="footnote-ref" id="fnref-ftn9"><a href="#fn-ftn9" role="doc-noteref">9</a></sup>
+                  steht Version 9.0.0. zur Verfügung. Das Update brachte u.a. kleine Verbesserungen
+                  der Facetten, Erweiterungen des clientseitigen URL-Routings und eine zusätzliche
+                  Unterstützung für IIIF-Manifeste. Darüber hinaus gab es eine grundlegende
+                  Überarbeitung des Annotation-Editors, der durch die Migration ein neues,
+                  benutzerfreundlicheres und ergonomischeres Layout, sowie zusätzliche
+                  Bearbeitungsmöglichkeiten von Register-Einträgen bietet. Somit wird es möglich
+                  auch lokale Taxonomien und Register für Orte, Namen etc. innerhalb des <em>TEI
+                     Publishers</em> zu nutzen.<sup class="footnote-ref" id="fnref-ftn10"><a href="#fn-ftn10" role="doc-noteref">10</a></sup> Zum Zeitpunkt der
+                  Abfassung dieser Review war Version 9.0.0. des<em> TEI Publisher </em>noch
+                  nicht veröffentlicht, sodass sich die hier dokumentierten Ergebnisse auf Version
+                  8.0.0. beziehen. Die Testdemo<sup class="footnote-ref" id="fnref-ftn11"><a href="#fn-ftn11" role="doc-noteref">11</a></sup>
+                  (Abb. 1), mit der die NutzerInnen die Infrastruktur des <em>TEI Publisher</em>
+                  erkunden und Daten zu Experimentierzwecken hochladen können, lief daher noch unter
+                  Version 8.1.0 (Abb. 2). Im projekteigenen GitHub-Repository ist die <em>version
+                     history</em> des <em>TEI Publisher </em>dokumentiert.<sup class="footnote-ref" id="fnref-ftn12"><a href="#fn-ftn12" role="doc-noteref">12</a></sup>
+               </p>
+<h3 id="div1.4">Bestimmung der Entwicklungsumgebung</h3>
+<p id="p6">Zum Zwecke dieses Reviews wurde der <em>TEI Publisher</em>
+                  vornehmlich auf Windows und Mac Systemen, zum kleinen Teil auch auf einem Linux
+                  (Ubuntu 22) System benutzt. Der <em>TEI Publisher</em> als Applikation auf
+                  Basis von <em>eXist-db</em> ist plattformunabhängig. Unterschiede ergaben sich
+                  lediglich in der Installation von <em>eXist-db</em>. </p>
+<h3 id="div1.5">Allgemeine Einführung in das Tool</h3>
+<p id="p7">Die Motivation hinter der Entwicklung des <em>TEI Publisher
+                  </em>liegt darin begründet, ein Werkzeug zur Verfügung zu stellen, das es
+                  WissenschaftlerInnen ermöglicht, ihre Quellen in digitaler Form und ohne
+                  umfassende Programmierkenntnisse zu veröffentlichen. Auch erfahrene
+                  EntwicklerInnen sollen von dieser Software profitieren, indem sie weniger Code
+                  schreiben müssen, dadurch Redundanzen vermeiden und somit Wartung sowie
+                  Interoperabilität verbessern können. Zentrale Aspekte in der Vision des <em>TEI
+                     Publisher</em> sind ein hohes Maß an Standardisierung, Modularität,
+                  Wiederverwendbarkeit sowie Nachhaltigkeit. </p>
+<p id="p8">Der <em>TEI Publisher</em> ist ein Gemeinschaftsprojekt, das auf
+                  Ideen und Beiträgen von TEI-Enthusiasten aus aller Welt basiert. Ursprünglich
+                  inspiriert von der Vision hinter dem TEI-Processing-Model<sup class="footnote-ref" id="fnref-ftn13"><a href="#fn-ftn13" role="doc-noteref">13</a></sup>
+                  und dem TEI-Simple-Projekt<sup class="footnote-ref" id="fnref-ftn14"><a href="#fn-ftn14" role="doc-noteref">14</a></sup>
+                  aus dem Jahr 2015, hat es sich zu dem entwickelt, was es heute ist: Eine
+                     <em>Instant Publishing Toolbox</em>, die eine einfache und unkomplizierte
+                  Datenpublikation auf Basis von XML-TEI in mehreren Exportformate ermöglichen soll.
+                  Laut Aussage der EntwicklerInnen ist der <em>TEI Publisher </em>kein
+                  kommerzielles Projekt, denn im Fokus steht der Open Source-Gedanke. Der <em>TEI
+                     Publisher </em>sei ein wichtiger Schritt in Richtung Interoperabilität,
+                  Wiederverwendbarkeit und Nachhaltigkeit. Um diese Ziele weiter voranzutreiben und
+                  damit auch eine breitere Öffentlichkeit davon profitieren kann, schlossen sich im
+                  Mai 2020 eine Reihe kleinerer und größerer Editionsprojekte, kulturbewahrende
+                  Institutionen und einzelne ForscherInnen zusammen, um e-editiones<sup class="footnote-ref" id="fnref-ftn15"><a href="#fn-ftn15" role="doc-noteref">15</a></sup>
+                  zu gründen. E-editiones ist ein Verband, der Akteure aus Forschung und
+                  Wissenschaft, die in den Bereichen der digitalen Geisteswissenschaften,
+                  Editionswissenschaft und der Informatik tätig sind, zusammenbringt. Im Fokus steht
+                  die Unterstützung digitaler Projekte durch die Förderung offener Standards und
+                  gemeinschaftlicher Kooperationen mit dem letztendlichen Ziel, den Fortbestand von
+                  Editionen bis weit in die Zukunft zu sichern.<sup class="footnote-ref" id="fnref-ftn16"><a href="#fn-ftn16" role="doc-noteref">16</a></sup> E-editiones wartet und pflegt auch den Sourcecode des <em>TEI
+                     Publisher</em> und koordiniert dessen Entwicklung in dem hier bereits
+                  vorgestellten GitHub-Repository.</p>
+<h3 id="div1.6">Finanzierung</h3>
+<p id="p9">Der <em>TEI Publisher</em> wurde mit Beiträgen anderer NutzerInnen
+                  der Öffentlichkeit als freie Software entwickelt und für Forschungszwecke zur
+                  Verfügung gestellt. Eine Vielzahl von privat und öffentlich finanzierten Projekten
+                  haben ebenfalls Unterstützung geleistet. Hinter allem steht, wie bereits erwähnt,
+                  der Verein e-editiones, der digitale Projekte durch die Förderung offener
+                  Standards unterstützt. Das Resultat dieser gemeinschaftlichen Zusammenarbeit ist
+                  eine lebhafte und gut vernetzte Community, die hinter dem <em>TEI
+                     Publisher</em> steht. </p>
+<p id="p10">Ein weiterer Weg der Finanzierung, z.B. für Wartung und Entwicklung
+                  von Software wie <em>eXist-db</em> oder dem <em>TEI-Publisher</em>, läuft
+                  über Projektaufträge. „TEI Publisher's development so far was mainly funded by
+                  projects having concrete publication needs.”<sup class="footnote-ref" id="fnref-ftn17"><a href="#fn-ftn17" role="doc-noteref">17</a></sup>
+                  Darüber hinaus, bietet die Entwickler-Community ihre Unterstützung bei der Planung
+                  und Umsetzung von Editionsprojekten an: „If you have a digital edition to publish
+                  and would like to give TEI Publisher a try, contact us [...] and we commit to port
+                  any feature with more general interest back to the TEI Publisher.“<sup class="footnote-ref" id="fnref-ftn18"><a href="#fn-ftn18" role="doc-noteref">18</a></sup>
+                  Auf der offiziellen Projektwebsite wird transparent gemacht, in welchen
+                  preislichen Kategorien sich potenzielle Interessenten befinden und unter welchen
+                  Bedingungen, z.B. je nach Umfang der technischen Anforderungen, einen
+                  Preisnachlass auf spezielle Anfragen gibt: <blockquote><p>Starting with TEI Publisher 5.0, we provide a special offer: Pass us
+                        your TEI data and we'll invest 5 full days to create a working prototype of
+                        your digital edition for a total price of € 5000 and earmark 10% of that for
+                        further TEI Publisher development. How much can be achieved in just a few
+                        days? Since TEI Publisher is all about code reuse, we can achieve a lot
+                        given that the quality of the underlying data allows it [...]<sup class="footnote-ref" id="fnref-ftn19"><a href="#fn-ftn19" role="doc-noteref">19</a></sup>
+                     </p></blockquote>
+               </p>
+<p id="p11">Um exemplarisch zu zeigen, was in kurzer Zeit möglich ist, wird auf
+                  eine mit dem <em>TEI Publisher</em> umgesetzte digitale Edition der <em>Van
+                     Gogh Letters</em><sup class="footnote-ref" id="fnref-ftn20"><a href="#fn-ftn20" role="doc-noteref">20</a></sup>
+                  verwiesen, die ein ausgewähltes Corpus der Briefe des Künstlers Van Gogh inklusive
+                  Transkriptionen und Faksimiles in synoptischer Ansicht visualisiert. Erstellt
+                  wurde diese Edition auf Basis von Version 5.0.0.</p>
+<h3 id="div1.7">Transparenz</h3>
+<p id="p12">Die Dokumentation<sup class="footnote-ref" id="fnref-ftn21"><a href="#fn-ftn21" role="doc-noteref">21</a></sup>
+                  ist sehr umfangreich, wird stetig erweitert und enthält viele Beispiele und
+                  Referenzen. Sie bespricht Probleme und gibt technische Hinweise, auf die
+                  NutzerInnen im Rahmen der produktiven Arbeit mit dem <em>TEI Publisher</em>
+                  achten sollten. Die Dokumentation kann sowohl online eingesehen als auch in
+                  verschiedenen Exportformaten oben im Menü via Klick auf „Download“ heruntergeladen
+                  werden. Als ersten Einstieg bietet die offizielle Website des <em>TEI
+                     Publisher</em> mehrere Demo-Projekte,<sup class="footnote-ref" id="fnref-ftn22"><a href="#fn-ftn22" role="doc-noteref">22</a></sup> damit sich NutzerInnen einen Überblick verschaffen können, um zu sehen,
+                  was mit dem <em>TEI Publisher</em> als Tool möglich ist. Die technische
+                  Dokumentation im GitHub-Repository<sup class="footnote-ref" id="fnref-ftn23"><a href="#fn-ftn23" role="doc-noteref">23</a></sup>
+                  ist ausführlich und wird stetig aktualisiert. Das betrifft sowohl die Ressourcen,
+                  als auch die textuellen Erläuterungen in der Readme-Datei, die z.B. durch den
+                  Installationsprozess führen. In dem Repository auf GitHub wird auch auf
+                     Lizenzen<sup class="footnote-ref" id="fnref-ftn24"><a href="#fn-ftn24" role="doc-noteref">24</a></sup> Bezug genommen, unter denen sämtliche Software, darunter auch der
+                     <em>TEI Publisher</em>, betrieben wird. Damit verknüpft sind auch die
+                  Bedingungen, unter denen der <em>Publisher</em> und seine Komponenten
+                  verwendet werden dürfen. Lizenziert ist der <em>TEI Publisher</em> unter der
+                     GPLv3-Lizenz.<sup class="footnote-ref" id="fnref-ftn25"><a href="#fn-ftn25" role="doc-noteref">25</a></sup> Ist von Seiten der NutzerInnen die Verwendung in einem anderen Kontext
+                  beabsichtigt, was möglicherweise ein anderes Lizenzmodell erforderlich macht,
+                  bitten die Verantwortlichen um eine Kontaktaufnahme, damit hier eine Lösung
+                  gefunden werden kann. </p>
+<p id="p13">Der Umfang der Informationen zu sämtlichen Bereichen rund um den
+                     <em>TEI Publisher</em> ist beachtlich und daher positiv zu bewerten. Die
+                  Art der Bereitstellung ist jedoch z. T. verwirrend und nicht immer
+                  nachvollziehbar. So widersprechen sich beispielsweise die Angaben zur Version in
+                  dem Blog von e-editiones (8.0.0)<sup class="footnote-ref" id="fnref-ftn26"><a href="#fn-ftn26" role="doc-noteref">26</a></sup>
+                  und in der Rubrik „News“ auf der Startseite (8.0.0)<sup class="footnote-ref" id="fnref-ftn27"><a href="#fn-ftn27" role="doc-noteref">27</a></sup>
+                  im Vergleich zur Testversion (8.1.0)<sup class="footnote-ref" id="fnref-ftn28"><a href="#fn-ftn28" role="doc-noteref">28</a></sup>.
+                  ForscherInnen, die eine produktive Arbeit mit diesem Tool in Erwägung ziehen,
+                  werden im Unklaren gelassen, wann welche Version der Publisher-App zur Verfügung
+                  steht.</p>
+    </section>
+    <section id="div2">
+      <h2>Methoden und Implementierung</h2>
+      <h3 id="div2.1">Problemstellung und Alternativen</h3>
+<p id="p14">Das grundlegende Problem, für das der <em>TEI Publisher</em> eine
+                  Lösung anbieten möchte, ist eines, das sich in vielen Projekten stellt: In TEI
+                  erfasste Textdaten und ein entsprechendes Datenmodell liegen vor oder das Projekt
+                  befindet sich womöglich noch im Prozess der Exploration und Datenmodellierung.
+                  Konzeptionell besteht bereits eine Vision von einer Präsentationsebene sowie einer
+                  Editionsansicht und gesucht wird nun der schnellste und einfachste Weg dorthin.
+                  Gleichzeitig sollte der Prozess so flexibel und anpassbar sein, dass spezifische
+                  Anforderungen (und die gibt es in fast jedem geisteswissenschaftlichen Projekt)
+                  realisiert und auch komplexe TEI-Datenmodelle repräsentiert und verarbeitet werden
+                  können. Trotz dieser Ansprüche ist in vielen Projekten oft jedoch keine dedizierte
+                  oder nur eine begrenzte Stelle für einen Entwickler vorgesehen. Darüber hinaus
+                  erlauben die Projektrealitäten keine langen und teuren Entwicklungsprozesse über
+                  die begrenzten Projektkontexte hinaus. Der klassische Weg wäre entweder die eigene
+                  Entwicklung einer Webapplikation auf Basis einer XML-Datenbank wie
+                     <em>eXist-db</em> oder <em>Base-X</em> oder die Erstellung einer
+                  statischen Webseite. Beide Wege sind in der oben skizzierten Situation oft nur
+                  schwer umsetzbar und erfordern von den Projektmitarbeitenden gute Kenntnisse
+                  sowohl im Bereich der „X-Technologien“ (<em>XPath, XSLT, XQuery</em>) und in
+                  der Webentwicklung die, sofern eben keine vollwertige Entwicklerstelle vorhanden
+                  ist, erst erarbeitet werden müssen. Dieses Problem ist seit langer Zeit Thema in
+                  den gerade kleineren Forschungsprojekten und es wurde immer wieder Bedarf für eine
+                  niedrigschwellige Lösung geäußert. In ihrer Vorstellung der <em>TEI Archiving,
+                     Publishing, and Access Service (TAPAS)</em> im TEI Journal berichten 2013
+                  z.B. schon Julia Flanders and Scott Hamlin: „Following a TEI workshop at Wheaton
+                  College, participants reflected on the fact that learning and creating TEI data
+                  seemed to lie well within their grasp, but publishing that data seemed to depend
+                  on institutional resources (server space, programmer time, XML publishing
+                  expertise) that they could not count on.“<sup class="footnote-ref" id="fnref-ftn29"><a href="#fn-ftn29" role="doc-noteref">29</a></sup>
+               </p>
+<p id="p15">Schaut man sich aktuelle Entwicklungen an, versuchen neben dem
+                     <em>TEI Publisher</em> auch andere Tools an diesem Punkt anzuknüpfen und
+                  Projekte in diesen Phasen des Workflows zu unterstützen - mit jeweils
+                  unterschiedlichen Herangehensweisen, Zielgruppen und <em>use-cases</em>. </p>
+<p id="p16">Die Software<em> EVT (Edition Visualization Technology)</em>
+                  beschreibt sich selbst als „light-weight, open source tool specifically designed
+                  to create digital editions from XML-encoded texts, freeing the scholar from the
+                  burden of web programming and enabling the final user to browse, explore and study
+                  digital editions by means of a user-friendly interface.“<sup class="footnote-ref" id="fnref-ftn30"><a href="#fn-ftn30" role="doc-noteref">30</a></sup>
+                  Das Tool wurde im Rahmen des <em>Digital Vercelli Book</em> Projektes
+                  entwickelt und liegt bereits in Version 2.0 vor.<sup class="footnote-ref" id="fnref-ftn31"><a href="#fn-ftn31" role="doc-noteref">31</a></sup>
+                  <em>EVT</em> positioniert sich zunehmend als generisches Tool für verschiedene
+                  Formen von digitalen Editionen.<sup class="footnote-ref" id="fnref-ftn32"><a href="#fn-ftn32" role="doc-noteref">32</a></sup> Der spezifische Fokus liegt
+                  hier auf der synoptischen Darstellung verschiedener Textansichten und des
+                  Faksimiles, also den Anforderungen einer klassischen historisch-kritischen
+                  Editionspraxis. Technisch realisiert ist die Software von EVT als Open-Source Web
+                  Applikation auf Basis von JavaScript. Wie im Namen bereits ersichtlich, liegt der
+                  Schwerpunkt primär darauf, EditorInnen bei der Arbeit mit und der Analyse von
+                  Dokumenten zu unterstützen und dafür eine leistungsfähige Visualisierung
+                  anzubieten. Eine finale Publikationsplattform für Projekte zu erstellen steht
+                  somit nicht im Vordergrund.</p>
+<p id="p17">Als weitere Entwicklung in diesem Bereich sei das Modul
+                     <em>ediarum.WEB</em> zu nennen, welches von der Berlin-Brandenburgische
+                  Akademie der Wissenschaften (BBAW) im Rahmen des <em>ediarum-</em>Projekts als
+                  Publikationsmodul entwickelt wurde. Dies bietet die Möglichkeit, Daten, die
+                  mittels des <em>ediarum-</em>Frameworks erstellt und verwaltet werden,
+                  innerhalb einer <em>eXist-db</em>-App zu veröffentlichen. Im Gegensatz zum
+                     <em>TEI Publisher</em> positioniert sich <em>ediarum.WEB</em> noch
+                  deutlicher als Werkzeug und Programmbibliothek für EntwicklerInnen („library for
+                     <em>eXist-db</em>“<sup class="footnote-ref" id="fnref-ftn33"><a href="#fn-ftn33" role="doc-noteref">33</a></sup> ) und weniger als out-of-the-box Lösung für ForscherInnen. </p>
+<h3 id="div2.2">Methodologie und Funktionsweisen</h3>
+<p id="p18"><figure id="img3" class="review-figure"><img src="pictures/picture-3.png" alt="Ausschnitt aus dem ODD-Editor." loading="lazy"><figcaption>Fig. 3: Ausschnitt aus dem ODD-Editor.</figcaption></figure>Kern des <em>TEI Publisher</em> ist das TEI Processing Model in Form
+                  von ODD (One Document Does it all) Dateien, die technisch betrachtet ebenfalls
+                  XML-Dateien sind. Diese Form der Verarbeitung wurde im Jahr 2015 zunächst als
+                  Alternative zur Arbeit mit XSLT-Skripten vorgestellt. ODD-Dateien enthalten
+                  XML-Schemafragmente in denen ein spezifisches Set von XML-Elementen und Attributen
+                  technisch definiert wird sowie die dazugehörige menschenlesbare Dokumentation und
+                  Encoding Richtlinien. In ODD-Dateien wird also festgelegt, welche TEI-Elemente und
+                  Attribute projektspezifisch genutzt werden und wie diese eingesetzt und
+                  verarbeitet werden sollen. Darauf aufbauend können mit Stylesheets spezifische
+                  Darstellungsformen erstellt werden. Im <em>TEI Publisher</em> sind bereits
+                  einige ODD-Dateien aus verschiedenen Projekten integriert. Mit diesen können
+                  bereits viele der am häufigsten verwendeten TEI-Elemente verarbeitet werden. Dies
+                  bietet den NutzerInnen vor allem am Anfang der Benutzung die Möglichkeit,
+                  experimentell verschiedene mögliche Darstellungsformen für ihre Daten
+                  auszuprobieren. Ein weiterer Vorteil des <em>TEI Publisher</em>s ist nicht nur
+                  die Vereinfachung der Verarbeitung von TEI-Dokumenten mittels ODD, sondern auch
+                  die Erstellung und Anpassung dieser ODD-Dateien durch ein mitgeliefertes User
+                  Interface. Der <em>TEI Publisher</em> bietet hier mit dem ODD-Editor (Abb. 3)
+                  ein Werkzeug an, mit dem die individuelle Anpassung von ODD Dateien und damit die
+                  Kontrolle über die Darstellung des TEI-Encoding auch für AnwenderInnen ermöglicht
+                  werden soll, die nicht direkt im XML-Code arbeiten können oder wollen. Dieses ist
+                  von der Funktionsweise vergleichbar mit dem von der Text Encoding Initiative
+                  selber bereitgestellten ROMA Tool<sup class="footnote-ref" id="fnref-ftn34"><a href="#fn-ftn34" role="doc-noteref">34</a></sup>, wobei dieses im direkten Vergleich der Benutzererfahrung nochmal klarer
+                  lesbar und leichter zu bedienen ist, gerade für technisch wenig versierte
+                  NutzerInnen. Auch wenn im ODD Editor hier dann tatsächlich keine aktive Arbeit im
+                  XML-Code mehr für die Anpassung erforderlich ist, ist eine gute Kenntnis der
+                  TEI-Module, des benutzten Vokabulars und ein Verständnis und Erfahrung von TEI
+                  Schemata dennoch erforderlich für eine effektive Nutzung. </p>
+<p id="p19">Weitere Elemente, die im Rahmen des Transformationsprozesses eine
+                  Rolle spielen, sind CSS-Stylesheets und HTML-Templates. In diesen Dateien wird die
+                  Darstellung der mit ODD transformierten Dokumente definiert. Auch hier stellt der
+                     <em>TEI Publisher</em> viele Beispiel-Templates bereit, mit denen
+                  unterschiedliche Layouts und Darstellungsformen mit den projekteigenen Daten
+                  getestet werden können. Für deren Anpassung gibt es allerdings keine grafische
+                  Oberfläche, hier muss also im Texteditor gearbeitet oder extern erstellte CSS- und
+                  HTML-Dateien importiert werden. Innerhalb der Templates können zusätzlich
+                  sogenannte, mit JavaScript realisierte <em>Webcomponents</em> genutzt werden.
+                  Diese <em>Webcomponents </em>sind in der Lage, interaktive und dynamische
+                  Funktionen und Features zu erzeugen. </p>
+<p id="p20">Die grundlegende Methodologie lässt sich dahingehend zusammenfassen,
+                  dass die Verarbeitung von TEI-Daten mittels ODD, Templates und Stylesheets
+                  unterstützt und dadurch den BenutzerInnen in erster Linie die Möglichkeit gegeben
+                  wird, mit verschiedene Darstellungsformen zu experimentieren bevor dann in einem
+                  nächsten Schritt die gezielte Anpassung und Weiterentwicklung vorgenommen werden
+                  kann.</p>
+<p id="p21"><figure id="img4" class="review-figure"><img src="pictures/picture-4.png" alt="Annotationseditor in einer älteren Version des TEI
+                           Publisher, Screenshot aus der TEI
+                        Publisher-Dokumentation." loading="lazy"><figcaption>Fig. 4: Annotationseditor in einer älteren Version des <em>TEI
+                           Publisher</em>, Screenshot aus der <em>TEI
+                        Publisher</em>-Dokumentation.</figcaption></figure>Neben diesen reinen Darstellungsfunktionalitäten unterstützt der
+                     <em>TEI Publisher </em>seit Version 7.1.0 zusätzlich rudimentäre
+                     Annotationsvorhaben.<sup class="footnote-ref" id="fnref-ftn35"><a href="#fn-ftn35" role="doc-noteref">35</a></sup>
+                  Im Annotationseditor kann eine geteilte Ansicht mit einer kleinen Auswahlleiste
+                  geöffnet werden, die über Annotationsbuttons verfügt (Abb. 4). Damit dieses
+                  Annotationsfeature funktioniert, ist eine vorherige Auszeichnung von Named
+                  Entities in den TEI-Dokumenten erforderlich. Erst dann können Entitäten, wie z.B.
+                  Personen und Orte im Annotationseditor semantisch hervorgehoben und exploriert
+                  werden. In einem Seitenbereich (unter „TEI“) können NutzerInnen nachverfolgen, wie
+                  sich die Annotationen in den XML-Daten verhalten und zugleich beobachten, wie sie
+                  im Interface des <em>TEI Publisher</em> angezeigt werden. In einem weiteren
+                  Bereich kann ergänzend zu „TEI“ zwischen weiteren Ansichten durch Transformation
+                  (z.B. in HTML, JSON) gewechselt werden.<sup class="footnote-ref" id="fnref-ftn36"><a href="#fn-ftn36" role="doc-noteref">36</a></sup>
+               </p>
+<p id="p22">
+                  <figure id="img5" class="review-figure"><img src="pictures/picture-5.png" alt="Annotationseditor in Version 9.0.0 des TEI
+                           Publisher. Screenshot aus der TEI
+                        Publisher-Dokumentation." loading="lazy"><figcaption>Fig. 5: Annotationseditor in Version 9.0.0 des <em>TEI
+                           Publisher</em>. Screenshot aus der <em>TEI
+                        Publisher</em>-Dokumentation.</figcaption></figure>Der typische „Transkriptions-Workflow“, den die meisten TEI-basierten
+                  Projekte durchlaufen, wird in der Dokumentation wie folgt beschrieben: In einem
+                  ersten Schritt wird eine rudimentäre Transkription erstellt. Entweder manuell in
+                  einem XML-Editor, mit Hilfe von OCR- oder HTR-Tools wie Transkribus oder durch
+                  Konvertierung aus einem anderen Format, z. B. durch Import aus Word. Unabhängig
+                  von der hier gewählten Methodik, enthält diese Transkription grundlegende
+                  strukturelle Markierungen, wie z.B. Unterteilungen, Überschriften und Absätze.
+                  Diese „Basis-Transkription“ kann mit Hilfe der Funktionalitäten des <em>TEI
+                     Publisher</em> schrittweise angereichert werden: Textmerkmale wie
+                  Hervorhebungen können markiert, Abkürzungen erweitert, Korrekturen und
+                  Regularisierungen vorgenommen werden; Personen, Orte oder Begriffe, die im Text
+                  vorkommen, können explizit markiert und mit einem <em>authority register</em>
+                  verknüpft werden. Dies ist ein iterativer Prozess, bei dem die daraus
+                  resultierende TEI-Kodierung stetig überprüft wird. Die Web-Annotationen innerhalb
+                  der Infrastruktur des<em> TEI Publisher</em> zielen darauf ab, die
+                  „Anreicherungsphase“ zu erleichtern. Sie ermöglicht den RedakteurInnen, alle
+                  Vorhaben der Auszeichnung direkt in einer benutzerfreundlichen Umgebung
+                  durchzuführen. Die Dokumentation verspricht, diese Arbeitsweise sei einfacher und
+                  niederschwelliger und erfordere nur halb so viel TEI-Erfahrung, wie es bei der
+                  Nutzung eines klassischen XML-Editors der Fall ist: „Just use your mouse to
+                  highlight the text fragment to annotate, click on the annotation type and
+                  optionally select additional information, e.g. to link with an external authority
+                     file.“<sup class="footnote-ref" id="fnref-ftn37"><a href="#fn-ftn37" role="doc-noteref">37</a></sup>
+               </p>
+<p id="p23">Die experimentelle Unterstützung für die Erkennung und Markierung von
+                  benannten Entitäten in Texten (Named Entity Recognition) ist erst mit Version 8
+                  des <em>TEI Publisher</em> möglich. In Version 9.0.0 wurden ein neues,
+                  ergonomischeres Layout sowie ein erweiterter Funktionsumfang für die Kuration
+                  ortsbezogener lokaler Register eingeführt (Abb. 5). Der Annotations-Editor ist
+                  nicht dazu gedacht, Dokumente von Grund auf neu zu erstellen. Er zielt auf „eine
+                  der mühsamsten und zeitraubendsten Aufgaben in jedem Editionsprojekt ab: das
+                  Hinzufügen von semantischen, analytischen oder textkritischen Markierungen zu
+                  einer bestehenden Transkription.“<sup class="footnote-ref" id="fnref-ftn38"><a href="#fn-ftn38" role="doc-noteref">38</a></sup> Die Arbeit
+                  der RedakteurInnen soll über den webbasierten Annotationseditor des <em>TEI
+                     Publisher</em> durch die automatische Identifizierung potenzieller Kandidaten
+                  für Personen und Orte vereinfacht werden. Um die Erkennung von Named-Entities im
+                  Annotationseditor verfügbar zu machen, ist ein separater Python-Dienst nötig. In
+                  dem entsprechenden Abschnitt der Dokumentation ist ein Verweis zum
+                     <em>tei-publisher-ner</em> Repository verlinkt.<sup class="footnote-ref" id="fnref-ftn39"><a href="#fn-ftn39" role="doc-noteref">39</a></sup>
+                  Dort können NutzerInnen das Repository gemäß den Anweisungen in der Readme-Datei
+                  klonen, um die API in der eigenen Instanz für die Erkennung von Entitäten im
+                  Eingabetext und Skripte für das Training von Entitätserkennungsmodellen nutzen zu
+                  können. Mit einem zusätzlichen Analysetool wie dem Annotationseditor ist der
+                  Grundstein für die weitere, tiefergehende Auseinandersetzung mit den Quellen
+                  gelegt, z.B. für eine (geografische oder personenbezogene) Netzwerkanalyse.</p>
+<h3 id="div2.3">Input- und Output</h3>
+<p id="p24">Der <em>TEI Publisher</em> startete als Publishing Toolbox für
+                  TEI-Daten. Die Prinzipien des TEI Processing Model waren jedoch nie auf ein
+                  einziges Vokabular beschränkt. Der <em>TEI Publisher</em> hat seine
+                  Unterstützung sehr schnell auf andere XML-Formate ausgeweitet. Derzeit werden TEI,
+                  DocBook, JATS und MS Word DOCX unterstützt. Diese werden dann automatisch vom
+                     <em>TEI Publisher</em> mithilfe von dafür ausgelegten ODD Dateien in TEI
+                  XML konvertiert. Komplexeres Markup wird hier also nicht mit konvertiert und
+                  erfasst, wie es z.B. bei eigenständigen Tools wie TEI Garage geschieht.<sup class="footnote-ref" id="fnref-ftn40"><a href="#fn-ftn40" role="doc-noteref">40</a></sup> Um ein äquivalentes Ergebnis z.B.
+                  für docx Dateien zu erzielen, müssen die für die Konvertierung genutzten ODD Daten
+                  individuell angepasst werden. Laut Dokumentation ist es eine bewusste Entscheidung
+                  gewesen, bei der Konvertierung zunächst den Fokus nur auf die Textinhalte und
+                  grobe Struktur zu legen um die resultierende TEI-Datei nicht mit unnötigen
+                  Elementen und Attributen zu überfrachten und komplexeres Markup den Anpassungen
+                  der Nutzer zu überlassen.<sup class="footnote-ref" id="fnref-ftn41"><a href="#fn-ftn41" role="doc-noteref">41</a></sup> Die Basis für die Arbeit mit dem <em>TEI Publisher</em> sind dennoch
+                  überwiegend valide TEI-Daten. Eventuell schon vorhandene ODD-Daten oder
+                  Stylesheets können ebenfalls als Input in die Instanz des <em>TEI
+                     Publisher</em> dienen. Innerhalb des <em>TEI Publisher</em> können diese
+                  weiter bearbeitet oder von Grund auf neu erstellt werden. Die als Input in den
+                     <em>TEI Publisher</em> eingespeisten Daten können wiederum in andere
+                  Ausgabeformate (<em>Output Media Settings</em>), wie z.B. PDF und epub
+                  exportiert werden.<sup class="footnote-ref" id="fnref-ftn42"><a href="#fn-ftn42" role="doc-noteref">42</a></sup>
+                  Der <em>TEI Publisher</em> unterstützt somit verschiedene Ausgabemedienformate
+                  und übersetzt Stile mit dem Attribut @output in das entsprechende Zielformat. Die
+                  Qualität der erzeugten Ausgabe kann allerdings je nach Art des Eingabedokuments im
+                  Fo- und Latex-Modus unterschiedlich sein, wie in der Dokumentation hingewiesen
+                  wird. Auch hier scheint der Output zunächst weniger detailliert zu sein, als bei
+                  den für diese Art von Transformation dedizierten Tools wie TEIGarage, erlaubt aber
+                  auch hier eine individuelle Anpassung,</p>
+<p id="p25">
+                  <figure id="img6" class="review-figure"><img src="pictures/picture-6.png" alt="Erstellung einer eigenen
+                        TEI-Publisher-Applikation mit dem App-Generator." loading="lazy"><figcaption>Fig. 6: Erstellung einer eigenen<em>
+                        TEI-Publisher</em>-Applikation mit dem App-Generator.</figcaption></figure>Der Hauptoutput des <em>TEI Publisher</em> ist, nachdem in der
+                  Sandbox-Umgebung eine funktionierende Kombination aus ODD und CSS entwickelt
+                  wurde, die Erzeugung einer Standalone <em>eXist-db</em>-Applikation mit der
+                  zuvor konfigurierten ODD-Datei und CSS-Stylesheet. Durch einen Klick auf „Admin“
+                  („Administration“) öffnet sich ein Menü, in dem die Option „App Generator“
+                  („Anwendung generieren“) ausgewählt werden kann (Abb. 6). Diese Version kann dann,
+                  je nach Anforderung, Ziel und Zweck individuell angepasst und konfiguriert werden.
+                  Die Modifizierung bezieht sich nicht nur auf die Konfiguration interaktiver
+                  Komponenten, sondern auf die Gestaltung und das Layout des gesamten Interface. In
+                  diesem Arbeitsschritt indiziert der <em>TEI Publishe</em>r automatisch die
+                  Datensätze, womit in der erstellten Applikation ohne weitere Arbeit eine
+                  Suchfunktion zur Verfügung steht. Ohne weitere Anpassungen werden dann auch
+                  facettierte Suchfilter für die Werte „Genre“ und „Language“ (aus den
+                  entsprechenden Elementen im TEI-Header) erzeugt. Es können weitere Facetten
+                  implementiert werden, diese müssen dann aber manuell in den Konfigurationsdateien
+                  der Applikation konfiguriert werden, was technisch nicht trivial aber ausreichend
+                  dokumentiert ist.<sup class="footnote-ref" id="fnref-ftn43"><a href="#fn-ftn43" role="doc-noteref">43</a></sup>
+               </p>
+<p id="p26">Diese separate Applikation, die in der <em>eXist-db-</em>Instanz
+                  generiert und auf dem Dashboard der Datenbank angezeigt wird, kann unabhängig vom
+                     <em>TEI Publisher</em> distribuiert werden. Es ist also möglich, eine voll
+                  funktionsfähige Anwendung zu exportieren, die dann auf einem eigenen Server
+                  bereitgestellt werden kann. </p>
+<p id="p27">Die Performance der Applikation ist abhängig von der Performance der
+                     <em>eXist-db</em>-Instanz, auf der der <em>TEI Publisher</em>
+                  installiert ist. Diese ist wiederum abhängig von den Systemressourcen und der
+                  Konfiguration des jeweiligen Servers. Die Darstellung von einzelnen XML-Daten und
+                  auch die facettierte Suche der meisten Korpora verläuft dank der von
+                     <em>eXist-db</em> durchgeführten Indizierung schnell und unproblematisch.
+                  Erfahrungsgemäß gibt es erst bei größeren Datenkorpora und komplexeren Queries in
+                  der XML-Datenbank Einbrüche in der Performance von <em>eXist-db.</em> Zu
+                  diesem Zeitpunkt müsste dann von einem erfahrenen Entwickler manuelle
+                  Optimierungsarbeit geleistet werden.<sup class="footnote-ref" id="fnref-ftn44"><a href="#fn-ftn44" role="doc-noteref">44</a></sup></p>
+<h3 id="div2.4">Praxisbeispiel: Erstellung einer Minimaledition</h3>
+<p id="p28"><figure id="img7" class="review-figure"><img src="pictures/picture-7.png" alt="Default-View auf eine hochgeladene TEI-XML-Datei in den
+                           TEI Publisher." loading="lazy"><figcaption>Fig. 7: Default-View auf eine hochgeladene TEI-XML-Datei in den
+                           <em>TEI Publisher</em>.</figcaption></figure>Grundlage für dieses niedrigschwellige Beispiel waren TEI-XML-Daten, die
+                  von Studierenden im Rahmen einer Anfänger Übung erstellt wurden. Die Studierenden
+                  hatten jeweils ein Dokument aus dem Nachlass Harold Garfinkels erhalten und
+                  sollten dieses hinsichtlich vorgenommener Änderungen (Ergänzungen,
+                  Durchstreichungen) und Named Entities transkribieren. Um die Transkriptionsarbeit
+                  der Studierenden schnell und ohne großen Aufwand zu visualisieren und ihnen einen
+                  ersten Eindruck von einer möglichen späteren Editionsansicht zu geben, sollte der
+                     <em>TEI Publisher</em> genutzt werden. Ein erster Test war dank der
+                  „Playground“ Umgebung auf der Webseite des <em>TEI Publishers </em>schnell
+                  möglich und eine erste rudimentäre Webansicht erstellt. Durch das Experimentieren
+                  mit den verschiedenen bereitgestellten ODD-Dateien und Templates konnten
+                  unterschiedliche Renderings derselben TEI-XML-Datei ausprobiert werden (Abb. 7).
+                  Viele der häufig in digitalen Editionen benutzen Elemente (z.B. <em>add,
+                     person</em>) werden in vielen der ODD-Template Kombinationen visualisiert und
+                  angezeigt. </p>
+<p id="p29">Als nächsten Schritt in der Reihe der Anpassung können z.B. eine
+                  eigene ODD mit eigenen Rendering-Befehlen erstellt werden. Eine Überlegung war
+                  auch, eine bereits vorhandene ODD zu kopieren und den eigenen Anforderungen
+                  anzupassen. In dem hier gezeigten use-case wurde eine bereits bestehende ODD
+                  kopiert und mit Hilfe des grafischen ODD-Editors neue Regeln zur Darstellung von
+                  Unterstreichungen formuliert. Für die Studierenden als Beispiel für NutzerInnen
+                  mit wenig XML-Erfahrung erlaubt der ODD-Editor einen einfacheren und
+                  niederschwelligen Zugang. Ein Vorwissen über das XML-Datenmodell, die Art der
+                  Beziehungen zwischen Elementen und Attribute sind jedoch erforderlich und führen
+                  zumindest für AnfängerInnen dennoch zu einer gewissen Einarbeitungszeit. </p>
+<p id="p30"><figure id="img8" class="review-figure"><img src="pictures/picture-8.png" alt="Synoptische Ansicht von Transkription und Faksimile eines
+                        Typoskripts." loading="lazy"><figcaption>Fig. 8: Synoptische Ansicht von Transkription und Faksimile eines
+                        Typoskripts.</figcaption></figure>Die Integration von Bilddateien wird im <em>TEI Publisher</em>
+                  mithilfe der bereits vorgestellten <em>Webcomponents</em> (in diesem Falle
+                     <em>pb-facsimile</em>) realisiert. Dieser spezielle
+                     <em>Webcomponent</em> wird im HTML-Template implementiert. Es ist sowohl
+                  eine Einbindung von Bildern mittels der IIIF Schnittstelle, als auch von
+                  statischen Bildern möglich, die auch auf externen Server liegen können. In diesem
+                  niedrigschwelligen Beispielsfall lagen die Bilder aber (noch) nicht auf einem
+                  IIIF-Server vor, sondern waren als statische Bilddateien auf dem Server abgelegt.
+                  Um sie korrekt darzustellen, waren kleine manuelle Arbeiten in den Ausgangsdaten,
+                  im Template und im ODD-Editor nötig, die aber in der Dokumentation klar
+                  verständlich beschrieben waren.<sup class="footnote-ref" id="fnref-ftn45"><a href="#fn-ftn45" role="doc-noteref">45</a></sup>
+                  Schlussendlich stand aber eine zufriedenstellende synoptische Ansicht der Texte
+                  und ihrer textuellen Phänomene bereit (Abb. 8). </p>
+<p id="p31">Im letzten Schritt kann diese Arbeit Grundlage einer<em>
+                     eXist-db</em> Applikation werden. Hierzu kann direkt aus der Oberfläche des
+                  Publishers eine Applikation erstellt werden mit den erstellten oder angepassten
+                  ODD - und Template-Daten. Diese Applikation liegt dann unabhängig als separate
+                     <em>eXist-db</em> App vor. Sind zu einem späteren Zeitpunkt noch Änderungen
+                  nötig oder gewünscht, kann dies z.B. durch Änderungen in der ODD und ein
+                  „rekompilieren“ der Applikation erreicht werden. Entsprechende
+                  Programmierkenntnisse vorausgesetzt, kann die Applikation auch direkt separat
+                  weiterentwickelt und modifiziert werden. </p>
+    </section>
+    <section id="div3">
+      <h2>Benutzerfreundlichkeit, Nachhaltigkeit und Wartbarkeit</h2>
+      <h3 id="div3.1">Installation</h3>
+<p id="p32">Eine Besonderheit und eine in Hinsicht auf Zugänglichkeit
+                  vorbildliche Option ist, dass für erste Experimente und Tests mit eigenen Daten
+                  zunächst keine lokale Installation notwendig ist, sondern eine zu
+                  Demonstrationszwecken zur Verfügung gestellte Instanz des <em>TEI
+                     Publisher</em> auf der offiziellen Seite betrieben wird. Auf diese wird
+                  unmittelbar auf der offiziellen Webseite hingewiesen. Innerhalb dieser Instanz
+                  finden sich die Dokumentation und Sammlungen verschiedener Beispielseiten. Die
+                  Beantragung eines Zugangs ist nicht erforderlich. Auf der Startseite sind die
+                  Zugangsdaten öffentlich angegeben (Anmelden als <em>tei-dem</em>o mit Passwort
+                     <em>demo</em>). NutzerInnen können dann die Benutzeroberfläche und eine
+                  Vielzahl von Beispielen erkunden und auf die eigenen Anforderungen hin überprüfen.
+                  Auch der Upload eigener XML-Daten ist im Rahmen einer „Playground“ genannten
+                  Umgebung hier sofort möglich. Hier muss jedoch beachtet werden, dass diese Daten
+                  dann im Rahmen der Demo-Instanz öffentlich zugänglich sind. </p>
+<p id="p33">Die Nutzung der Testversion stellt den von Entwicklerseite
+                  bevorzugten ersten Kontaktpunkt mit der Anwendung dar. Dies zeigt sich auch darin,
+                  dass sich die Anleitung zur Installation in einer lokalen oder selbst-gehosteten
+                     <em>eXist-db </em>Instanz dann erst innerhalb der Dokumentation und nicht
+                  direkt auf der Homepage der Webseite findet. Die lokale Installation des <em>TEI
+                     Publisher</em> erfolgt entweder in Form eines „App“-Pakets innerhalb von
+                     <em>eXist-db</em> oder als Docker-Container. </p>
+<p id="p34">Für die manuelle, lokale Installation ergeben sich dadurch
+                  Abhängigkeiten in Bezug auf <em>eXist-db,</em> welche wiederum Java
+                  voraussetzt. Die Einrichtung dieser Abhängigkeiten und des Installationsprozesses
+                  ist sowohl von Seiten des <em>TEI-Publisher</em> als auch von <em>eXist-db
+                  </em>ausreichend gut dokumentiert, benötigt aber erfahrungsgemäß ein gewisses
+                  Maß an technischem Verständnis und Aufmerksamkeit. Dies ist insbesondere dann der
+                  Fall, wenn andere von Java abhängige Software in der jeweiligen Umgebung genutzt
+                  wird, da es bei der Verwendung anderer Java-Versionen zu Konflikten kommen kann.
+                  Hier ist also genau auf die zum Zeitpunkt der Installation in den Dokumentationen
+                  genannten Versionsnummern von <em>eXist-db</em> und Java zu achten. Die
+                  Installation über Docker hat keine weiteren Abhängigkeiten und ist, sofern
+                  Erfahrung im Umgang mit Docker gegeben ist, reibungslos. Der Installationsvorgang
+                  selbst und die Hinweise auf Abhängigkeiten sind in der allgemein sehr
+                  ausführlichen Dokumentation beschrieben (wenn auch zum Stand dieser Review teils
+                  nur auf Englisch<sup class="footnote-ref" id="fnref-ftn46"><a href="#fn-ftn46" role="doc-noteref">46</a></sup>).</p>
+<h3 id="div3.2">Dokumentation und Lernkurve</h3>
+<p id="p35">Die Dokumentation ist über die Webseite einfach zu erreichen und
+                  deckt klar strukturiert in einem Bereich „Quickstart“ alle Themen ab, um in die
+                  Arbeit mit dem <em>TEI Publisher</em> einzusteigen. Auch zu komplexeren Themen
+                  wie <em>Custom Vocabularies</em>, CSS Styling, <em>Webcomponents </em>etc.
+                  finden sich hier Anleitungen, die jeweils immer Beispiele und ggf. Dokumentation
+                  von APIs enthalten. Mit zunehmender Tiefe der Themen setzt aber auch die
+                  Dokumentation fortgeschrittene technische Kompetenz voraus. Es ist somit keine
+                  vollumfängliche Anleitung, um technische Laien zu tieferer individueller Anpassung
+                  zu ermächtigen. Wo die Grenzen zwischen einer Dokumentation, gerichtet an das
+                  reine Benutzerpublikum und einer technischen Dokumentation für EntwicklerInnen zu
+                  ziehen sind, ist nicht immer klar und kann womöglich in einigen Situationen zur
+                  Irritation führen. </p>
+<p id="p36">Als Kanäle für Support jenseits der Dokumentation wird vor allem auf
+                  den <em>Slack</em>-Channel<sup class="footnote-ref" id="fnref-ftn47"><a href="#fn-ftn47" role="doc-noteref">47</a></sup>
+                  von e-editiones verwiesen. Hier können Fragen an die EntwicklerInnen gestellt
+                  werden. Diese werden auch konsistent innerhalb von wenigen Stunden, maximal eines
+                  Tages beantwortet. Des Weiteren gibt es auf der GitHub-Seite die Möglichkeit, das
+                  Issue System für Fragen und Probleme der technischen Natur zu nutzen. </p>
+<p id="p37">Angesichts der niedrigen Einstiegshürde durch die Demo-Instanz, der
+                  Dokumentation und dem angebotenen Support zeigt sich für den ersten Einstieg in
+                  den <em>TEI Publisher</em> eine flache Lernkurve wie sich auch in unseren oben
+                  skizzierten Erfahrungen in der Lehre gezeigt hat. Von der TEI-XML-Datei zur ersten
+                  rudimentären HTML-Ansicht unter Benutzung der voreingestellten ODDs und dem
+                  Template ist der Prozess reibungslos und die Studierenden hatten schon nach kurzer
+                  Zeit erste Ergebnisse. Auch für eine Vielzahl von niedrigschwelligen
+                  Editionsprojekten, z.B. eine Briefedition, die sich an das etablierte
+                  TEI-Vokabular hält, wird dieser Prozess ausreichend sein. Hier zeigen sich die
+                  Stärken einer solchen Lösung, die auf Grundlage einer soliden TEI-Datenbasis
+                  schnell eine funktionale einfache Edition bereitstellen kann. Auch die
+                  Realisierung einer rudimentären Indizierung und Suche ist so schnell erreicht, da
+                  diese durch den <em>TEI Publisher</em> ohne zusätzlichen Entwicklungsaufwand
+                  implementiert ist. </p>
+<p id="p38">Spezifische Forschungsfragen und Anforderungen erfordern dagegen ein
+                  zunehmendes Maß an Anpassung sowohl der Darstellung als auch der Transformation
+                  der Dateien an das jeweilige Datenmodell und die Editionsrichtlinien. Um dies zu
+                  erleichtern und den BenutzerInnen mit nur wenig XML-Kenntnissen zu ermöglichen,
+                  bietet der <em>TEI Publisher</em> den bereits erwähnten ODD-Editor an, der
+                  Anpassungen mittels einer grafischen Benutzeroberfläche innerhalb des <em>TEI
+                     Publisher</em> ermöglicht. Mit etwas Einarbeitungszeit ist also auch eine
+                  individuelle Anpassung der Transformation der TEI-XML-Dateien möglich. Eine
+                  Anpassung und Erweiterung der facettierten Suche erfordert dann jedoch bereits
+                  gute Kenntnisse in XQuery bzw. dem Umgang mit <em>eXist-db</em>. </p>
+<p id="p39">Die Lernkurve wird steiler, sobald die Anforderungen der Projekte
+                  ambitionierter werden und komplexere Forschungsplattformen jenseits einer
+                  „einfachen“ Edition entwickelt werden sollen. Der <em>TEI Publisher</em>
+                  reagiert auf derartige Herausforderungen, indem er die Entwicklung komplexerer
+                  Plattformen mittels individuell angepassten HTML-Templates und CSS Stylesheets
+                  sowie <em>Webcomponents</em> erlaubt. Somit können dann auch interaktive
+                  visuelle Elemente wie z.B. Timelines o.Ä. eingebunden werden.<sup class="footnote-ref" id="fnref-ftn48"><a href="#fn-ftn48" role="doc-noteref">48</a></sup> Dies
+                  setzt, wie bereits erwähnt, in jedem Fall technische Kenntnisse und eine gewisse
+                  Einarbeitungszeit voraus. Die zwar meist sehr ausführliche und verständlich
+                  gestaltete Dokumentation ist dennoch komplex und setzt Verständnis und Erfahrungen
+                  mit den zugrundeliegenden Technologien, insbesondere <em>eXist-db</em> und
+                  seinen Modulen und Funktionen voraus </p>
+<h3 id="div3.3">Nachhaltigkeit</h3>
+<p id="p40">Aspekte aus dem Bereich Sicherheit und Privatsphäre ergeben sich
+                  nicht aus dem <em>TEI Publisher</em> selbst, sondern vielmehr aus der
+                  zugrundeliegenden Technologien (<em>eXist-db</em>), sowie der von den
+                  NutzerInnen mit dem <em>TEI Publisher</em> erstellten Applikation. Ein
+                  grundlegendes Nutzer- und Rechtemanagement kann über <em>eXist-db</em>
+                  eingerichtet werden.</p>
+<p id="p41">Eine Schwäche scheint bisher die Zitierfähigkeit innerhalb der mit
+                  dem <em>TEI Publisher</em> erstellten Applikationen zu sein. Es finden sich
+                  keine Module oder Hilfestellungen, um UUID oder persistente URIs für z.B.
+                  Einzelseiten oder Abschnitte in Dokumenten zu erstellen. Befindet man sich
+                  beispielsweise auf der dritten Seite eines Dokuments und kopiert die URL in ein
+                  anderes, separates Browserfenster, so öffnet dieser die Seite zwar auf dem
+                  korrekten Dokument, referenziert dann aber die erste Seite des Dokumentes. Ist
+                  eine entsprechende persistente Zitierbarkeit für eine Edition gewünscht, so muss
+                  dies durch EntwicklerInnen innerhalb der mit dem <em>TEI Publisher</em>
+                  erstellen Applikation implementiert werden. Obwohl der Quellcode des <em>TEI
+                     Publisher</em> in offenen GitHub Repositorien bereitgestellt wird, ist dieser
+                  aufgrund der Größe und Komplexität der Anwendung nur teilweise kommentiert.
+                  Tiefgehende Anpassungen und Weiterentwicklungen sind daher nur mit beträchtlicher
+                  Einarbeitungszeit und Geduld umzusetzen. In diesem Zusammenhang muss auch erwähnt
+                  werden, dass eine Archivierbarkeit der mit dem <em>TEI Publisher</em>
+                  erstellten Editionen mit einem Tool wie dem Web Archive nicht verlässlich und
+                  konsistent gegeben ist. Beim Versuch, eine Einzelseite einer Edition (also z.b.
+                  ein Brief) zu archivieren und diesen Archivlink wieder aufzurufen, gelangt man oft
+                  lediglich zu einer leeren Seite mit evtl. nur einem Logo. Dies führte z.B. schon
+                  im Prozess dieser Review dazu, dass Links zu der Dokumentation des <em>TEI
+                     Publishers</em> oft nicht als archivierte Links genutzt werden konnten, da
+                  die Dokumentation selbst eine <em>TEI Publisher</em> Anwendung ist und ein
+                  Aufruf der archivierten Seite „ins Nichts“ führte. Hier wäre aus Sicht der
+                  Nachhaltigkeit und Zitierbarkeit eine Lösung oder zumindest eine Anleitung für
+                  Entwickler nötig, wie diese Einschränkung umgangen werden kann.</p>
+<p id="p42">Ein Aspekt der Nachhaltigkeit ist der langfristig zu erwartende
+                  Support eines Tools. Im Gegensatz zu vielen Anwendungen deren Entwicklung in den
+                  Digital Humanities oft an Projektlaufzeiten oder gar an Einzelpersonen geknüpft
+                  ist, kann der<em> TEI Publisher</em> hier durch die Einbettung in den
+                  e-editiones Verein ein glaubwürdiges Versprechen machen, auch langfristig und
+                  kontinuierlich weiter gepflegt zu werden und eine aktive Community aufrecht zu
+                     erhalten.<sup class="footnote-ref" id="fnref-ftn49"><a href="#fn-ftn49" role="doc-noteref">49</a></sup> Mit Fragen zur Nachhaltigkeit ist im Kontext digitaler Projekte immer auch
+                  die Zuständigkeit für die Langzeitarchivierung und -verfügbarkeit verbunden.
+                  Insbesondere für kleinere Projekte mit begrenzten Ressourcen kann das Hosting ein
+                  massives Problem darstellen. Der Betrieb eines Servers und die Wartung der
+                  zugehörigen Infrastruktur ist teuer und erfordert ein ständiges Engagement, das
+                  i.d.R. über die geplante Dauer des Projekts hinausgeht. Auch wenn das Hosting von
+                  einer institutionellen Service-Infrastruktur bereitgestellt wird, kann unter
+                  gewissen Umständen immer der Fall eintreten, dass die Ressourcen dieser
+                  Institutionen ihre Rolle auf die Bereitstellung von Updates und minimaler Wartung
+                  beschränken. Dies führt allzu oft dazu, dass die Dienste nach einigen Jahren
+                  teilweise oder ganz eingestellt werden. In ihren Statuten („4. Ensuring long term
+                  availability of digital editions“)<sup class="footnote-ref" id="fnref-ftn50"><a href="#fn-ftn50" role="doc-noteref">50</a></sup> setzt sich der Verband e-editiones dafür ein, dass öffentliche
+                  Gedächtnisinstitutionen die Editionen langfristig bereitstellen. Ziel dieses
+                  Vorhabens von Seiten der Community ist es, die Kosten und den Aufwand für die mit
+                  der Pflege der Editionen beauftragten Institutionen drastisch zu senken. Wie der
+                  Verband auf seiner Website darlegt, hat swissuniversities Anfang 2020 im Rahmen
+                  des Projekts Nationale Infrastruktur Editionen (NIE-INE) Verbesserungen am
+                     <em>TEI Publisher </em>gefördert, um langfristige Aktualisierungen zu
+                  erleichtern und ein gemeinsames Hosting von heterogenen Editionsprojekten auf
+                  einer Plattform zu ermöglichen. Die Community unterstützt Editionsprojekte auch
+                  dabei, einen (öffentlichen) Provider für die Zeit nach dem Ende des
+                  Förderzeitraums zu gewinnen und die langfristige Archivierung der Rohdaten des
+                  Projekts zu planen. In welchem preislichen Rahmen sich die hier genannten
+                  Förderangebote bewegen, wird nicht transparent gemacht.</p>
+    </section>
+    <section id="div4">
+      <h2>Userinteraktion, GUI and Visualisierungen</h2>
+      <h3 id="div4.1">Profil der BenutzerInnen</h3>
+<p id="p43">Wie bereits erwähnt, eignet sich der <em>TEI Publisher</em> vor
+                  allem für WissenschaftlerInnen und ForscherInnen, die ihre Daten ohne umfangreiche
+                  Kenntnisse im Bereich Webentwicklung digital publizieren und zugänglich machen
+                  möchten. Grundwissen im Bereich TEI-XML, XPath, XQuery und HTML und CSS sind
+                  jedoch von Vorteil. Für AnfängerInnen eignet sich der <em>TEI Publisher
+                  </em>andererseits gut, um diese Technologien weiter zu vertiefen, vor allem aber
+                  um deren Zusammenspiel innerhalb der Infrastruktur des <em>TEI Publisher</em>
+                  besser zu verstehen. Der große Zulauf anlässlich des „three-part online course“ im
+                  Juni 2020 hat gezeigt, dass ein großes Interesse auch bei InteressentInnen
+                  vorhanden war, die sich bis dato gar nicht oder nur wenig mit der Publikation von
+                  XML/TEI-Daten befasst haben.<sup class="footnote-ref" id="fnref-ftn51"><a href="#fn-ftn51" role="doc-noteref">51</a></sup>
+                  Sobald konkretere oder technisch anspruchsvollere Lösungen gefordert sind, müssen
+                  umfassende Programmierarbeiten durchgeführt werden, was die Kompetenzen einiger
+                  NutzerInnen übersteigen könnte. Das kann z.B. die Implementierung und
+                  Konfiguration komplexer Publikationsansichten betreffen, für die jeweils
+                  verschiedene ODDs für unterschiedliche TEI-XML-Dateien generiert werden müssen. Je
+                  nach Konfigurationslevel muss die technische Infrastruktur des <em>TEI
+                     Publisher</em> unter Umständen vollständig „aufgebohrt“ werden. </p>
+<h3 id="div4.2">Technische Schnittstellen und GUI</h3>
+<p id="p44">Ein grundsätzliches Problem, das sich bei der Betrachtung der
+                  grafischen Benutzeroberfläche (GUI) bemerkbar macht, ist das Responsive Design.
+                  Bis dato ist es mit dem <em>TEI Publisher</em> nicht möglich, adäquate
+                  Darstellungen für kleinere Ausgabegeräte zu generieren. Aufgrund des
+                  Zusammenspiels verhältnismäßig vieler Technologien und dem modularen Aufbau der
+                  Software, gestaltet es sich schwierig, spezifische Viewports (z.B. für den
+                  Faksimile-Viewer oder der Beibehaltung optisch ansprechender synoptischer
+                  Textansichten) für unterschiedliche Geräteanforderungen zu konfigurieren. Diese
+                  komplizierten Aufgaben können, wenn die technische Infrastruktur des <em>TEI
+                     Publisher</em> dafür überhaupt ausgelegt ist, nur von professionellen
+                  DH-EntwicklerInnen oder ausgebildeten SoftwareentwicklerInnen geleistet werden, da
+                  mitunter viel technische Anpassungsarbeit notwendig ist.</p>
+<p id="p45">Ist der <em>TEI Publisher</em> als Applikation einmal installiert
+                  und eingerichtet (vgl. Abschnitt 3), kann er, bzw. die Startseite über eine GUI,
+                  z.B. den Browser, aufgerufen werden. Die GUI ist übersichtlich gestaltet und wirkt
+                  zunächst wenig überladen. Dadurch können NutzerInnen die unterschiedlichen
+                  Funktionen und Features, z.B. eine facettierte Suche oder eine Menüstruktur im
+                  Header-Bereich, auf den ersten Blick visuell gut erfassen. An dieser Stelle muss
+                  erwähnt werden, dass es sich in dieser Ansicht, die den NutzerInnen geboten wird,
+                  lediglich um einen „Dummy“ mit Default-Einstellung handelt. In den
+                  Standardeinstellungen verfügt das Interface des <em>TEI Publisher</em> über
+                  die gängigen visuellen Komponenten einer Website. Dazu zählen beispielsweise ein
+                  Content-Bereich, die Anzeige von Facetten und ein Header-Bereich als Kopfzeile, in
+                  die bei Bedarf (drop-down)-Menüs implementiert werden können. Vor der produktiven
+                  Arbeit mit dem <em>TEI Publisher</em> muss, wie in Kapitel 3 dieser Review
+                  bereits erläutert, über den sogenannten App-Generator eine eigene Web-App und
+                  somit eine separate Instanz des <em>TEI Publisher</em> erstellt werden. </p>
+<p id="p46">Die bereits angesprochenen interaktiven Elemente werden durch
+                  sogenannte <em>Webcomponents</em> im Interface integriert. Sie basieren auf
+                  dem HTML5- Standard und liefern ein Set aus unterschiedlichen Steuerelementen und
+                  Navigationswergzeugen. Je nach Quelle, können unterschiedliche Komponenten, z.B.
+                  für die Generierung einer synoptischen Ansicht aus Transkription, Übersetzung und
+                  dem dazugehörigen Faksimile implementiert werden. Für eine intuitive Nutzung
+                  textbasierter Ressourcen stellt der <em>TEI Publisher </em>Buttons für eine
+                  Blätterfunktion bereit. Mit OpenSeadragon liefert der <em>TEI Publisher</em>
+                  einen integrierten Faksimile-Viewer, der ein stufenloses Zoomen in Bilddateien
+                  erlaubt. In dem projekteigenen GitHub-Repository wird in den Kommentaren eines
+                  JavaScript-Files, das in der library für die Dokumentation der <em>Webcomponents
+                  </em>liegt, auf Version 4.1.1 des Viewers verwiesen.<sup class="footnote-ref" id="fnref-ftn52"><a href="#fn-ftn52" role="doc-noteref">52</a></sup>
+                  Die derzeit aktuellste Version von OpenSeadragon ist 5.0.0.<sup class="footnote-ref" id="fnref-ftn53"><a href="#fn-ftn53" role="doc-noteref">53</a></sup>
+                  Da die Einbindung eines solchen Viewers in das Template durch den
+                     <em>Webcomponent </em>&lt;pb-facsimile&gt; erfolgt (Abb. 9) ist es
+                  fraglich, ob alternative Viewer (z.B. Mirador), die möglicherweise nicht mit
+                  solchen <em>Webcomponents </em>kompatibel sind, in den <em>TEI
+                     Publisher</em> integriert werden können. Der Einbau solcher Viewer ist
+                  unabhängig dieser Webcomponents sicher möglich, erfordert aber zusätzliches
+                  technisches Know-How. </p>
+<p id="p47">
+                  <figure id="img9" class="review-figure"><img src="pictures/picture-9.png" alt="Dokumentation der Webcomponent und Demo des
+                        Viewers." loading="lazy"><figcaption>Fig. 9: Dokumentation der <em>Webcomponent</em> und Demo des
+                        Viewers.</figcaption></figure>Seit Version 9.0.0 unterstützt der <em>TEI Publisher </em>die
+                  Präsentation von IIIF-Manifesten. Durch dieses neue Feature werden alle relevanten
+                  Metadaten, einschließlich einer Liste der Bilder, in einem einzigen
+                  standardisierten IIIF-Manifest registriert und bereitgestellt. Der dafür
+                  erforderliche <em>Webcomponent</em> ist <em>pb-tify</em>.
+                     <em>pb-tify</em> ist seit Version 2.10.0 der <em>tei-publisher-components
+                  </em>verfügbar und basiert auf TIFY, einem „schlanken und mobilfreundlichen
+                     IIIF-Viewer“.<sup class="footnote-ref" id="fnref-ftn54"><a href="#fn-ftn54" role="doc-noteref">54</a></sup>
+                  Für die Betrachtung von Bilddateien nutzt TIFY ebenfalls OpenSeadragon als
+                     Viewer.<sup class="footnote-ref" id="fnref-ftn55"><a href="#fn-ftn55" role="doc-noteref">55</a></sup>
+               </p>
+<p id="p48">
+                  <figure id="img10" class="review-figure"><img src="pictures/picture-10.png" alt="Ausgabe eines Fehlercodes bei fehlgeschlagener Übersetzung
+                        der ODD." loading="lazy"><figcaption>Fig. 10: Ausgabe eines Fehlercodes bei fehlgeschlagener Übersetzung
+                        der ODD.</figcaption></figure>Die Software des <em>TEI Publisher</em> verfügt über Mechanismen, die
+                  Fehlervermeidung oder Warnungen in Form von Alerts ausgeben. Dieses Feature ist
+                  insofern hilfreich, als dass es unerfahrenen AnwenderInnen aufzuzeigen versucht,
+                  in welchem Bereich Probleme auftreten. Dies kann z.B. bei einer nicht korrekt
+                  übersetzten ODD (Abb. 10) oder einer fehlerhaften Verknüpfung von ODD und
+                  HTML-Template oder TEI-XML-Daten der Fall sein. Die Fehlermeldungen innerhalb des
+                  ODD-Editors sind jedoch verhältnismäßig informationsarm. Eine Fehlermeldung, die
+                  bei einem fehlgeschlagenen Speichern auftritt, gibt z.B. nur die Meldung „Error“
+                  aus, nicht jedoch die Ursache. Darüber hinaus gibt es keine Hilfestellung, wie
+                  Probleme zu beheben sind, die in den Meldungen adressiert werden. </p>
+<h3 id="div4.3">Visualisierungen</h3>
+<p id="p49">Der <em>TEI Publisher</em> verfügt über keine speziellen oder
+                  nennenswerten Features für die Visualisierung der Daten. </p>
+<h3 id="div4.4">Befähigung der NutzerInnen</h3>
+<p id="p50">
+                  <figure id="img11" class="review-figure"><img src="pictures/picture-11.png" alt="eXide als XML-Editor von eXist-db
+                        für das Editieren von Daten." loading="lazy"><figcaption>Fig. 11: <em>eXide </em>als XML-Editor von <em>eXist-db</em>
+                        für das Editieren von Daten.</figcaption></figure>Die Ausgabe des Textes über die ODD ist verhältnismäßig gut und einfach
+                  zu konfigurieren. Dort können NutzerInnen schnell und unkompliziert einfache
+                  Textformatierungen für spezielle Elemente im Output anpassen. Dieser Vorgang kann
+                  unmittelbar im integrierten ODD-Editor oder im Oxygen-XML-Editor erfolgen, sofern
+                  dieser mit der <em>eXist-db</em> über den Datenquellenexplorer verknüpft ist.
+                  Alternativ können NutzerInnen sämtliche Daten, Skripte und ODDs in
+                     <em>eXide</em>, einem mitgelieferten XML-Editor von <em>eXist-db</em>,
+                  editieren und in die Datenbank speichern (Abb. 11). </p>
+<p id="p51">Problematischer ist hingegen das Design der Publisher-App, das sich
+                  auf sämtliche Einstellungen und Konfigurationen bezieht, die außerhalb der
+                  Funktionalität liegen. Hier umfangreiche und komplexe projektspezifische
+                  Anpassungen vorzunehmen, sprengt oft das beabsichtigte Format und die Kompetenzen
+                  der NutzerInnen. Das Korsett ist im übertragenen Sinne verhältnismäßig eng, da nur
+                  in einem gewissen Umfang <em>einfache</em> Änderungen von Seiten weniger
+                  erfahrener NutzerInnen auf dem Gebiet der Webentwicklung vorgenommen werden
+                  können. Nur wer über genügend technisches Know-How verfügt, kann fehlende Features
+                  oder Funktionen selbst entwickeln, indem man beispielsweise ganz spezifische, für
+                  das Projekt erforderliche <em>Webcomponents</em> einbindet.</p>
+<h3 id="div4.5">Zugänglichkeit</h3>
+<p id="p52">Ein großer Kritikpunkt ist die nicht vorhandene Angabe zu Funktionen
+                  wie z.B. Screenreadern, die zu einer erheblichen Verbesserung der Zugänglichkeit
+                  für Menschen mit besonderen Bedürfnissen, Eigenschaften und Fähigkeiten beitragen
+                  würden, damit auch sie den <em>TEI Publisher</em> als Software für ihr
+                  Forschungsvorhaben nutzen können. Ein kurzer stichprobenartiger Test mit dem in
+                  MacOS integrierten Screenreader VoiceOver ergab, dass in der mit dem <em>TEI
+                     Publisher</em> realisierten Van Gogh Briefedition zwar die Editionstexte und
+                  Fußnoten gut navigiert werden konnten, es aber Elemente des Interfaces und der
+                  Navigation gab die nicht korrekt wiedergegeben wurden, was die Navigation teils
+                  inkonsistent erscheinen ließ oder gar komplett blockierte. Hier wäre es auf jeden
+                  Fall wünschenswert, in zukünftigen Entwicklungen auf eine Kompatibilität mit
+                  solchen Tools zu achten und in der Dokumentation das Thema Zugänglichkeit
+                  dediziert zu berücksichtigen.</p>
+    </section>
+    <section id="div5">
+      <h2>Fazit</h2>
+      <p id="p53">Der <em>TEI Publisher</em> spielt in der TEI-Community eine immer
+               größere Rolle. Die seit einigen Jahren existierende und stetig anwachsende <em>TEI
+                  Publisher Registry</em><sup class="footnote-ref" id="fnref-ftn56"><a href="#fn-ftn56" role="doc-noteref">56</a></sup>,
+               die auf Basis einer Kartenansicht sämtliche mit dem <em>TEI Publisher</em>
+               umgesetzte Projekte geografisch verzeichnet, zeigt nicht nur die Vielfalt sondern
+               auch die zunehmende Bedeutung dieser Software für die Umsetzung digitaler
+               Editionsvorhaben. Als Tool bietet der <em>TEI Publisher</em> viele nachgefragte
+               Funktionen für die Forschung, die die technischen Hürden für die Erstellung digitaler
+               Editionen senken kann. Allerdings offenbaren sich bei genauerer Betrachtung einige
+               vernachlässigte Aspekte, die für die Benutzerfreundlichkeit und die wissenschaftliche
+               Integrität von entscheidender Bedeutung sind.</p>
+<p id="p54">Positiv sei erwähnt, dass der <em>TEI Publisher</em> schon jetzt
+               eine sehr schnelle Lösung bietet um bei einem vorhanden TEI-XML-Korpus Darstellungs-
+               und Publikationen prototypisch zu erzeugen und damit im Sinne des
+                  <em>rapid-prototypings</em> eine wichtige Funktion im Projektablauf übernimmt.
+               EditorInnen können so schnell einen Eindruck davon bekommen, wie ihre Texte in einer
+               späteren Edition aussehen können und anschließend diese Darstellung mit
+               vergleichsweise geringen technischen Aufwand modifizieren. Für Projekte, die ein
+               umfangreiches Korpus mit geringer oder mittlerer Erfassungstiefe und Komplexität
+               umfassen - also überwiegend gebräuchliche TEI-XML-Elemente und wenig spezifische
+               Darstellungsformen - kann der <em>TEI Publisher</em> ebenfalls eine sehr gute
+               Lösung sein. Eine Edition, Plattform oder Webseite kann damit ohne großen
+               Entwicklungsaufwand erstellt werden. Hier muss aber auch erwähnt werden, dass die
+               technische Komplexität schnell und stark ansteigt, sobald die Anforderungen eines
+               Projektes von den antizipierten Anwendungsfällen abweichen. Die Anpassung der
+               ODD-Dateien und den Templates ist technisch, auch im grafischen Editor, nicht
+               unbedingt trivial und kann schnell komplex werden. Daher sind in diesem Bereich gute
+               Kenntnisse in den X-Technologien erforderlich. Die Nutzung der
+                  <em>Webcomponents</em> bietet zwar mächtige und sinnvolle Funktionalitäten,
+               erhöht aber das Komplexitätsniveau weiter. Hier ist eine konstante
+               EntwicklerInnenstelle nötig, die neben Expertenwissen im Bereich der X-Technologien,
+               Webentwicklung und der gängigen Webtechnologien HTML, CSS und JavaScript, möglichst
+               auch Erfahrungen mit dem Datenbanksystem <em>eXist-db</em> und ihren Eigenheiten
+               vorweisen sollte. Die Einbindung von IIIF-Manifesten ist mit der Migration auf
+               Version 9.0.0 des <em>TEI Publisher</em> positiv zu bewerten. Ein solches Feature
+               treibt die Unterstützung einer plattformübergreifenden Nutzung bildbasierter
+               Medieninhalte weiter voran. Der modifizierte und optisch überarbeitete
+               Annotationseditor ermöglicht einen neuen Blick auf die Daten und bietet neue
+               Möglichkeiten zur Exploration und Erschließung der Quellen.</p>
+<p id="p55">Ein Mangel liegt in der Vernachlässigung von barrierefreien Zugängen für
+               Menschen mit Behinderungen. Die Entwicklung von Software sollte stets darauf
+               abzielen, Inklusivität zu fördern und allen NutzerInnen die gleichen Chancen zu
+               bieten. Eine barrierefreie Gestaltung kann durch Hilfestellungen in Form von
+               Screenreader-Kompatibilität, Tastaturkürzeln oder alternativen Darstellungsformen
+               gewährleistet werden. Dieser Aspekt ist nicht nur ethisch wichtig, sondern entspricht
+               auch den Grundprinzipien der Gleichberechtigung im digitalen Raum. Ein weiteres
+               Versäumnis betrifft die unzureichende Berücksichtigung von Zitierfähigkeit auf
+               sämtlichen Granularitätsebenen. Zwar verkündet die Community des <em>TEI
+                  Publisher</em> mit Version 8 ein zentrales URL-Register einzuführen.<sup class="footnote-ref" id="fnref-ftn57"><a href="#fn-ftn57" role="doc-noteref">57</a></sup>
+               Da aber nirgends ersichtlich ist, wo und wann dieses Feature veröffentlicht und für
+               die breite Öffentlichkeit nutzbar sein wird, konnte diese Funktion innerhalb dieser
+               Review nicht getestet werden. Die Verwendung persistenter Identifier ist essentiell,
+               um die Rückverfolgbarkeit und wissenschaftliche Nachvollziehbarkeit von Daten und
+               Inhalten sicherzustellen. Derzeit wird der Zugriff per Dateinamen geregelt. Zum
+               jetzigen Zeitpunkt ist das die einzige „Persistenz“ die es gibt. In der Dokumentation
+               wird auf das Konzept persistenter Identifier und die Rolle innerhalb der Entwicklung
+               des <em>TEI Publisher</em> nicht eingegangen. Eine Software wie der <em>TEI
+                  Publisher</em> sollte immanente Prinzipien wie persistent Identifier und PURLs
+               unterstützen, z.B. durch Resolver/Rewrite-Routinen. Das Fehlen einer solchen
+               zentralen Funktion kann die Glaubwürdigkeit der Forschungsergebnisse beeinträchtigen
+               und die Integration der Software in den wissenschaftlichen Diskurs erschweren. Des
+               Weiteren zeigt sich ein Defizit im Bereich der visuellen Darstellung von Faksimiles.
+               Eine Thumbnail-View oder zumindest eine doppelseitige Ansicht würde eine effiziente
+               Analyse von Texten und Bildern ermöglichen. Die Vernachlässigung solcher Features
+               beeinträchtigt nicht nur die Benutzerfreundlichkeit, sondern kann auch die
+               Effektivität von Forschungsarbeiten beeinflussen, insbesondere in Bezug auf die
+               Arbeit mit historischen Dokumenten oder Handschriften. Insgesamt verdeutlichen diese
+               Versäumnisse, dass die Entwicklung von Software für die Digital Humanities nicht nur
+               auf innovative Funktionen, sondern auch auf grundlegende Prinzipien der
+               Zugänglichkeit, wissenschaftlichen Integrität und Nutzerfreundlichkeit abzielen
+               sollte. Zukünftige Programme und Software sollten daher diese Aspekte prioritär
+               berücksichtigen, um eine umfassende und inklusive Forschungsumgebung zu
+               gewährleisten. Die Community hinter dem <em>TEI Publisher</em> unterstützt
+               Editionsprojekte dabei, einen (öffentlichen) Provider für die Zeit nach Ende des
+               Förderzeitraums zu gewinnen und die langfristige Archivierung der Rohdaten des
+               Projekts zu planen. Es ist somit möglich, mit den VorsteherInnen von e-editiones in
+               Bezug auf potenzielle Hostingangebote in Kontakt zu treten. ForscherInnen und
+               WissenschaftlerInnen können sich über das Hosten ihrer Projekte informieren und, je
+               nach Umfang und Anforderung, in Absprache realisieren. Über vergleichbare preisliche
+               Kategorien für die Dauer des Hostings gibt es keine offiziellen Bekanntmachungen.
+            </p>
+    </section>
+
+    <section id="bibliography" class="review-bibliography">
+      <h2>Bibliography</h2>
+      <ol class="bib-list">
+        <li><span id="teipublisher">Offizielle Dokumentation des <em>TEI Publisher</em>:
+                     <a href="https://web.archive.org/web/20240119142743/https://teipublisher.com/exist/apps/tei-publisher/documentation" target="_blank" rel="noopener">https://web.archive.org/web/20240119142743/https://teipublisher.com/exist/apps/tei-publisher/documentation</a>.</span></li>
+        <li><span id="vorstellung-teipublisher">Vorstellung des <em>TEI Publisher</em> im
+                  Rahmen der Webinar-Reihe <em>Tools &amp; Transitions</em> des DigEdTnT: <a href="https://web.archive.org/web/20240119134732/https://digedtnt.github.io/teipublisher/" target="_blank" rel="noopener">https://web.archive.org/web/20240119134732/https://digedtnt.github.io/teipublisher/</a>.</span></li>
+        <li><span id="teiguidelines">TEI-Guidelines, 22.5.4.1 <em>The TEI processing
+                     model</em>: <a href="https://web.archive.org/web/20240119150735/https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TD.html#TDPMPM" target="_blank" rel="noopener">https://web.archive.org/web/20240119150735/https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TD.html#TDPMPM</a>
+               </span></li>
+        <li><span id="learn-teipublisher">Learn <em>TEI Publisher</em>. Three-Part online
+                  course: <a href="https://web.archive.org/web/20240123123956/https://www.youtube.com/watch?v=QuWrfAS2SWM" target="_blank" rel="noopener">https://web.archive.org/web/20240123123956/https://www.youtube.com/watch?v=QuWrfAS2SWM</a>
+               </span></li>
+        <li><span id="piotrowski2020">Michael Piotrowski: Gründung von e-editiones. Blogpost
+                  auf dem DHd-Blog. Veröffentlicht am 16. April 2020: <a href="https://web.archive.org/web/20240904085635/https://dhd-blog.org/?p=13474" target="_blank" rel="noopener">https://web.archive.org/web/20240904085635/https://dhd-blog.org/?p=13474</a>.
+               </span></li>
+      </ol>
+    </section>
+
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        <li id="fn-ftn1" class="footnote-item">
+           Vgl.
+                     offizielle Projektwebseite <a href="https://web.archive.org/web/20240119134513/https://teipublisher.com/index.html" target="_blank" rel="noopener">https://web.archive.org/web/20240119134513/https://teipublisher.com/index.html</a>.
+          <a href="#fnref-ftn1" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn2" class="footnote-item">
+          
+                     <em>Allgemeine Beschreibung</em>. Vgl.<em> Digital Edition Creation
+                        Pipelines: Tools and Transitions</em> (DigEdTnT): <a href="https://web.archive.org/web/20240119134732/https://digedtnt.github.io/teipublisher/" target="_blank" rel="noopener">https://web.archive.org/web/20240119134732/https://digedtnt.github.io/teipublisher/</a>.
+          <a href="#fnref-ftn2" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn3" class="footnote-item">
+          
+                     eXist-Solutions. Offizielle Projektwebsite: <a href="https://web.archive.org/web/20240119135050/https://www.existsolutions.com/" target="_blank" rel="noopener">https://web.archive.org/web/20240119135050/https://www.existsolutions.com/</a>.
+          <a href="#fnref-ftn3" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn4" class="footnote-item">
+           Vgl. ebd. 
+          <a href="#fnref-ftn4" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn5" class="footnote-item">
+           Vgl. ebd.
+          <a href="#fnref-ftn5" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn6" class="footnote-item">
+           Directory zur
+                        <em>TEI Publisher</em>-App im projekteigenen GitHub-Repository: <a href="https://web.archive.org/web/20240119135544/https://github.com/eeditiones/tei-publisher-app" target="_blank" rel="noopener">https://web.archive.org/web/20240119135544/https://github.com/eeditiones/tei-publisher-app</a>.
+          <a href="#fnref-ftn6" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn7" class="footnote-item">
+           e-editiones, Tagged
+                     „release“, offizielle Website: <a href="https://web.archive.org/web/20240119135747/https://www.e-editiones.org/tags/release/" target="_blank" rel="noopener">https://web.archive.org/web/20240119135747/https://www.e-editiones.org/tags/release/</a>.
+                  
+          <a href="#fnref-ftn7" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn8" class="footnote-item">
+           e-editiones, Blogpost zur Version 8.0.0. des
+                        <em>TEI Publisher</em>. Offizielle Website: <a href="https://web.archive.org/web/20240119140230/https://www.e-editiones.org/posts/tei-publisher-8/" target="_blank" rel="noopener">https://web.archive.org/web/20240119140230/https://www.e-editiones.org/posts/tei-publisher-8/</a>.
+          <a href="#fnref-ftn8" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn9" class="footnote-item">
+           e-editiones,
+                     Blogpost zur Version 9.0.0 des <em>TEI Publisher</em>. Offizielle Website:
+                        <a href="http://web.archive.org/web/20240829005138/https://www.e-editiones.org/posts/tei-publisher-9/" target="_blank" rel="noopener">http://web.archive.org/web/20240829005138/https://www.e-editiones.org/posts/tei-publisher-9/</a>.
+          <a href="#fnref-ftn9" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn10" class="footnote-item">
+           Vgl. ebd. Abschnitt
+                        <em>Redesigned annotation editor.</em>
+          <a href="#fnref-ftn10" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn11" class="footnote-item">
+           Testinstanz in Version 8.1.0
+                     des <em>TEI Publisher</em>: <a href="https://web.archive.org/web/20240119140535/https://teipublisher.com/exist/apps/tei-publisher/index.html" target="_blank" rel="noopener">https://web.archive.org/web/20240119140535/https://teipublisher.com/exist/apps/tei-publisher/index.html</a>.
+          <a href="#fnref-ftn11" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn12" class="footnote-item">
+           GitHub-Repository der tei-publisher-app, Releases: <a href="http://web.archive.org/web/20240904063926/https://github.com/eeditiones/tei-publisher-app/releases" target="_blank" rel="noopener">http://web.archive.org/web/20240904063926/https://github.com/eeditiones/tei-publisher-app/releases</a>.
+          <a href="#fnref-ftn12" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn13" class="footnote-item">
+           Das
+                        <em>TEI-Processing-Model </em>steuert, wie TEI-Dokumente verarbeitet und
+                     in andere Formate (wie z.B. HTML, PDF, oder ePub) konvertiert werden. Es bietet
+                     eine standardisierte Methode, die festlegt, wie die XML-Kodierung eines
+                     TEI-Dokuments interpretiert und in eine bestimmte Präsentationsform
+                     transformiert wird. Das Modell enthält Regeln und Mechanismen, um den Übergang
+                     von der strukturierten Repräsentation eines Textes in der TEI zu seiner
+                     Darstellung zu <em>prozessieren</em>.Vgl. DiXiT Blog. <em>TEI Simple
+                        Processing Model: Oxford workshop</em> (2015): <a href="http://web.archive.org/web/20240904070739/https://dixit.hypotheses.org/695" target="_blank" rel="noopener">http://web.archive.org/web/20240904070739/https://dixit.hypotheses.org/695</a>.
+          <a href="#fnref-ftn13" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn14" class="footnote-item">
+           Das <em>TEI-Simple-Projekt
+                     </em>war eine Initiative, die darauf abzielte, die Komplexität der
+                     TEI-Kodierung zu reduzieren, um sie für NutzerInnen zugänglicher zu machen, die
+                     keine ExpertInnen im Bereich der Textkodierung sind. <em>TEI-Simple
+                     </em>stellte eine vereinfachte Version der TEI-Guidelines zur Verfügung, die
+                     sich auf häufig verwendetes und grundlegendes TEI-Markup konzentrierte. Ziel
+                     war es, die Nutzung von TEI für Projekte zu erleichtern, die keine hochgradig
+                     komplexe oder detaillierte Textkodierung benötigen. Vgl. GitHub.io. <em>TEI
+                        Simple</em>: <a href="http://web.archive.org/web/20240904070209/https://teic.github.io/TEI-Simple/" target="_blank" rel="noopener">http://web.archive.org/web/20240904070209/https://teic.github.io/TEI-Simple/</a>.
+          <a href="#fnref-ftn14" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn15" class="footnote-item">
+           e-editiones, offizielle Website: <a href="https://web.archive.org/web/20240119141236/https://www.e-editiones.org/" target="_blank" rel="noopener">https://web.archive.org/web/20240119141236/https://www.e-editiones.org/</a>.
+          <a href="#fnref-ftn15" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn16" class="footnote-item">
+           Vgl. ebd.
+                  
+          <a href="#fnref-ftn16" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn17" class="footnote-item">
+          
+                     <em>Support</em>. Offizielle Website des <em>TEI Publisher</em>: <a href="https://web.archive.org/web/20240904071745/https://teipublisher.com/index.html#support" target="_blank" rel="noopener">https://web.archive.org/web/20240904071745/https://teipublisher.com/index.html#support</a>.
+          <a href="#fnref-ftn17" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn18" class="footnote-item">
+           Ebd. <a href="https://web.archive.org/web/20240904071745/https://teipublisher.com/index.html#support" target="_blank" rel="noopener">https://web.archive.org/web/20240904071745/https://teipublisher.com/index.html#support</a>.
+          <a href="#fnref-ftn18" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn19" class="footnote-item">
+          
+                           <em>Special Offer</em>. Offizielle Website des <em>TEI
+                              Publisher</em>: <a href="https://web.archive.org/web/20240904071745/https://teipublisher.com/index.html#support" target="_blank" rel="noopener">https://web.archive.org/web/20240904071745/https://teipublisher.com/index.html#support</a>.
+          <a href="#fnref-ftn19" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn20" class="footnote-item">
+          
+                     <em>Van Gogh Letters</em>. Digitale Edition online abrufbar unter: <a href="https://web.archive.org/web/20240119142458/https://teipublisher.com/exist/apps/vangogh/index.html" target="_blank" rel="noopener">https://web.archive.org/web/20240119142458/https://teipublisher.com/exist/apps/vangogh/index.html</a>.
+          <a href="#fnref-ftn20" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn21" class="footnote-item">
+           Offizielle Dokumentation des
+                        <em>TEI Publisher</em>: <a href="https://web.archive.org/web/20240119142743/https://teipublisher.com/exist/apps/tei-publisher/documentation" target="_blank" rel="noopener">https://web.archive.org/web/20240119142743/https://teipublisher.com/exist/apps/tei-publisher/documentation</a>.
+          <a href="#fnref-ftn21" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn22" class="footnote-item">
+          
+                     <em>Features Demos</em>. Offizielle Website des <em>TEI Publisher</em>:
+                        <a href="https://web.archive.org/web/20240119134513/https://teipublisher.com/index.html" target="_blank" rel="noopener">https://web.archive.org/web/20240119134513/https://teipublisher.com/index.html</a>.
+                  
+          <a href="#fnref-ftn22" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn23" class="footnote-item">
+           GitHub-Repository von
+                     e-editiones, technische Dokumentation des <em>TEI Publisher</em>: <a href="https://web.archive.org/web/20240904072550/https://github.com/eeditiones/tei-publisher-app" target="_blank" rel="noopener">https://web.archive.org/web/20240904072550/https://github.com/eeditiones/tei-publisher-app</a>.
+          <a href="#fnref-ftn23" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn24" class="footnote-item">
+          
+                     <em>License. </em>GitHub-Repository von e-editiones, technische
+                     Dokumentation des <em>TEI Publisher</em>: <a href="https://web.archive.org/web/20240904072550/https://github.com/eeditiones/tei-publisher-app" target="_blank" rel="noopener">https://web.archive.org/web/20240904072550/https://github.com/eeditiones/tei-publisher-app</a>
+                  
+          <a href="#fnref-ftn24" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn25" class="footnote-item">
+           Die GNU General Public License ist eine
+                     freie Copyleft-Lizenz für Software und andere Arten von Werken. Sie soll die
+                     Freiheit garantieren, alle Versionen eines Programms weiterzugeben sowie
+                     Modifikationen zu erlauben. Dadurch soll sichergestellt werden, dass sie eine
+                     freie Software und ein freies Programm für alle NutzerInnen bleibt. <a href="https://web.archive.org/web/20240119042126/https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noopener">https://web.archive.org/web/20240119042126/https://www.gnu.org/licenses/gpl-3.0.html</a>
+                  
+          <a href="#fnref-ftn25" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn26" class="footnote-item">
+           e-editiones, Blogpost zur
+                     Version 8.0.0. des <em>TEI Publisher</em>. Offizielle Website: <a href="https://web.archive.org/web/20240119140230/https://www.e-editiones.org/posts/tei-publisher-8/" target="_blank" rel="noopener">https://web.archive.org/web/20240119140230/https://www.e-editiones.org/posts/tei-publisher-8/</a>.
+          <a href="#fnref-ftn26" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn27" class="footnote-item">
+          
+                     <em>News</em>. Offizielle Website des <em>TEI Publisher</em>: <a href="https://web.archive.org/web/20240119134513/https://teipublisher.com/index.html" target="_blank" rel="noopener">https://web.archive.org/web/20240119134513/https://teipublisher.com/index.html</a>.
+          <a href="#fnref-ftn27" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn28" class="footnote-item">
+           Testinstanz in Version
+                     8.1.0 des <em>TEI Publisher</em>: <a href="https://web.archive.org/web/20240119140535/https://teipublisher.com/exist/apps/tei-publisher/index.html" target="_blank" rel="noopener">https://web.archive.org/web/20240119140535/https://teipublisher.com/exist/apps/tei-publisher/index.html</a>.
+          <a href="#fnref-ftn28" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn29" class="footnote-item">
+          
+                     <em>TAPAS: Building a TEI Publishing and Repository Service </em>Julia
+                     Flanders and Scott Hamlin <a href="https://doi.org/10.4000/jtei.788" target="_blank" rel="noopener">https://doi.org/10.4000/jtei.788</a>
+          <a href="#fnref-ftn29" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn30" class="footnote-item">
+          
+                     <em>EVT</em>: <a href="http://web.archive.org/web/20240125074736/http://evt.labcd.unipi.it/" target="_blank" rel="noopener">http://web.archive.org/web/20240125074736/http://evt.labcd.unipi.it/</a>.
+          <a href="#fnref-ftn30" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn31" class="footnote-item">
+          
+                     <em>Digital Vercelli Book Projekt</em>: <a href="http://web.archive.org/web/20240125075035/http://vbd.humnet.unipi.it/" target="_blank" rel="noopener">http://web.archive.org/web/20240125075035/http://vbd.humnet.unipi.it/</a>.
+          <a href="#fnref-ftn31" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn32" class="footnote-item">
+           Exemplarischen sei hier noch
+                     die Universitätbibliothek in Basilikata erwähnt die für viele Handschriften
+                     neben einer PDF Datei auch eine mit EVT realisierte Editionsansicht anbietet:
+                        <a href="https://bup.unibas.it/library/DH" target="_blank" rel="noopener">https://bup.unibas.it/library/DH</a>
+          <a href="#fnref-ftn32" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn33" class="footnote-item">
+           GitHub des <em>ediarum.WEB</em>
+                     Moduls: <a href="https://github.com/ediarum/ediarum.WEB/releases" target="_blank" rel="noopener">https://github.com/ediarum/ediarum.WEB/releases</a>
+                  
+          <a href="#fnref-ftn33" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn34" class="footnote-item">
+           Roma - ODD Customization
+                        <a href="https://web.archive.org/web/20240906034216/https://roma.tei-c.org/" target="_blank" rel="noopener">https://web.archive.org/web/20240906034216/https://roma.tei-c.org/</a>
+                  
+          <a href="#fnref-ftn34" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn35" class="footnote-item">
+          
+                     <em>Configuring the Annotation Editor. </em>Dokumentation des
+                        <em>TEI-Publisher</em>:<a href="https://web.archive.org/web/20240904074340/https://teipublisher.com/exist/apps/tei-publisher/documentation?root=3.42" target="_blank" rel="noopener">https://web.archive.org/web/20240904074340/https://teipublisher.com/exist/apps/tei-publisher/documentation?root=3.42</a>.
+          <a href="#fnref-ftn35" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn36" class="footnote-item">
+          
+                     <em>Bearbeitung des ODD der Manuskripte. </em>Vgl.<em> Digital Edition
+                        Creation Pipelines: Tools and Transitions</em> (DigEdTnT): <a href="https://web.archive.org/web/20240904074941/https://digedtnt.github.io/teipublisher/" target="_blank" rel="noopener">https://web.archive.org/web/20240904074941/https://digedtnt.github.io/teipublisher/#a-bearbeitung-des-odd-der-manuskripte</a>.
+          <a href="#fnref-ftn36" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn37" class="footnote-item">
+          
+                     <em>Annotating Documents</em>. Dokumentation des
+                     <em>TEI-Publisher</em>: <a href="https://web.archive.org/web/20240829113820/https://tei-publisher.com/exist/apps/tei-publisher/documentation/web-annotations" target="_blank" rel="noopener">https://web.archive.org/web/20240829113820/https://tei-publisher.com/exist/apps/tei-publisher/documentation/web-annotations</a>.
+          <a href="#fnref-ftn37" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn38" class="footnote-item">
+           Vgl. ebd.
+          <a href="#fnref-ftn38" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn39" class="footnote-item">
+           API
+                        <em>tei-publisher-ner. </em>GitHub-Repository von e-editiones: <a href="https://web.archive.org/web/20240904081501/https://github.com/eeditiones/tei-publisher-ner" target="_blank" rel="noopener">https://web.archive.org/web/20240904081501/https://github.com/eeditiones/tei-publisher-ner</a>.
+          <a href="#fnref-ftn39" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn40" class="footnote-item">
+           TEIGarage Conversion <a href="https://teigarage.tei-c.org/" target="_blank" rel="noopener">https://teigarage.tei-c.org/</a>
+          <a href="#fnref-ftn40" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn41" class="footnote-item">
+           Vgl. Seite 32/33 in .<a href="https://tei-publisher.com/exist/apps/tei-publisher/print/doc/documentation.xml" target="_blank" rel="noopener">https://tei-publisher.com/exist/apps/tei-publisher/print/doc/documentation.xml</a>
+                  
+          <a href="#fnref-ftn41" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn42" class="footnote-item">
+          
+                     <em>Output Media Settings. </em>Dokumentation des <em>TEI
+                        Publisher</em>: <a href="https://web.archive.org/web/20240123104904/https://teipublisher.com/exist/apps/tei-publisher/documentation/output-media" target="_blank" rel="noopener">https://teipublisher.com/exist/apps/tei-publisher/documentation/output-media</a>.
+          <a href="#fnref-ftn42" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn43" class="footnote-item">
+          
+                     <em>Facet Search Configuration. </em>Dokumentation des <em>TEI
+                        Publisher</em>: <a href="https://teipublisher.com/exist/apps/tei-publisher/documentation/facets" target="_blank" rel="noopener">https://teipublisher.com/exist/apps/tei-publisher/documentation/facets</a>
+                  
+          <a href="#fnref-ftn43" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn44" class="footnote-item">
+           Genaue Werte lassen sich
+                     hier nicht benennen, da viele Faktoren wie Serverleistung, die
+                        <em>eXist-db</em> Version und vor allem auch die Komplexität der Daten
+                     und der Queries hier einen maßgeblichen Einfluss auf die Performance haben.
+                     Dies ist ein auf Seite von exist-db bekanntes Thema und die Entwickler bieten
+                     dafür Hilfestellungen an. Siehe hierzu : <a href="https://exist-db.org/exist/apps/doc/faq_performance" target="_blank" rel="noopener">https://exist-db.org/exist/apps/doc/faq_performance</a> und <a href="https://exist-db.org/exist/apps/doc/tuning" target="_blank" rel="noopener">https://exist-db.org/exist/apps/doc/tuning</a>
+          <a href="#fnref-ftn44" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn45" class="footnote-item">
+          
+                     <em>Images and IIIF</em> TEI Publisher FAQ <a href="https://web.archive.org/web/20240911113016/https://faq.teipublisher.com/images/static-images/" target="_blank" rel="noopener">https://web.archive.org/web/20240911113016/https://faq.teipublisher.com/images/static-images/</a>
+          <a href="#fnref-ftn45" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn46" class="footnote-item">
+           An der Mehrsprachigkeit des <em>TEI
+                        Publisher</em> und seiner Dokumentation wird per
+                        <em>Crowdsourcing</em> laufend gearbeitet. 
+          <a href="#fnref-ftn46" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn47" class="footnote-item">
+           Slack-Channel von e-editiones:
+                        <a href="https://web.archive.org/web/20240904082433/https://e-editiones.slack.com/" target="_blank" rel="noopener">https://web.archive.org/web/20240904082433/https://e-editiones.slack.com/</a>.
+          <a href="#fnref-ftn47" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn48" class="footnote-item">
+          
+                     Als Beispiel sei hier nochmal auf die Van Gogh Edition verwiesen, in der
+                     mithilfe der <em>Webcomponent</em>
+                     <em>pb-timeline</em> eine dynamische Zeitleiste zur Navigation angeboten
+                     werden kann. Ein Beispiel für den Einsatz der <em>pb-leaflet-map</em>
+                     <em>Webcomponent</em> wären die Reisetagebücher Johann Conrad Fischers <a href="https://web.archive.org/web/20240119142458/https://teipublisher.com/exist/apps/vangogh/index.html" target="_blank" rel="noopener">https://web.archive.org/web/20240119142458/https://teipublisher.com/exist/apps/vangogh/index.html</a>.<a href="https://johannconradfischer.com/de/travels" target="_blank" rel="noopener">https://johannconradfischer.com/de/travels</a><span>  </span>Eine
+                     Liste aller zur Verfügung stehenden Komponenten mit Beispielen findet sich in
+                     einer ausführlichen API Dokumentation z.B. für <em>pb-timeline</em>: <a href="https://cdn.tei-publisher.com/@2.23.2/dist/api.html#pb-timeline.0" target="_blank" rel="noopener">https://cdn.tei-publisher.com/@2.23.2/dist/api.html</a>
+          <a href="#fnref-ftn48" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn49" class="footnote-item">
+           Stand August 2024 verzeichnet der Verein
+                     e-editiones im Projektregister 46 eingetragene und mit dem <em>TEI Publisher
+                     </em>realisierte Projekte weltweit. <a href="https://web.archive.org/web/20240906042131/https://www.e-editiones.org/map/" target="_blank" rel="noopener">https://web.archive.org/web/20240906042131/https://www.e-editiones.org/map/</a>
+                  
+          <a href="#fnref-ftn49" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn50" class="footnote-item">
+          
+                     <em>Strategy</em>. <em>4. Ensuring long term availability of digital
+                        editions. </em>Offizielle Website von e-editiones: <a href="https://web.archive.org/web/20240829140227/https://www.e-editiones.org/pages/strategy/#4.-ensuring-long-term-availability-of-digital-editions" target="_blank" rel="noopener">https://web.archive.org/web/20240829140227/https://www.e-editiones.org/pages/strategy/#4.-ensuring-long-term-availability-of-digital-editions</a>
+                  
+          <a href="#fnref-ftn50" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn51" class="footnote-item">
+           Learn <em>TEI Publisher</em>
+                     From Scratch. Session 1 of 3. Online verfügbar auf YouTube: <a href="https://web.archive.org/web/20240123123956/https://www.youtube.com/watch?v=QuWrfAS2SWM" target="_blank" rel="noopener">https://web.archive.org/web/20240123123956/https://www.youtube.com/watch?v=QuWrfAS2SWM</a>.
+          <a href="#fnref-ftn51" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn52" class="footnote-item">
+          
+                     GitHub-Repository von e-editiones/tei-publisher-components: <a href="https://web.archive.org/web/20240904090056/https://github.com/eeditiones/tei-publisher-components/blob/master/lib/openseadragon.min.js" target="_blank" rel="noopener">https://web.archive.org/web/20240904090056/https://github.com/eeditiones/tei-publisher-components/blob/master/lib/openseadragon.min.js</a>.
+          <a href="#fnref-ftn52" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn53" class="footnote-item">
+          
+                     <em>OpenSeadragon</em>. Offizielles GitHub-Repository: <a href="https://web.archive.org/web/20240904090259/https://openseadragon.github.io/" target="_blank" rel="noopener">https://web.archive.org/web/20240904090259/https://openseadragon.github.io/</a>.
+          <a href="#fnref-ftn53" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn54" class="footnote-item">
+          <em> TIFY. A slim and mobile-friendly IIIF
+                        document viewer</em>. Offizielle Projektwebsite: <a href="https://web.archive.org/web/20240829115731/https://tify.rocks/" target="_blank" rel="noopener">https://web.archive.org/web/20240829115731/https://tify.rocks/</a>.
+          <a href="#fnref-ftn54" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn55" class="footnote-item">
+          
+                     <em>Facsimiles and other images:</em> Dokumentation des <em>TEI
+                        Publisher</em>: <a href="https://web.archive.org/web/20240904090856/https://teipublisher.com/exist/apps/tei-publisher/documentation/facsimiles?action=search&view=div&odd=docbook.odd#3.16.21.7.2.4.2.4" target="_blank" rel="noopener">https://web.archive.org/web/20240904090856/https://teipublisher.com/exist/apps/tei-publisher/documentation/facsimiles?action=search&amp;view=div&amp;odd=docbook.odd#3.16.21.7.2.4.2.4</a>.
+          <a href="#fnref-ftn55" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn56" class="footnote-item">
+          
+                  <em>TEI Publisher Registry</em>. Einsehbar auf der offiziellen Website von
+                  e-editiones: <a href="https://web.archive.org/web/20240904085848/https://www.e-editiones.org/map/" target="_blank" rel="noopener">https://web.archive.org/web/20240904085848/https://www.e-editiones.org/map/</a>.
+          <a href="#fnref-ftn56" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn57" class="footnote-item">
+          
+                  <em>Browser history, bookmarkable URLs. </em>Ankündigung im Blogpost von
+                  e-editiones: <a href="https://web.archive.org/web/20240119140230/https://www.e-editiones.org/posts/tei-publisher-8/" target="_blank" rel="noopener">https://web.archive.org/web/20240119140230/https://www.e-editiones.org/posts/tei-publisher-8/</a>.
+          <a href="#fnref-ftn57" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+      </ol>
+    </section>
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{tei-publisher,
+  author    = {Sutor, Nadine and Mertgens, Andreas},
+  title     = {TEI Publisher},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {19},
+  year      = {2024},
+  doi       = {10.18716/ride.a.19.1},
+  url       = {https://doi.org/10.18716/ride.a.19.1},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Sutor, Nadine
+AU  - Mertgens, Andreas
+TI  - TEI Publisher
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 19
+PY  - 2024
+DA  - 2024/12
+DO  - 10.18716/ride.a.19.1
+UR  - https://doi.org/10.18716/ride.a.19.1
+PB  - Institut für Dokumentologie und Editorik e.V.
+LA  - de
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Sutor, N., &amp; Mertgens, A. (2024). TEI Publisher. RIDE – A review journal for digital editions and resources, (19). https://doi.org/10.18716/ride.a.19.1</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Sutor, Nadine, and Andreas Mertgens. &#34;TEI Publisher.&#34; RIDE – A review journal for digital editions and resources, no. 19, 2024. https://doi.org/10.18716/ride.a.19.1.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Sutor, Nadine, and Andreas Mertgens. &#34;TEI Publisher.&#34; RIDE – A review journal for digital editions and resources, no. 19 (2024). https://doi.org/10.18716/ride.a.19.1.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/tei-publisher/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

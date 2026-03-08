@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corpus of Spanish Golden-Age Sonnets &mdash; RIDE</title>
+  <meta name="description" content="
+            In this paper a TEI corpus with sonnets from the Spanish Golden-Age is reviewed. Some
+               of the 52 authors represented in the collection are Cervantes, Lope, Quevedo,...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Corpus of Spanish Golden-Age Sonnets">
+  <meta property="og:description" content="
+            In this paper a TEI corpus with sonnets from the Spanish Golden-Age is reviewed. Some
+               of the 52 authors represented in the collection are Cervantes, Lope, Quevedo,...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/gasonnets/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/gasonnets/">
+<meta name="DC.title" content="Corpus of Spanish Golden-Age Sonnets">
+<meta name="DC.creator" content="José Calvo Tello">
+<meta name="DC.date" content="2017-09">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.6.4"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="en">
+
+<meta name="citation_title" content="Corpus of Spanish Golden-Age Sonnets">
+<meta name="citation_author" content="José Calvo Tello">
+<meta name="citation_doi" content="10.18716/ride.a.6.4"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2017-09">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/gasonnets/gasonnets.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Corpus of Spanish Golden-Age Sonnets",
+  "author": [{"@type": "Person", "name": "Jos\u00e9 Calvo Tello", "url": "https://orcid.org/0000-0002-1129-5604"}],
+  "datePublished": "2017-09",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.6.4"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e.V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">General information</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">The collection</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">Structure of the corpus</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">Structure of the files</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div5" class="toc-link">Publication</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div6" class="toc-link">Interface (beta)</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div7" class="toc-link">Preservation</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div8" class="toc-link">Conclusion</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#bibliography" class="toc-link">Bibliography</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#footnotes" class="toc-link">Notes</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>September 2017</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.6.4" rel="external">10.18716/ride.a.6.4</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-6/">
+        <span class="badge badge-textcollections">DTC</span>
+        Issue 6
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>EN</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/gasonnets/gasonnets.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/gasonnets/gasonnets-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="en">
+    <header class="review-header">
+      <a href="/issues/issue-6/" class="review-issue-link">
+        <span class="badge badge-textcollections">DTC</span>
+        Issue 6: Digital Text Collections
+      </a>
+
+      <h1>Corpus of Spanish Golden-Age Sonnets</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          José Calvo Tello&nbsp;<a href="https://orcid.org/0000-0002-1129-5604" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>        </span>
+      </div>
+
+      <div class="review-affiliation">University of Würzburg, Würzburg, Germany</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="https://github.com/bncolorado/CorpusSonetosSigloDeOro" rel="external">Corpus of Spanish Golden-Age Sonnets</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">General information</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">The collection</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">Structure of the corpus</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">Structure of the files</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div5" class="toc-link">Publication</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div6" class="toc-link">Interface (beta)</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div7" class="toc-link">Preservation</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div8" class="toc-link">Conclusion</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#bibliography" class="toc-link">Bibliography</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#footnotes" class="toc-link">Notes</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>September 2017</span>
+<span><a href="https://doi.org/10.18716/ride.a.6.4" rel="external">DOI</a></span><a href="/reviews/gasonnets/gasonnets.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/gasonnets/gasonnets-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>In this paper a TEI corpus with sonnets from the Spanish Golden-Age is reviewed. Some
+               of the 52 authors represented in the collection are Cervantes, Lope, Quevedo, Tirso,
+               Calderón or Góngora. In total, the corpus contains more than 5000 sonnets. The
+               project is currently under development at the University of Alicante, Spain. One of
+               the strongest aspects of this corpus is the metrical annotation of each verse. The
+               researchers have already analysed the corpus using topic modelling, a suitable
+               technique for the structure of the collection and the size of the texts. The weakest
+               aspect of this collection is the metadata of the files: the majority of them are
+               redundant and some important aspects (e.g. identifiers of texts, author, collection,
+               source) are missing. The corpus is available as a GitHub repository, a good practice
+               that facilitates cloning all the data, the track of changes and the preservation of
+               the corpus.</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>General information</h2>
+      <p id="p1">The <em>Corpus of Spanish Golden-Age Sonnets</em> is a collection of
+               sonnets in TEI that covers the main canonical Spanish authors from the Golden-Age of
+               the Spanish Literature (16th and 17th Centuries). The Golden-Age or <em>Siglo de
+                  Oro</em> (also called <em>Edad de Oro</em> or <em>Siglos de Oro</em>)
+               encompasses some of the most important authors of the Spanish Literature like
+               Cervantes, Lope, Quevedo, Tirso, Calderón, Góngora, etc. The sonnet represents one of
+               the most important lyric genres of this period.</p>
+<p id="p2">
+               <figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="Website of the project." loading="lazy"><figcaption>Fig. 1: Website of the project.</figcaption></figure> The project has been created under the leadership of Borja Navarro
+               Colorado, together with María Ribes Lafoz and Noelia Sánchez at the University of
+               Alicante, Spain. After the publication of the first version, the project got private
+               funding for the next years (2016–2018) from a private foundation for the analysis,
+               annotation and revision of the corpus with the name <em>Análisis distante del
+                  soneto castellano de los Siglos de Oro</em> (ADSO). The main website of the
+               project (see <a href="#img1" class="crossref">Fig. 1</a>), which is not the
+               focus of this review, is reachable at <a href="http://adso.gplsi.es" target="_blank" rel="noopener">http://adso.gplsi.es</a>. The TEI version of the corpus is available as a
+               repository on GitHub.<sup class="footnote-ref" id="fnref-ftn1"><a href="#fn-ftn1" role="doc-noteref">1</a></sup>
+            </p>
+    </section>
+    <section id="div2">
+      <h2>The collection</h2>
+      <p id="p3">
+               <figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="Folders for each author of the corpus." loading="lazy"><figcaption>Fig. 2: Folders for each author of the corpus.</figcaption></figure> The basic documentation of the project is available through the
+                  <em>readme</em> file of the GitHub repository and through the project’s
+                  website.<sup class="footnote-ref" id="fnref-ftn2"><a href="#fn-ftn2" role="doc-noteref">2</a></sup> The rhythmical annotation is documented in more detail in a PDF file in the
+                  repository<sup class="footnote-ref" id="fnref-ftn3"><a href="#fn-ftn3" role="doc-noteref">3</a></sup> which also explains specific aspects of the corpus.
+               The structure of the folders and files clearly indicates the names of the sonnet’s
+               authors (see <a href="#img2" class="crossref">Fig. 2</a>). Even if the project
+               is documented, as I will explain in the next sections, I miss specific information
+               about the corpus design, its creation and the distribution of sonnets over
+               authors.</p>
+<p id="p4">The creators decided to encode every sonnet as a single file, grouping
+               the works of the same author in a single folder (two folders in the case of Lope, who
+               has 1346 sonnets). Thinking of usage scenarios, this makes the collection a perfect
+               use case for Topic Modeling, for instance, since the texts are already offered in
+               small and homogeneous units. The authors have already published a paper on the topic
+               (Navarro Colorado 2015) that shows what kind of research questions could be applied:
+               topical patterns in groups of authors or periods, or an analysis of the outcome of
+               clustering each author's sonnets. Other kinds of analysis, e.g. stylometry for
+               authorship attribution, or ways of utilization such as reading would require to
+               combine different files into a single file or a conversion to other formats. But
+               since the corpus is available and uses standard technologies, a researcher with
+               programming skills wouldn't have many troubles.</p>
+<p id="p5">This corpus aims to create the most representative collection of sonnets
+               for the Spanish 16th and 17th centuries in order to analyse them, especially their
+               rhythmical structure. Unlike similar repositories for other subgenres created in
+               Spain, this repository has published all its data in the TEI format.</p>
+    </section>
+    <section id="div3">
+      <h2>Structure of the corpus</h2>
+      <p id="p6">Regarding the structure of the corpus, the only criterion mentioned in
+               the documentation is that for every author at least 10 sonnets are included, which
+               could be found in the section "Biblioteca del Soneto"<sup class="footnote-ref" id="fnref-ftn4"><a href="#fn-ftn4" role="doc-noteref">4</a></sup> of the <em>Biblioteca Digital Cervantes Virtual</em> (that I will just
+               call <em>Cervantes Virtual</em> from now on), and which is one of the biggest
+               collections of Spanish texts in HTML created on the basis of digitizations. That
+               makes this corpus a compilation of the sonnets found in <em>Cervantes
+                  Virtual</em> where a specific but arbitrary print edition of a work is
+               digitized, encoded in TEI and published only as HTML. So one of the main selection
+               criteria of this corpus is the opportunism of having all these texts already
+               published and available from a single source. Under these terms, it is questionable
+               whether this collection actually represents the population of the sonnets of the
+               period. The corpus contains more than 5000 sonnets from 52 authors. The amount of
+               tokens is not given, but the fixed structure of the genre makes this information less
+               important than for other genres (e.g. novel). The size of the collection seems
+               appropriate in order to analyse it with quantitative methods and it represents the
+               largest collection of Spanish poetry that I am aware of.</p>
+<p id="p7">The corpus is divided into subcorpora of single authors, whose names are
+               encoded in both the names of the folders and the XML files, the latter together with
+               a numerical identification. The amount of sonnets for each author varies greatly,
+               from 10 (e.g. of Cristobal de Virués, Fray Luis de León) to several hundreds (e.g. of
+               Fernando de Herrera, Quevedo or Lope de Vega).</p>
+    </section>
+    <section id="div4">
+      <h2>Structure of the files</h2>
+      <p id="p8">As mentioned before, the fact that all the texts come from
+                  <em>Cervantes Virtual</em>, is described very briefly on the project website.
+               For that digital library, a large amount of texts has been encoded in TEI over the
+               years, but <em>Cervantes Virtual</em> has been always reluctant either to publish
+               it in other formats than HTML or to facilitate the TEI to other researchers. Although
+               the ADSO project and <em>Cervantes Virtual</em> are based at the same university,
+               it seems that the texts have been processed directly from the HTML published on the
+               web, probably transformed with regular expressions (as many other projects working
+               with Spanish texts do) and converted to TEI, even though this is not clearly
+               explained. Thanks to this corpus, the research community has won access to data that
+               was already encoded in TEI but was inaccessible. The project has also isolated every
+               sonnet, identified the kind of stanzas and numbered the verses. The most interesting
+               enrichment that has been done by the project is without doubt the formal annotation
+               of the rhythmical structure of every verse. Sadly, the recollection of the texts has
+               also caused the loss of some metadata: in the source, the sonnets are normally
+               published as a part of a collection of sonnets and usually every sonnet is numbered.
+               Here, the relations between the different sonnets are only kept in the source
+               description (<code>sourceDesc</code>) in the TEI header. For instance, the link to
+               the primary source in <em>Cervantes Virtual</em> is missing.</p>
+<p id="p9">
+               <figure id="img3" class="review-figure"><img src="pictures/picture-3.png" alt="Example of the TEI header of a sonnet from Cervantes." loading="lazy"><figcaption>Fig. 3: Example of the TEI header of a sonnet from Cervantes.</figcaption></figure> The authors don't communicate if there has been any quality check of the
+               texts. Again, because of the very specific structure that sonnets have in general, it
+               would be very simple to check if all files have specific features (four stanzas, 14
+               verses, etc.). Since the project has been managed with GitHub, one can see that they
+               have been correcting their own rhythmical annotation since the start of the project,
+               which is also kept in the TEI header in <code>metDecl</code>.</p>
+<p id="p10">Information about the metrical structure is encoded in every
+                  <code>l</code> element in the corresponding <code>@met</code> attribute with a
+               combination of pluses and slashes, which is explained in the TEI header and follows
+               the recommendation of the TEI Guidelines. This information has been added
+               automatically and it is being corrected manually. The editors of the text collection
+               have published a paper about the the method of scansion (Navarro Colorado 2017).</p>
+<p id="p11">
+               <figure id="img4" class="review-figure"><img src="pictures/picture-4.png" alt="Text of the same sonnet from Cervantes." loading="lazy"><figcaption>Fig. 4: Text of the same sonnet from Cervantes.</figcaption></figure> The great majority of the metadata of every file is shared by the rest of
+               the files. According to this approach, the metadata is converted into general
+               information about the project, rather than about the files themselves. In general,
+               the only places where the metadata vary are the <code>sourceDesc</code> and the
+                  <code>metDecl</code> elements (if the text has been corrected manually). This
+               brings up several questions: Should the title in the <code>titleStmt</code> contain
+               only the title of the whole corpus instead of the text encoded in each file (e.g. of
+               each sonnet)? Shouldn't the name of the author also be kept in the
+                  <code>titleStmt</code> and not only in the name of the file? Why is there no
+                  <code>revisionDesc</code>?</p>
+<p id="p12">Other metadata which would be very useful when working with the
+               collection are missing: the original link to the source at <em>Cervantes
+                  Virtual</em>; information and identifiers (through standards like VIAF) about
+               the different stages of the publications (the publication of the digital edition in
+                  <em>Cervantes Virtual</em>, the publication of the printed edition digitized
+               by <em>Cervantes Virtual</em>, the publication of the first edition of the text)
+               with the corresponding publication dates; the explicit identification of the number
+               of the poem according to its position in the digitized anthology; and also an
+               identifier that the project itself defines (which could be the same as the name of
+               the file).</p>
+<p id="p13">The basic text in this project is the sonnet, so each sonnet is encoded
+               in a separate TEI file. This is a different structure from the one of <em>Cervantes
+                  Virtual</em>, where a collection of sonnets already published as a book was
+               digitized and encoded as one file and shown in HTML as a group of sonnets, connected
+               by links. These two models have advantages and disadvantages.</p>
+<p id="p14">On the one hand, the model of one file for each collection organizes the
+               sonnets of each author in their publication context and order. Like this, the works
+               of one author are represented only by some files and not by hundreds of files. In
+               this model the sonnet can still be accessed individually and, through XML
+               technologies like XPath and XSLT, all the sonnets can easily be isolated as single
+               files. The biggest disadvantage of this model is that using a single text element for
+               all the sonnets makes it impossible to encode metadata for each poem.</p>
+<p id="p15">On the other hand, the model of one file for each sonnet, which has been
+               used for the text collection discussed here, reinforces the individuality of the
+               sonnet and reduces the importance of the collections of the sonnets (as there might
+               be several different collections, some of them created years after the death of the
+               author). Plus, if all the texts have an homogeneous structure and length, it is
+               easier to analyse them for example with techniques like Topic Modeling. One of the
+               biggest disadvantages of this model is that it is harder to keep the information
+               about the original collection each sonnet belonged to, and about where the sonnet was
+               placed in that collection. In the way the collection is structured right now, it
+               would probably be possible but really hard to recreate the structure of whole
+               collections. This could be done by using the name of the collection given in the
+               header of a single sonnet file to associate the sonnet with the corresponding
+               collection and to place it in the collection according to the Roman number given in
+               the header of the text. If the collection would have sub parts grouping some of the
+               sonnets closer together, that information would most probably be lost. In addition,
+               the greatest advantage of this model is actually not exploited by this project: to
+               give specific metadata about each sonnet in the TEI header. In the current state of
+               the corpus (and as I have already said, the project is still ongoing), all the
+               sonnets of a certain published collection share all their metadata, so that all their
+               TEI headers are redundant.</p>
+<p id="p16">There are different possibilities to fully exploit the advantages and to
+               balance the disadvantages of these two structural models. First, grouping all the
+               sonnets originating from the same published collection in a single file, structuring
+               of course each sonnet as an individual poem. Besides, it would be possible to offer
+               each poem as a single file as an export version in plain text to facilitate its
+               analysis. This could be a good way if it is not planned to add specific metadata
+               about each poem. Secondly: Keeping the structure of a single file for each poem but
+               add some metadata that identify in an unequivocal way the published collections it
+               belongs to, its section in the collection (if there are any), and its exact position
+               in it. Thirdly, and probably the most flexible and structured option, structuring all
+               the collections of the same writer in a single TEI file with a <code>teiCorpus</code>
+               element as root element; this would contain other <code>teiCorpus</code> elements for
+               each collection of sonnets written by this author. Finally, each sonnet can be
+               encoded as a dedicated element TEI. In doing so, it is possible to add extra metadata
+               in the child element <code>teiHeader</code> if needed.</p>
+    </section>
+    <section id="div5">
+      <h2>Publication</h2>
+      <p id="p17">All the data is available through GitHub, which means that the
+               researcher can download everything at once and keep track of every change easily.
+               This reflects a major and laudable change in a positive direction in the way that DH
+               projects have published their data in Spain. The corpus doesn't provide any other
+               format of the data. What would be of great help are metadata in tabular form, ideally
+               one table for authors (with the amount of sonnets and the information about their
+               original publication contexts) and one for the sonnets (with an identifier, the
+               author, the original published collection, the sonnet's number, etc.).</p>
+<p id="p18">It is very easy to think of re-use scenarios for these data, especially
+               since the Golden Age is the period of the Spanish Literature for which most texts
+               have been digitized, for example in the corpora <em>IMPACT-es diachronic
+                  corpus</em> and <em>TESO</em> (amongst others).</p>
+    </section>
+    <section id="div6">
+      <h2>Interface (beta)</h2>
+      <p id="p19">
+               <figure id="img5" class="review-figure"><img src="pictures/picture-5.png" alt="Search using metrical structure and the word “amor”." loading="lazy"><figcaption>Fig. 5: Search using metrical structure and the word “amor”.</figcaption></figure> The project also offers an interesting interface available via the menus of
+               the website of the project ("Corpus métrica" &gt; "Consultar").<sup class="footnote-ref" id="fnref-ftn5"><a href="#fn-ftn5" role="doc-noteref">5</a></sup> Currently, the main function of this interface is to make querying the data
+               easier using the information about author, title, poem, verse, metrical structure or
+               stanza. The search results are always given as verses and give the possibility to
+               read the verse, export the result as a CSV table or navigate to the original digital
+               version in <em>Cervantes Virtual</em> (see <a href="#img5" class="crossref">Fig. 5</a>). This last function is surprising since, as already mentioned, this
+               link is not given in the TEI. The creator of the project has explained to us that the
+               position of every sonnet in <em>Cervantes Virtual</em> has been searched again
+               and that each URI has been kept in a database for use in the interface. Another
+               interesting aspect is to be found in the URI: the subdomain is actually part of
+                  <em>Cervantes Virtual</em>. As confirmed through personal communication, both
+               projects are currently working together. In any case, this part is announced as beta
+               and is only linked to from the menu, so its maintenance is unclear.</p>
+    </section>
+    <section id="div7">
+      <h2>Preservation</h2>
+      <p id="p20">On the GitHub page and on the website of the project, basic
+               documentation is given, although some questions about the creation and its design
+               remain unanswered, as I have already pointed out.</p>
+<p id="p21">The metrical annotation is under a Creative Commons Attribution-Non
+               Commercial 4.0 International License and the digital texts remain under the copyright
+               of <em>Cervantes Virtual</em>. This double licence situation could confuse people
+               from other projects who want to reuse the data about what exactly they are allowed to
+               do with the corpus as a whole.</p>
+<p id="p22">The URI of the GitHub repository can be used as a unique identifier to
+               quote the repository, and the version control system of this platform allows to quote
+               or to access any specific state of it. Sadly, the repository doesn't offer a DOI,
+               which would be possible using the integration of GitHub releases and Zenodo DOIs. The
+               project also offers a recommendation about how to cite it, proposing to cite a
+               conference paper (Navarro-Colorado, Ribes Lafoz, Sánchez 2016).</p>
+<p id="p23">Since the start of the project last year the project members have
+               corrected the annotation of some poems. It can be expected that this corpus will grow
+               or that its metadata will be enriched. GitHub is a good place to keep things in the
+               long term, although the already mentioned integration with Zenodo would improve the
+               archiving of the text collection.</p>
+    </section>
+    <section id="div8">
+      <h2>Conclusion</h2>
+      <p id="p24">In conclusion, even if it is an ongoing project with expected progress
+               in the next months, this is already a very valuable resource, which allows to analyse
+               the sonnets of the Spanish Literature of the Golden Age, of considerable size and
+               using standard technologies. The researchers have published their data in TEI using
+               GitHub and best practices that can be considered a pioneer work in the year 2015 in
+               the field of Spanish Literature. Its publication is a milestone for the DH landscape
+               in Spanish language and I hope that it will raise expectations for this kind of
+               resources in the field. The project offers a resource of good quality to other
+               researchers wishing to use it: it is open, accessible and citable. However, the
+               documentation of the project is inconsistent: some aspects, like the metrical
+               annotation, have been documented extensively; other aspects, like the design and
+               creation of the corpus, rather poorly. It is one of the biggest open access
+               collections of encoded TEI texts in Spanish, and one of the biggest collections of
+               poetic texts in European languages. The most exceptional feature of this corpus is
+               the metrical annotation of each verse, which is currently under human revision.</p>
+<p id="p25">Some suggestions have been pointed out in previous sections of this
+               review: more documentation about the design and composition of the corpus is needed.
+               The authors, collections and poems should be identified unequivocally and, if
+               possible, using standards and authority files. In general, the TEI header should
+               offer more metadata (an identifier of the file, chronological information, changes…).
+               The current way of using a single file for each sonnet either leads to the loss of or
+               makes it difficult to access some information, so other ways of structuring the texts
+               would be beneficial.</p>
+    </section>
+
+    <section id="bibliography" class="review-bibliography">
+      <h2>Bibliography</h2>
+      <ol class="bib-list">
+        <li>
+                  <em>Biblioteca Cervantes Virtual.</em> Alicante: Universidad de Alicante,
+                  1999. Web.</li>
+        <li>IMPACT-es: Sánchez-Martínez, Felipe et al. ‘An Open Diachronic Corpus of
+                  Historical Spanish.’ <em>Language Resources and Evaluation</em> 47.4 (2013):
+                  1327–1342. <em>link.springer.com.</em> Web. Accessed: June 1, 2017. <a href="http://www.digitisation.eu/tools-resources/language-resources/impact-es/" target="_blank" rel="noopener">http://www.digitisation.eu/tools-resources/language-resources/impact-es/</a>. </li>
+        <li>Navarro Colorado, Borja. ‘A Computational Linguistic Approach to Spanish Golden
+                  Age Sonnets: Metrical and Semantic Aspects.’ <em>Proceedings of the Fourth
+                     Workshop on Computational Linguistics for Literature.</em> Denver: N.p.,
+                  2015. Web.</li>
+        <li>Navarro Colorado, Borja. ‘A Metrical Scansion System for Fixed-Metre Spanish
+                  Poetry.’ <em>Digital Scholarship in the Humanities</em> (2017): n. pag.
+                     <em>CrossRef.</em> Web. 4 May 2017.</li>
+        <li>Navarro Colorado, Borja, María Ribes Lafoz, and Noelia Sánchez. ‘Metrical
+                  Annotation of a Large Corpus of Spanish Sonnets: Representation, Scansion and
+                  Evaluation.’ <em>Proceedings of the 10th Edition of the Language Resources and
+                     Evaluation Conference (LREC 2016).</em> Portorož (Slovenia): N.p., 2016.
+                  Web.</li>
+        <li>TESO: Simón Palmer, María del Carmen. <em>Teatro Español Del Siglo de
+                     Oro.</em> Ann Arbor: ProQuest, 1997. Web. <a href="https://web.archive.org/web/20161025093021/http://teso.chadwyck.com:80/" target="_blank" rel="noopener">https://web.archive.org/web/20161025093021/http://teso.chadwyck.com:80/</a>.
+               </li>
+      </ol>
+    </section>
+
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        <li id="fn-ftn1" class="footnote-item">
+          
+                  <a href="https://github.com/bncolorado/CorpusSonetosSigloDeOro" target="_blank" rel="noopener">https://github.com/bncolorado/CorpusSonetosSigloDeOro</a> Accessed: June 1,
+                  2017.
+          <a href="#fnref-ftn1" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn2" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20170909164015/http://adso.gplsi.es/index.php/es/corpus-de-metrica/" target="_blank" rel="noopener">https://web.archive.org/web/20170909164015/http://adso.gplsi.es/index.php/es/corpus-de-metrica/</a>.
+               
+          <a href="#fnref-ftn2" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn3" class="footnote-item">
+          
+                  <a href="https://github.com/bncolorado/CorpusSonetosSigloDeOro/blob/master/GuiaAnotacionMetrica.pdf" target="_blank" rel="noopener">https://github.com/bncolorado/CorpusSonetosSigloDeOro/blob/master/GuiaAnotacionMetrica.pdf</a>.
+                  Accessed: June 1, 2017.
+          <a href="#fnref-ftn3" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn4" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20161226203745/http://www.cervantesvirtual.com/bib/portal/bibliotecasoneto/" target="_blank" rel="noopener">https://web.archive.org/web/20161226203745/http://www.cervantesvirtual.com/bib/portal/bibliotecasoneto/</a>.
+               
+          <a href="#fnref-ftn4" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn5" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20170909165825/http://goldenage.cervantesvirtual.com/" target="_blank" rel="noopener">https://web.archive.org/web/20170909165825/http://goldenage.cervantesvirtual.com/</a>.
+               
+          <a href="#fnref-ftn5" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+      </ol>
+    </section>
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{gasonnets,
+  author    = {Calvo Tello, José},
+  title     = {Corpus of Spanish Golden-Age Sonnets},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {6},
+  year      = {2017},
+  doi       = {10.18716/ride.a.6.4},
+  url       = {https://doi.org/10.18716/ride.a.6.4},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Calvo Tello, José
+TI  - Corpus of Spanish Golden-Age Sonnets
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 6
+PY  - 2017
+DA  - 2017/09
+DO  - 10.18716/ride.a.6.4
+UR  - https://doi.org/10.18716/ride.a.6.4
+PB  - Institut für Dokumentologie und Editorik e.V.
+LA  - en
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Calvo Tello, J. (2017). Corpus of Spanish Golden-Age Sonnets. RIDE – A review journal for digital editions and resources, (6). https://doi.org/10.18716/ride.a.6.4</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Calvo Tello, José. &#34;Corpus of Spanish Golden-Age Sonnets.&#34; RIDE – A review journal for digital editions and resources, no. 6, 2017. https://doi.org/10.18716/ride.a.6.4.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Calvo Tello, José. &#34;Corpus of Spanish Golden-Age Sonnets.&#34; RIDE – A review journal for digital editions and resources, no. 6 (2017). https://doi.org/10.18716/ride.a.6.4.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/gasonnets/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

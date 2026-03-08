@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEI Critical Apparatus Toolbox: Web-based tools for ongoing XML-TEI editions &mdash; RIDE</title>
+  <meta name="description" content="
+            Despite the flexibility that a TEI-based workflow offers for preparing editions based on collating several manuscripts, textual scholars working with XML-TEI edition files face a lack...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="TEI Critical Apparatus Toolbox: Web-based tools for ongoing XML-TEI editions">
+  <meta property="og:description" content="
+            Despite the flexibility that a TEI-based workflow offers for preparing editions based on collating several manuscripts, textual scholars working with XML-TEI edition files face a lack...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/teicat/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/teicat/">
+<meta name="DC.title" content="TEI Critical Apparatus Toolbox: Web-based tools for ongoing XML-TEI editions">
+<meta name="DC.creator" content="Bastien Dumont">
+<meta name="DC.date" content="2022-12">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.15.4"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="en">
+
+<meta name="citation_title" content="TEI Critical Apparatus Toolbox: Web-based tools for ongoing XML-TEI editions">
+<meta name="citation_author" content="Bastien Dumont">
+<meta name="citation_doi" content="10.18716/ride.a.15.4"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2022-12">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/teicat/teicat.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "TEI Critical Apparatus Toolbox: Web-based tools for ongoing XML-TEI editions",
+  "author": [{"@type": "Person", "name": "Bastien Dumont", "url": "https://orcid.org/0000-0002-9532-3405"}],
+  "datePublished": "2022-12",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.15.4"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e.V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">General presentation of the TEI-CAT</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">Evaluation</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">Conclusion</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#bibliography" class="toc-link">Bibliography</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#footnotes" class="toc-link">Notes</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>December 2022</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.15.4" rel="external">10.18716/ride.a.15.4</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-15/">
+        <span class="badge badge-tools">TE</span>
+        Issue 15
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>EN</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/teicat/teicat.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/teicat/teicat-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="en">
+    <header class="review-header">
+      <a href="/issues/issue-15/" class="review-issue-link">
+        <span class="badge badge-tools">TE</span>
+        Issue 15: Tools and Environments
+      </a>
+
+      <h1>TEI Critical Apparatus Toolbox: Web-based tools for ongoing XML-TEI editions</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Bastien Dumont&nbsp;<a href="https://orcid.org/0000-0002-9532-3405" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>        </span>
+      </div>
+
+      <div class="review-affiliation">Université de Lorraine, Nancy, France</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="http://teicat.huma-num.fr/" rel="external">TEI Critical Apparatus Toolbox</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">General presentation of the TEI-CAT</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">Evaluation</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">Conclusion</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#bibliography" class="toc-link">Bibliography</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#footnotes" class="toc-link">Notes</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>December 2022</span>
+<span><a href="https://doi.org/10.18716/ride.a.15.4" rel="external">DOI</a></span><a href="/reviews/teicat/teicat.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/teicat/teicat-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>Despite the flexibility that a TEI-based workflow offers for preparing editions based on collating several manuscripts, textual scholars working with XML-TEI edition files face a lack of domain-specific auxiliary tools. The TEI-CAT partially fills this gap by providing interfaces for visualizing the transcription of different manuscripts and for exploring the encoded variations and detecting common mistakes. While not properly supporting several types of textual variation and editorial intervention, these tools satisfy most of the needs usually arising during transcription and collation. The image annotation tool complements them by allowing users to generate TEI-compliant code. This tool very flexibly describes or comments on facsimile layout and content and thus is particularly helpful in preparing digital editions. Finally, the PDF-via-LaTeX exporting facility extends the scope of the toolbox towards traditional paper-based publishing, which often remains an editor’s ultimate goal. However, this tool requires adopting specific encoding practices, which are not made explicit and may not match the user’s choices; its output needs manual modifications in some cases. Together, these tools partially illustrate how the XML-TEI format can be used to prepare critical editions. They constitute an important step towards creating a TEI-based digital environment in this field.</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>General presentation of the TEI-CAT</h2>
+      <h3 id="div1.1">Intellectual and practical scope</h3>
+<p id="p1">Regardless of their purpose and method, scholars preparing critical editions (whether “Lachmannian”, “Bedierist” or focused on the study of textual tradition) often have to register, summarize and account for textual variations across several manuscripts and citations. To date, two approaches have been prevalent. The first one involves entering variations in a collation table, either in a notebook or a spreadsheet, and manually redacting the critical text and the critical apparatuses with a word processor or in a TeX file. The second approach involves using specialized software<sup class="footnote-ref" id="fnref-ftn1"><a href="#fn-ftn1" role="doc-noteref">1</a></sup> that provides a unified interface and various auxiliary tools in order to support the editing process from transcribing to exporting the definitive files.</p>
+<p id="p2">Such all-in-one applications have undeniable advantages. However, apart from TUSTEP (<a href="#karls1966" class="crossref">Universität Tübingen 1966–2020</a>), which includes a general-purpose text editor and a full scripting language,<sup class="footnote-ref" id="fnref-ftn2"><a href="#fn-ftn2" role="doc-noteref">2</a></sup> most applications comprise a predefined set of features that the user can hardly extend and that complicate exchanging data with other software — at best, users can export their work for further processing with another software, whose output cannot be reimported and reworked without losing information.<sup class="footnote-ref" id="fnref-ftn3"><a href="#fn-ftn3" role="doc-noteref">3</a></sup> For instance, Pinche (<a href="#pinche2021" class="crossref">2021</a>) relies on the annotation of places, personal names and punctuation marks in the edited text in a detailed and structured way. Other examples involve linguistic tagging or describing the shape of letters and abbreviations. This limitation requires performing such tasks after establishing the critical text, which is not always optimal. A workflow based on a TEI-XML encoded file (as described in <a href="#andrews2009" class="crossref">Andrews 2009, 34–74</a>) is highly suited to addressing such needs.</p>
+<p id="p3">When using the <a href="https://web.archive.org/web/20221110133927/https:/tei-c.org/release/doc/tei-p5-doc/en/html/index.html" target="_blank" rel="noopener">TEI (Text Encoding Initiative) encoding standard</a> (<a href="#teiconsortium2021" class="crossref">TEI Consortium 2021</a>)<sup class="footnote-ref" id="fnref-ftn4"><a href="#fn-ftn4" role="doc-noteref">4</a></sup>, which addresses a wide range of needs and provides extension and specialization mechanisms, scholars are virtually unlimited in determining the data structure of their edition file. This is the case because XML-TEI files only contain structured information. As such, they are not meant to be consulted directly by readers but processed by an external programme to produce, for instance, word processor files (to be sent to a publisher), electronic editions (displayed in a web browser), or even work files (e. g. tables containing all variant readings). XSLT (<a href="#kay2017" class="crossref">Kay 2017</a>), a language designed to perform transformations on XML files with the help of stylesheets, is often used to that end (for an example, see <a href="#vaughan2021" class="crossref">Vaughan 2021</a>). Separating the recording of variants and the redaction of apparatus entries, which is delegated to further processing (in contrast, notably, to CTE, <a href="#hagel1997" class="crossref">Hagel 1997–2021</a>), also ensures a homogeneous syntax in the critical apparatus (see <a href="#code1" class="crossref">code example 1</a>) and permits its adaptation to the publisher’s requirements by modifying the transformation stylesheet. On the one hand, this requires time and programming skills, but on the other it enables recording a lot of information in a single XML file, only part of which will be used and preserved in every output.<figure id="code1" class="review-figure"><img src="" alt="Edition file with some annotations and the identification of biblical references. Note that the references have been separated from the edited text to avoid overloading." loading="lazy"><figcaption>Edition file with some annotations and the identification of biblical references. Note that the references have been separated from the edited text to avoid overloading.</figcaption></figure>
+               </p>
+<p id="p4">However, while users might appreciate being able to write custom programmes to address specific needs, they benefit from performing common tasks with existing general-purpose tools. Unfortunately, few applications are directed towards critical editing based on XML-TEI and mostly provide interfaces for visualizing achieved editions.<sup class="footnote-ref" id="fnref-ftn5"><a href="#fn-ftn5" role="doc-noteref">5</a></sup> What distinguishes the TEI-CAT is that it provides a set of tools for work in progress. Moreover, contrary to publication software, the two main tools in this toolbox deal almost exclusively with textual variation, which most editors will likely encode in the same way,<sup class="footnote-ref" id="fnref-ftn6"><a href="#fn-ftn6" role="doc-noteref">6</a></sup> and simply ignore more project-specific features. Overall, then, the TEI-CAT truly contributes to developing common tools for common tasks.</p>
+<h3 id="div1.2">Development of the TEI-CAT tools</h3>
+<p id="p5">The TEI-CAT (originally called <em>TEI Critical Edition Toolbox</em>) was opened for testing in June 2014.<sup class="footnote-ref" id="fnref-ftn7"><a href="#fn-ftn7" role="doc-noteref">7</a></sup> It has been programmed almost entirely by Marjorie Burghart, a medieval Latin philologist, who felt that the existing tools for interacting with XML-TEI editions lacked either sufficient support for the TEI “Critical Apparatus” module or features required to work on ongoing projects (e. g. automatic error detection). To overcome this shortcoming, Burghart decided to make available the scripts that she had written for herself (<a href="#burghart2019" class="crossref">Burghart 2019</a>). This initiative has been part of her broader commitment to making XML-TEI based solutions for critical editing more widely known and accessible. As a member of the TEI Consortium’s <a href="https://web.archive.org/web/20210816160411/https://wiki.tei-c.org/index.php?title=Critical_Apparatus_Workgroup" target="_blank" rel="noopener">Critical Apparatus Workgroup</a>, she has also contributed to improving standards. She has also helped create an <a href="https://web.archive.org/web/20221110134540/https:/teach.dariah.eu/course/view.php?id=32&section=0" target="_blank" rel="noopener">online course</a> and a free ebook on encoding critical editions with the TEI (<a href="#burghardtetal2017" class="crossref">Burghart, Cummings, and Pierazzo 2017</a>).</p>
+<p id="p6">Originally, the TEI-CAT consisted of two interfaces, which still exist today. Besides conforming to XML and TEI specifications, <em>Check your encoding</em> also helps screen apparatus entries for e. g. the absence of a required witness or the mention of two readings for the same witness. <em>Display parallel versions</em> exhibits the critical text and the texts of selected witnesses, thus facilitating the verification of collation against every manuscript and the examination of variants. Both interfaces insert anchors in the displayed text that make the individual apparatus entries accessible. What follows refers to these interfaces as the <em>core tools</em> of the TEI-CAT, not only because they were released first, but also because they match the needs of all editors using TEI.</p>
+<p id="p7">The TEI-CAT has benefited from scholars and students collaborating on its development during two hackathons and a training week in 2015 and 2016. Some new features have been worked on at that time (<a href="#burghart2019" class="crossref">Burghart 2019</a>). Whereas these have never been released, Burghart has published three <em>additional tools</em>. (1) A tool for generating TEI <code>&lt;zone&gt;</code> elements from an image was added in 2017, designed by Chris Sparks (<a href="#sparks2017" class="crossref">Sparks 2017</a>). Two others followed in 2018: (2) an interface for generating a traditional print edition from an XML-TEI file; (3) a tool for displaying statistics about the XML elements used. In September 2021, <a href="https://web.archive.org/web/20221110134637/http:/teicat.huma-num.fr/zoner/index.php" target="_blank" rel="noopener">a new version of </a>
+                  <a href="http://teicat.huma-num.fr/zoner/index.php" target="_blank" rel="noopener">Annotate an image</a> was released (<a href="#spark_svankova2017" class="crossref">Sparks and Vaňková</a> 2017–2019). As this timeline suggests, and as Burghart has confirmed, project changes result mainly from user suggestions, contributions and requests.</p>
+<h3 id="div1.3">Architecture and infrastructure</h3>
+<p id="p8">
+                  <figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="Processing of an XML-TEI file by the TEI-CAT (core tools)" loading="lazy"><figcaption>Fig. 1: Processing of an XML-TEI file by the TEI-CAT (core tools)</figcaption></figure>
+                  <figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="Processing of an XML-TEI or an image file by the TEI-CAT (additional tools)" loading="lazy"><figcaption>Fig. 2: Processing of an XML-TEI or an image file by the TEI-CAT (additional tools)</figcaption></figure>Generally speaking (see <a href="#img1" class="crossref">fig. 1</a> and <a href="#img2" class="crossref">fig. 2</a>), the XML-TEI file uploaded by the user is processed by an XSLT processor using the appropriate stylesheets. The generated HTML files are rendered by the browser with the help of the CSS and JavaScript files retrieved from the server. However, two tools depart from this path to some extent. Relying exclusively on a JavaScript program called TEI Zoner, <em>Annotate an image</em> does not involve any server-side processing: the programme is executed directly in the user’s web browser. As for <em>Print an edition</em>, the XSLT processor generates a TeX file, taking into account user options. This TeX file is then processed on the server by a LaTeX engine, which outputs a PDF and a log file. Finally, all three files are bundled into a ZIP archive, which is shipped to the user. The choice of LaTeX is motivated by the fact that, being based on TeX, it produces PDF files of very good typographic quality. It can also be used together with <em>reledmac</em>, a package specifically designed for printing critical editions (<a href="#rouquette2011" class="crossref">Rouquette 2011–2021</a>; reviewed in <a href="#dunning2020" class="crossref">Dunning 2020</a>, who also provides a general introduction to LaTeX).<sup class="footnote-ref" id="fnref-ftn8"><a href="#fn-ftn8" role="doc-noteref">8</a></sup> Finally, it enables the user to manually adjust the automatically generated TeX file and to process it with a local LaTeX installation.</p>
+<p id="p9">
+                 Usually, all tools return their output after some seconds. They can even handle rather long and complex editions,<sup class="footnote-ref" id="fnref-ftn9"><a href="#fn-ftn9" role="doc-noteref">9</a></sup> provided that not too many witnesses are selected at a time. The printing tool may take longer, depending on the time needed by LaTeX to compile the PDF file.</p>
+    </section>
+    <section id="div2">
+      <h2>Evaluation</h2>
+      <h3 id="div2.1">Methodology</h3>
+<p id="p10">Given that the core tools share a similar interface and common features (e. g. the generation of the critical text), I review them together. To that end, I have used the test file provided by Marjorie Burghart,<sup class="footnote-ref" id="fnref-ftn10"><a href="#fn-ftn10" role="doc-noteref">10</a></sup> which documents part of the behaviour of the core tools. However, being a sample file rather than a comprehensive test input, it does not address some usual textual phenomena (e. g. blank spaces, duplication of words, transposition of whole segments). The same could be said of a handful of frequent encoding features such as the presence of XML elements (e. g. <code>&lt;abbr&gt;</code>) in a <code>&lt;lem&gt;</code> element. To supplement it, I have written a set of additional tests.</p>
+<p id="p11">All the test files, along with a list of the tested features and the detailed results, can be retrieved <a href="https://doi.org/10.5281/zenodo.5270343" target="_blank" rel="noopener">from Zenodo.</a>
+                  <sup class="footnote-ref" id="fnref-ftn11"><a href="#fn-ftn11" role="doc-noteref">11</a></sup> For each set of tools, I first comment on the interface and then synthesize the outcome of my tests.</p>
+<h3 id="div2.2">Core tools: Checking and visualizing ongoing editions</h3>
+<p id="p12">The interface is simple, intuitive and well-described on the <a href="https://web.archive.org/web/20210816165805/http://teicat.huma-num.fr/help.php" target="_blank" rel="noopener">help page</a>. The user uploads the XML-TEI file. Then, in <em>Display parallel versions</em>, he or she selects the texts to be compared (the critical text and/or one or more witnesses). Texts are displayed side by side (see <a href="#img3" class="crossref">fig. 3</a>). Every variation is marked by an anchor, which can be clicked to display the corresponding apparatus entry. Editorial notes (in <code>&lt;note&gt;</code> elements) are rendered as well. In the witness text, passages containing variant readings are highlighted in different colours according to the relationship between the displayed text and the lemma.</p>
+<p id="p13">Hence, <em>Display parallel versions</em> addresses the needs of any editor working with several manuscripts. Indeed, it is easier to check transcription accuracy from a continuous text than from the XML-TEI file or even from a collation table. Variant highlighting provides a general idea of the differences between manuscripts before studying them in greater detail and helps study their peculiarities.</p>
+<p id="p14">In <em>Check your encoding</em>, only the critical text appears, exactly as in <em>Display parallel versions</em>. The user can dynamically select which encoding anomalies or broader features should be highlighted. Especially appreciated is the ability to highlight those apparatus entries in which some witnesses are missing or recorded twice: these anomalies appear quite frequently, often due to a siglum having been mistyped. Other most common mistakes are tracked too, such as forgetting to define the critical text in a variant location.</p>
+<p id="p15">
+                  <figure id="img3" class="review-figure"><img src="pictures/picture-3.png" alt="Parallel display with an apparatus entry showing up." loading="lazy"><figcaption>Fig. 3: Parallel display with an apparatus entry showing up.</figcaption></figure>
+                  <figure id="img4" class="review-figure"><img src="pictures/picture-4.png" alt="Some verses of poetry in the parallel view." loading="lazy"><figcaption>Fig. 4: Some verses of poetry in the parallel view.</figcaption></figure>
+                  <figure id="img5" class="review-figure"><img src="pictures/picture-5.png" alt="Text of a witness in light and dark mode (using Advanced Night Mode add-on in Pale Moon)." loading="lazy"><figcaption>Fig. 5: Text of a witness in light and dark mode (using Advanced Night Mode add-on in Pale Moon).</figcaption></figure>Some small but significant improvements could be made to the interface, which is otherwise rather appealing and readable. Texts are not aligned in parallel display (see <a href="#img3" class="crossref">fig. 3</a> shows). The interface could be made a little more interactive, especially by enabling the user to change column width (<a href="#img4" class="crossref">fig. 4</a> illustrates why). The white background used to highlight those places where the displayed text is identical with the lemma becomes invisible when dark mode is activated (see <a href="#img5" class="crossref">fig. 5</a>): replacing it with a lightly coloured background would resolve the issue.</p>
+<p id="p16">The interface could provide additional information. For instance, according to the <a href="https://web.archive.org/web/20210816165805/http://teicat.huma-num.fr/help.php" target="_blank" rel="noopener">help page</a>, “in the toolbox, you will have the option of showing or hiding the page breaks, either all of them, or for a particular witness.” However, the required checkboxes only appear in <em>Check your encoding</em>. In <em>Display parallel versions</em>, page breaks in manuscripts are currently recorded in the HTML file produced by the TEI-CAT as spans with class <code>.msPb</code> but are not displayed. Furthermore, the <code>&lt;said&gt;</code> element, which delimits direct or reported speech, is currently not supported. Since identifying such passages often relies on the editor’s interpretation, highlighting them at least in the critical text would help review the choices that have been made in these respects.</p>
+<p id="p17">
+                  <figure id="img6" class="review-figure"><img src="pictures/picture-6.png" alt="How the TEI-CAT core tools handle a missing witness in a given variant location." loading="lazy"><figcaption>Fig. 6: How the TEI-CAT core tools handle a missing witness in a given variant location.</figcaption></figure>As advertised, the core tools effectively support either positive or negative apparatus entries: <a href="#img6" class="crossref">fig. 6</a> illustrates what kind of heuristics the stylesheet uses to handle ambiguous cases. However, it would seem more logical to determine the convention followed at the file level rather than for every apparatus entry. In files encoded with a positive apparatus, this would permit highlighting passages where the critical text is not attested in any manuscript and thus results from the editor’s reconstruction. However, <em>Check your encoding</em> partly offsets this shortcoming by highlighting those variant locations where the readings of selected witnesses are missing.</p>
+<p id="p18">
+                 Regarding the recognition of textual features, only two cases documented in the sample file provided by the author are poorly handled. Variants inside a group (<code>&lt;rdgGrp&gt;</code> element) are marked as illegible in the corresponding witness texts. When a given witness is attributed to both the lemma and a variant reading in the same passage, its text in parallel display reproduces that of the lemma instead of indicating an error.</p>
+<p id="p19">Conversely, the core tools fail the majority of the supplementary tests. This comes as no surprise, since these tests mostly concern features not stated as supported by the documentation, namely, the <a href="https://web.archive.org/web/20210918103503/http://teicat.huma-num.fr/help.php" target="_blank" rel="noopener">help page</a> and Burghart’s <a href="http://teicat.huma-num.fr/pseudo-edition-test-file.xml" target="_blank" rel="noopener">test file</a>. Supported undocumented features include the correct display of right-to-left alphabets, XML elements inside a <code>&lt;lem&gt;</code>, additions, transposed text segments (although the apparatus yields strange results), scribal abbreviations in the lemma or outside a variant location. Unsupported or buggy features include the indication of blank spaces, duplication of expressions or, among possible mistakes, the use of a witness in contexts where this should remain unmentioned (e. g. in a lacuna). However, these shortcomings do not prevent using these tools, since at least the displayed text is generally correct or understandable.</p>
+<h3 id="div2.3">Additional tools: Annotating an image and generating a traditional PDF edition</h3>
+<p id="p20">The <a href="http://teicat.huma-num.fr/zoner.php" target="_blank" rel="noopener">basic version</a> of <em>Annotate an image</em> lets the user swiftly and easily draw zones on an image and export their coordinates in TEI format. However, it always displays the image in full size, which can be problematic with high-quality reproductions. Nor can the zone be adjusted once drawn. The basic version has been superseded by the <a href="http://teicat.huma-num.fr/zoner/index.php" target="_blank" rel="noopener">new version</a>, which enables scaling images, as well as moving and deleting zones individually. The added features allow categorizing and annotating zones. The help message is very clear and comprehensive. Although I have not used this tool in real projects, it would seem very helpful for those wishing to include annotations linked to manuscript images in their XML-TEI file (e. g. to publish an electronic edition displaying interactive images alongside the text).</p>
+<p id="p21">At first sight, <em>Print an edition</em> looks very attractive. Besides relieving editors of the burden of programming a very complex XSLT stylesheet, the TEI-to-LaTeX transformation provides numerous options for page layout, the formatting of the critical apparatus, the indices, etc. It supports a two-level apparatus containing variant readings and sources. Taken together, the <a href="https://web.archive.org/web/20200804113222/http://teicat.huma-num.fr/print-feature-test-file.xml" target="_blank" rel="noopener">sample file</a> and the indications in the customization interface provide much information about the supported encoding. Those needing further customization can download and modify the XSLT stylesheet (used to process the XML file). This, of course, requires understanding both XSLT and LaTeX, especially <em>reledmac</em>.</p>
+<p id="p22">However, it supports neither variant locations nested in variant readings nor explicitly encoded duplications nor transposed spans of text (i. e. neither <em>iter.</em> nor <em>transp.</em> can be generated in the critical apparatus: the entire contents of each reading is written out instead). Besides, very long chunks of complicated and sometimes duplicated code make the default XSLT stylesheet difficult to read and modify. Nevertheless, users dissatisfied with the output can use the generated LaTeX file as a basis and modify it by hand. Even those who wish to implement their own stylesheets may benefit from studying Burghart’s sheet.</p>
+<p id="p23">Although perhaps beyond the scope of a single-person project, <em>Print an edition</em> might serve to more broadly reflect on how to most practically express traditional paper-based editions in form of an XML-TEI model, ideally embodied in a constraining RNG schema. A consensual, well-designed set of conventions with explicit theoretical, albeit traditional foundations, would be suitable for many projects, and would prevent their authors from reinventing the wheel. Such a specification could also be appropriated by other editing and publishing software in the field of textual criticism providing XML-TEI output (<a href="#pierazzo2019" class="crossref">Pierazzo 2019</a>; this approach is exemplified by <a href="#camps2016" class="crossref">Camps 2016</a>).</p>
+<p id="p24">Admittedly, programming a more feature-rich and yet reliable set of stylesheets would be a fairly complex and difficult endeavour. However, some design decisions could make this somewhat easier. First, a comprehensive test suite would permit tracking the progress made in supporting the designed model and ensure that no modification introduces bugs. Secondly, the respective responsibilities of the XSLT stylesheet and of LaTeX macros could be better defined. Currently, for a PDF output similar to <a href="#img7" class="crossref">fig. 7</a>, XSLT generates the type of code as shown in <a href="#code2" class="crossref">example 2</a>, which mixes structural commands (e. g. <code>\edtext or \pstart ... \pend)</code> and formatting instructions (e. g. <code>\vspace</code>).<figure id="code2" class="review-figure"><img src="" alt="Sample LaTeX code generated by tei2latex (slightly modified).12
+                     " loading="lazy"><figcaption>Sample LaTeX code generated by tei2latex (slightly modified).<sup class="footnote-ref" id="fnref-ftn12"><a href="#fn-ftn12" role="doc-noteref">12</a></sup>
+                     </figcaption></figure>
+               </p>
+<p id="p25">This could be made more manageable by using high-level structural commands (see <a href="#code3" class="crossref">code example 3</a>):<sup class="footnote-ref" id="fnref-ftn13"><a href="#fn-ftn13" role="doc-noteref">13</a></sup>
+                  <figure id="code3" class="review-figure"><img src="" alt="Rewriting code as shown in example 2 so that it focuses on structural units.14
+                     " loading="lazy"><figcaption>Rewriting code as shown in example 2 so that it focuses on structural units.<sup class="footnote-ref" id="fnref-ftn14"><a href="#fn-ftn14" role="doc-noteref">14</a></sup>
+                     </figcaption></figure>
+               </p>
+<p id="p26">These commands could be defined in a separate package file as shown in <a href="#code4" class="crossref">example 4</a>.<figure id="code4" class="review-figure"><img src="" alt="Definition of the commands used in Code 3.15
+                     " loading="lazy"><figcaption>Definition of the commands used in Code 3.<sup class="footnote-ref" id="fnref-ftn15"><a href="#fn-ftn15" role="doc-noteref">15</a></sup>
+                     </figcaption></figure>
+               </p>
+<p id="p27">Conceivably, such a LaTeX package could provide some customization options. These could be set in a file generated by the XSLT processor and imported by the main LaTeX file. This would make the XSLT stylesheet more manageable, since it would have to deal only with structure, not with formatting. Later, this would also make it easier to introduce support for <em>ekdosis</em> (<a href="#alessi2020" class="crossref">Alessi 2020–2021</a>). On the XSLT side, this would only require some additions, to reflect new features, with most of the implementation being done in the package. Needless to say, these are prospective considerations, not actual requirements for TEI-CAT.</p>
+    </section>
+    <section id="div3">
+      <h2>Conclusion</h2>
+      <p id="p28">The TEI-CAT is an important step towards creating a digital ecosystem for critical editing based on XML-TEI. By displaying the recorded text of every witness, <em>Display parallel versions</em> enables checking conformity to the manuscript. It also enables the user to visualize apparatus entries. Check your encoding points out possible mistakes or typos in the encoding. Although they do not replace XML editors or the potential use of transcription and collation software, these tools can make transcribing, collating and editing more efficient and more reliable. In sum, they provide the editor with views that help control and interpret data. <em>Get statistics</em>, which provides information about XML element use and word count, fits in well with this perspective.</p>
+<p id="p29">
+               <em>Annotate an image</em> and <em>Print an edition</em> go beyond the production of textual data. The former considerably facilitates linking text and image and as such is oriented more towards producing a digital edition. The latter is modeled on traditional print editions. Users who do not follow the exact same encoding model and feel that some features are missing can modify the stylesheet or rework its LaTeX output. They may thus still gain time compared to writing their own stylesheets from scratch.</p>
+<p id="p30">On the whole, Marjorie Burghart’s work can be characterized as a pioneering general-purpose toolbox that contributes to reducing the need for programming project-specific tools while setting up TEI-based editing workflows. One can only be grateful to her for making her personal scripts available. Yet, beyond TEI-CAT, significant work remains to be done to create a complete environment. First, in reconstructing the transmission history and the critical text, it would be helpful to be able to explore textual variations in tabular form, with support for sorting, weighting and generating reports. Secondly, unified interfaces for exporting to PDF, DOCX, ODT or HTML would greatly facilitate the publication process. A specialized XML editor, or specific configurations for existing ones, could also make complex source files more manageable.</p>
+<p id="p31">To these ends, some existing components could be built on, such as the <a href="https://web.archive.org/web/20210414231059/https://tei-c.org/release/doc/tei-p5-doc/en/html/TD.html#TDPMPM" target="_blank" rel="noopener">TEI processing model</a> implemented in the <a href="https://teipublisher.com/index.html" target="_blank" rel="noopener">TEI Publisher</a> (<a href="#teipublisher2016" class="crossref">2016–2021</a>) or the latter’s annotation editor. However, creating an environment of interoperable software is likely to be hindered, at least for the moment, by the absence of a recognized standard about how to express textual variation using the rich and rather permissive TEI vocabulary. Marjorie Burghart and her TEI-CAT might well play a role in this respect in the future, either directly or as a source of inspiration.</p>
+    </section>
+
+    <section id="bibliography" class="review-bibliography">
+      <h2>Bibliography</h2>
+      <ol class="bib-list">
+        <li><span id="alessi2020">Alessi, Robert. 2020–2021. <em>ekdosis – Typesetting TEI-XML compliant Critical Editions</em>. LaTeX. <a href="https://web.archive.org/web/20221111115050/https://www.ctan.org/pkg/ekdosis" target="_blank" rel="noopener">https://web.archive.org/web/20221111115050/https://www.ctan.org/pkg/ekdosis</a>.</span></li>
+        <li><span id="andrews2009">Andrews, Tara L. 2009. “Prolegomena to a Critical Edition of the Chronicle of Matthew of Edessa, with a Discussion of Computer-Aided Methods Used to Edit the Text.” PhD Thesis, Oxford: Oxford University. <a href="https://web.archive.org/web/20221111115125/https://ora.ox.ac.uk/objects/uuid:67ea947c-e3fc-4363-a289-c345e61eb2eb" target="_blank" rel="noopener">https://web.archive.org/web/20221111115125/https://ora.ox.ac.uk/objects/uuid:67ea947c-e3fc-4363-a289-c345e61eb2eb</a>.</span></li>
+        <li><span id="burghart2019">Burghart, Marjorie. 2019. “The TEI Critical Apparatus Toolbox: Empowering Textual Scholars Through Display, Control, and Comparison Features.” <em>Journal of the Text Encoding Initiative</em> 10. <a href="https://doi.org/10.4000/jtei.1520" target="_blank" rel="noopener">https://doi.org/10.4000/jtei.1520</a>.</span></li>
+        <li><span id="burghardtetal2017">Burghart, Marjorie, James Cummings, and Elena Pierazzo. 2017. <em>Creating a Digital Scholarly Edition with the Text Encoding Initiative</em>. Edited by Marjorie Burghart. DEMM. <a href="https://web.archive.org/web/20210816161355/https://www.digitalmanuscripts.eu/?page_id=648" target="_blank" rel="noopener">https://web.archive.org/web/20210816161355/https://www.digitalmanuscripts.eu/?page_id=648</a>.</span></li>
+        <li><span id="camps2016">Camps, Jean-Baptiste. 2016. “La Chanson d’Otinel : édition complète du corpus manuscrit et prolégomènes à l’édition critique.” Thèse de doctorat, Paris: Université Paris-Sorbonne (Paris IV). <a href="https://web.archive.org/web/20221111115306/https://halshs.archives-ouvertes.fr/tel-01664932" target="_blank" rel="noopener">https://web.archive.org/web/20221111115306/https://halshs.archives-ouvertes.fr/tel-01664932</a>.</span></li>
+        <li><span id="dumont2021">Dumont, Bastien. 2021. <em>Tests for the TEI-CAT</em> (version 1.1). <a href="https://doi.org/10.5281/zenodo.5270343" target="_blank" rel="noopener">https://doi.org/10.5281/zenodo.5270343</a>.</span></li>
+        <li><span id="dunning2020">Dunning, Andrew. 2020. “Reledmac. Typesetting Technology-Independent Critical Editions with LaTeX.” <em>RIDE</em> 11. <a href="https://doi.org/10.18716/ride.a.11.1" target="_blank" rel="noopener">https://doi.org/10.18716/ride.a.11.1</a>.</span></li>
+        <li><span id="hagel1997">Hagel, Stephan. 1997–2021. <em>Classical Text Editor</em> (version 10.4). Windows. Austrian Academy of Sciences, Corpus Scriptorum Ecclesiasticorum Latinorum. <a href="https://web.archive.org/web/20221104100713/https://cte.oeaw.ac.at/" target="_blank" rel="noopener">https://web.archive.org/web/20221104100713/https://cte.oeaw.ac.at/</a>.</span></li>
+        <li><span id="karls1966">Eberhard Karls Universität Tübingen. 1966–2020. <em>Tübinger System von Textverarbeitungs-Programmen</em>. Linux, Mac OS, Raspbian, Windows. Universität Tübingen, Zentrum für Datenverarbeitung. <a href="https://web.archive.org/web/20221008175234/http://www.tustep.uni-tuebingen.de/" target="_blank" rel="noopener">https://web.archive.org/web/20221008175234/http://www.tustep.uni-tuebingen.de/</a>.</span></li>
+        <li><span id="kay2017">Kay, Michael, ed. 2017. “XSL Transformations (XSLT) Version 3.0.” W3C. June 8, 2017. <a href="https://www.w3.org/TR/xslt-30/" target="_blank" rel="noopener">https://www.w3.org/TR/xslt-30/</a>.</span></li>
+        <li><span id="moureau2021">Moureau, Sébastien. 2021. <em>ChrysoCollate</em> (version 1.0). Browser-based. Université catholique de Louvain. <a href="https://web.archive.org/web/20221111120045/https://cental.uclouvain.be/chrysocollate/" target="_blank" rel="noopener">https://web.archive.org/web/20221111120045/https://cental.uclouvain.be/chrysocollate/</a>.</span></li>
+        <li><span id="pierazzo2019">Pierazzo, Elena. 2019. “What Future for Digital Scholarly Editions? From Haute Couture to Prêt-à-Porter.” <em>International Journal of Digital Humanities</em> 1: 209–20. <a href="https://doi.org/10.1007/s42803-019-00019-3" target="_blank" rel="noopener">https://doi.org/10.1007/s42803-019-00019-3</a>.</span></li>
+        <li><span id="pinche2021">Pinche, Ariane. 2021. “Édition nativement numérique du recueil hagiographique <em>Li Seint Confessor</em> de Wauchier de Denain d’après le manuscrit fr. 412 de la Bibliothèque nationale de France.” Thèse de doctorat, Lyon: Université Jean Moulin (Lyon 3). <a href="https://web.archive.org/web/20221111120146/https://www.theses.fr/2021LYSE3019" target="_blank" rel="noopener">https://web.archive.org/web/20221111120146/https://www.theses.fr/2021LYSE3019</a>.</span></li>
+        <li><span id="rossellidelturco2016">Rosselli Del Turco, Roberto, ed. 2016–2021. <em>Edition Visualization Technology</em> (version Beta2). Node.js. EVT Team. <a href="https://web.archive.org/web/20221013152203/http://evt.labcd.unipi.it/" target="_blank" rel="noopener">https://web.archive.org/web/20221013152203/http://evt.labcd.unipi.it/</a>.</span></li>
+        <li><span id="rouquette2011">Rouquette, Maïeul. 2011–2021. <em>reledmac – Typeset scholarly editions</em>. LaTeX. <a href="https://web.archive.org/web/20221111120343/https://www.ctan.org/pkg/reledmac" target="_blank" rel="noopener">https://web.archive.org/web/20221111120343/https://www.ctan.org/pkg/reledmac</a>.</span></li>
+        <li><span id="schreibmanetal2016">Schreibman, Susan, Karolina Badzmierowska, and Roman Bleier. 2016. <em>Versioning Machine</em> (version 5.0). Browser-based. <a href="https://web.archive.org/web/20221111120450/http://v-machine.org/" target="_blank" rel="noopener">https://web.archive.org/web/20221111120450/http://v-machine.org/</a>.</span></li>
+        <li><span id="sparks2017">Sparks, Chris. 2017. <em>TEI Zoner</em>. Browser-based. <a href="https://github.com/sparkyc84/tei-zoner" target="_blank" rel="noopener">https://github.com/sparkyc84/tei-zoner</a>.</span></li>
+        <li><span id="spark_svankova2017">Sparks, Chris, and Marie Vaňková. 2017–2019. <em>tei-zoner-angular</em>. Browser-based. <a href="https://github.com/Elfina1039/tei-zoner-angular" target="_blank" rel="noopener">https://github.com/Elfina1039/tei-zoner-angular</a>.</span></li>
+        <li><span id="teiconsortium2021">TEI Consortium. 2021. “TEI P5: Guidelines for Electronic Text Encoding and Interchange.” Text Encoding Initiative. 2021. <a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/index.html" target="_blank" rel="noopener">https://tei-c.org/release/doc/tei-p5-doc/en/html/index.html</a>.</span></li>
+        <li><span id="teipublisher2016">
+                  <em>TEI Publisher: The Instant Publishing Toolbox</em> (version 7.1). 2016–2021. Java. e-editiones.org. <a href="https://web.archive.org/web/20221110134226/https://teipublisher.com/index.html" target="_blank" rel="noopener">https://web.archive.org/web/20221110134226/https://teipublisher.com/index.html</a>.</span></li>
+        <li><span id="vaughan2021">Vaughan, Nicolás. 2021. “TEI-XML to LaTeX Workflow: Issues and Lessons.” <em>TUGboat</em> 42 (2): 174–79. <a href="https://doi.org/10.47397/tb/42-2/tb131vaughan-tei" target="_blank" rel="noopener">https://doi.org/10.47397/tb/42-2/tb131vaughan-tei</a>.</span></li>
+      </ol>
+    </section>
+
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        <li id="fn-ftn1" class="footnote-item">
+          Among others: <a href="https://web.archive.org/web/20221008175234/http:/www.tustep.uni-tuebingen.de/" target="_blank" rel="noopener">TUSTEP</a> (<a href="#karls1966" class="crossref">Universität Tübingen 1966–2020</a>), <a href="https://www.oeaw.ac.at/kvk/cte/" target="_blank" rel="noopener">Classical Text Editor</a> (CTE, <a href="#hagel1997" class="crossref">Hagel 1997–2021</a>) and <a href="https://web.archive.org/web/20221110133752/https:/cental.uclouvain.be/chrysocollate/" target="_blank" rel="noopener">ChrysoCollate</a> (<a href="#moureau2021" class="crossref">Moureau 2021</a>).
+          <a href="#fnref-ftn1" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn2" class="footnote-item">
+          See <a href="https://web.archive.org/web/20211212154719/https://ride.i-d-e.de/issues/issue-11/tustep/" target="_blank" rel="noopener">Christian Griesinger’s review in RIDE 11</a>.
+          <a href="#fnref-ftn2" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn3" class="footnote-item">
+          CTE works around this limitation by letting the user insert arbitrary TEI-XML tags in the text. However, to be exportable to TEI-XML, the apparatus has to be redacted in a machine-readable way, which is generally incompatible with the requirements of a print edition: for instance, following the manual, expressions indicating nested variant locations such as <em>deus dixit] dominus (christus B) dicit ABC</em> will not be recognized. The practical consequence is that users must choose between print and TEI output.
+          <a href="#fnref-ftn3" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn4" class="footnote-item">
+          Especially the modules devoted to the <a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/MS.html" target="_blank" rel="noopener">manuscript description</a>, the <a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/PH.html" target="_blank" rel="noopener">representation of primary sources</a> and the <a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/TC.html" target="_blank" rel="noopener">critical apparatus</a>.
+          <a href="#fnref-ftn4" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn5" class="footnote-item">
+          The most prominent ones are <a href="https://web.archive.org/web/20221013152203/http:/evt.labcd.unipi.it/" target="_blank" rel="noopener">Edition Visualization Technology</a>
+                     <a href="http://evt.labcd.unipi.it/" target="_blank" rel="noopener"> (EVT)</a> and the <a href="https://web.archive.org/web/20221110134156/http:/v-machine.org/" target="_blank" rel="noopener">Versioning Machine</a> (<a href="#schreibmanetal2016" class="crossref">Schreibman et al. 2016)</a>. <a href="https://web.archive.org/web/20221110134226/https:/teipublisher.com/index.html" target="_blank" rel="noopener">TEI Publisher</a> (<a href="#teipublisher2016" class="crossref">2016–2021</a>) has a broader scope.
+          <a href="#fnref-ftn5" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn6" class="footnote-item">
+          Only parallel segmentation is supported for linking the critical text with the variations. However, the other methods provided by the TEI are less broadly used.
+          <a href="#fnref-ftn6" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn7" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20210816160022/https://tei-c.org/2014/06/10/tei-critical-edition-toolbox/" target="_blank" rel="noopener">https://web.archive.org/web/20210816160022/https://tei-c.org/2014/06/10/tei-critical-edition-toolbox/</a>
+                  
+          <a href="#fnref-ftn7" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn8" class="footnote-item">
+          The <em>ekdosis</em> package has since been released (<a href="#alessi2020" class="crossref">Alessi 2020–2021</a>).
+          <a href="#fnref-ftn8" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn9" class="footnote-item">
+          Such as <a href="https://web.archive.org/web/20210816164342/https://raw.githubusercontent.com/sjhuskey/Calpurnius_Siculus/master/editio.xml" target="_blank" rel="noopener">this file</a>.
+          <a href="#fnref-ftn9" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn10" class="footnote-item">
+          Available at <a href="http://teicat.huma-num.fr/pseudo-edition-test-file.xml" target="_blank" rel="noopener">http://teicat.huma-num.fr/pseudo-edition-test-file.xml</a>. A copy of the version available at the time of writing is included in the ZIP folder mentioned below.
+          <a href="#fnref-ftn10" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn11" class="footnote-item">
+          I am very grateful to Marjorie Burghart, to whom I sent this folder, for kindly pointing out some errors in my test files. Please note that, as the result of possible work on TEI-CAT, the situation described below may change in the near future.
+          <a href="#fnref-ftn11" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn12" class="footnote-item">
+          Paragraphs are surrounded by <code>\pstart</code> and <code>\pend</code>. The critical text in variant locations constitutes the first argument of <code>\edtext</code>. The second argument is composed of the lemma, followed by the literal text of the apparatus entry (<code>\Afootnote</code>). <code>\vspace</code> introduces a gap before the next paragraph. <code>\Bfootnote</code> contains an entry in the apparatus fontium.
+          <a href="#fnref-ftn12" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn13" class="footnote-item">
+          The code examples are merely illustrative.
+          <a href="#fnref-ftn13" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn14" class="footnote-item">
+          Paragraphs are now set as arguments of <code>\edparagraph</code>, whose definition in Code example 4 includes both the <code>\pstart</code> ... <code>\pend</code> pair and <code>\vspace</code>. The apparatuses are more clearly distinguished by the use of <code>\variantLocation</code> and <code>\citing</code>. Instead of formatting the critical apparatus directly, the variants are indicated by <code>\variant</code>, which takes the variant reading and the list of the corresponding witnesses as arguments. Italics and commas are defined in Code example 4. Note that, in this example, the second argument of <code>\variantLocation</code> is empty: Code example 4 shows that it needs to be set only if the lemma in the apparatus differs from the main text.
+          <a href="#fnref-ftn14" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn15" class="footnote-item">
+          The new commands used in Code example 3 are translated into their <em>reledmac</em> equivalents, albeit with some tweaks: for instance, in each critical apparatus entry, a comma and a space are inserted before all variant readings but the first. Using this kind of definition guarantees that all apparatus entries are formatted according to the same rules, which can then be modified uniformly.
+          <a href="#fnref-ftn15" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+      </ol>
+    </section>
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{teicat,
+  author    = {Dumont, Bastien},
+  title     = {TEI Critical Apparatus Toolbox: Web-based tools for ongoing XML-TEI editions},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {15},
+  year      = {2022},
+  doi       = {10.18716/ride.a.15.4},
+  url       = {https://doi.org/10.18716/ride.a.15.4},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Dumont, Bastien
+TI  - TEI Critical Apparatus Toolbox: Web-based tools for ongoing XML-TEI editions
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 15
+PY  - 2022
+DA  - 2022/12
+DO  - 10.18716/ride.a.15.4
+UR  - https://doi.org/10.18716/ride.a.15.4
+PB  - Institut für Dokumentologie und Editorik e.V.
+LA  - en
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Dumont, B. (2022). TEI Critical Apparatus Toolbox: Web-based tools for ongoing XML-TEI editions. RIDE – A review journal for digital editions and resources, (15). https://doi.org/10.18716/ride.a.15.4</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Dumont, Bastien. &#34;TEI Critical Apparatus Toolbox: Web-based tools for ongoing XML-TEI editions.&#34; RIDE – A review journal for digital editions and resources, no. 15, 2022. https://doi.org/10.18716/ride.a.15.4.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Dumont, Bastien. &#34;TEI Critical Apparatus Toolbox: Web-based tools for ongoing XML-TEI editions.&#34; RIDE – A review journal for digital editions and resources, no. 15 (2022). https://doi.org/10.18716/ride.a.15.4.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/teicat/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Casebooks Project &mdash; RIDE</title>
+  <meta name="description" content="
+            This essay reviews The Casebooks Project, an ambitious attempt to
+               digitize 80,000 astrological medical records from early modern England. The
+                 ...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Casebooks Project">
+  <meta property="og:description" content="
+            This essay reviews The Casebooks Project, an ambitious attempt to
+               digitize 80,000 astrological medical records from early modern England. The
+                 ...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/casebooks/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/casebooks/">
+<meta name="DC.title" content="The Casebooks Project">
+<meta name="DC.creator" content="Joshua Kruchten">
+<meta name="DC.date" content="2017-12">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.7.4"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="en">
+
+<meta name="citation_title" content="The Casebooks Project">
+<meta name="citation_author" content="Joshua Kruchten">
+<meta name="citation_doi" content="10.18716/ride.a.7.4"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2017-12">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/casebooks/casebooks.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "The Casebooks Project",
+  "author": [{"@type": "Person", "name": "Joshua Kruchten"}],
+  "datePublished": "2017-12",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.7.4"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e. V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">Introduction</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">What are Casebooks?</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">Subject and Content</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">Publication and Presentation</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div5" class="toc-link">Editorial Decisions and Audience</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div6" class="toc-link">Conclusion and Further Directions</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#bibliography" class="toc-link">Bibliography</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#footnotes" class="toc-link">Notes</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>December 2017</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.7.4" rel="external">10.18716/ride.a.7.4</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-7/">
+        <span class="badge badge-editions">SE</span>
+        Issue 7
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>EN</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/casebooks/casebooks.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/casebooks/casebooks-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="en">
+    <header class="review-header">
+      <a href="/issues/issue-7/" class="review-issue-link">
+        <span class="badge badge-editions">SE</span>
+        Issue 7: Digital Scholarly Editions
+      </a>
+
+      <h1>The Casebooks Project</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Joshua Kruchten        </span>
+      </div>
+
+      <div class="review-affiliation">New York University, New York, United States</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="http://www.magicandmedicine.hps.cam.ac.uk/" rel="external">The Casebooks Project</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">Introduction</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">What are Casebooks?</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">Subject and Content</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">Publication and Presentation</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div5" class="toc-link">Editorial Decisions and Audience</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div6" class="toc-link">Conclusion and Further Directions</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#bibliography" class="toc-link">Bibliography</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#footnotes" class="toc-link">Notes</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>December 2017</span>
+<span><a href="https://doi.org/10.18716/ride.a.7.4" rel="external">DOI</a></span><a href="/reviews/casebooks/casebooks.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/casebooks/casebooks-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>This essay reviews <em>The Casebooks Project</em>, an ambitious attempt to
+               digitize 80,000 astrological medical records from early modern England. <em>The
+                  Casebooks Project</em> exemplifies the possibilities of using digital
+               technologies to understand early modern cultural and intellectual history, and offers
+               us insight into the process of creating such a project. However, it remains unclear
+               who the project’s audience is, whether to see it purely as a ‘dataset’ or as a
+               textual-based digital edition, and how public-facing the project wants to be. This
+               review seeks to use the digital edition and Dr. Lauren Kassell’s ongoing scholarly
+               and public reflections on the project to highlight the project’s successes and
+               suggest further possibilities it may inspire.</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>Introduction</h2>
+      <p id="p1">
+               <em>The Casebooks Project</em> highlights the interdisciplinary, qualitative, and
+               quantitative potential digital technologies can offer scholars. It encourages
+               researchers to explore thousands of otherwise indecipherable written records from the
+               early modern era, and aims to focus the reader’s attention on the materiality of
+               those records and the performative uses of writing and note-taking. As Lauren Kassell
+               herself puts it, ‘It [<em>The Casebooks Project</em>] uses digital technologies
+               to understand what were, in the seventeenth century, new paper technologies’ (2016,
+               120). This project stands out not only because of its scope and breadth, but also
+               Kassell’s willingness to publically engage in self-critical reflection. In doing so,
+               she allows us to access not only the project but the process of producing it: an
+               invaluable opportunity for both amateurs and novices in the digital humanities.<sup class="footnote-ref" id="fnref-ftn1"><a href="#fn-ftn1" role="doc-noteref">1</a></sup>
+            </p>
+<p id="p2">‘<em>The Casebooks Project</em>: A digital edition of Simon Forman’s
+               and Richard Napier’s medical records 1596-1634’ is directed by Dr. Lauren Kassell.
+               Kassell, the driving force behind the project, is the current director and a reader
+               in the Department of History and Philosophy of Science and Fellow of Pembrook
+               College, Cambridge. The eight-member team behind this project additionally comprises
+               Dr. Michael Hawkins, the technical director, who has worked on projects such as <a href="http://web.archive.org/web/20170310223112/http://www.newtonproject.ox.ac.uk/" target="_blank" rel="noopener">The Newton Project</a>, and currently also acts as a consultant to the <a href="http://web.archive.org/web/20170310223155/https://www.darwinproject.ac.uk/" target="_blank" rel="noopener">Darwin Correspondence Project</a>. Senior Editors include Dr. Robert Rally,
+               responsible for independently transcribing and editing Forman’s guide to astrology,
+               and Dr. John Young, who is responsible for the site’s transcription guidelines. Dr.
+               Joanna Edge and Janet Yvonne Martin-Portugues are current assistant editors; Boyd
+               Brogan and Natalie Kaoukji are current research fellows.<sup class="footnote-ref" id="fnref-ftn2"><a href="#fn-ftn2" role="doc-noteref">2</a></sup>
+            </p>
+<p id="p3">The project was originally released on January 15, 2012, comprising
+               approximately 10,000 entries, and has subsequently undergone 11 total releases. The
+               last modification was on June 13, 2016, which added nearly 15,800 further cases,
+               color images, and refinements to search and visualization functions on the site. The
+               project is located at <a href="http://www.magicandmedicine.hps.cam.ac.uk/" target="_blank" rel="noopener">http://www.magicandmedicine.hps.cam.ac.uk</a>.</p>
+    </section>
+    <section id="div2">
+      <h2>What are Casebooks?</h2>
+      <p id="p4">Early modern medical writing conforms to a variety of specific genres;
+               Gianna Pomata, historian of medicine, suggests these genres are ‘highly structured
+               and clearly recognizable textual conventions’ (2010, 197). By noticing changes in
+               what she sees as ‘the disappearance, emergence, and transformation of epistemic
+               genres,’ researchers can track ‘profound transformations in ways of thinking,
+               collective and individual’ (Pomata 2010, 198). Pomata tracks the late-Renaissance
+               genre of <em>observationes</em>, or collections of narrated medical cases, which
+               first appear in connection to the astral sciences and move into law and medicine in
+               the 16th century (2010, 204).</p>
+<p id="p5">Kassell focuses on a slightly different genre, casebooks, which she
+               describes as ‘material and intellectual artifacts of medical practice,’ often the
+               only surviving trace of the early modern medical encounter itself (2014, 596). To
+               differentiate them from other forms of note-taking or narrative records, she
+               describes casebooks as primarily ‘serial records of practice’ (Kassell 2014, 600).
+               Casebooks are thus emblematic of changing medical practice and cultural attitudes
+               towards patients and disease (Kassell 2014, 603, Hess and Mendelsohn 2010).</p>
+<p id="p6">The first practitioner in England whose astrological records survive are
+               those of Richard Trewythian, who kept several dozen calculations between 1442 and
+               1458 (Kassell 2014, 608). Between 1450 and 1700, Kassell identifies thirty-six extant
+               sets of medical casebooks and eleven sets of astrological casebooks in England (2014,
+               600). Her survey of astrological casebooks suggests several early figures, such as
+               Johannes Schöner, Thomas Bodier, and an anonymous astrologer who recorded,
+               respectively, from several dozen cases to several dozen pages of cases and questions
+               (Kassell 2014, 608, 609).</p>
+<p id="p7">One astrologer in particular, Simon Forman, occupies a central place in
+               the history of casebooks, and more broadly, the history of medicine, the history of
+               astrology, and intellectual history. Forman was ‘probably the most popular astrologer
+               in Elizabethan London,’ and his records show a ‘practice of alchemy, natural magic,
+               astrology, and medicine’ (Kassell 1999, 3, 4). Yet Forman, who was not formally
+               educated and was in frequent conflict with the College of Physicians, enough to at
+               one point even require leaving London to continue his practice, ‘figures in all of
+               these accounts, sometimes as a charlatan, sometimes as a womanizer, and sometimes as
+               a testament to the popularity of astrology; he has not been considered in his own
+               right as an influence on the history of astrology or medicine’ (Kassell 1999).
+               Countering this misconception, Kassell notes, ‘his and Napier [his successor]’s
+               records are more systematic and extensive than anything else that survives’ (2014,
+               610). Their notebooks, spanning from 1596 to 1603, offer themselves up as a rich and
+               unparalleled source of biographical, medical, and local information.</p>
+<p id="p8">In the encounter, Forman and Napier would record the querent’s name and
+               the exact time of the consultation, occasionally biographical information, and
+               whether or not the querent was asking on behalf of someone else (Kassell 1999, 4). A
+               chart was often drawn up, using techniques appropriate to astrology, geomancy, or
+                  numerology,<sup class="footnote-ref" id="fnref-ftn3"><a href="#fn-ftn3" role="doc-noteref">3</a></sup> and then a set of conclusions were made and perhaps
+               therapeutic treatment was recorded (Kassell 1999, 4).</p>
+<p id="p9">As such, the casebooks are particularly interesting not just for how they
+               recorded, but also shaped, the medical encounter. For example, Kassell states, ‘The
+               astrologer and his patient negotiated an exchange of trust for true judgments.
+               Casebooks were central to this dynamic. They were instruments for judging the causes
+               of disease, status objects demonstrating the astrologer’s expertise, and records of
+               these practices. With pen and paper, the astrologer located each patient within the
+               cosmos and signaled his authority to do so’ (Kassell 2014, 598). In turn,
+               encountering these books through digital technologies can offer a window into what
+               early modern medical practitioners’ lives were like, what the personal and medical
+               lives of average, everyday men and women were like, and how early modern medical
+               practitioners used paper and writing as tools for memory assistance and
+               authority.</p>
+    </section>
+    <section id="div3">
+      <h2>Subject and Content</h2>
+      <p id="p10">
+               <em>The Casebooks Project</em>, then, seeks to digitize, tag, and render
+               searchable the astrological casebooks of both Forman and his successor, Richard
+               Napier, which is the largest collection of such encounters in the history of early
+               modern medicine. It specifically aims to provide researchers with quantitative and
+               qualitative data generated from encoding the medical encounter. Because of the rich
+               data this project generates, this scholarly digital edition lends itself to use not
+               only by historians of medicine, but historians of science, local historians, and
+               intellectual and social historians.</p>
+<p id="p11">Aims and methods of the project are publically available, and include
+               generating freely accessible, searchable transcriptions of both normalized and
+               diplomatic versions, providing a platform for users to search the entire corpus or
+               browse the entries sequentially, providing tabular CSV displays of the metadata,
+               tracking specific individuals in the records and locating them within networks of
+               relationships, and providing files in multiple formats, such as XHTML or even as a
+               downloadable PDF.<sup class="footnote-ref" id="fnref-ftn4"><a href="#fn-ftn4" role="doc-noteref">4</a></sup>
+            </p>
+<p id="p12">Kassell sees the project as building on the content and methodology of
+               Michael MacDonald’s <em>Mystical Bedlam: Madness, Anxiety and Healing in
+                  Seventeenth-Century England</em>, and changing trends towards recovering lost
+               patient voices; ‘MacDonald used a mainframe, in my initial work on Forman I used a
+               laptop and a spreadsheet, the Casebooks Project uses XML and programs for processing
+               its data and metadata. This is an example of what Tim Hitchcock has referred to as
+               the use of computers to address the ‘human contents’ of the past, to recover the
+               voices of ordinary people…’ (2016, 217). This project is, in other words, not merely
+               an attempt to reconstruct written records and better understand practitioners and
+               practice, but to reach a more nuanced understanding of patients and their
+               experiences.</p>
+<p id="p13">Of the 80,000 cases, 48,514 are currently available to browse or search
+               as fully transcribed entries with associated images. An additional 1,992 cases have
+               been ‘calendared,’ or in other words, dates, as well as names of querents and
+               consultants, have been provided, but no other data has been transcribed. For
+               transcribed cases, the editors focus on the ‘question’ component of the medical
+               encounter, which includes the date and time, biographical information about the
+               patient, and detailed information about the medical consultation. Other information
+               is included on an as-needed basis, and specific editorial policies are publicly
+               available.</p>
+<p id="p14">
+               <figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="Transcription of Case No. 19512, a case of ‘fairy pinching’.
+                     The transcription is displayed on the left, while the high-resolution image is
+                     displayed on the right. Options to toggle between normalized and diplomatic
+                     editions and to hide images are located above." loading="lazy"><figcaption>Fig. 1: Transcription of Case No. 19512, a case of ‘fairy pinching’.
+                     The transcription is displayed on the left, while the high-resolution image is
+                     displayed on the right. Options to toggle between normalized and diplomatic
+                     editions and to hide images are located above.</figcaption></figure> Transcriptions are viewable as either normalized or diplomatic texts.
+               Diplomatic view allows the user to see original symbols, abbreviation indicators, and
+               archaic letter forms, such as zodiac symbols, which are explained by a pop-up box on
+               mouseover. The normalized text is also available. Users can choose to see the
+               transcription alone, with categories of information broken down into toggle-able text
+               boxes (text, querent, patient, occupations, topics). Users can see the transcription
+               alongside the exact page the case occurs on, with instructions in the source
+               information as to the precise location of the case on the page. These images are
+               high-resolution, clear, zoomable images made available by the Bodleian Library.</p>
+<p id="p15">Several other manuscripts have been transcribed and are available on the
+               site. The project publishes a transcription of Simon Forman’s <em>The
+                  Astrologicalle Judgmentes of phisick and other Questions</em>, a guide to
+               Forman’s astrological and medical practice. This transcription also offers the option
+               to toggle between a diplomatic and a normalized version. High quality images are made
+               available when necessary in the transcription, such as examples of Forman’s
+               astrological charts. There are also transcriptions of other texts by Forman, ‘To
+               Knowe where a woman be with child of a man or a woman’ ‘Rueles and observances before
+               youe give Judgment’, ‘A Treatise touching the defense of Astrology’, and ‘Howe you
+               shall knowe which vivent longest of a man vel muliere.’</p>
+    </section>
+    <section id="div4">
+      <h2>Publication and Presentation</h2>
+      <p id="p16">
+               <figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="The current home page contains a rotating slider and links to
+                     key introductory materials." loading="lazy"><figcaption>Fig. 2: The current home page contains a rotating slider and links to
+                     key introductory materials.</figcaption></figure> The site itself is simple and easy to navigate. A rotating slider on the
+               home page welcomes a user and shifts between an animated introduction and
+               announcements about current projects. Colorful images link out to help users navigate
+               the site, to ‘meet the astrologers,’ spend ‘a day with the astrologers: 26 February
+               1599,’ learn how to use the search functionality, and to see current news and events.
+               Information about the staff and funding, as well as a citation and privacy statement,
+               are immediately available on the home page.</p>
+<p id="p17">
+               <figure id="img3" class="review-figure"><img src="pictures/picture-3.png" alt="One of Forman’s journals, MS Ashmore 411, viewed through the
+                     browsing interface." loading="lazy"><figcaption>Fig. 3: One of Forman’s journals, MS Ashmore 411, viewed through the
+                     browsing interface.</figcaption></figure> Information is divided into five sections: The Casebooks, Using Our
+               Edition, The Manuscripts, On Astrological Medicine, and About Us. The first section,
+               The Casebooks, allows a user to browse or search the Casebooks. Users can browse
+               cases either as edited transcriptions, on a case-by-case basis, or as page images
+               from scanned volumes. Users can also browse the four additional calendared—but not
+               transcribed—volumes, as well as other supplementary materials. Browsing allows a user
+               to open high-resolution images of an entire volume at once from the Bodleian Library
+               and to move through page by page.</p>
+<p id="p18">
+               <figure id="img4" class="review-figure"><img src="pictures/picture-4.png" alt="Search Module, with options for querent, case details, topic,
+                     and volume selected." loading="lazy"><figcaption>Fig. 4: Search Module, with options for querent, case details, topic,
+                     and volume selected.</figcaption></figure> Searching, by comparison, is an incredibly powerful tool developed as part
+               of this project. Users can filter the cases by date and time ranges, specific named
+               parties in the medical encounter, biographical information about a patient,
+               consultation or diagnostic information, and even by a concise list of topics. Users
+               can combine qualifying criteria, and view the results as individual cases or as a
+               summarized, quantified result.</p>
+<p id="p19">The second section, Using our Edition, instructs the user how to use the
+               site and read the cases. Dedicated subpages explain how the topics were derived and
+               what contemporary meaning they had, detailed instructions on how to use the search
+               function, and a glossary of unfamiliar terms. Finally, all editorial policies are
+               publically available here, including the project’s transcription guidelines, an
+               element set, and coding references for users who want to use the raw XML files.
+               Coding references are expansive and include handwriting, topics, and other entities,
+               as well as other issues specifically related to the casebooks, and the project
+               appears to follow common standards for TEI guidelines, all of which are available to
+               browse.</p>
+<p id="p20">
+               <figure id="img5" class="review-figure"><img src="pictures/picture-5.png" alt="A Page from Richard Napier’s Casebooks’ dissects one single
+                     case into its component parts, alongside a high-resolution image of the case in
+                     its context." loading="lazy"><figcaption>Fig. 5: A Page from Richard Napier’s Casebooks’ dissects one single
+                     case into its component parts, alongside a high-resolution image of the case in
+                     its context.</figcaption></figure> The third section, The Manuscripts, provides useful information to
+               introduce a user to astrological medicine, Forman and Napier, their practice, and the
+               material objects the cases are written in. One notable sub-section is ‘A Page from
+               Richard Napier’s Casebooks’, where the editors have visually dissected a single case
+               into its component parts with an accompanying high-resolution image from MS Ashmole
+               228. This visual allows a user to quickly identify the typical key components of any
+               given case.</p>
+<p id="p21">
+               <figure id="img6" class="review-figure"><img src="pictures/picture-6.png" alt="‘A Page in Full’ provides careful explanation of how to read
+                     several sample astrological charts." loading="lazy"><figcaption>Fig. 6: ‘A Page in Full’ provides careful explanation of how to read
+                     several sample astrological charts.</figcaption></figure> A subsequent page, A page in full, explains, with images, how diplomatic
+               transcriptions are generated. Further, this section also provides samples of
+               handwriting and links out to introductions to paleography, for users who are less
+               familiar, and a carefully reconstructed single day in the life of each astrologer,
+               Monday the 26th of February 1599. These materials, taken together, allow both novices
+               and experts alike access to the source materials and the process of transcribing
+               them.</p>
+<p id="p22">The fourth section, On Astrological Medicine, provides information to
+               navigate the practice of astrology, as well as transcribed versions of Napier and
+               Forman’s guides to their practice, biographical information, and further reading and
+               bibliographic information for users looking for more scholarship or contextual
+               information.</p>
+<p id="p23">Finally, the last section, About Us, is a repository of crucial project
+               information, such as aims and methods, release information, staff details, links to
+               news and events, funding sources, and permissions.</p>
+    </section>
+    <section id="div5">
+      <h2>Editorial Decisions and Audience</h2>
+      <p id="p24">
+               <figure id="img7" class="review-figure"><img src="pictures/picture-7.png" alt="‘Results Summary’ for ‘Lunatic’ in the Casebooks." loading="lazy"><figcaption>Fig. 7: ‘Results Summary’ for ‘Lunatic’ in the Casebooks.</figcaption></figure> One curious part of the editorial policies and sampling policies is their
+               decision to exclude ‘extraneous material,’ such as ‘remarks about the day’s weather,
+               lists of expenses or medicines, news about the recovery or death of former patients,
+               records of events in the practitioner’s own life, and so forth’.<sup class="footnote-ref" id="fnref-ftn5"><a href="#fn-ftn5" role="doc-noteref">5</a></sup>
+               Transcribing 80,000 records is already a formidable task, and as the editorial team
+               poignantly remarks, ‘a full-text critical edition of the entire corpus is
+               ‘logistically and financially impossible.’’<sup class="footnote-ref" id="fnref-ftn6"><a href="#fn-ftn6" role="doc-noteref">6</a></sup> I wonder, however, what
+               kinds of rich information this extraneous material might provide us not only about
+               the economics of early modern medical practice and biographical information for
+               Forman, Napier, and their patients, but also the interactions between practitioner
+               and patient which occurred outside of the boundaries of the casebook. Though we might
+               desire to hunt for traces of patients’ voices and their extra-textual interactions,
+               however, Kassell cautions that the casebooks only represent one side of the story:
+               ‘we do not have a single patient’s account of a consultation with Forman’ (1999, 18).
+               She continues, in a more recent discussion of the <em>Casebooks: </em>‘The
+               records were framed within conventions of writing narratives and collecting data;
+               they are not, as we will see, unmediated records of experiences of illness and
+               healing’ (Kassell 2016, 126). Regardless, the already-transcribed material contains
+               extensive biographical and medical information available for research.</p>
+<p id="p25">
+               <figure id="img8" class="review-figure"><img src="pictures/picture-8.png" alt="Breakdown of ‘Lunatics’ by age." loading="lazy"><figcaption>Fig. 8: Breakdown of ‘Lunatics’ by age.</figcaption></figure> In addition, the editorial team conceives of this project as more of a
+               ‘data set’ rather than a ‘textual edition’, despite its textual roots. This
+               quantitative approach is one of the more exciting features the project offers. After
+               searching by a wide range of topics (both medical and non-medical alike) or limiting
+               factors, the project offers its users the ability to generate a ‘results summary’ for
+               any given search. For example: a quick search for the topic of ‘lunatic’ underneath
+               the category ‘illnesses of the mind’ generates 152 cases.<sup class="footnote-ref" id="fnref-ftn7"><a href="#fn-ftn7" role="doc-noteref">7</a></sup> Results include the percentage of querents asking on
+               someone else’s behalf, the date range of the cases, a summary of cases by practice
+               and practitioner, the type and number of topics associated with the selected cases,
+               and information about the querent and patient, including ages, genders, and
+               information about frequent patients. These quantitative data seems immediately
+               useful; for example, it appears most querents were female, rather than male, and
+               younger, rather than older; there are entries for 15 male subjects between 20-29 in
+               contrast to 46 female subjects. Immediately we could imagine how even this cursory
+               search might be useful for a researcher working out the story of gender and madness
+               in the early modern period. At the same time, whether these results are statistically
+               significant is still up for discussion, and there does not appear to be an option to
+               download these data directly from the search interface. To do so would require
+               software and training to sift through the raw XML files, available at <a href="http://web.archive.org/web/20170310223514/https://github.com/CasebooksProject" target="_blank" rel="noopener">http://web.archive.org/web/20170310223514/https://github.com/CasebooksProject</a>,
+               or some kind of technical interface or API, which currently does not exist.</p>
+<p id="p26">Who is the audience for the <em>Casebooks</em> project? Kassell
+               states that this is not a public engagement project, but instead designed to ‘make
+               sense of archives at the highest possible level’.<sup class="footnote-ref" id="fnref-ftn8"><a href="#fn-ftn8" role="doc-noteref">8</a></sup> Yet while Kassell
+               has written explicitly to a scholarly audience about Forman and the
+                  <em>Casebooks</em>, she has also written to a more public audience in the UK
+               magazine <em>History Today</em> in September 2011 (Kassell 2011). In her review
+               in <em>The Edinburgh Companion to the Critical Medical Humanities</em>, she
+               defines the project’s audience as ‘users, not readers, and one of the challenges of
+               the project is to tutor them in engaging critically with the casebooks’ (Kassell
+               2016, 127); in her earlier article in <em>History Today</em> she suggests that
+               ‘it [the project] will also coach its users in the nature of these records…allowing
+               scholars to explore the ways in which matters of health and questions about fortune
+               more generally were socially constituted’ (Kassell 2011, 25). Yet the reach of this
+               project has grown beyond only ‘scholarly’ limitations; the team maintains a humorous
+               Twitter account to which over 1200 people are currently subscribed.<sup class="footnote-ref" id="fnref-ftn9"><a href="#fn-ftn9" role="doc-noteref">9</a></sup> A variety of other outreach efforts or tangential projects
+               are listed on the main site, including a feature of the project in the
+                  <em>Guardian</em>’s cryptic crossword<sup class="footnote-ref" id="fnref-ftn10"><a href="#fn-ftn10" role="doc-noteref">10</a></sup> interviews in <em>Der Spiegel</em>,<sup class="footnote-ref" id="fnref-ftn11"><a href="#fn-ftn11" role="doc-noteref">11</a></sup>
+               <em>The Sydney Morning Harold</em>,<sup class="footnote-ref" id="fnref-ftn12"><a href="#fn-ftn12" role="doc-noteref">12</a></sup> and <em>The Atlantic</em>.<sup class="footnote-ref" id="fnref-ftn13"><a href="#fn-ftn13" role="doc-noteref">13</a></sup> Elements of the research project are also being developed into a video game,
+               as part of the Epic Games and Wellcome Trust Big Data Challenge,<sup class="footnote-ref" id="fnref-ftn14"><a href="#fn-ftn14" role="doc-noteref">14</a></sup> and Natalie Kaoukji, research fellow for the project, is developing a public
+               arts project based on the casebooks at the gallery Ambika P3, as six contemporary
+               artists respond to the project, expanding the scope of this project from paper and
+               pen and digital technologies to ‘sculpture, video and audio installation, live
+               performance, robotics and artificial intelligence’.<sup class="footnote-ref" id="fnref-ftn15"><a href="#fn-ftn15" role="doc-noteref">15</a></sup>
+            </p>
+<p id="p27">
+               <figure id="img9" class="review-figure"><img src="pictures/picture-9.png" alt="A representative sample of some humorous tweets on Valentine’s
+                     Day, 2017." loading="lazy"><figcaption>Fig. 9: A representative sample of some humorous tweets on Valentine’s
+                     Day, 2017.</figcaption></figure> On the one hand, the issue of ‘public engagement’ and audience may be far
+               less contentious than I have outlined here. The Wellcome Trust, the largest source of
+               funding for the project, may not simply define the project as such in its rubrics and
+               assessments for funding: without direct access to funding documentation, I could not
+               say for sure. Nevertheless, the question of audience raises serious issues about the
+               impact of the project and its core vision. Said otherwise, the audience for a project
+               dictates which elements of the casebooks are transcribed and edited and which are
+               excluded. By reproducing these extensive and rare manuscripts as a digital edition
+               for an academic audience, the editors can more easily and efficiently navigate thorny
+               issues of reproducing extinct symbols and the rich astrological charts Forman and
+               Napier drew. A scholarly digital edition, unlike a print edition, allows researchers
+               to index, search, and manipulate robust quantitative data from an otherwise
+               unpublished body of subjective case entries. Although the specific day-to-day content
+               in Forman and Napier’s journals may not be different from other extant astrological
+               casebooks or medical records, the sheer quantity of entries may provide rich
+               biographical, social, or medical data for a researcher. Yet distilling the
+               qualitative content of the 80,000 cases in the manuscripts into quantitative data
+               already presents methodological and epistemological questions. A “tweet" summary of a
+               medical case complicates this problematic even further. Can one represent the rich
+               quantitative results of a custom search, or even the complicated metadata from a
+               single case, in less than 280 characters? What lessons are followers of the Twitter
+               account learning from these case summaries? Careful attention needs to be paid to the
+               represenation of scholarly editions on social media platforms, and this example
+               highlights just how radically different the experience of reading a tweet, or even a
+               single case summary, is from handling the manuscript or a printed facsimile of
+               it.</p>
+<p id="p28">The question of how to link research tools with social media is not a
+               problem uniquely for the <em>Casebooks Project</em> to answer, but is one
+               scholarly projects will increasingly need to grapple with in the future. Obviously,
+               scholars will need different resources than a public audience, and if this project
+               ultimately conceives of itself as an academic ‘dataset’ and not a public engagement
+               project, then we should ask what non-scholarly users would <em>do</em> with the
+               data generated. Or, if the project does wish to eventually develop a sustainable
+               public-facing component, one must ask; can creative, public initiatives like the
+               partnership with Ambika P3 inform or push the boundaries of scholarly research? In
+               this case, can artistic or extra scholarly efforts help the scholarly digital editon
+               represent the experiential and material nature of these books in a way that
+               transcription alone cannot?</p>
+    </section>
+    <section id="div6">
+      <h2>Conclusion and Further Directions</h2>
+      <p id="p29">This project—despite unresolved tension as to whether it conceives of
+               itself as primarily a textually-based edition or a ‘dataset’—still conforms to
+               scholarly standards and should be considered a scholarly digital edition; the textual
+               tradition is clearly documented, editorial decisions are transparent, and the work is
+               of excellent scholarly quality. Further, this edition has clearly accomplished most
+               of its ambitious aims and methods, even though the complete 80,000 records are not
+               yet transcribed.</p>
+<p id="p30">In a panel discussion of her work at New York University this past
+               February, Kassell acknowledged some of the tensions mentioned in this review, through
+               a framework of seven key questions about her own work: what does it mean to create a
+               new archive from an old archive? What is a casebook? Is the project editing what the
+               astrologer wrote, or the narrated encounter itself? How do we help readers navigate?
+               What is the tension between front-end presentation and durability? How can the site
+               be made appealing? And how can users navigate ‘flattened’ data which may not be
+               necessarily statistically significant?</p>
+<p id="p31">In this discussion, Kassell clarified several editorial decisions and
+               processes not necessarily evident from the main site itself. In terms of durability,
+               for example, the front-end of the project is currently moving to a new home at the
+               University of Cambridge Libraries. Kassell’s main points of pride are not the
+               front-end developments, but instead the XML and encoded case files, currently
+               available from GitHub, and an index developed by the editorial team. The index is of
+               particular interest, because the contemporary early modern invention of the index
+               radically altered how cases were organized and conceptualized. That Forman and
+               Napier’s work itself was <em>not</em> indexed gives as insight into how digital
+               technologies can help us recreate and understand conceptual shifts in informational
+               management strategies and shifts in early modern reading and writing habits.</p>
+<p id="p32">I was also struck by Kassell’s ruminations on what exactly is being
+               edited: the written material, or the medical encounter. This scholarly digital
+               edition is a remarkable accomplishment for the qualitative and quantitative data
+               generated from the written material, but there is much material from the encounter
+               still unrepresented, particularly the performative elements of the casebooks. One
+               example is the astrological chart, which is not reconstructed in any fashion in the
+               transcriptions. Without presenting or representing the original charts, a key part of
+               the casebooks’ essence would surely be lost if users only encountered the casebooks
+               through the transcription, divorced from the page of the journal. Extra-textual
+               encounters with patients are another example of unrepresented material. When asked in
+               February about both these points, Kassell replied that while software developers can
+               accurately use software to generate astrological charts, they are not always true to
+               the charts in the book as Forman drew them, and that she believed the video game in
+               development would capture the performative nature of astrological readings better
+               than the site could. She further suggested that there is current ongoing effort to
+               ‘encode reported speech’ and to record social encounters outside of the case. While
+               this is exciting, as of this review those elements are not currently searchable. I
+               also wish that metadata pertaining to the materiality of the text and elements of the
+               writing itself—other than the location of the case within the volumes—were
+               searchable, since their materiality clearly played a role in shaping the encounter
+               and giving the astrologers authority.<sup class="footnote-ref" id="fnref-ftn16"><a href="#fn-ftn16" role="doc-noteref">16</a></sup>
+            </p>
+<p id="p33">One can imagine how this project could evolve to study other samples of
+               early modern medical writing, such as the many examples of <em>observationes</em>
+               described by Pomata. This development could be used not only to generate local
+               historical data, but broad, internationally-oriented information about humanist
+               networks, circulation of medical information, and similarities and differences in
+               medical and astrological practice across the continent. The ability to track cases,
+               many of which were collected and recycled in various publications of
+                  <em>observationes </em>and casebooks in the late 17th-century, could offer
+               insight into the history of reading and the history of publishing. The unique focus
+               on the <em>case</em> also lends this type of project to adaptation for legal and
+               other medical projects across many different time periods. In the meantime, however,
+               this project is a remarkable accomplishment, both for the data it generates and its
+               transparency. As it migrates to a new library host and hones its relationship to its
+               audience(s), I hope we will continue to better understand the casebooks’ performative
+               and material nature, as well as the lives of the patients and practitioners contained
+               within them.</p>
+    </section>
+
+    <section id="bibliography" class="review-bibliography">
+      <h2>Bibliography</h2>
+      <ol class="bib-list">
+        <li>Hess, Volker, and J. Andrew Mendelsohn. 2010. ‘Case and Series: Medical
+                  Knowledge and Paper Technology, 1600-1900.’ <em>History of Science</em>
+                  48:287-314.</li>
+        <li>Kassell, Lauren. 1999. ‘How to Read Simon Forman's Casebooks: Medicine,
+                  Astrology, and Gender in Elizabethan London.’ <em>Social History of
+                     Medicine</em> 12 (1):3-18.</li>
+        <li>Kassell, Lauren. 2011. ‘The Astrologer's Tables.’ <em>History Today</em>,
+                  September 2011, 18-25.</li>
+        <li>Kassell, Lauren. 2014. ‘Casebooks in Early Modern England: Medicine, Astrology,
+                  and Written Records.’ <em>Bulletin of the History of Medicine</em> 88
+                  (4):595-625. doi: 10.1353/bhm.2014.0066.</li>
+        <li>Kassell, Lauren. 2016. ‘Paper Technologies, Digital Technologies: Working with
+                  Early Modern Medical Records.’ In <em>The Edinburgh Companion to the Critical
+                     Medical Humanities.</em>, edited by A Whitehead and A Woods, 120-135.
+                  Edinburgh: Edinburgh University Press.</li>
+        <li>Pomata, Gianna. 2010. ‘Sharing Cases: The Observationes in Early Modern
+                  Medicine.’ <em>Early Science and Medicine</em> 15 (3):193-236. doi:
+                  10.1163/157338210x493932.</li>
+      </ol>
+    </section>
+
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        <li id="fn-ftn1" class="footnote-item">
+          Joshua Kruchten is a former graduate student of English and American
+                  literature at New York University, and a current Erasmus Mundus student at the
+                  Université de Strasbourg and the Università di Bologna.
+          <a href="#fnref-ftn1" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn2" class="footnote-item">
+          Information about staff for this project can be found.
+          <a href="#fnref-ftn2" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn3" class="footnote-item">
+          Types of astrology in the Casebooks are described
+                     <a href="http://www.magicandmedicine.hps.cam.ac.uk/using-our-edition/editorial-policies/coding-reference/a-guide-to-the-source#sort_chart" target="_blank" rel="noopener">here</a>.
+          <a href="#fnref-ftn3" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn4" class="footnote-item">
+          Aims and methods are available <a href="http://web.archive.org/web/20170310223631/http://www.magicandmedicine.hps.cam.ac.uk/about-us/aims" target="_blank" rel="noopener">here</a>.
+          <a href="#fnref-ftn4" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn5" class="footnote-item">
+          For editorial policies, see: <a href="http://web.archive.org/web/20170310223812/http://www.magicandmedicine.hps.cam.ac.uk/using-our-edition/editorial-policies" target="_blank" rel="noopener">http://web.archive.org/web/20170310223812/http://www.magicandmedicine.hps.cam.ac.uk/using-our-edition/editorial-policies</a>.
+          <a href="#fnref-ftn5" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn6" class="footnote-item">
+          See <a href="#ftn4" class="crossref">note 4</a>.
+          <a href="#fnref-ftn6" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn7" class="footnote-item">
+          I
+                  performed a search using the topic for ‘lunatic.’ Those results are available <a href="http://web.archive.org/web/20170310223843/http://www.magicandmedicine.hps.cam.ac.uk/the-casebooks/search/cases/results/summarise?t=166&tm=10&nt1=1" target="_blank" rel="noopener">here</a>. 
+          <a href="#fnref-ftn7" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn8" class="footnote-item">
+          These are
+                  remarks by Dr. Kassell from a panel given at NYU, ‘Inscription, Digitization and
+                  the Shape of Knowledge,’ for the NYU Center for the Humanities. The event was
+                  recorded and archived, and is publicly available on the NYU Center for the
+                  Humanities’ YouTube channel: <a href="https://www.youtube.com/watch?v=hxgFqx06IrI" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hxgFqx06IrI</a>. 
+          <a href="#fnref-ftn8" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn9" class="footnote-item">
+          The Twitter account, @hpscasebooks, can be found <a href="http://web.archive.org/web/20170310223927/https://twitter.com/hpscasebooks?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" rel="noopener">here</a>.
+          <a href="#fnref-ftn9" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn10" class="footnote-item">
+          
+                  <a href="http://web.archive.org/web/20170310224014/https://www.theguardian.com/crosswords/prize/25107" target="_blank" rel="noopener">http://web.archive.org/web/20170310224014/https://www.theguardian.com/crosswords/prize/25107</a>.
+               
+          <a href="#fnref-ftn10" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn11" class="footnote-item">
+          
+                  <a href="http://web.archive.org/web/20170310224108/http://www.spiegel.de/spiegel/print/d-83180880.html" target="_blank" rel="noopener">http://web.archive.org/web/20170310224108/http://www.spiegel.de/spiegel/print/d-83180880.html</a>. 
+          <a href="#fnref-ftn11" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn12" class="footnote-item">
+          
+                  <a href="http://web.archive.org/web/20170310224204/http://www.smh.com.au/world/science/astrologers-medical-records-a-star-turn-20111014-1lp4u.html" target="_blank" rel="noopener">http://web.archive.org/web/20170310224204/http://www.smh.com.au/world/science/astrologers-medical-records-a-star-turn-20111014-1lp4u.html</a>.
+               
+          <a href="#fnref-ftn12" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn13" class="footnote-item">
+          
+                  <a href="http://web.archive.org/web/20170310224239/https://www.theatlantic.com/health/archive/2013/11/your-zodiac-sign-your-health/281358/" target="_blank" rel="noopener">http://web.archive.org/web/20170310224239/https://www.theatlantic.com/health/archive/2013/11/your-zodiac-sign-your-health/281358/</a>.
+               
+          <a href="#fnref-ftn13" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn14" class="footnote-item">
+          
+                  <a href="http://web.archive.org/web/20170310224315/https://www.unrealengine.com/blog/epic-games-and-wellcome-trust-reveal-20000-big-data-vr-challenge-winner" target="_blank" rel="noopener">http://web.archive.org/web/20170310224315/https://www.unrealengine.com/blog/epic-games-and-wellcome-trust-reveal-20000-big-data-vr-challenge-winner</a>.
+               
+          <a href="#fnref-ftn14" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn15" class="footnote-item">
+          See the <a href="http://web.archive.org/web/20170310224355/http://www.p3exhibitions.com/" target="_blank" rel="noopener">AmbikaP3 site</a>.
+          <a href="#fnref-ftn15" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn16" class="footnote-item">
+          Kassell states, for
+                  example, ‘Treating casebooks as found objects highlights how medical practitioners
+                  used writing as a tool for marking details or constructing narratives…the format
+                  of the notebook…should vary depending on the case…placing each casebook requires
+                  attention to the level of learning of the author, format of the paper, layout of
+                  the page, ordering of the records, and whether the script is rough or fair’ (2014,
+                  615).
+          <a href="#fnref-ftn16" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+      </ol>
+    </section>
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{casebooks,
+  author    = {Kruchten, Joshua},
+  title     = {The Casebooks Project},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {7},
+  year      = {2017},
+  doi       = {10.18716/ride.a.7.4},
+  url       = {https://doi.org/10.18716/ride.a.7.4},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Kruchten, Joshua
+TI  - The Casebooks Project
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 7
+PY  - 2017
+DA  - 2017/12
+DO  - 10.18716/ride.a.7.4
+UR  - https://doi.org/10.18716/ride.a.7.4
+PB  - Institut für Dokumentologie und Editorik e. V.
+LA  - en
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Kruchten, J. (2017). The Casebooks Project. RIDE – A review journal for digital editions and resources, (7). https://doi.org/10.18716/ride.a.7.4</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Kruchten, Joshua. &#34;The Casebooks Project.&#34; RIDE – A review journal for digital editions and resources, no. 7, 2017. https://doi.org/10.18716/ride.a.7.4.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Kruchten, Joshua. &#34;The Casebooks Project.&#34; RIDE – A review journal for digital editions and resources, no. 7 (2017). https://doi.org/10.18716/ride.a.7.4.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/casebooks/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

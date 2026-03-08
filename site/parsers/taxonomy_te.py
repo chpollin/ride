@@ -13,7 +13,7 @@ def parse_te_taxonomy(taxonomy: etree._Element, resource_id: str = "") -> Questi
     identified by the `m` attribute on the taxonomy element.
     """
     base_url = taxonomy.get("{http://www.w3.org/XML/1998/namespace}base", "")
-    m_attr = taxonomy.get("m", resource_id)
+    m_attr = taxonomy.get("m", "") or taxonomy.get("n", "") or resource_id
 
     sections = []
     for top_cat in taxonomy.findall("tei:category", NS):

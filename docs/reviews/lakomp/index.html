@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAKomp. Lemmatize, annotate and compare texts in non-standardized
+               languages &mdash; RIDE</title>
+  <meta name="description" content="
+            LAKomp is a semi-automatic web-based tool developed for the annotation and comparison
+               of historical, non-standardized texts. In contrast to other tools, LAKomp does...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="LAKomp. Lemmatize, annotate and compare texts in non-standardized
+               languages">
+  <meta property="og:description" content="
+            LAKomp is a semi-automatic web-based tool developed for the annotation and comparison
+               of historical, non-standardized texts. In contrast to other tools, LAKomp does...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/lakomp/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/lakomp/">
+<meta name="DC.title" content="LAKomp. Lemmatize, annotate and compare texts in non-standardized
+               languages">
+<meta name="DC.creator" content="Barbara Aehnlich">
+<meta name="DC.creator" content="Elisabeth Witzenhausen">
+<meta name="DC.date" content="2023-09">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.15.7"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="en">
+
+<meta name="citation_title" content="LAKomp. Lemmatize, annotate and compare texts in non-standardized
+               languages">
+<meta name="citation_author" content="Barbara Aehnlich">
+<meta name="citation_author" content="Elisabeth Witzenhausen">
+<meta name="citation_doi" content="10.18716/ride.a.15.7"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2023-09">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/lakomp/lakomp.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "LAKomp. Lemmatize, annotate and compare texts in non-standardized\n               languages",
+  "author": [{"@type": "Person", "name": "Barbara Aehnlich", "url": "https://orcid.org/0000-0003-1492-7766"}, {"@type": "Person", "name": "Elisabeth Witzenhausen"}],
+  "datePublished": "2023-09",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.15.7"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e.V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">Introduction</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">LAKomp: Project, access, data and workflow</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">LAKomp in use – annotation and comparison of ENHG legal sources</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">Conclusion</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#bibliography" class="toc-link">Bibliography</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#footnotes" class="toc-link">Notes</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>September 2023</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.15.7" rel="external">10.18716/ride.a.15.7</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-15/">
+        <span class="badge badge-tools">TE</span>
+        Issue 15
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>EN</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/lakomp/lakomp.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/lakomp/lakomp-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="en">
+    <header class="review-header">
+      <a href="/issues/issue-15/" class="review-issue-link">
+        <span class="badge badge-tools">TE</span>
+        Issue 15: Tools and Environments
+      </a>
+
+      <h1>LAKomp. Lemmatize, annotate and compare texts in non-standardized
+               languages</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Barbara Aehnlich&nbsp;<a href="https://orcid.org/0000-0003-1492-7766" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>,         </span>
+        <span class="review-author">
+          Elisabeth Witzenhausen        </span>
+      </div>
+
+      <div class="review-affiliation">University of Bremen, Bremen, Germany Bochum, Germany</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="https://lakomp.uzi.uni-halle.de" rel="external">LAKomp</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">Introduction</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">LAKomp: Project, access, data and workflow</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">LAKomp in use – annotation and comparison of ENHG legal sources</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">Conclusion</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#bibliography" class="toc-link">Bibliography</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#footnotes" class="toc-link">Notes</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>September 2023</span>
+<span><a href="https://doi.org/10.18716/ride.a.15.7" rel="external">DOI</a></span><a href="/reviews/lakomp/lakomp.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/lakomp/lakomp-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>LAKomp is a semi-automatic web-based tool developed for the annotation and comparison
+               of historical, non-standardized texts. In contrast to other tools, LAKomp does not
+               automate annotation but makes manual annotation simple and fast offering a
+               semi-automatic tagging feature and a simple interface. Therefore, the tool is
+               especially useful for scholars of the Humanities. An alignment view and a generated
+                  <em>Partiturtext</em> make a comparison of different textual variants
+               possible. LAKomp is useful to individual researchers as well as larger research
+               groups as various users can annotate simultaneously. It was developed at the
+               Martin-Luther-University Halle-Wittenberg.</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>Introduction</h2>
+      <p id="p1">Historical language data, such as Early New High German (ENHG) texts,
+               show a very high degree of variation on a graphematic as well as morphological and
+               lexical level. Therefore, quantitative research in diachronic linguistics faces
+               various challenges, as most tools in Natural Language Processing are trained on
+               standardized data and do not perform well on non-standardized varieties (<a href="#bennett2010" class="crossref">Bennett et al. 2010</a>). Linguists
+               working on these non-standardized language varieties generally use manually annotated
+               corpora that enable the automatic extraction of lexical, morphological, and syntactic
+               information and thereby allow statistically valid observations. </p>
+<p id="p2">In order to build a corpus, texts have to be enriched with metadata,
+               tokenized, lemmatized and annotated. As even the best automatic lemmatization tools
+               and part-of-speech (PoS) taggers produce a certain error rate, manual correction and
+               annotation are usually necessary to produce valid results. This makes corpus building
+               both a time-consuming and tiring process for annotators.</p>
+<p id="p3">LAKomp<sup class="footnote-ref" id="fnref-ftn1"><a href="#fn-ftn1" role="doc-noteref">1</a></sup>
+               is a semi-automatic, web-based tool developed for Early New High German texts that
+               provides a user-friendly interface, which makes corpus creation and text comparison
+               easier and faster (<a href="#aehnlichkoesser2016" class="crossref">Aehnlich and Kösser 2016</a>). It was
+               designed for projects that analyze works that are transmitted through various textual
+               variants and show a high degree of graphematic variation. The tool can automatically
+               identify similar text passages across different textual variants, align them and list
+               deviations from a generated normalized text. At the same time, it has an integrated
+               machine-learning feature that presents suggestions for the lemmatization and
+               annotation of text based on the previous input. This process is referred to as
+               semi-automatic annotation in the course of this review.</p>
+<p id="p4">In this article, we<sup class="footnote-ref" id="fnref-ftn2"><a href="#fn-ftn2" role="doc-noteref">2</a></sup> will present the tool from the perspective of a user. First, we
+               explain its development and user access (section “<a href="#div2.1" class="crossref">Project and development</a>” and “<a href="#div2.2" class="crossref">User profile and access</a>”). In the sections “<a href="#div2.3" class="crossref">Corpus creation</a>” “<a href="#div2.4" class="crossref">Text comparison</a>”, and “<a href="#div2.5" class="crossref">Performance</a>” we explain the general workflow. The interface
+               is described in the section “<a href="#div2.6" class="crossref">User
+                  interface</a>”. Sections “<a href="#div2.7" class="crossref">Input and
+                  output</a>” and “<a href="#div2.8" class="crossref">Documentation and
+                  support</a>” detail how input and output are dealt with and where documentation
+               and support can be accessed. In section “<a href="#div3" class="crossref">LAKomp
+                  in use</a>” we give a detailed account of how the tool was used for the project
+                  <em>Digital Diachronic Text Comparison of Early Modern Legal Sources</em>
+                  (<a href="#aehnlich2021" class="crossref">Aehnlich 2021</a>). Finally, some
+               concluding remarks are provided in the “<a href="#div4" class="crossref">Conclusion</a>”.</p>
+    </section>
+    <section id="div2">
+      <h2>LAKomp: Project, access, data and workflow</h2>
+      <h3 id="div2.1">Project and development</h3>
+<p id="p5">The acronym LAKomp stands for <em>L</em>emmatisierung,
+                     <em>A</em>nnotation, <em>Komp</em>aration von Varianten
+                  frühneuhochdeutscher Texte (Lemmatization, Annotation, Comparison of Variants of
+                  Early New High German Texts). The developers of the tool are André Medek, Aletta
+                  Leipold, Jörg Ritter, and Paul Molitor. LAKomp is a web-based tool, built using
+                  the programming language Ruby on Rails<sup class="footnote-ref" id="fnref-ftn3"><a href="#fn-ftn3" role="doc-noteref">3</a></sup>. It was developed within the interdisciplinary project
+                     <em>SaDA</em> (Semiautomatische Differenzanalyse von komplexen
+                  Textvarianten/ Semiautomatic Difference Analysis of Complex Textual Variants)<sup class="footnote-ref" id="fnref-ftn4"><a href="#fn-ftn4" role="doc-noteref">4</a></sup> in order to allow corpus building and comparison of
+                  textual variants within a user-friendly interface. After the end of the project,
+                  the team ensures maintenance and support for the tool.</p>
+<p id="p6">LAKomp was originally developed and is currently used for preparing
+                  the <em>Pfalzpaint</em> edition, to be published in hybrid form, both
+                  digitally and as a printed book, in 2023. The aim of this edition is to present
+                  the textual variants of the <em>Wundarznei</em> by Heinrich von Pfalzpaint
+                  (ca. 1400-1464, cf. <a href="#leipold2014" class="crossref">Leipold et al.
+                     2014</a>) and to provide a highly structured and annotated corpus useful to
+                  researchers with various interests (<a href="#leipold2015" class="crossref">Leipold et al. 2015</a>, 171). During the annotation process for the
+                  <em>Pfalzpaint</em> edition, LAKomp was used for another project running at the
+                  same time, namely the annotation of the Referenzkorpus Frühneuhochdeutsch<sup class="footnote-ref" id="fnref-ftn5"><a href="#fn-ftn5" role="doc-noteref">5</a></sup>.
+                  The project group in Halle used LAKomp as an alternative to the annotation tool
+                  CorA (<a href="#bollmanndipper2014" class="crossref">Bollmann et al.
+                     2014</a>), which was used by the other project groups (see section “<a href="#div2.6" class="crossref">User
+                  interface</a>” for a short comparison of both tools). For the Halle group, the main
+                  reason for using LAKomp was that the user interface ensures a faster annotation
+                  process.</p>
+<h3 id="div2.2">User profile and access</h3>
+<p id="p7">LAKomp was designed for humanities scholars, especially linguists, to
+                  create a corpus consisting of different textual variants with a high degree of
+                  spelling variation in order to analyze their relationship. It was designed for the
+                  specific tasks of scholarly editing ENHG texts presenting textual variants, but is
+                  as useful for the lemmatization and morphological annotation of other corpora. It
+                  is possible to ask for modifications of the tool in order to analyze texts in a
+                  language other than ENHG (personal correspondence with Jörg Ritter, 13.12.2021).
+                  LAKomp can be used free of charge.</p>
+<p id="p8">Potential users have to contact the project group via the e-mail
+                  address specified on the website <a href="https://lakomp.uzi.uni-halle.de/" target="_blank" rel="noopener">https://lakomp.uzi.uni-halle.de/</a> and will receive their own URL for
+                  using the tool. LAKomp can be accessed with all common browser versions and does
+                  not rely on plugins. The tool was designed for large screens; thus, it does not
+                  fully work on mobile devices. </p>
+<p id="p9">All features in LAKomp can be used immediately without requiring long
+                  training periods. Working with the tool, it becomes apparent that it was designed
+                  for and with Humanities scholars. The intuitive design of the user interface makes
+                  it possible for any user with a linguistic background to start lemmatizing and
+                  annotating. The interface displays the features clearly and no specific
+                  programming knowledge is required to use the tool. </p>
+<p id="p10">LAKomp was designed to be used by single researchers or larger
+                  groups. Therefore, various users can work simultaneously on one project. LAKomp
+                  has an integrated user administration board in which user roles and rights can be
+                  managed. Not every user has all editing rights. The administrator assigns roles
+                  and has unrestricted rights, while annotators can only annotate the documents.
+                  This is particularly useful for working on projects with several employees and
+                  student assistants.</p>
+<h3 id="div2.3">Corpus creation</h3>
+<p id="p11">The workflow for corpus creation and subsequent text comparison
+                  consists of three steps. First, texts have to be transcribed within the
+                  web-interface. During the annotation process, the texts are pre-processed, i.e.,
+                  enriched with modern punctuation. This makes subsequent automatic data processing
+                  possible. Secondly, the texts are lemmatized and annotated with PoS and
+                  morphological information. The annotation process is referred to as
+                  semi-automatic, because both lemmatization (normalization), PoS and morphological
+                  annotations are done manually but are greatly sped up by automatically generated
+                  suggestions. In a third step, textual variants can be compared with each other. In
+                  the interface, at first similar text passages are identified and contrasted; in
+                  the detailed comparison, these passages can be presented synoptically.</p>
+<p id="p12">Within the tool, lemmatization is referred to as normalization.
+                  Normalizing the spelling leads to good results in the automatic text comparison
+                  and is the first step before annotating morphological information. For the
+                  lemmatization, there are preset lexica, namely the Brothers Grimm German
+                  Dictionary<sup class="footnote-ref" id="fnref-ftn6"><a href="#fn-ftn6" role="doc-noteref">6</a></sup> and the dictionary of the Early New High German reference
+                  corpus.<sup class="footnote-ref" id="fnref-ftn7"><a href="#fn-ftn7" role="doc-noteref">7</a></sup> For each corpus, a project-internal dictionary is generated.
+                  This dictionary grows as the lemmatization of the texts proceeds. When generating
+                  automatic suggestions, these growing dictionaries are given priority. </p>
+<p id="p13">In the next step, the users annotate the text with PoS and
+                  morphological information. They can decide whether they want to use the
+                     <em>STTS</em>
+                  <sup class="footnote-ref" id="fnref-ftn8"><a href="#fn-ftn8" role="doc-noteref">8</a></sup> or <em>HiTS</em> tagset (<a href="#dipper2013" class="crossref">Dipper et al. 2013</a>). The Stuttgart-Tübingen-Tagset
+                  (STTS) is the standard tagset for Modern German corpora. Since this tagset can
+                  only be partially applied to older stages of German, the Historical Tagset (HiTS)
+                     (<a href="#dipper2013" class="crossref">Dipper et al. 2013</a>) was
+                  developed. The main difference between the two tagsets is the consistent double
+                  labeling of lemmas in HiTS. For each token, it distinguishes between the PoS-tag
+                  of the dictionary form and that of the specific occurrence. This makes it
+                  possible, for example, to tag an adjective that is used as an adverb. Hence,
+                  language change/grammaticalization in progress can be studied. Both tagsets allow
+                  for the definition of new tags for which values (morphological information) can be
+                  adapted in LAKomp.</p>
+<p id="p14">The tool provides the annotation layers "Lemma", "PoS-Tag Lemma",
+                  "PoS-Tag Record”, “case", "gender" and "number", as well as comments sections for
+                  both lemma and PoS-tag. In this respect, the tool is similar to CorA (<a href="#bollmanndipper2014" class="crossref">Bollmann et al. 2014</a>), which
+                  also does not give the flexibility of defining individual annotation layers
+                  depending on the specific annotation task (<a href="#bollmanndipper2014" class="crossref">Bollmann et al. 2014</a>, 87). This means that
+                  mistakes due to typos or spelling variation within the annotation layers are
+                  prevented, as no plain text annotation is possible, but that the user has to
+                  choose from a closed list of values for each layer. The user, however, can
+                  customize the list of tags and values.</p>
+<p id="p15">A central feature of LAKomp is that changes within the single steps
+                  of the workflow can be made without having to repeat the subsequent steps. If, for
+                  example, an error in the transcription is found while comparing the texts, it is
+                  not necessary to correct, lemmatize and annotate the entire text part again. Only
+                  the specific token with its annotations has to be corrected, while the adjacent
+                  tokens and annotations are preserved. This limits the amount of work to the
+                  absolute necessary.</p>
+<h3 id="div2.4">Performance</h3>
+<p id="p16">For historical language data, automatic tagging still faces
+                  challenges. The tagger either needs a normalization layer (<a href="#bollmanndipper2012" class="crossref">Bollman et al. 2012</a>; <a href="#bollmann2012" class="crossref">Bollmann 2012</a>) or manually annotated data on
+                  which the tagger learns (<a href="#koleva2017" class="crossref">Koleva et al. 2017</a>). In
+                  most cases, manual post-processing is necessary, as there is always a certain
+                  error rate. LAKomp offers an alternative: Instead of tagging automatically, the
+                  tool gives suggestions during the manual annotation process which are picked out
+                  by the annotator. Using a machine-learning algorithm, the tool learns during the
+                  manual annotation and gives suggestions based on the input. In this process, the
+                  corpus-specific dictionary has a higher priority than the preset dictionaries. The
+                  suggestions, therefore, become better the more tokens are annotated. In the case
+                  of the <em>Wundarznei</em> in which 81,86% (n= 186180) of all tokens are
+                  annotated, LAKomp provides the correct suggestion for PoS and morphological
+                  information as a first or second option in 80% of the cases (personal
+                  correspondence with Jörg Ritter, 13.12.2021). This semi-automatic process makes
+                  the manual annotation faster compared to other tools that use a tabular interface
+                  without suggestions.</p>
+<h3 id="div2.5">Text comparison</h3>
+<p id="p17">For scholarly editing and other text comparison tasks, LAKomp offers
+                  an alignment view and <em>Partiturtext</em> (see below). The text is first off
+                  partitioned. Then the tool compares selected witnesses and presents similar
+                  passages. The user can decide whether the comparison should be on paragraph,
+                  sentence (default), phrase or word level and can also edit the automatically
+                  generated alignment. </p>
+<p id="p18">The text comparison tool works based on the lemmatization and
+                  annotation in the previous step. The word forms of the individual manuscripts are
+                  compared to an automatically generated normalized text. This automatically
+                  generated text functions as the basis of comparison. An in-depth comparison of
+                  textual variants thus becomes possible. The tool automatically displays diverging
+                  positions of paragraphs, sentences and words.</p>
+<p id="p19">Differences and similarities between the textual variants are
+                  displayed vertically in an alignment table. LAKomp automatically generates the
+                     <em>Partiturtext</em> (a horizontal alignment table plus a critical
+                  apparatus) based on pre-processing, lemmatization, and annotation.</p>
+<p id="p20">
+                  <figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="Partiturtext on lemma level." loading="lazy"><figcaption>Fig. 1: Partiturtext on lemma level.</figcaption></figure>
+                  <figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="Partiturtext on character level." loading="lazy"><figcaption>Fig. 2: Partiturtext on character level.</figcaption></figure>LAKomp supports two levels of comparison: on a lexical level (<a href="#img1" class="crossref">fig. 1</a>), lexical and structural
+                  differences between textual variants are highlighted. LAKomp also supports text
+                  comparison on the level of characters (<a href="#img2" class="crossref">fig.
+                     2</a>). All graphematic deviations are then displayed.</p>
+<h3 id="div2.6">User interface</h3>
+<p id="p21">Lemmatization and annotation are designed to be fast and simple.
+                  Compared to other annotation tools such as CorA, the interface is not tabular and
+                  words are displayed in a reading version (without transcription notation), which
+                  makes it easier to read the text that is being annotated. It is also possible to
+                  show the text in transcription notation. Without having to take their hands off
+                  the keyboard, the users can select a word and open the dialog window in which
+                  suggestions for the annotation are presented. The user can accept or correct the
+                  annotation with the keyboard: A time-consuming back-and-forth between keyboard and
+                  mouse is not necessary. In contrast to CorA, the input fields for lemma, PoS-tag
+                  and morphological information have an auto-completion feature that suggests
+                  entries with every character entered. In most cases, a word form can be annotated
+                  with very few keystrokes.<sup class="footnote-ref" id="fnref-ftn9"><a href="#fn-ftn9" role="doc-noteref">9</a></sup>
+               </p>
+<h3 id="div2.7">Input and output</h3>
+<p id="p22">No import functionality is available: the text has to be transcribed
+                  directly or copy-pasted (in plain text) into the web interface. No bridge with an
+                  OCR software is provided.</p>
+<p id="p23">The input is checked for the correct transcription standard
+                  established in the reference corpus project Early New High German.<sup class="footnote-ref" id="fnref-ftn10"><a href="#fn-ftn10" role="doc-noteref">10</a></sup> This feature can be changed if the tool is used for other
+                  languages. The transcription standard allows details of the manuscript to be
+                  recorded, such as headings, marginal notes or unreadable text. The web interface
+                  offers a print view displaying all metadata and annotations. The text can be
+                  presented in a reading version as well as in transcription mode. The lemmatized
+                  and annotated texts can be exported as TEI-XML. Furthermore, an export as CorA-XML
+                     (<a href="#bollmanndipper2014" class="crossref">Bollmann et al. 2014</a>)
+                  is offered.</p>
+<p id="p24">Corpora created with LAKomp can be imported into the ANNIS corpus
+                  tool. ANNIS is a web-based software for searching and visualizing linguistic
+                  corpora, which is part of the corpus-tools.org toolchain (<a href="#zeldes2009" class="crossref">Zeldes et al. 2009</a>). Within the tool, it is possible
+                  to search through all annotation layers, single tokens and adjacent tokens.</p>
+<h3 id="div2.8">Documentation and support</h3>
+<p id="p25">Only a project-internal documentation is available. It would be
+                  desirable to have a support forum or FAQ on the website. Nonetheless, quick and
+                  reliable active support is provided by the Institute for Computer Science at the
+                  MLU Halle-Wittenberg.</p>
+    </section>
+    <section id="div3">
+      <h2>LAKomp in use – annotation and comparison of ENHG legal sources</h2>
+      <p id="p26">In the following section, we want to describe how LAKomp was used in the
+               project <em>Digitaler diachroner Textvergleich zu Rechtsquellen der Frühen
+                  Neuzeit</em> (Digital Diachronic Text Comparison of Early Modern Legal Sources)
+               (<a href="#aehnlich2021" class="crossref">Aehnlich 2021</a>). The project aimed at comparing
+               passages from four different ENHG legal sources (<em>Constitutio Criminalis
+                  Bambergensis, Constitutio Criminalis Carolina</em>, the <em>Klagspiegel</em>
+               of Conrad Heyden and the <em>Laienspiegel</em> of Ulrich Tengler).<sup class="footnote-ref" id="fnref-ftn11"><a href="#fn-ftn11" role="doc-noteref">11</a></sup>
+               All the texts were used during and after the reception of Roman law in Germany in the
+               15th and 16th century. Digital text comparison with LAKomp made it possible to study
+               the representations of homicide in different versions of the four legal sources
+               mentioned above. Lemmatizing and annotating the passages in LAKomp allowed a
+               diachronic perspective on linguistic features of the texts. The comparison and
+               description of their development over a total of almost 200 years made it possible to
+               show changes in spelling, punctuation, and specialized vocabulary. </p>
+<p id="p27">The projects in LAKomp are subdivided into texts, parts of text and
+               documents. The whole text, i.e. one edition of the <em>Laienspiegel</em>, would
+               be referred to as text. Chapters are parts of texts and subdivided into documents.
+               The transcription and annotation are done in documents. This structure avoids large
+               amounts of text to be processed at the same time and allows to capture the structure
+               of the original manuscripts.</p>
+<p id="p28">
+               <figure id="img3" class="review-figure"><img src="pictures/picture-3.png" alt="Transcription according to the conventions of the reference
+                     corpora (Klagspiegel 1480)." loading="lazy"><figcaption>Fig. 3: Transcription according to the conventions of the reference
+                     corpora (Klagspiegel 1480).</figcaption></figure>First of all, the print editions of the legal sources had to be transcribed
+               and pre-processed (<a href="#img3" class="crossref">fig. 3</a>). All the sources
+               are available in digital copies. Despite recent progress in OCR-technology, automatic
+               text recognition is still error-prone for ENHG texts and manual post-processing would
+               have been too time-consuming given the size of the individual documents. Therefore,
+               the passages were transcribed manually, following the transcription conventions of
+               Middle High German grammar and the reference corpora Middle High German and Early New
+               High German.<sup class="footnote-ref" id="fnref-ftn12"><a href="#fn-ftn12" role="doc-noteref">12</a></sup>
+            </p>
+<p id="p29">
+               <figure id="img4" class="review-figure"><img src="pictures/picture-4.png" alt="Transcription mode in LAKomp (Klagspiegel 1480)." loading="lazy"><figcaption>Fig. 4: Transcription mode in LAKomp (Klagspiegel 1480).</figcaption></figure>
+               <figure id="img5" class="review-figure"><img src="pictures/picture-5.png" alt="Annotation dialog in LAKomp." loading="lazy"><figcaption>Fig. 5: Annotation dialog in LAKomp.</figcaption></figure>After transcription and post-processing, the text is displayed in LAKomp as
+               shown in <a href="#img4" class="crossref">fig. 4</a>. At this stage, the texts
+               are lemmatized and annotated by clicking on the respective token. As noted in section
+               2.3.1, lemmatization assigns a dictionary form (lemma) to a spelling variant
+               occurring in the text. In this project, lemmatization was based on the integrated
+               Grimm's dictionary (DWB),<sup class="footnote-ref" id="fnref-ftn13"><a href="#fn-ftn13" role="doc-noteref">13</a></sup> which serves as a reference dictionary. <sup class="footnote-ref" id="fnref-ftn14"><a href="#fn-ftn14" role="doc-noteref">14</a></sup>
+               <a href="#img5" class="crossref">Fig. 5</a> shows the dialog window for the
+               lemmatization and annotation in LAKomp. In this window, suggestions for lemma and
+               morphological information are offered. The suggestions can be accepted with one
+               click. Even if there is no appropriate suggestion, the powerful auto-completion makes
+               writing into the respective fields much faster. </p>
+<p id="p30">Based on the annotation, the text comparison allowed us to investigate
+               graphematic and lexical changes in the legal sources over the centuries.</p>
+    </section>
+    <section id="div4">
+      <h2>Conclusion</h2>
+      <p id="p31">LAKomp is an intuitive tool that facilitates the work of humanities
+               scholars and enables them to lemmatize, annotate, and compare texts of
+               non-standardized languages without specific programming skills. By means of an
+               alignment view and a generated <em>Partiturtext</em>, a comparison of different
+               textual variants is possible. LAKomp is a web-based tool, in which several users can
+               annotate simultaneously. The integrated machine-learning algorithm makes suggestions
+               for lemmatization based on previous inputs, which makes LAKomp a fast and effective
+               tool for working with historical or non-standardized texts. This software fills a gap
+               in the existing tool landscape, as it does not automate annotation but makes manual
+               annotation faster using the semi-automatic tagging feature and a simple
+               interface.</p>
+<p id="p32">It would be helpful if a comprehensive handbook or tutorial was
+               available. Currently, researchers working with the tool receive reliable and friendly
+               support from the project staff. Overall, LAKomp can be highly recommended for
+               annotating and comparing texts without standardized orthography.</p>
+    </section>
+
+    <section id="bibliography" class="review-bibliography">
+      <h2>Bibliography</h2>
+      <ol class="bib-list">
+        <li><span id="aehnlichkoesser2016">Aehnlich, Barbara, and Sylwia Kösser. 2016. ‘Das
+                  Tool LAKomp und seine Anwendung auf Texte nichtstandardisierter Sprachstufen’.
+                  Poster DHd 2016 Leipzig. <a href="https://www.dhd2016.de/abstracts/posters-001.html" target="_blank" rel="noopener">https://www.dhd2016.de/abstracts/posters-001.html</a>, <a href="https://dhd2016.de/?q=node/135" target="_blank" rel="noopener">https://dhd2016.de/?q=node/135</a>. </span></li>
+        <li><span id="aehnlich2020">Aehnlich, Barbara. 2020. <em>Rechtspraktikerliteratur und
+                  neuhochdeutsche Schriftsprache. Conrad Heydens Klagspiegel und Ulrich Tenglers
+                  Laienspiegel</em>. Berlin: Peter Lang.</span></li>
+        <li><span id="aehnlich2021">Aehnlich, Barbara. 2021. ‘Standardisierung in
+                  frühneuhochdeutschen Rechtsquellen’. In <em>Historische Schrift- und
+                  Schriftlichkeitsforschung</em> (= Jahrbuch für Germanistische Sprachgeschichte 12),
+                  edited by Paul Rössler, Peter Besl and Anna Saller, Berlin/Boston: De Gruyter,
+                  227–250.</span></li>
+        <li><span id="bennett2010">Bennett, Paul, Martin Durrell, Silke Scheible, and Richard
+                  J. Whitt. 2010. ‘Annotating a historical corpus of German: A case study’. In
+                  <em>Proceedings of the LREC 2010 workshop on Language Resources and Language
+                  Technology Standards</em>, 64–68. </span></li>
+        <li><span id="bollmann2012">Bollmann, Marcel. 2012. ‘(Semi-)automatic normalization
+                  of historical texts using distance measures and the Norma tool’. In <em>Proceedings of
+                  the Second Workshop on Annotation of Corpora for Research in the Humanities</em>
+                  (ACRH-2), Lisbon, Portugal.</span></li>
+        <li><span id="bollmanndipper2014">Bollmann, Marcel, Stefanie Dipper, Julia Krasselt,
+                  and Florian Petran. 2014. ‘Manual and semi-automatic normalization of historical
+                  spelling – case studies from Early New High German’. In <em>Proceedings of the First
+                  International Workshop on Language Technology for Historical Text(s) (LThist2012)</em>, Vienna, Austria.</span></li>
+        <li><span id="dipper2013">Dipper, Stefanie, Karin Donhauser, Thomas Klein, Sonja
+                  Linde, Stefan Müller, and Klaus-Peter Wegera. 2013. ‘HiTS: ein Tagset für
+                  historische Sprachstufen des Deutschen’. In <em>Journal for Language Technology an
+                  Computational Linguistics</em> (JLCL) 28 (1), 85–137.</span></li>
+        <li><span id="koleva2017">Koleva, Mariya, Melissa Farasyn, Bart Desmet, Anne
+                  Breitbarth, and Veronique Hoste. 2017. ‘An automatic part-of-speech tagger for
+                  Middle Low German’. In <em>International Journal of Corpus Linguistics</em>. 22(1),
+                  108–141. </span></li>
+        <li><span id="leipold2015">Leipold, Aletta, Sylwia Kösser, André Gießler, and
+                  Hans-Joachim Solms. 2015. ‘Zwischen Online-Korpus und Buch. Die Hybridedition der
+                  Wundarznei des Heinrich von Pfalzpaint’. In <em>Vom Nutzen der Editionen. Zur
+                  Bedeutung moderne Editorik für die Erforschung von Literatur- und Kulturgeschichte</em>
+                  (= Editio / Beihefte, 39), edited by Thomas Bein, Berlin: de Gruyter,
+                  167–184.</span></li>
+        <li><span id="leipold2014">Leipold, Aletta, Jörg Ritter, and Hans-Joachim Solms.
+                  2014. ‘Neue Wege zu Textzeugenvergleich und Edition am Beispiel der Wundarznei des
+                  Heinrich von Pfalzpaint’. In <em>Jahrbuch für Germanistische Sprachgeschichte 5</em> (1),
+                  edited by Hans Ulrich Schmid and Arne Ziegler, Berlin/Boston: De Gruyter,
+                  335–358.</span></li>
+        <li><span id="zeldes2009">Zeldes, Amir, Julia Ritz, Anke Lüdeling, and Christian
+                  Chiarcos. 2009. ‘ANNIS: A Search Tool for Multi-Layer Annotated Corpora’. In
+                  <em>Proceedings of Corpus Linguistics 2009</em>. Liverpool, UK.</span></li>
+      </ol>
+    </section>
+
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        <li id="fn-ftn1" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20230221131911/https://lakomp.uzi.uni-halle.de/" target="_blank" rel="noopener">https://web.archive.org/web/20230221131911/https://lakomp.uzi.uni-halle.de/</a>.
+          <a href="#fnref-ftn1" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn2" class="footnote-item">
+          PD Dr. Barbara Aehnlich works as a
+                  lecturer at the University Bremen and holds a Habilitation in German linguistics.
+                  Her research interests are language change and linguistic variation, with a
+                  particular focus on the legal language of the early modern period. Barbara
+                  Aehnlich is coordinator of the Digital Humanities Network DHnet Jena and has
+                  recently developed teaching concepts to strengthen data literacy for students in
+                  all faculties of the University Jena within a project for teaching data
+                  literacy.<br>Dr. Elisabeth Witzenhausen is a post-doc at Ruhr-University Bochum
+                  working on historical syntax, language change and dialectology. In her research,
+                  she works with various corpora and annotation tools for non-standardized
+                  language.
+          <a href="#fnref-ftn2" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn3" class="footnote-item">
+          The source code is not
+                     freely available.
+          <a href="#fnref-ftn3" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn4" class="footnote-item">
+          
+                     <a href="http://www.informatik.uni-halle.de/ti/forschung/ehumanities/sada/" target="_blank" rel="noopener">http://www.informatik.uni-halle.de/ti/forschung/ehumanities/sada/</a>;
+                     Cf. <a href="#leipold2015" class="crossref">Leipold et al. 2015</a>. SaDA was a BMBF-funded
+                     project by linguists (German, Romance) and computer scientists, led by Thomas
+                     Bremer, Paul Molitor, Jörg Ritter, and Hans-Joachim Solms (1 September 2012 to
+                     31 August 2015).
+          <a href="#fnref-ftn4" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn5" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20230221132147/https://www.ruhr-uni-bochum.de/wegera/ref/index.htm" target="_blank" rel="noopener">https://web.archive.org/web/20230221132147/https://www.ruhr-uni-bochum.de/wegera/ref/index.htm</a>.
+          <a href="#fnref-ftn5" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn6" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20230221132336/https://woerterbuchnetz.de/?sigle=DWB" target="_blank" rel="noopener">
+                        https://web.archive.org/web/20230221132336/https://woerterbuchnetz.de/?sigle=DWB
+                     </a>.
+          <a href="#fnref-ftn6" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn7" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20230221132147/https://www.ruhr-uni-bochum.de/wegera/ref/index.htm" target="_blank" rel="noopener">
+                        https://web.archive.org/web/20230221132147/https://www.ruhr-uni-bochum.de/wegera/ref/index.htm
+                     </a>.
+          <a href="#fnref-ftn7" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn8" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20221222074849/http://www.sfs.uni-tuebingen.de/resources/stts-1999.pdf" target="_blank" rel="noopener">
+                        https://web.archive.org/web/20221222074849/http://www.sfs.uni-tuebingen.de/resources/stts-1999.pdf
+                     </a>.
+          <a href="#fnref-ftn8" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn9" class="footnote-item">
+          The <em>Enter</em> key on a word
+                     form opens the dialog, with the arrow keys, the selection of an entry from the
+                     drop-down menu is possible, the <em>Tab</em> key switches to the input
+                     fields to change or re-enter data, pressing <em>Enter</em> with an open
+                     dialog window saves the annotation.
+          <a href="#fnref-ftn9" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn10" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20230221132147/https://www.ruhr-uni-bochum.de/wegera/ref/index.htm" target="_blank" rel="noopener">
+                        https://web.archive.org/web/20230221132147/https://www.ruhr-uni-bochum.de/wegera/ref/index.htm
+                     </a>.
+          <a href="#fnref-ftn10" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn11" class="footnote-item">
+          LAKomp was also used in another project comparing passages of the
+                  <em>Klagspiegel</em> and the <em>Laienspiegel</em>, (cf. <a href="#aehnlich2020" class="crossref">Aehnlich 2020</a>, 319–369).
+          <a href="#fnref-ftn11" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn12" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20230221132147/https://www.ruhr-uni-bochum.de/wegera/ref/index.htm" target="_blank" rel="noopener">
+                     https://web.archive.org/web/20230221132147/https://www.ruhr-uni-bochum.de/wegera/ref/index.htm
+                  </a>.
+          <a href="#fnref-ftn12" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn13" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20230221132336/https://woerterbuchnetz.de/?sigle=DWB" target="_blank" rel="noopener">
+                     https://web.archive.org/web/20230221132336/https://woerterbuchnetz.de/?sigle=DWB
+                  </a>.
+          <a href="#fnref-ftn13" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn14" class="footnote-item">
+          The
+                  reference corpus Frühneuhochdeutsch and the Pfalzpaint-Edition are also lemmatized
+                  according to the DWB. (cf. <a href="#leipold2015" class="crossref">Leipold et
+                     al. 2015</a>, 174).
+          <a href="#fnref-ftn14" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+      </ol>
+    </section>
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{lakomp,
+  author    = {Aehnlich, Barbara and Witzenhausen, Elisabeth},
+  title     = {LAKomp. Lemmatize, annotate and compare texts in non-standardized
+               languages},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {15},
+  year      = {2023},
+  doi       = {10.18716/ride.a.15.7},
+  url       = {https://doi.org/10.18716/ride.a.15.7},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Aehnlich, Barbara
+AU  - Witzenhausen, Elisabeth
+TI  - LAKomp. Lemmatize, annotate and compare texts in non-standardized
+               languages
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 15
+PY  - 2023
+DA  - 2023/09
+DO  - 10.18716/ride.a.15.7
+UR  - https://doi.org/10.18716/ride.a.15.7
+PB  - Institut für Dokumentologie und Editorik e.V.
+LA  - en
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Aehnlich, B., &amp; Witzenhausen, E. (2023). LAKomp. Lemmatize, annotate and compare texts in non-standardized
+               languages. RIDE – A review journal for digital editions and resources, (15). https://doi.org/10.18716/ride.a.15.7</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Aehnlich, Barbara, and Elisabeth Witzenhausen. &#34;LAKomp. Lemmatize, annotate and compare texts in non-standardized
+               languages.&#34; RIDE – A review journal for digital editions and resources, no. 15, 2023. https://doi.org/10.18716/ride.a.15.7.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Aehnlich, Barbara, and Elisabeth Witzenhausen. &#34;LAKomp. Lemmatize, annotate and compare texts in non-standardized
+               languages.&#34; RIDE – A review journal for digital editions and resources, no. 15 (2023). https://doi.org/10.18716/ride.a.15.7.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/lakomp/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

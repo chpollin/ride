@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omeka Classic. Un environnement de recherche pour les éditions scientifiques
+                    numériques &mdash; RIDE</title>
+  <meta name="description" content="
+            This review focuses on Omeka, an open-source Content Management
+                    System (CMS), which has been specifically designed for the management and the
+                   ...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Omeka Classic. Un environnement de recherche pour les éditions scientifiques
+                    numériques">
+  <meta property="og:description" content="
+            This review focuses on Omeka, an open-source Content Management
+                    System (CMS), which has been specifically designed for the management and the
+                   ...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/omeka/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/omeka/">
+<meta name="DC.title" content="Omeka Classic. Un environnement de recherche pour les éditions scientifiques
+                    numériques">
+<meta name="DC.creator" content="Elina Leblanc">
+<meta name="DC.date" content="2020-01">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.11.3"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="fr">
+
+<meta name="citation_title" content="Omeka Classic. Un environnement de recherche pour les éditions scientifiques
+                    numériques">
+<meta name="citation_author" content="Elina Leblanc">
+<meta name="citation_doi" content="10.18716/ride.a.11.3"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2020-01">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/omeka/omeka.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Omeka Classic. Un environnement de recherche pour les \u00e9ditions scientifiques\n                    num\u00e9riques",
+  "author": [{"@type": "Person", "name": "Elina Leblanc", "url": "http://viaf.org/viaf/96146574005338102601"}],
+  "datePublished": "2020-01",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.11.3"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e. V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">Introduction</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">Un CMS, plusieurs plugins, plusieurs perceptions du processus d’ édition
+                    numerique</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">Omeka et les plugins TEI: utilisabilité, durabilité et
+                    maintenance</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">Omeka, plugins TEI et utilisateurs</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div5" class="toc-link">Conclusions</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#bibliography" class="toc-link">Bibliography</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#footnotes" class="toc-link">Notes</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>Januar 2020</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.11.3" rel="external">10.18716/ride.a.11.3</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-11/">
+        <span class="badge badge-tools">TE</span>
+        Issue 11
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>FR</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/omeka/omeka.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/omeka/omeka-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="fr">
+    <header class="review-header">
+      <a href="/issues/issue-11/" class="review-issue-link">
+        <span class="badge badge-tools">TE</span>
+        Issue 11: Tools and Environments
+      </a>
+
+      <h1>Omeka Classic. Un environnement de recherche pour les éditions scientifiques
+                    numériques</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Elina Leblanc&nbsp;<a href="http://viaf.org/viaf/96146574005338102601" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>        </span>
+      </div>
+
+      <div class="review-affiliation">Université Grenoble Alpes, Grenoble, France</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="https://omeka.org/classic" rel="external">Omeka Classic</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">Introduction</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">Un CMS, plusieurs plugins, plusieurs perceptions du processus d’ édition
+                    numerique</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">Omeka et les plugins TEI: utilisabilité, durabilité et
+                    maintenance</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">Omeka, plugins TEI et utilisateurs</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div5" class="toc-link">Conclusions</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#bibliography" class="toc-link">Bibliography</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#footnotes" class="toc-link">Notes</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>Januar 2020</span>
+<span><a href="https://doi.org/10.18716/ride.a.11.3" rel="external">DOI</a></span><a href="/reviews/omeka/omeka.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/omeka/omeka-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>This review focuses on <em>Omeka</em>, an open-source Content Management
+                    System (CMS), which has been specifically designed for the management and the
+                    display of digitized historical content. Originally, this CMS was not intended
+                    for the creation and display of scholarly digital editions. However, the active
+                    community of <em>Omeka</em>’s users has developed several plugins that can
+                    manage and display digital scholarly editions following the XML-TEI standard.
+                    This review will then present several of these plugins, and the different ways
+                    we can use them to include <em>Omeka</em> in a digital editing process. </p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>Introduction</h2>
+      <p id="p1">Le CMS (Content Management System) open-source Omeka<sup class="footnote-ref" id="fnref-ftn1"><a href="#fn-ftn1" role="doc-noteref">1</a></sup> est né en 2008, à l’initiative du
+                        <em>Roy Rosenzweig Center for History and New Media</em>(RRCHNM)<sup class="footnote-ref" id="fnref-ftn2"><a href="#fn-ftn2" role="doc-noteref">2</a></sup> de
+                    l’Université George Mason en Virginie<sup class="footnote-ref" id="fnref-ftn3"><a href="#fn-ftn3" role="doc-noteref">3</a></sup>
+                    Entièrement tourné vers les institutions patrimoniales (bibliothèques, archives,
+                    musées, etc.), qui représentent son public privilégié, il a été pensé pour
+                    répondre aux besoins de celles-ci en termes de gestion, de valorisation et de
+                    diffusion d’importantes collections numérisées. Face à la multiplication des
+                    sites <em>Omeka</em> au sein d’une même institution et face aux besoins
+                    grandissants de la communauté, un nouveau logiciel, baptisé <em>Omeka
+                        S</em>
+               <sup class="footnote-ref" id="fnref-ftn4"><a href="#fn-ftn4" role="doc-noteref">4</a></sup>, apparaît en 2017. Ce nouveau CMS ne
+                    vient pas remplacer l’ancien <em>Omeka</em>, qui s’appelle désormais
+                        <em>Omeka Classic</em>, mais le complète, en permettant notamment de
+                    gérer plusieurs sites à partir d’une seule instance du logiciel ou d’incorporer
+                    des vocabulaires issus du Web sémantique. Les deux outils partagent ainsi le
+                    même nom, mais reposent sur des logiques différentes. Cette revue se focalise
+                    toutefois uniquement sur <em>Omeka Classic</em>, et non sur <em>Omeka
+                        S</em>, dans la mesure où ce dernier n’a pas encore fait l’objet de
+                    développement pour la diffusion d’éditions numériques scientifiques,
+                    contrairement à <em>Omeka Classic</em>
+               <sup class="footnote-ref" id="fnref-ftn5"><a href="#fn-ftn5" role="doc-noteref">5</a></sup> comme nous le verrons
+                    ci-après.</p>
+<p id="p2">Pour comprendre le fonctionnement d’<em>Omeka</em> et son rapport
+                    à l’édition numérique, compris ici au sens anglais d’<em>editing</em>, il
+                    convient de faire une distinction entre les éditions numérisées et les éditions
+                    numériques, pour reprendre la terminologie de Patrick Sahle (2008; 2016). Une
+                    édition numérisée (<em>digitized edition</em>) est la numérisation d’une
+                    édition imprimée et constitue en cela une remédiation d’un contenu analogique.
+                    Une édition numérique (<em>digital edition</em>), quant à elle, est une
+                    représentation critique d’une source physique (manuscrits, imprimés, etc.),
+                    suite à un processus d’édition qui va au-delà du processus de numérisation
+                    (Sahle 2008; Pierazzo 2015, 22; Sahle 2016, 26).</p>
+<p id="p3">Si nous appliquons cette distinction à <em>Omeka</em>, nous
+                    constatons que cet outil n’a pas été pensé, à l’origine, pour la réalisation
+                    d’éditions numériques, mais pour la diffusion et la valorisation d’éditions
+                    imprimées numérisées, en vue de créer des bibliothèques ou des archives
+                    numériques. Lors de son installation, <em>Omeka</em> propose ainsi un noyau
+                    brut de fonctionnalités, qui se limite principalement à l’ajout de contenus
+                    numérisés et de métadonnées, à la recherche dans ces mêmes contenus ou encore à
+                    la création d’expositions virtuelles.</p>
+<p id="p4">Cependant, face aux besoins croissants de la communauté et
+                    l’explosion du nombre de projets <em>Omeka</em> de plus en plus variés au
+                    cours de la dernière décennie, ce CMS a été repensé pour pouvoir être intégré
+                    dans un processus d’édition numérique, notamment en se concentrant sur certaines
+                    étapes de ce processus, telles que la transcription, l’encodage ou la
+                    publication. Ces différentes étapes prennent la forme d’extensions (ou plugins),
+                    maintenues par l’équipe d’<em>Omeka</em> (plugins officiels) ou par sa
+                    communauté (plugins non-officiels)<sup class="footnote-ref" id="fnref-ftn6"><a href="#fn-ftn6" role="doc-noteref">6</a></sup>
+                    et qui viennent enrichir le noyau principal de ce CMS.</p>
+<p id="p5">Dans cette revue, nous proposons donc une présentation de la manière
+                    dont ces différentes activités peuvent être réalisées avec <em>Omeka</em>,
+                    afin de mettre en avant plusieurs solutions pour intégrer ce CMS dans un
+                    processus d’édition numérique.</p>
+    </section>
+    <section id="div2">
+      <h2>Un CMS, plusieurs plugins, plusieurs perceptions du processus d’ édition
+                    numerique</h2>
+      <h3 id="div2.1">Omeka ou la tradition des CMS patrimoniaux</h3>
+<p id="p6">
+                  <em>Omeka</em> appartient également au domaine des CMS patrimoniaux,
+                        dans la mesure où il a été conçu pour la diffusion de ressources numériques
+                        patrimoniales de nature très différente (texte, image, documents
+                        audiovisuels), qu’il organise en collections hiérarchisées à l’image des
+                        fonds d’archives. <em>Omek</em>a propose un juste équilibre entre une
+                        gestion archivistique des collections et leur valorisation et diffusion
+                        auprès d’un large public, à l’aide d’une double interface (interface
+                        privée/interface publique) qui permet de publier en temps réel des contenus.
+                        Cette organisation et la facilité de son installation et de son utilisation
+                        valent à <em>Omeka</em> une grande popularité auprès des institutions
+                        patrimoniales qui souhaitent mettre en ligne leurs collections
+                        numérisées.</p>
+<p id="p7">La diversité des institutions utilisant <em>Omeka</em> a fait
+                        émerger des besoins nouveaux, pour lesquels <em>Omeka</em> n’avait pas
+                        été pensé au départ, à l’exemple de la publication d’éditions numériques, et
+                        non plus uniquement d’éditions numérisées. La communauté des utilisateurs
+                            d’<em>Omeka</em>, notamment celle issue des instituts et des
+                        laboratoires de recherche, s’est récemment emparée de cette question et a
+                        proposé plusieurs solutions, sous la forme de plugins, permettant d’intégrer
+                            <em>Omeka</em> à certaines étapes du processus d’éditions
+                        numériques.</p>
+<p id="p8">Parmi ces étapes, la plus populaire et la plus répandue au sein
+                        de la communauté <em>Omeka</em> est la transcription, représentée par le
+                        plugin <em>Scripto</em>.<sup class="footnote-ref" id="fnref-ftn7"><a href="#fn-ftn7" role="doc-noteref">7</a></sup>
+                        Cet outil, également disponible sur d’autres CMS<sup class="footnote-ref" id="fnref-ftn8"><a href="#fn-ftn8" role="doc-noteref">8</a></sup>,
+                        permet aux utilisateurs de transcrire de manière coopérative des éditions
+                        imprimées numérisées. <em>Scripto</em> s’inscrit ici dans la lignée des
+                        projets de transcription participative tels que <em>Transcribe
+                            Bentham</em>
+                  <sup class="footnote-ref" id="fnref-ftn9"><a href="#fn-ftn9" role="doc-noteref">9</a></sup>,
+                            <em>What’s on the Menu</em>
+                  <sup class="footnote-ref" id="fnref-ftn10"><a href="#fn-ftn10" role="doc-noteref">10</a></sup>
+                        ou encore <em>Europeana Transcribe </em>
+                  <sup class="footnote-ref" id="fnref-ftn11"><a href="#fn-ftn11" role="doc-noteref">11</a></sup>
+                        qui invitent leurs utilisateurs à transcrire leurs collections sur la base
+                        du volontariat.</p>
+<p id="p9">Au cours de la dernière décennie, plusieurs entreprises ont vu le
+                        jour pour faire d’<em>Omeka</em> un environnement adapté à l’encodage et
+                        la diffusion d’éditions numériques en XML-TEI (<em>Text Encoding
+                            Initiative</em>). Actuellement, il n’existe aucun plugin officiel ni
+                        aucun workflow unique pour encoder et afficher de telles éditions dans
+                            <em>Omeka</em>. Les solutions disponibles émanent de projets
+                        spécifiques. Chaque projet a recours à une solution différente et développe
+                        à cette fin des plugins qui lui sont propres, au point que nous pourrions
+                        dire qu’ils existent autant de plugins dédiés à la TEI que de projets. Aucun
+                        de ces plugins n’a fait l’objet d’un retrabiblent par les développeurs
+                            d’<em>Omeka</em> pour être intégré dans la liste officielle des
+                        plugins.</p>
+<p id="p10">Nous avons repéré cinq plugins permettant de gérer la TEI dans
+                            <em>Omeka</em>: <em>MLA TEI</em>, <em>TEI Annotations</em>,
+                            <em>TEI Display</em>, <em>TEI Editions et Transcript</em>.<sup class="footnote-ref" id="fnref-ftn12"><a href="#fn-ftn12" role="doc-noteref">12</a></sup>
+                        Parmi ces plugins, nous distinguons deux groupes: ceux qui permettent
+                        uniquement de publier des fichiers TEI et ceux qui permettent de transcrire,
+                        d’encoder et de publier les éditions produites. Dans cette revue, nous ne
+                        présenterons pas l’ensemble de ces plugins, mais uniquement ceux pour
+                        lesquels nous possédons des exemples d’applications concrètes dans des
+                        projets, à savoir <em>TEI Display</em>, <em>TEI Editions</em> et
+                            <em>Transcript</em>.</p>
+<p id="p11">Bien qu’<em>Omeka</em> soit un outil très populaire, nous
+                        sommes confrontés à une pénurie de publications scientifiques à son sujet,
+                        et d’autant plus en ce qui concerne son emploi pour la réalisation
+                        d’éditions numériques. Par conséquent, dans la suite de cette revue, nous
+                        nous sommes appuyés sur la documentation technique produite par les projets
+                        eux-mêmes pour comprendre leur utilisation d’<em>Omeka</em> dans le
+                        cadre d’un processus d’édition scientifique.</p>
+<h3 id="div2.2">Comment ça marche? Omeka et le processus d’éditions
+                        numériques</h3>
+<p id="p12">Les plugins développés pour <em>Omeka</em> doivent
+                        s’inscrire dans un circuit de données préexistant, qui repose sur le duo
+                        Collections/bibls. En effet, dans <em>Omeka</em>, chaque contenu
+                        correspond à un bibl et peut être classé dans une ou plusieurs collections.
+                        Ces bibls sont décrits avec un ensemble de métadonnées au format
+                            <em>Dublin Core</em>
+                  <sup class="footnote-ref" id="fnref-ftn13"><a href="#fn-ftn13" role="doc-noteref">13</a></sup>,
+                        importées via un fichier CSV ou moissonnées via le protocole OAI-PMH<sup class="footnote-ref" id="fnref-ftn14"><a href="#fn-ftn14" role="doc-noteref">14</a></sup>.
+                        Ces bibls peuvent être enrichis par divers médias, tels que des images
+                        numérisées ou des fichiers audiovisuels.</p>
+<p id="p13">Les différents plugins que nous allons présenter ont chacun
+                        adopté une solution différente pour insérer des éditions numériques dans ce
+                        circuit adapté aux éditions numérisées. Ils considèrent les éditions
+                        numériques soit comme des extensions d’un bibl préexistant
+                            (<em>Scripto</em>, <em>Transcript</em>, <em>TEI
+                        Display</em>), soit comme un bibl à part entière (<em>TEI
+                            Editions</em>). Nous avons catégorisé ces plugins en fonction des
+                        différentes étapes du processus d’édition numérique auxquelles ils se
+                        référent et permettant d’intégrer <em>Omeka</em> de plusieurs manières
+                        dans ce processus.</p>
+<h4 id="div2.2.1">Omeka comme plateforme de transcription</h4>
+<p id="p14">Le plugin <em>Scripto</em> permet de transformer
+                                <em>Omeka</em> en une plateforme de transcription participative.
+                            Développé par le RRCHNM<sup class="footnote-ref" id="fnref-ftn15"><a href="#fn-ftn15" role="doc-noteref">15</a></sup>
+                            et basé sur <em> MediaWiki</em>
+                     <sup class="footnote-ref" id="fnref-ftn16"><a href="#fn-ftn16" role="doc-noteref">16</a></sup>,
+                            cet outil <em>open-source</em> donne la possibilité aux
+                            utilisateurs, après s’être connectés, de transcrire les collections d’un
+                            projet, d’ouvrir des discussions avec d’autres utilisateurs, de
+                            consulter l’historique de leurs transcriptions et également de suivre
+                            l’évolution des transcriptions des contenus qui les intéressent. De leur
+                            côté, les responsables scientifiques du projet peuvent consulter et
+                            éditer les transcriptions, afin de s’assurer de la qualité des
+                            productions des utilisateurs, mais également les valider.</p>
+<p id="p15">
+                     <em>Scripto</em> a été utilisé dans le cadre de nombreux projets à
+                            l’exemple de <em>Transcrire</em>
+                     <sup class="footnote-ref" id="fnref-ftn17"><a href="#fn-ftn17" role="doc-noteref">17</a></sup>, un projet dédié à la transcription de carnets
+                            d’ethnologues ; <em>DIY History</em>
+                     <sup class="footnote-ref" id="fnref-ftn18"><a href="#fn-ftn18" role="doc-noteref">18</a></sup>,
+                            qui propose à la transcription de nombreuses collections de la
+                            bibliothèque numérique de l’Université de l’Iowa ; ou encore <em>The
+                                Civil War in Letters</em>
+                     <sup class="footnote-ref" id="fnref-ftn19"><a href="#fn-ftn19" role="doc-noteref">19</a></sup>,
+                            qui se concentre sur les lettres et manuscrits produits pendant la
+                            Guerre civile américaine. Les transcriptions produites par ces
+                            différents projets ont toutes pour objectif de faciliter l’accès aux
+                            contenus, que ce soit en termes de consultation, de recherche, de
+                            réutilisation et d’édition des données.</p>
+<p id="p16">
+                     <figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="Interface de transcription de Transcrire (http://web.archive.org/web/20191206141550/http://transcrire.huma-num.fr/scripto/transcribe/22/1896#transcription)." loading="lazy"><figcaption>Fig. 1: Interface de transcription de Transcrire (<a href="http://web.archive.org/web/20191206141550/http://transcrire.huma-num.fr/scripto/transcribe/22/1896#transcription" target="_blank" rel="noopener">http://web.archive.org/web/20191206141550/http://transcrire.huma-num.fr/scripto/transcribe/22/1896#transcription</a>).</figcaption></figure> Ces projets reposent sur le même fonctionnement: l’utilisateur
+                            crée un compte, sélectionne un contenu à transcrire et accède à une
+                            interface de transcription qui met en vis-à-vis la numérisation d’un
+                            contenu imprimé ou manuscrit et un champ de texte libre, où
+                            l’utilisateur reproduit le texte tel qu’il le voit sur la numérisation
+                                (<a href="#img1" class="crossref">Fig. 1</a> et <a href="#img2" class="crossref">2</a>). Contrairement à d’autres
+                            projets, tels que <em>Transcribe Bentham</em> ou <em>Europeana
+                                Transcribe</em>, qui demandent à l’utilisateur de formater le
+                            texte et de représenter certaines de ses particularités (soulignement,
+                            position sur la page, etc.), les projets de transcription appuyés sur
+                                <em>Omeka</em> n’offrent pas cette possibilité. L’activité de
+                            transcription est ici réduite à son minimum.</p>
+<p id="p17">
+                     <figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="Interface de transcription de DIY History (http://web.archive.org/web/20191206141817/http://diyhistory.lib.uiowa.edu/transcribe/5207/165771)." loading="lazy"><figcaption>Fig. 2: Interface de transcription de DIY History (<a href="http://web.archive.org/web/20191206141817/http://diyhistory.lib.uiowa.edu/transcribe/5207/165771" target="_blank" rel="noopener">http://web.archive.org/web/20191206141817/http://diyhistory.lib.uiowa.edu/transcribe/5207/165771</a>).</figcaption></figure> Bien que <em>Scripto</em> prévoit un système de validation
+                            par les responsables scientifiques d’un projet, depuis l’interface
+                            privée de l’outil, les projets de transcription participative
+                            actuellement existants sous <em>Omeka</em> ont opté pour une
+                            validation par les autres utilisateurs après une relecture.</p>
+<h4 id="div2.2.2">Omeka comme plateforme de publication d’éditions
+                            numériques</h4>
+<p id="p18">Une autre manière d’employer <em>Omeka</em> dans le
+                            processus d’édition numérique est de le considérer comme une plateforme
+                            de publication. Il s’agit ici d’importer des fichiers XML TEI et de les
+                            transformer pour l’affichage en ligne, via des feuilles de
+                            transformation XSLT. C’est ce que propose le plugin <em>TEI
+                                Display</em> développé par l’équipe <em>Scholar’s
+                                Lab</em>
+                     <sup class="footnote-ref" id="fnref-ftn20"><a href="#fn-ftn20" role="doc-noteref">20</a></sup>:
+                            il permet d’attacher un fichier XML-TEI à un bibl préexistant dans
+                                <em>Omeka </em>et de présenter son contenu en ligne.</p>
+<p id="p19">
+                     <figure id="img3" class="review-figure"><img src="pictures/picture-3.png" alt="Une lettre numérisée et sa transcription (http://web.archive.org/web/20191025093912/http://morand.ens-lyon.fr/bibls/show/403)." loading="lazy"><figcaption>Fig. 3: Une lettre numérisée et sa transcription (<a href="http://web.archive.org/web/20191025093912/http://morand.ens-lyon.fr/bibls/show/403" target="_blank" rel="noopener">http://web.archive.org/web/20191025093912/http://morand.ens-lyon.fr/bibls/show/403</a>).</figcaption></figure> Ce plugin a notamment été employé par le projet <em>Roman
+                                des Morand</em>
+                     <sup class="footnote-ref" id="fnref-ftn21"><a href="#fn-ftn21" role="doc-noteref">21</a></sup>,
+                            dédié à l’importante correspondance de la famille Morand de Jouffrey,
+                            une famille de notables lyonnais. L’ensemble des 338 lettres qui
+                            composent ce corpus a été numérisé, puis a fait l’objet d’une
+                            transcription interprétative et partielle, l’orthographe ayant été
+                            modernisée et certains passages avec un faible intérêt historique et
+                            scientifique ayant été omis. Les éditions numériques sont affichées en
+                            ligne avec le plugin <em>TEI Display</em>.</p>
+<p id="p20">Les transcriptions interprétatives des lettres se trouvent
+                            en-dessous des numérisations et apparaissent comme un appui à l’édition
+                            numérisée (<a href="#img3" class="crossref">Fig. 3</a>). Chaque
+                            transcription peut être exportée en XML-TEI. Le projet met également à
+                            disposition, en téléchargement, le corpus entier encodé en XML-TEI,
+                            ainsi que le schéma utilisé pour les besoins du projet sous sa forme ODD
+                            (One Document Does it all)<sup class="footnote-ref" id="fnref-ftn22"><a href="#fn-ftn22" role="doc-noteref">22</a></sup>. Le projet accordant une attention particulière à
+                            l’onomastique, les noms propres cités dans les lettres sont mis en
+                            évidence et renvoient à un index des noms de personnes. Pour enrichir la
+                            compréhension et l’analyse des lettres, le projet s’est appuyé sur les
+                            nombreuses fonctionnalités offertes par <em>Omeka</em>, telles que
+                            les expositions virtuelles ou les frises chronologiques.</p>
+<p id="p21">Le plugin <em>TEI Display</em> a également été utilisé
+                            par le projet d’édition numérique <em>Civil War Governors of
+                                Kentucky</em>
+                     <sup class="footnote-ref" id="fnref-ftn23"><a href="#fn-ftn23" role="doc-noteref">23</a></sup>,
+                            font le corpus propose un panorama des réseaux et des relations qui
+                            existaient autour du bureau du gouverneur pendant la Guerre civile
+                            américaine. Ici, les développeurs ont adapté <em>TEI Display</em>,
+                            en le combinant avec le plugin <em>Dropbox</em>
+                     <sup class="footnote-ref" id="fnref-ftn24"><a href="#fn-ftn24" role="doc-noteref">24</a></sup>
+                                d’<em>Omeka</em>, afin de réaliser des imports en masse.</p>
+<p id="p22">
+                     <figure id="img4" class="review-figure"><img src="pictures/picture-4.png" alt="Transcription d’un placard datant de 1863 (http://web.archive.org/web/20191206142203/http://discovery.civilwargovernors.org/document/KYR-0362-001-0001)." loading="lazy"><figcaption>Fig. 4: Transcription d’un placard datant de 1863 (<a href="http://web.archive.org/web/20191206142203/http://discovery.civilwargovernors.org/document/KYR-0362-001-0001" target="_blank" rel="noopener">http://web.archive.org/web/20191206142203/http://discovery.civilwargovernors.org/document/KYR-0362-001-0001</a>).</figcaption></figure> Ce projet propose en vis-à-vis l’édition numérisée et
+                            l’édition numérique interprétative (<a href="#img4" class="crossref">Fig. 4</a>). Les noms de lieux, de personnes et les dates sont
+                            mis en évidence et renvoient vers une définition plus précise, qui
+                            elle-même propose une liste de tous les documents où la notion définie
+                            est citée. Le fichier .pdf de l’édition numérisée et le fichier .xml de
+                            l’édition numérique en TEI peuvent être téléchargés par les
+                            utilisateurs. Comme pour le projet <em>Roman des Morands</em>,
+                            l’édition numérique bénéficie des fonctionnalités d’<em>Omeka
+                            </em>pour enrichir ses contenus, à l’exemple d’expositions virtuelles,
+                            d’index et de dossiers documentaires à destination des enseignants afin
+                            de réutiliser les collections dans le cadre de cours.</p>
+<p id="p23">Le plugin <em>TEI Edition</em>, développé par Mike
+                            Bryant dans le cadre du projet EHRI (European Holocaust Research
+                                Infrastructure)<sup class="footnote-ref" id="fnref-ftn25"><a href="#fn-ftn25" role="doc-noteref">25</a></sup>, permet, à l’inverse de <em>TEI Display</em>, de créer
+                            de nouvelles notices de contenus, c’est-à-dire de nouveaux bibls, à
+                            partir de fichiers XML-TEI. Ce plugin effectue en effet des
+                            correspondances, à l’aide de la technologie XPath, entre des éléments du
+                                <code> &lt;teiHeader&gt;</code> et des éléments <em>Dublin
+                                Core</em> sur lesquels <em>Omeka</em> repose (Tableau 1). Il
+                            permet également d’extraire et d’afficher en ligne une transcription
+                            contenue dans l’élément TEI <code>&lt;body&gt;</code>, en établissant
+                            une correspondance avec le champ «Text» d’Omeka<sup class="footnote-ref" id="fnref-ftn26"><a href="#fn-ftn26" role="doc-noteref">26</a></sup>
+                            À ces nouveaux bibls peuvent ensuite être associés d’autres types de
+                            fichiers (.jpg, .png, .pdf, etc.), telles que des éditions numérisées,
+                            afin de les enrichir (Bryant 2019). <div class="table-wrapper"><table><tr><th>Éléments TEI</th><th>Champs <em>Dublin Core</em>
+                           </th></tr><tr><td>tei:idno</td><td>dc:identifier</td></tr><tr><td>tei:title</td><td>dc:title</td></tr><tr><td>tei:bibl</td><td>dc:subject</td></tr><tr><td>tei:abstract</td><td>dc:description</td></tr><tr><td>tei:publisher</td><td>dc:publisher</td></tr><tr><td>tei:licence</td><td>dc:rights</td></tr><tr><td>tei:physDesc</td><td>dc:format</td></tr></table></div>
+                  </p>
+<p id="p24">
+                     <figure id="img5" class="review-figure"><img src="pictures/picture-5.png" alt="Édition numérique d’un télégramme (http://web.archive.org/web/20191206142636/https://begrenzte-flucht.ehri-project.eu/document/EHRI-BF-19380722).
+                                " loading="lazy"><figcaption>Fig. 5: Édition numérique d’un télégramme (<a href="http://web.archive.org/web/20191206142636/https://begrenzte-flucht.ehri-project.eu/document/EHRI-BF-19380722" target="_blank" rel="noopener">http://web.archive.org/web/20191206142636/https://begrenzte-flucht.ehri-project.eu/document/EHRI-BF-19380722</a>).
+                                </figcaption></figure> À ce jour, nous ne connaissons qu’un projet ayant recours au
+                            plugin <em>TEI Editions</em>, à savoir l’édition numérique
+                                <em>BeGrenzte Flucht</em>
+                     <sup class="footnote-ref" id="fnref-ftn28"><a href="#fn-ftn28" role="doc-noteref">27</a></sup>,
+                            qui propose l’édition de documents relatifs aux réfugiés juifs
+                            autrichiens en Tchécoslovaquie au cours de l’année 1938<sup class="footnote-ref" id="fnref-ftn29"><a href="#fn-ftn29" role="doc-noteref">28</a></sup>.
+                            Ce projet fait partie du projet plus large EHRI, qui a fait naître le
+                            plugin <em>TEI Editions</em>. L’édition proposée est une édition
+                            interprétative, disponible au téléchargement, qui met l’accent sur les
+                            entités nommées (<a href="#img5" class="crossref">Fig. 5</a>). Ces
+                            dernières sont cliquables et peuvent être recherchées dans l’ensemble du
+                            corpus de l’édition, dans <em>GeoNames</em>
+                     <sup class="footnote-ref" id="fnref-ftn30"><a href="#fn-ftn30" role="doc-noteref">29</a></sup>
+                            ou <em>Wikipédia</em>
+                     <sup class="footnote-ref" id="fnref-ftn31"><a href="#fn-ftn31" role="doc-noteref">30</a></sup>
+                            (Encadré à droite sur la <a href="#img5" class="crossref">fig.
+                                5</a>). Chaque bibl est, qui plus est, enrichi avec une carte
+                            géographique et des références complémentaires, disponibles sur le
+                            portail du projet EHRI.</p>
+<p id="p25">Les différents projets d’éditions numériques que nous avons
+                            présentés dans cette partie se caractérisent tous par la présence de
+                            nombreux outils complémentaires, tels que des index, des bibliographies
+                            ou des expositions virtuelles. Ces outils mettent en lumière l’un des
+                            principaux intérêts d’<em>Omeka</em> pour la diffusion d’éditions
+                            numériques, à savoir l’enrichissement et la valorisation des données
+                            contenues dans les éditions. Ces outils complémentaires sont considérés
+                            par Roberto Rosseli Del Turco comme l’un des principaux pré-requis des
+                            éditions numériques, en tant qu’interface utilisateur (2011, paragr.
+                            29). Ils accompagnent l’utilisateur dans sa navigation et lui permettent
+                            d’accéder aux contenus de l’édition sous différents angles, enrichissant
+                            ainsi sa découverte de l’édition et ses connaissances.</p>
+<p id="p26">La solution adoptée par les plugins <em>TEI Display</em>
+                            et <em>TEI Edition</em>, pour diffuser des éditions numériques dans
+                                <em>Omeka</em>, suit les recommandations des développeurs du CMS
+                            eux-mêmes. En effet, face à la multiplication des demandes et des
+                            initiatives envers les éditions numériques de la part de la communauté,
+                            les concepteurs du CMS se sont prononcés en incitant les utilisateurs à
+                            recourir à l’outil <em>TEI BoilerPlate</em>. Cette recommandation
+                            positionne alors <em>Omeka</em> comme une plateforme de diffusion
+                            d’éditions numériques plutôt que de création.</p>
+<h4 id="div2.2.3">De la transcription à l’encodage: la création d’éditions numériques
+                            depuis Omeka</h4>
+<p id="p27">Bien que les recommandations des développeurs
+                                d’<em>Omeka</em> soient de privilégier ce dernier comme une
+                            plateforme de diffusion, un plugin, développé par la communauté des
+                            utilisateurs, propose de transcrire, d’encoder et de diffuser des
+                            éditions numériques depuis l’interface privée du CMS. Ce plugin, du nom
+                            de <em>Transcript </em>(v. 0.1), a été développé par Vincent Buard
+                            de l’équipe <em>Numerizen</em>
+                     <sup class="footnote-ref" id="fnref-ftn32"><a href="#fn-ftn32" role="doc-noteref">31</a></sup>
+                            pour le projet <em>Éditions de Manuscrits et d’Archives Numériques
+                                (EMAN)</em>
+                     <sup class="footnote-ref" id="fnref-ftn33"><a href="#fn-ftn33" role="doc-noteref">32</a></sup>
+                            de l’Institut des Textes et des Manuscrits Modernes (bibl), et plus
+                            particulièrement dans le cadre du projet <em>Notes de Cours de
+                                l’ENS</em>
+                     <sup class="footnote-ref" id="fnref-ftn34"><a href="#fn-ftn34" role="doc-noteref">33</a></sup>.
+                            Il intègre à Omeka un éditeur XML, permettant de transcrire et d’annoter
+                            un texte avec des éléments TEI, représentés sous la forme d’une boîte à
+                            outils <em>TinyMCE</em>(v. 4.0)<sup class="footnote-ref" id="fnref-ftn35"><a href="#fn-ftn35" role="doc-noteref">34</a></sup>.
+                            Il permet ainsi à un utilisateur non-expert d’enrichir une transcription
+                            sans voir le code source (Dessaint s. d.).</p>
+<p id="p28">L’usage d’un éditeur XML-TEI accompagné d’une boîte à outils
+                            a déjà été expérimenté dans le cadre de projets non-<em>Omeka</em>,
+                            à l’exemple de <em>Transcribe Bentham</em> ou de la plateforme
+                                TACT<sup class="footnote-ref" id="fnref-ftn36"><a href="#fn-ftn36" role="doc-noteref">35</a></sup>,
+                            deux projets participatifs de transcription et d’annotation de
+                            manuscrits. Il s’agit pour ces projets de mettre à la portée du plus
+                            grand nombre l’encodage en XML-TEI, sans avoir besoin d’une formation
+                            préalable à ce standard, afin d’inviter et d’encourager les utilisateurs
+                            à participer.</p>
+<p id="p29">Le plugin <em>Transcript</em> n’intègre pas l’ensemble
+                            des balises TEI, mais repose sur un schéma adapté aux besoins d’un
+                            projet. La présence de ce schéma permet au plugin de contrôler la
+                            validité de l’encodage réalisé et de respecter les préconisations du
+                            consortium TEI pour l’emploi des éléments, générant ainsi des fichiers
+                            TEI standardisés. Une fois encodée, la transcription est affichée sur
+                            l’interface publique d’<em>Omeka </em> via l’outil <em>TEI
+                                Boilerplate</em>
+                     <sup class="footnote-ref" id="fnref-ftn37"><a href="#fn-ftn37" role="doc-noteref">36</a></sup>
+                            qui permet de transformer et de publier en ligne des fichiers TEI
+                            (Dessaint s. d.).</p>
+<p id="p30">
+                     <figure id="img6" class="review-figure"><img src="pictures/picture-6.png" alt="Édition diplomatique des notes de cours de Henri
+                                    Weil sur Euripide (http://web.archive.org/web/20191025094149/http://eman-archives.org/coursENS/transcription/1142)." loading="lazy"><figcaption>Fig. 6: Édition diplomatique des notes de cours de Henri
+                                    Weil sur Euripide (<a href="http://web.archive.org/web/20191025094149/http://eman-archives.org/coursENS/transcription/1142" target="_blank" rel="noopener">http://web.archive.org/web/20191025094149/http://eman-archives.org/coursENS/transcription/1142</a>).</figcaption></figure> Comme pour le plugin <em>TEI Editions</em>, présenté plus
+                            haut, à ce jour, seul le projet <em>Notes de cours de l’ENS</em>,
+                            qui a été le contexte d’élaboration de <em>Transcript</em>, utilise
+                            ce plugin. Ce projet propose les éditions numériques d’un important
+                            fonds d’archives: celui des cours donnés à l’ENS (École Normale
+                            Supérieure). Ce projet expérimental a pour objectif d’explorer les
+                            possibilités offertes par <em>Omeka</em> pour la création et la
+                            diffusion d’éditions numériques scientifiques (Sordet et Dessaint 2019).
+                            C’est dans le cadre de ce projet que le plugin <em>Transcript</em> a
+                            été mis au point. L’interface du projet permet de présenter en vis-à-vis
+                            l’image numérisée et sa transcription diplomatique. L’utilisateur a la
+                            possibilité d’afficher la transcription à l’identique de l’image
+                            numérisée, ou bien une version enrichie de cette transcription, avec
+                            notamment l’extension des abréviations et l’insertion d’icônes
+                            représentant les éléments TEI employés (<a href="#img6" class="crossref">Fig. 6</a>). De cette manière, le projet donne une
+                            certaine transparence à ses données et à la manière dont elles ont été
+                            structurées.</p>
+    </section>
+    <section id="div3">
+      <h2>Omeka et les plugins TEI: utilisabilité, durabilité et
+                    maintenance</h2>
+      <p id="p31">
+               <em>Omeka</em> est téléchargeable depuis le site de l’outil. Les plugins
+                    «officiels», c’est-à-dire ceux mis au point par les développeurs
+                        d’<em>Omeka</em> ou validés par eux, sont également disponibles au
+                    téléchargement sur cette plateforme. Il existe en parallèle de très nombreux
+                    plugins développés par la communauté des utilisateurs d’<em>Omeka</em> et
+                    disponibles sur <em>GitHub</em>.</p>
+<p id="p32">Compatible avec les systèmes Linux, Mac OS X et Windows, pour
+                    fonctionner, <em>Omeka</em> a besoin d’un environnement <em>Apache</em>,
+                    MySQL (v. 5) et PHP (v. 5.3.2). Pour la gestion des images, il est également
+                    nécessaire d’installer l’outil de manipulation d’images,
+                        <em>ImageMagick</em>
+               <sup class="footnote-ref" id="fnref-ftn38"><a href="#fn-ftn38" role="doc-noteref">37</a></sup>.
+                    Le plugin <em>Scripto</em> nécessite l’installation de
+                        <em>MediaWiki</em>, un logiciel qui permet de gérer les utilisateurs et
+                    les transcriptions produites. Quant aux plugins TEI, ils ne requièrent pas
+                    d’environnements ou d’outils spécifiques pour fonctionner, hormis ceux requis
+                    pour <em>Omeka</em>. Les sites Web créés à partir de ce CMS sont adaptatifs
+                    et peuvent être consultés depuis des appareils électroniques variés (écrans
+                    d’ordinateurs, tablettes, smartphones).</p>
+<p id="p33">L’installation d’<em>Omeka</em> est intuitive et se réalise en
+                    peu d’étapes: il s’agit de déposer un répertoire contenant les fichiers du CMS
+                    sur un serveur, de créer une base de données MySQL et de la relier à l’instance
+                        d’<em>Omeka</em>. Ces étapes sont détaillées dans la documentation de
+                    l’outil (<em>User Manual</em>), qui contient notamment une section
+                        <em>Getting Started et Installation</em>
+               <sup class="footnote-ref" id="fnref-ftn39"><a href="#fn-ftn39" role="doc-noteref">38</a></sup>.
+                    En cas de difficultés lors de l’installation ou de l’utilisation du CMS, les
+                    utilisateurs peuvent se reporter au forum d’<em>Omeka</em>
+               <sup class="footnote-ref" id="fnref-ftn40"><a href="#fn-ftn40" role="doc-noteref">39</a></sup>,
+                    qui permet d’échanger avec les développeurs de l’outil, très actifs sur cette
+                    plateforme, et d’accéder aux anciennes discussions, classées en sept catégories:
+                    installation et mises à jour, dépannage, plugins, thèmes, import/export, bibls
+                    et collections, développement. En France, les utilisateurs peuvent également
+                    échanger via une liste de diffusion et un site dédié aux projets et initiatives
+                    francophones autour d’<em>Omeka</em>
+               <sup class="footnote-ref" id="fnref-ftn41"><a href="#fn-ftn41" role="doc-noteref">40</a></sup>.</p>
+<p id="p34">L’installation des plugins est également détaillée dans le manuel
+                    utilisateur. Les plugins officiels bénéficient d’une documentation qui leur est
+                    propre sur le site officiel et sur <em>GitHub</em>, et qui précise leurs
+                    modalités d’administration et de fonctionnement. En ce qui concerne les plugins
+                    «non-officiels», parmi lesquels se trouvent les plugins TEI, la présence de
+                    documentation sous la forme d’un fichier README.md est variable. Ainsi, alors
+                    que le plugin <em>TEI Display</em> n’en propose aucune, les plugins
+                        <em>Scripto</em>, <em>TEI Editions</em> et <em>Transcript </em>
+                    en fournissent une détaillée.</p>
+<p id="p35">Bien que documenté et facile à déployer, la principale limite
+                        d’<em>Omeka</em> est la maintenance de son interface, et plus
+                    particulièrement la maintenance d’interfaces complexes qui vont au-delà des
+                    usages prévus par les développeurs du CMS, comme l’intégration
+                        d’<em>Omeka</em> dans un processus d’édition numérique. En effet, la
+                    réalisation d’un site web culturel avec ce CMS repose sur une juxtaposition de
+                    plugins, aboutissant à une architecture composite, dont les différents éléments
+                    n’évoluent pas au même rythme.</p>
+<p id="p36">Dans le cadre de projets de diffusion de contenus, qui n’emploient
+                    que les plugins et les thèmes officiels, sans apporter de lourdes modifications
+                    au code source du CMS, la maintenance n’est pas un problème épineux. Lors d’une
+                    mise à jour du CMS, les plugins de la liste officielle sont mis à jour
+                    progressivement par l’équipe de développement d’<em>Omeka
+                    </em>elle-même.</p>
+<p id="p37">Cependant, dans le cadre de projets plus complexes, qui souhaitent
+                    un design élaboré et mettre en place des fonctionnalités qui dépassent ce pour
+                    quoi <em>Omeka</em> a été créé, la maintenance de l’infrastructure peut
+                    constituer un obstacle important. En effet, en ce qui concerne les plugins
+                    non-officiels, les mises à jour sont plus espacées, voire ne sont jamais
+                    effectuées, ce qui peut entraîner une indisponibilité de certains plugins et
+                    donc de services, voire un ajournement de la mise à jour d’<em>Omeka
+                    </em>elle-même.</p>
+<p id="p38">Or, la très grande majorité des plugins <em>Omeka</em> sont
+                    développés par la communauté des utilisateurs elle-même. Ces plugins ont été
+                    pensés dans le cadre de projets spécifiques, qui ont mis au point un
+                    environnement <em>Omeka</em> unique, avec des thèmes et des plugins
+                    personnalisés en fonction de leurs besoins. En effet, l’interface par défaut
+                    proposée par <em>Omeka</em> est neutre et simplifiée afin de répondre aux
+                    besoins d’un public large et divers. Elle nécessite donc un important travail de
+                    personnalisation de l’organisation de l’interface publique, des pages, des
+                    thèmes ou des plugins, afin d’adapter spécifiquement le CMS à son projet. Or,
+                    l’ensemble de ces composants sont interdépendants, les plugins influençant les
+                    thèmes et le code source d’<em>Omeka</em>, et inversement. Par conséquent,
+                    un plugin développé dans le cadre d’un projet, à l’image de
+                        <em>Transcript</em> ou de <em>TEI Editions</em>, peut ne pas être
+                    compatible, dans un premier temps, avec l’instance d’<em>Omeka </em> d’un
+                    autre projet, qui a lui-même sélectionné son propre thème et un ensemble de
+                    plugins, et effectué certaines modifications dans le code source du CMS.<sup class="footnote-ref" id="fnref-ftn42"><a href="#fn-ftn42" role="doc-noteref">41</a></sup>
+            </p>
+<p id="p39">Face à ce problème, l’une des réponses de la communauté a été de
+                    mettre à disposition des autres utilisateurs les plugins préexistants qu’elle a
+                    modifié pour élaborer un autre plugin. Par conséquent, dans la liste des plugins
+                    non-officiels, il est possible de croiser des plugins officiels qui ont été
+                    modifiés par un projet dans le cadre de l’élaboration d’un autre plugin. Pour
+                    que cet autre plugin soit employé par un projet tiers, ce dernier sera, dans
+                    certains cas, contraints d’installer également les plugins modifiés pour
+                    élaborer ce nouveau plugin.</p>
+<p id="p40">Ce problème de compatibilité et de maintenance des plugins constitue
+                    l’une des principales limites d’<em>Omeka</em> et suppose un important
+                    travail de développement et la présence d’une équipe de développeurs et
+                    d’ingénieurs en soutien. Par conséquent, en termes de gestion des risques, il
+                    est nécessaire, lors de l’utilisation d’<em>Omeka</em> comme plateforme pour
+                    les éditions numériques, de prévoir un temps pour retravailler les plugins et
+                    les adapter à son environnement <em>Omeka</em>, en cas de bogues
+                    potentiels.</p>
+    </section>
+    <section id="div4">
+      <h2>Omeka, plugins TEI et utilisateurs</h2>
+      <p id="p41">
+               <figure id="img7" class="review-figure"><img src="pictures/picture-7.png" alt="Tableau de bord d'Omeka ." loading="lazy"><figcaption>Fig. 7: Tableau de bord d'<em>Omeka</em> .</figcaption></figure>
+               <em>Omeka</em>s’adresse à des humanistes et à des professionnels de la
+                    documentation et du patrimoine, sans compétences informatiques avancées. Si lors
+                    du téléchargement, <em>Omeka</em> se présente sous la forme d’un répertoire
+                    à déposer sur un serveur, une fois cette étape passée, il offre une interface
+                    utilisateur prête à l’emploi. En effet, lors de sa connexion à
+                        <em>Omeka</em>, l’utilisateur est immédiatement conduit sur un tableau
+                    de bord (<a href="#img7" class="crossref">Fig. 7</a>). Celui-ci permet à
+                    l’utilisateur d’embrasser d’un seul coup d’œil ses dernières activités, mais
+                    également l’ensemble des fonctionnalités proposées par l’outil. Il peut ainsi
+                    créer et gérer des bibls, activer des plugins ou encore choisir un thème pour
+                    l’interface publique du CMS. L’ensemble de ces activités s’effectue en un clic
+                    et peut aisément être défait de la même manière.</p>
+<p id="p42">
+               <figure id="img8" class="review-figure"><img src="pictures/picture-8.png" alt="Activation/Désactivation des plugins dans
+                                Omeka." loading="lazy"><figcaption>Fig. 8: Activation/Désactivation des plugins dans
+                                <em>Omeka</em>.</figcaption></figure>
+               <figure id="img9" class="review-figure"><img src="pictures/picture-9.png" alt="Extrait du plugin TeiEdition, qui s'inscrit
+                            dans l'interface graphique d'Omeka (http://web.archive.org/web/20191025093609/https://raw.githubusercontent.com/mikesname/TeiEditions/master/plugin_functions.png).
+                        " loading="lazy"><figcaption>Fig. 9: Extrait du plugin <em>TeiEdition</em>, qui s'inscrit
+                            dans l'interface graphique d'<em>Omeka </em>(<a href="http://web.archive.org/web/20191025093609/https://raw.githubusercontent.com/mikesname/TeiEditions/master/plugin_functions.png" target="_blank" rel="noopener">http://web.archive.org/web/20191025093609/https://raw.githubusercontent.com/mikesname/TeiEditions/master/plugin_functions.png</a>).
+                        </figcaption></figure> Prenons l’exemple des plugins. Comme nous l’avons vu précédemment,
+                    l’installation des plugins est semblable à celle d’<em>Omeka</em>:
+                    l’utilisateur télécharge un répertoire sur le site du CMS ou sur
+                        <em>GitHub</em>, puis le dépose sur le serveur dans le répertoire
+                        d’<em>Omeka</em> approprié. Le plugin apparaît ensuite dans une liste
+                    accessible depuis l’onglet «Extensions» (<a href="#img7" class="crossref">Fig. 7</a>). Une fois résolues les éventuelles erreurs dues à des
+                    problèmes de compatibilité et nécessitant une intervention dans le code source
+                        d’<em>Omeka</em>, chaque plugin peut être activé, désactivé et supprimé
+                    en cliquant sur les boutons correspondants (<a href="#img8" class="crossref">Fig. 8</a>). Lorsqu’il est activé, le plugin devient en temps réel
+                    paramétrable et utilisable, grâce à une interface utilisateur qui se fond dans
+                    celle d’<em>Omeka</em> et sans voir une ligne de code, que le plugin ait été
+                    développé par ses développeurs ou par des membres de sa communauté, à l’image
+                    des plugins TEI (<a href="#img9" class="crossref">Fig. 9</a>).</p>
+<p id="p43">L’accès à l’interface privée d’<em>Omeka</em> est contrôlé par
+                    des rôles utilisateur<sup class="footnote-ref" id="fnref-ftn43"><a href="#fn-ftn43" role="doc-noteref">42</a></sup>.
+                    Ces rôles se distinguent par leur degré d’interaction avec l’interface. Ainsi,
+                    un utilisateur avec un rôle de <em>researcher </em>consulte les contenus
+                    sans interagir avec eux. Le <em>contributor</em> ne peut modifier ou
+                    supprimer que les contenus qu’il a créés. L’utilisateur <em>admin</em>, à
+                    l’inverse, interagit avec tous les contenus, mais n’a pas accès à
+                    l’administration du site, des plugins ou des thèmes, réservée au super
+                    utilisateur.</p>
+<p id="p44">En termes d’accessibilité<sup class="footnote-ref" id="fnref-ftn44"><a href="#fn-ftn44" role="doc-noteref">43</a></sup>
+               <em>Omeka</em> et ses plugins par défaut (<em>Exhibit Builder</em>,
+                        <em>Coins</em> et <em>Simple Pages</em>)<sup class="footnote-ref" id="fnref-ftn45"><a href="#fn-ftn45" role="doc-noteref">44</a></sup> suivent les recommandations du W3C
+                        (WAI-ARIA)<sup class="footnote-ref" id="fnref-ftn46"><a href="#fn-ftn46" role="doc-noteref">45</a></sup>
+                    et du programme américain <em>Section 508</em>
+               <sup class="footnote-ref" id="fnref-ftn47"><a href="#fn-ftn47" role="doc-noteref">46</a></sup>
+                    Omeka est ainsi utilisable sans souris, grâce à des raccourcis clavier, ou à
+                    l’aide d’un lecteur d’écran, qui présente à l’utilisateur le contenu d’une page
+                    avec un afficheur braille ou via la synthèse vocale.</p>
+    </section>
+    <section id="div5">
+      <h2>Conclusions</h2>
+      <p id="p45">Choisir <em>Omeka</em> pour réaliser une édition numérique ne
+                    s’impose pas de prime abord. En effet, c’est avant tout un outil de publication,
+                    pas un éditeur. <em>Omeka</em> ne permet pas de prendre en charge l’ensemble
+                    des étapes d’un processus d’édition. Il intervient uniquement à des moments
+                    ponctuels de ce processus, plus particulièrement aux étapes de transcription et
+                    de publication qui sont actuellement les plus éprouvées par les projets.</p>
+<p id="p46">Bien qu’il n’y soit pas destiné, le recours à <em>Omeka</em>
+                    dans un contexte d’édition numérique peut toutefois se justifier par plusieurs
+                    raisons: la gestion d’importants volumes de données, grâce à son organisation
+                    archivistique basée sur la notion d’bibls et de collections ; l’indexation fine
+                    des contenus, qui peuvent être recherchés par mots-clés, par date ou par auteur
+                    ; les nombreuses fonctionnalités de valorisation des contenus, telles que les
+                    expositions virtuelles, les cartes ou les frises chronologiques. Ainsi, les
+                    différents projets d’éditions numériques sous <em>Omeka</em> que nous avons
+                    présentés dans cet article, s’ils différent quant à la manière d’intégrer
+                        <em>Omeka</em> dans leur processus d’édition, se caractérisent tous par
+                    l’important volume de leurs collections (correspondances, matériaux d’archives),
+                    mais également par la présence de ces outils (index, expositions virtuelles,
+                    cartes), qui accompagnent l’utilisateur dans sa consultation et enrichissent son
+                    expérience.</p>
+<p id="p47">Bien que la création ou la diffusion d’éditions numériques en
+                    XML-TEI représentent toujours un défi pour les projets et qu’aucun consensus n’a
+                    été trouvé autour d’un plugin, ces différents éléments, constitutifs
+                        d’<em>Omeka</em>, le font apparaitre comme environnement propice à la
+                    diffusion d’éditions numériques. <em>Omeka</em> rencontre en effet les
+                    principaux besoins des éditions numériques en tant qu’interface utilisateur,
+                    tels que définis par Roberto Rosseli Del Turco (2011). Il propose ainsi des
+                    «outils de manipulation d’image»<sup class="footnote-ref" id="fnref-ftn48"><a href="#fn-ftn48" role="doc-noteref">47</a></sup>,
+                    qui permettent de naviguer aisément dans la numérisation de l’imprimé qui fait
+                    l’objet d’une édition, de faire des agrandissements à grande échelle ou encore
+                    de modifier la couleur, le contraste ou la luminosité de l’image. Il dispose
+                    également de fonctionnalités de recherche avancée, notamment quand on lui
+                    associe le moteur de recherche <em>SolR</em>
+               <sup class="footnote-ref" id="fnref-ftn49"><a href="#fn-ftn49" role="doc-noteref">48</a></sup>
+                    qui permet de faire une indexation précise des données et de faire ainsi
+                    ressortir toute la richesse d’un encodage en XML-TEI. Enfin, <em>Omeka</em>
+                    permet également d’associer aux éditions numériques tout un arsenal d’outils qui
+                    viennent les compléter et permettent de guider l’utilisateur à travers le volume
+                    de données qui lui est présenté (Rosseli Del Turco 2011, paragr. 27-29).</p>
+<p id="p48">Actuellement, <em>Omeka</em> ne permet de représenter que des
+                    éditions numériques diplomatiques. L’outil n’offre aucune solution pour
+                    l’affichage d’éditions numériques critiques ou génétiques. D’une certaine
+                    manière, <em>Omeka</em> tend à réduire les éditions numériques savantes à
+                    des transcriptions enrichies d’éditions numérisées. De nombreuses recherches et
+                    expérimentations sont, par conséquent, encore à mener pour l’usage
+                        d’<em>Omeka</em> pour d’autres modèles d’éditions numériques (critiques,
+                    génétiques ou synoptiques). Pour l’instant, la seule solution est d’avoir
+                    recours à d’autres outils, spécialisés dans la création et l’affichage de ce
+                    type d’éditions, et de les relier à <em>Omeka</em>.</p>
+    </section>
+
+    <section id="bibliography" class="review-bibliography">
+      <h2>Bibliography</h2>
+      <ol class="bib-list">
+        <li>Bleier, Roman, Martina Bürgermeister, Helmut W. Klug, Frederike Neuber, et
+                        Gerlinde Schneider. 2018. <em>Scholarly Digital Editions as
+                            Interfaces.</em> Norderstedt: BoD – Books on Demand. </li>
+        <li>Bryant, Mike. 2019. TeiEditions (ReadMe.md). EHRI. <a href="https://github.com/mikesname/TeiEditions/blob/master/README.md" target="_blank" rel="noopener">https://github.com/mikesname/TeiEditions/blob/master/README.md</a>. </li>
+        <li>Dessaint, Charlotte. s. d. «Le module utilisé pour la transcription :
+                        Transcript». Note de cours de l’ENS (blog). Consulté le 15 octobre 2019.
+                            <a href="http://eman-archives.org/coursENS/plugin-transcript" target="_blank" rel="noopener">http://eman-archives.org/coursENS/plugin-transcript</a>.</li>
+        <li>Donadille, Julien, Pascale Lefebvre, Marie-Amélie Louveau, et Romain
+                        Gaillard. 2006. «CMS et bibliothèques». Villeurbanne: Enssib.</li>
+        <li>Pierazzo, Elena. 2015. <em>Digital scholarly editing: theories, models
+                            and methods</em>. Farnham: Ashgate. <a href="https://hal.archives-ouvertes.fr/hal-01182162/document" target="_blank" rel="noopener">https://hal.archives-ouvertes.fr/hal-01182162/document</a>.</li>
+        <li>Del Turco, Roberto. 2011. «After the Editing is Done. Designing a Graphic
+                        User Interface for Digital Editions». <em>Digital Medievalist </em>7.
+                            <a href="http://www.digitalmedievalist.org/journal/7/rosselliDelTurco/" target="_blank" rel="noopener">http://www.digitalmedievalist.org/journal/7/rosselliDelTurco/</a>.</li>
+        <li>Sahle, Patrick. 2008. «Virtual Library Digital Scholarly Editing». Text.
+                        2008. <a href="http://digitale-edition.de/vlet-about.html" target="_blank" rel="noopener">http://digitale-edition.de/vlet-about.html</a>.</li>
+        <li>———. 2016. «What is a Scholarly Digital Edition?» In <em>Digital
+                            Scholarly Editing: Theories and Practices</em>, par Matthew James
+                        Driscoll et Elena Pierazzo, 19‑39. Open Book Publishers. <a href="https://www.openbookpublishers.com/reader/483#page/58/mode/2up" target="_blank" rel="noopener">https://www.openbookpublishers.com/reader/483#page/58/mode/2up</a>.</li>
+        <li>Sordet, Emmanuelle, et Charlotte Dessaint. 2019. «Notes de cours de
+                        l’ENS». <em>Plate-forme EMAN</em> (blog). 22 septembre 2019. <a href="http://eman-archives.org/EMAN/bibls/show/11" target="_blank" rel="noopener">http://eman-archives.org/EMAN/bibls/show/11</a>.</li>
+      </ol>
+    </section>
+
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        <li id="fn-ftn1" class="footnote-item">
+          Omeka Classic (v.2.7, licence GPL3): <a href="http://web.archive.org/web/20190801113805/https://omeka.org/classic/download/" target="_blank" rel="noopener">http://web.archive.org/web/20190801113805/https://omeka.org/classic/download/</a>(Dernières
+                        révisions le 29 mai 2019).
+          <a href="#fnref-ftn1" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn2" class="footnote-item">
+          Le RRCHNM est également à l’origine du développement de
+                        Zotero, un outil de gestion bibliographique, et de <em>Tropy</em>, une
+                        plateforme de gestion et d’annotations de photographies.
+          <a href="#fnref-ftn2" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn3" class="footnote-item">
+          L’équipe de
+                        développement d’Omeka est composé de Alyssa Toby Fahringer, Jeremy Boggs,
+                        Jim Safley, John Flatness, Ken Albers, Kim Nguyen, Megan Brett, Patrick
+                        Murray-John, Sharon Leon, Sheila Brennan et Tom Scheinfeldt: <a href="http://web.archive.org/web/20190113053500/https://rrchnm.org/omekaplatform/" target="_blank" rel="noopener">http://web.archive.org/web/20190113053500/https://rrchnm.org/omekaplatform/</a>.
+          <a href="#fnref-ftn3" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn4" class="footnote-item">
+          Omeka S (v.2.0.2) <a href="http://web.archive.org/web/20190801113616/https://omeka.org/s/download/" target="_blank" rel="noopener">http://web.archive.org/web/20190801113616/https://omeka.org/s/download/</a>(Dernières
+                        révisions le 16 août 2019).
+          <a href="#fnref-ftn4" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn5" class="footnote-item">
+          Par commodité de
+                        langage, dans la suite de cet article, nous désignerons <em>Omeka
+                            Classic</em> sous sa forme abrégée Omeka.
+          <a href="#fnref-ftn5" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn6" class="footnote-item">
+          Omeka propose plus de 200
+                        plugins. La liste des plugins officiels d’Omeka se situe sur le site du
+                        logiciel: <a href="http://web.archive.org/web/20190607022659/https://omeka.org/classic/plugins/" target="_blank" rel="noopener">http://web.archive.org/web/20190607022659/https://omeka.org/classic/plugins/</a>
+                        Les plugins développés par la communauté <em>Omeka</em> sont disponibles
+                        sur la plateforme <em>GitHub</em>. Parmi les plus importants
+                        contributeurs, nous pouvons citer l’équipe Scholar’s Lab de l’Université de
+                        Virginie (<a href="http://web.archive.org/web/20170614145053/https://github.com/scholarslab/" target="_blank" rel="noopener">http://web.archive.org/web/20170614145053/https://github.com/scholarslab/</a>),
+                        l’équipe BibLibre (<a href="http://web.archive.org/web/20191025091929/https://github.com/biblibre" target="_blank" rel="noopener">http://web.archive.org/web/20191025091929/https://github.com/biblibre</a>)
+                        ou encore Daniel Berthereau (<a href="http://web.archive.org/web/20191025092028/https://github.com/Daniel-KM" target="_blank" rel="noopener">http://web.archive.org/web/20191025092028/https://github.com/Daniel-KM</a>).
+          <a href="#fnref-ftn6" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn7" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20191118102818/http://scripto.org/" target="_blank" rel="noopener">https://web.archive.org/web/20191118102818/http://scripto.org/</a>.
+          <a href="#fnref-ftn7" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn8" class="footnote-item">
+          Scripto
+                            est également disponible pour les CMS WordPress et Drupal.
+          <a href="#fnref-ftn8" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn9" class="footnote-item">
+          
+                     <a href="http://web.archive.org/web/20190927152646/https://blogs.ucl.ac.uk/transcribe-bentham/" target="_blank" rel="noopener">http://web.archive.org/web/20190927152646/https://blogs.ucl.ac.uk/transcribe-bentham/</a>.
+          <a href="#fnref-ftn9" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn10" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20191118100403/http://menus.nypl.org/" target="_blank" rel="noopener">https://web.archive.org/web/20191118100403/http://menus.nypl.org/</a>.
+          <a href="#fnref-ftn10" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn11" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20191120223612/https://transcribathon.com/en/" target="_blank" rel="noopener">https://web.archive.org/web/20191120223612/https://transcribathon.com/en/</a>.
+          <a href="#fnref-ftn11" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn12" class="footnote-item">
+          
+                     <a href="http://web.archive.org/web/20191205104437/https://github.com/patrickmj/MlaTei" target="_blank" rel="noopener">http://web.archive.org/web/20191205104437/https://github.com/patrickmj/MlaTei</a>.
+          <a href="#fnref-ftn12" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn13" class="footnote-item">
+          Créé à l'initiative de
+                            l'OCLC (Online Computer Library Center) en 1995, le Dublin Core est une
+                            norme internationale, qui permet de décrire des objets numériques ou
+                            physiques d'horizon différents. Il se compose de quinze balises
+                            répétables et assez larges pour couvrir un grand nombre d'usages: <a href="http://web.archive.org/web/20191022223101/https://www.dublincore.org/" target="_blank" rel="noopener">http://web.archive.org/web/20191022223101/https://www.dublincore.org/</a>.
+          <a href="#fnref-ftn13" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn14" class="footnote-item">
+          OAI-PMH (<em>Open Archive Initiative – Protocol for
+                                Metadata Harvesting</em>) assure l’interopérabilité des données
+                            entre plusieurs répertoires et permet à ces derniers de moissonner les
+                            métadonnées de l’autre: <a href="http://web.archive.org/web/20191022213818/https://openarchives.org/pmh/" target="_blank" rel="noopener">http://web.archive.org/web/20191022213818/https://openarchives.org/pmh/</a>.
+          <a href="#fnref-ftn14" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn15" class="footnote-item">
+          Scripto est développé par
+                                une équipe du RRCHNM composée de Sharon M. Leon, Jim Safley, Ken
+                                Albers, Kim Nguyen, James Halabuk et Lee Ann Ghajar: <a href="http://web.archive.org/web/20190518043432/http://scripto.org/about/" target="_blank" rel="noopener">http://web.archive.org/web/20190518043432/http://scripto.org/about/</a>.
+          <a href="#fnref-ftn15" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn16" class="footnote-item">
+          
+                        <a href="http://web.archive.org/web/20190607031015/https://www.mediawiki.org/wiki/MediaWiki/fr" target="_blank" rel="noopener">http://web.archive.org/web/20190607031015/https://www.mediawiki.org/wiki/MediaWiki/fr</a>.
+          <a href="#fnref-ftn16" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn17" class="footnote-item">
+          
+                        <a href="http://web.archive.org/web/20191120223532/http://transcrire.huma-num.fr/" target="_blank" rel="noopener">http://web.archive.org/web/20191120223532/http://transcrire.huma-num.fr/</a>
+                                .
+          <a href="#fnref-ftn17" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn18" class="footnote-item">
+          
+                        <a href="http://web.archive.org/web/20191009164608/http://diyhistory.lib.uiowa.edu/" target="_blank" rel="noopener">http://web.archive.org/web/20191009164608/http://diyhistory.lib.uiowa.edu/</a>.
+          <a href="#fnref-ftn18" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn19" class="footnote-item">
+          
+                        <a href="http://web.archive.org/web/20190506155836/http://omeka.wellesley.edu/civilwarletters/" target="_blank" rel="noopener">http://web.archive.org/web/20190506155836/http://omeka.wellesley.edu/civilwarletters/</a>.
+          <a href="#fnref-ftn19" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn20" class="footnote-item">
+          
+                        <a href="http://web.archive.org/web/20190824222538/https://scholarslab.lib.virginia.edu/" target="_blank" rel="noopener">http://web.archive.org/web/20190824222538/https://scholarslab.lib.virginia.edu/</a>.
+          <a href="#fnref-ftn20" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn21" class="footnote-item">
+          Roman des Morand (un projet de
+                                l’ENS de Lyon, en partenariat avec les Archives municipales de Lyon
+                                et le Laboratoire Triangle – UMR 5206): <a href="http://web.archive.org/web/20190308211358/http://morand.ens-lyon.fr/" target="_blank" rel="noopener">http://web.archive.org/web/20190308211358/http://morand.ens-lyon.fr/</a>.
+          <a href="#fnref-ftn21" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn22" class="footnote-item">
+          Lien vers l’ODD du projet
+                                Roman des Morand: <a href="http://web.archive.org/web/20191025094045/http://morand.ens-lyon.fr/archive/schema/Morand_TEI.odd" target="_blank" rel="noopener">http://web.archive.org/web/20191025094045/http://morand.ens-lyon.fr/archive/schema/Morand_TEI.odd</a>
+                                .
+          <a href="#fnref-ftn22" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn23" class="footnote-item">
+          
+                        <a href="http://web.archive.org/web/20191203020346/http://discovery.civilwargovernors.org/" target="_blank" rel="noopener">http://web.archive.org/web/20191203020346/http://discovery.civilwargovernors.org/</a>.
+          <a href="#fnref-ftn23" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn24" class="footnote-item">
+          
+                        <a href="http://web.archive.org/web/20190607032438/https://omeka.org/classic/plugins/Dropbox/" target="_blank" rel="noopener">http://web.archive.org/web/20190607032438/https://omeka.org/classic/plugins/Dropbox/</a>.
+          <a href="#fnref-ftn24" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn25" class="footnote-item">
+          
+                        <a href="http://web.archive.org/web/20190723161626/https://ehri-project.eu/" target="_blank" rel="noopener">http://web.archive.org/web/20190723161626/https://ehri-project.eu/</a>
+                                .
+          <a href="#fnref-ftn25" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn26" class="footnote-item">
+          Omeka Classic propose de classer les contenus selon des types
+                                d’bibls (bibl types). À chacun de ces types, est associé un ensemble
+                                de métadonnées, issu du Dublin Core, mais également créé par Omeka,
+                                à l’exemple de l’élément Text, permettant d’afficher toutes données
+                                textuelles contenues dans un document: <a href="http://web.archive.org/web/20190607034545/https://omeka.org/classic/docs/Content/bibl_Types/" target="_blank" rel="noopener">http://web.archive.org/web/20190607034545/https://omeka.org/classic/docs/Content/bibl_Types/</a>.
+          <a href="#fnref-ftn26" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn28" class="footnote-item">
+          
+                        <a href="http://web.archive.org/web/20190128224748/https://begrenzte-flucht.ehri-project.eu/" target="_blank" rel="noopener">http://web.archive.org/web/20190128224748/https://begrenzte-flucht.ehri-project.eu/</a>.
+          <a href="#fnref-ftn28" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn29" class="footnote-item">
+          
+                        <a href="http://web.archive.org/web/20191204121403/http://www.geonames.org/" target="_blank" rel="noopener">http://web.archive.org/web/20191204121403/http://www.geonames.org/</a>.
+          <a href="#fnref-ftn29" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn30" class="footnote-item">
+          
+                        <a href="http://web.archive.org/web/20191204121403/http://www.geonames.org/" target="_blank" rel="noopener">http://web.archive.org/web/20191204121403/http://www.geonames.org/</a>.
+          <a href="#fnref-ftn30" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn31" class="footnote-item">
+          
+                        <a href="http://web.archive.org/web/20191205134056/https://en.wikipedia.org/wiki/Main_Page" target="_blank" rel="noopener">http://web.archive.org/web/20191205134056/https://en.wikipedia.org/wiki/Main_Page</a>.
+          <a href="#fnref-ftn31" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn32" class="footnote-item">
+          
+                        <a href="http://web.archive.org/web/20191025092512/http://numerizen.fr/" target="_blank" rel="noopener">http://web.archive.org/web/20191025092512/http://numerizen.fr/</a>.
+          <a href="#fnref-ftn32" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn33" class="footnote-item">
+          
+                        <a href="http://web.archive.org/web/20190415151623/http://eman-archives.org/EMAN/" target="_blank" rel="noopener">http://web.archive.org/web/20190415151623/http://eman-archives.org/EMAN/</a>.
+          <a href="#fnref-ftn33" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn34" class="footnote-item">
+          Notes de cours de l’ENS (un projet
+                                de la bibliothèque Ulm-Jourdan, en partenariat avec l’bibl et
+                                l’École nationale des chartes): <a href="http://web.archive.org/web/20191025092750/http://eman-archives.org/coursENS/" target="_blank" rel="noopener">http://web.archive.org/web/20191025092750/http://eman-archives.org/coursENS/</a>.
+          <a href="#fnref-ftn34" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn35" class="footnote-item">
+          Tiny MCE est un
+                                éditeur HTML WYSIWYG, qui propose une boîte à outils permettant
+                                d’encoder un texte en HTML sans voir de code: <a href="http://web.archive.org/web/20191019064324/http://www.tiny.cloud/" target="_blank" rel="noopener">http://web.archive.org/web/20191019064324/http://www.tiny.cloud/</a>.
+          <a href="#fnref-ftn35" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn36" class="footnote-item">
+          TACT (Plateforme de transcription et
+                                d’annotation de corpus textuels): <a href="http://web.archive.org/web/20191025093047/https://tact.demarre-shs.fr/" target="_blank" rel="noopener">http://web.archive.org/web/20191025093047/https://tact.demarre-shs.fr/</a>.
+          <a href="#fnref-ftn36" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn37" class="footnote-item">
+          
+                        <a href="http://web.archive.org/web/20190407120016/http://dcl.ils.indiana.edu/teibp/index.html" target="_blank" rel="noopener">http://web.archive.org/web/20190407120016/http://dcl.ils.indiana.edu/teibp/index.html</a>.
+          <a href="#fnref-ftn37" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn38" class="footnote-item">
+          ImageMagick permet de retailler
+                        les images importées dans Omeka et notamment de créer des thumbnails: <a href="http://web.archive.org/web/20191025094257/https://imagemagick.org/" target="_blank" rel="noopener">http://web.archive.org/web/20191025094257/https://imagemagick.org/</a>.
+          <a href="#fnref-ftn38" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn39" class="footnote-item">
+           Manuel
+                        utilisateur d’Omeka Classic: <a href="http://web.archive.org/web/20190607022754/https://omeka.org/classic/docs/" target="_blank" rel="noopener">http://web.archive.org/web/20190607022754/https://omeka.org/classic/docs/</a>.
+          <a href="#fnref-ftn39" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn40" class="footnote-item">
+          Forum d’Omeka: <a href="http://web.archive.org/web/20191025094415/https://forum.omeka.org/c/omeka-classic" target="_blank" rel="noopener">http://web.archive.org/web/20191025094415/https://forum.omeka.org/c/omeka-classic</a>.
+          <a href="#fnref-ftn40" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn41" class="footnote-item">
+          Liste de diffusion
+                        francophone autour d’Omeka: <a href="http://web.archive.org/web/20191025094549/https://listes.huma-num.fr/sympa/info/humanum-omeka" target="_blank" rel="noopener">http://web.archive.org/web/20191025094549/https://listes.huma-num.fr/sympa/info/humanum-omeka</a>.
+          <a href="#fnref-ftn41" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn42" class="footnote-item">
+          
+                  <em>Transcript </em>est un plugin en cours d’améliorations, qui
+                        bénéficiera prochainement de nouvelles fonctionnalités, d’une meilleure
+                        ergonomie et d’une plus grande stabilité. Dans le cas de <em>TEI
+                            Editions</em>, pour éviter les problèmes de compatibilité, les
+                        développeurs recommandent d’utiliser un thème particulier (<em>EHRI Omeka
+                            Editions Theme</em>).
+          <a href="#fnref-ftn42" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn43" class="footnote-item">
+          Présentation détaillée des rôles
+                        utilisateur: <a href="http://web.archive.org/web/20191025094910/https://omeka.org/classic/docs/Admin/Users/" target="_blank" rel="noopener">http://web.archive.org/web/20191025094910/https://omeka.org/classic/docs/Admin/Users/</a>.
+          <a href="#fnref-ftn43" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn44" class="footnote-item">
+          Omeka et
+                        l’accessibilité: <a href="http://web.archive.org/web/20190607034354/https://omeka.org/classic/docs/GettingStarted/Accessibility_Statement/" target="_blank" rel="noopener">http://web.archive.org/web/20190607034354/https://omeka.org/classic/docs/GettingStarted/Accessibility_Statement/</a>.
+          <a href="#fnref-ftn44" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn45" class="footnote-item">
+          
+                  <em>Exhibit Builder</em> permet de créer des expositions virtuelles à
+                        partir des bibls et des collections ajoutées à <em>Omeka</em>;
+                            <em>Simple Pages</em>, d’ajouter des pages statiques à l’interface
+                        publique ; <em>Coins</em>, d’exporter les bibls sous la forme de
+                        citations dans l’application de gestion bibliographique,
+                        <em>Zotero</em>.
+          <a href="#fnref-ftn45" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn46" class="footnote-item">
+          Standard WAI-ARIA: <a href="http://web.archive.org/web/20191018183403/http://www.w3.org/WAI/standards-guidelines/aria/" target="_blank" rel="noopener">http://web.archive.org/web/20191018183403/http://www.w3.org/WAI/standards-guidelines/aria/</a>.
+          <a href="#fnref-ftn46" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn47" class="footnote-item">
+          
+                  <a href="http://web.archive.org/web/20191019164045/https://www.section508.gov/" target="_blank" rel="noopener">http://web.archive.org/web/20191019164045/https://www.section508.gov/</a>.
+          <a href="#fnref-ftn47" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn48" class="footnote-item">
+          Parmi les outils de
+                        visualisation disponible sur <em>Omeka</em>, nous pouvons citer
+                            <em>DocViewer</em>, <em>Universal Viewer</em> ou encore
+                            <em>Mirador</em>: <a href="http://web.archive.org/web/20190607022659/https://omeka.org/classic/plugins/" target="_blank" rel="noopener">http://web.archive.org/web/20190607022659/https://omeka.org/classic/plugins/</a>.
+          <a href="#fnref-ftn48" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn49" class="footnote-item">
+          
+                  <a href="http://web.archive.org/web/20191120003045/http://lucene.apache.org/solr/" target="_blank" rel="noopener">http://web.archive.org/web/20191120003045/http://lucene.apache.org/solr/</a>.
+          <a href="#fnref-ftn49" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+      </ol>
+    </section>
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{omeka,
+  author    = {Leblanc, Elina},
+  title     = {Omeka Classic. Un environnement de recherche pour les éditions scientifiques
+                    numériques},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {11},
+  year      = {2020},
+  doi       = {10.18716/ride.a.11.3},
+  url       = {https://doi.org/10.18716/ride.a.11.3},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Leblanc, Elina
+TI  - Omeka Classic. Un environnement de recherche pour les éditions scientifiques
+                    numériques
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 11
+PY  - 2020
+DA  - 2020/01
+DO  - 10.18716/ride.a.11.3
+UR  - https://doi.org/10.18716/ride.a.11.3
+PB  - Institut für Dokumentologie und Editorik e. V.
+LA  - fr
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Leblanc, E. (2020). Omeka Classic. Un environnement de recherche pour les éditions scientifiques
+                    numériques. RIDE – A review journal for digital editions and resources, (11). https://doi.org/10.18716/ride.a.11.3</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Leblanc, Elina. &#34;Omeka Classic. Un environnement de recherche pour les éditions scientifiques
+                    numériques.&#34; RIDE – A review journal for digital editions and resources, no. 11, 2020. https://doi.org/10.18716/ride.a.11.3.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Leblanc, Elina. &#34;Omeka Classic. Un environnement de recherche pour les éditions scientifiques
+                    numériques.&#34; RIDE – A review journal for digital editions and resources, no. 11 (2020). https://doi.org/10.18716/ride.a.11.3.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/omeka/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

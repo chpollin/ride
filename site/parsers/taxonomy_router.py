@@ -27,7 +27,7 @@ def parse_questionnaires(root: etree._Element) -> list[Questionnaire]:
     results = []
     for tax in taxonomies:
         base = tax.get("{http://www.w3.org/XML/1998/namespace}base", "")
-        m_attr = tax.get("m", "")
+        m_attr = tax.get("m", "") or tax.get("n", "")
 
         if "criteria-version-1-1" in base or "criteria-version-1" in base:
             # Check if it's SE (not DTC and not TE)

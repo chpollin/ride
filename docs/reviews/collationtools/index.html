@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juxta Web Service, LERA, and Variance Viewer. Web based collation tools for
+                    TEI &mdash; RIDE</title>
+  <meta name="description" content="
+            The review presents and compares three open source and web-based text collation
+                    tools, namely Juxta Web Service, LERA, and Variance Viewer, and investigates
+      ...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Juxta Web Service, LERA, and Variance Viewer. Web based collation tools for
+                    TEI">
+  <meta property="og:description" content="
+            The review presents and compares three open source and web-based text collation
+                    tools, namely Juxta Web Service, LERA, and Variance Viewer, and investigates
+      ...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/collationtools/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/collationtools/">
+<meta name="DC.title" content="Juxta Web Service, LERA, and Variance Viewer. Web based collation tools for
+                    TEI">
+<meta name="DC.creator" content="Torsten Roeder">
+<meta name="DC.date" content="2020-01">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.11.5"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="en">
+
+<meta name="citation_title" content="Juxta Web Service, LERA, and Variance Viewer. Web based collation tools for
+                    TEI">
+<meta name="citation_author" content="Torsten Roeder">
+<meta name="citation_doi" content="10.18716/ride.a.11.5"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2020-01">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/collationtools/collationtools.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Juxta Web Service, LERA, and Variance Viewer. Web based collation tools for\n                    TEI",
+  "author": [{"@type": "Person", "name": "Torsten Roeder", "url": "https://orcid.org/0000-0001-7043-7820"}],
+  "datePublished": "2020-01",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.11.5"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e. V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">Introduction</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">Perspectives on text collation</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">Review procedure</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">Juxta Web Service</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div5" class="toc-link">LERA</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div6" class="toc-link">Variance Viewer</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div7" class="toc-link">Discussion</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#bibliography" class="toc-link">Bibliography</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#footnotes" class="toc-link">Notes</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>Januar 2020</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.11.5" rel="external">10.18716/ride.a.11.5</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-11/">
+        <span class="badge badge-tools">TE</span>
+        Issue 11
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>EN</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/collationtools/collationtools.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/collationtools/collationtools-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="en">
+    <header class="review-header">
+      <a href="/issues/issue-11/" class="review-issue-link">
+        <span class="badge badge-tools">TE</span>
+        Issue 11: Tools and Environments
+      </a>
+
+      <h1>Juxta Web Service, LERA, and Variance Viewer. Web based collation tools for
+                    TEI</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Torsten Roeder&nbsp;<a href="https://orcid.org/0000-0001-7043-7820" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>        </span>
+      </div>
+
+      <div class="review-affiliation">Leopoldina, Halle (Saale), Germany</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="http://juxtacommons.org/" rel="external">Juxta Web Service</a>; <a href="http://lera.uzi.uni-halle.de/" rel="external">LERA</a>; <a href="http://variance-viewer.informatik.uni-wuerzburg.de/Variance-Viewer/" rel="external">Variance Viewer</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">Introduction</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">Perspectives on text collation</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">Review procedure</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">Juxta Web Service</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div5" class="toc-link">LERA</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div6" class="toc-link">Variance Viewer</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div7" class="toc-link">Discussion</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#bibliography" class="toc-link">Bibliography</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#footnotes" class="toc-link">Notes</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>Januar 2020</span>
+<span><a href="https://doi.org/10.18716/ride.a.11.5" rel="external">DOI</a></span><a href="/reviews/collationtools/collationtools.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/collationtools/collationtools-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>The review presents and compares three open source and web-based text collation
+                    tools, namely Juxta Web Service, LERA, and Variance Viewer, and investigates
+                    their suitability especially for philological work with TEI. While all tools
+                    adequately fulfill the general requirements of text collation, each of them
+                    supports individual workflow concepts and visualization methods. It is
+                    recommended that future developments consider supporting TEI standoff markup and
+                    tool modularization.</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>Introduction</h2>
+      <p id="p1">Have you ever needed to collate two copies or editions of a
+                    historical document in order to quickly and reliably identify the differences
+                    between them? In digital scholarly editions, variant readings are often encoded
+                    manually by human editors. Tools for automatic text collation do exist, but most
+                    of them are either difficult to use, or they address specific use cases. As
+                    such, there is a need for easy-to-use, accessible, and adaptable tools which can
+                    handle textual variance and text alignment, including support for TEI-XML
+                    markup. In other words, some tools exist, but do they really fit the
+                    philological and technical requirements of researchers?</p>
+<p id="p2">This article starts with a quick overview of text collation in
+                    philology and computer science. It goes on to develop a suitable review method
+                    and analyses three TEI-interoperable, web based collation tools: <a href="#div4" class="crossref">Juxta Web Service</a>
+               <sup class="footnote-ref" id="fnref-ftn1"><a href="#fn-ftn1" role="doc-noteref">1</a></sup>,
+                        <a href="#div5" class="crossref">LERA</a>
+               <sup class="footnote-ref" id="fnref-ftn2"><a href="#fn-ftn2" role="doc-noteref">2</a></sup>,
+                    and <a href="#div6" class="crossref">Variance Viewer</a>
+               <sup class="footnote-ref" id="fnref-ftn3"><a href="#fn-ftn3" role="doc-noteref">3</a></sup>.
+                    The review closes with a <a href="http://ride.i-d-e.de/issue-11/web-based-collation-tools/#" target="_blank" rel="noopener">comparison of these tools and a discussion</a> about workflow integration
+                    and future requirements.</p>
+<p id="p3">This review focuses on <em>non-proprietary online tools which
+                        require knowledge of XML-TEI</em>, but no programming skills. For this
+                    reason, some important instruments for scholarly text collation are not included
+                    in this review, like TUSTEP<sup class="footnote-ref" id="fnref-ftn4"><a href="#fn-ftn4" role="doc-noteref">4</a></sup>,
+                    Classical Text Editor<sup class="footnote-ref" id="fnref-ftn5"><a href="#fn-ftn5" role="doc-noteref">5</a></sup>,
+                    Versioning Machine<sup class="footnote-ref" id="fnref-ftn6"><a href="#fn-ftn6" role="doc-noteref">6</a></sup>,
+                    Oxygen XML Editor<sup class="footnote-ref" id="fnref-ftn7"><a href="#fn-ftn7" role="doc-noteref">7</a></sup>
+                    and CollateX<sup class="footnote-ref" id="fnref-ftn8"><a href="#fn-ftn8" role="doc-noteref">8</a></sup>.
+                    Nury (2018) discusses some of these tools (and others) in her comprehensive
+                    study (Nury 2018: 205–239), and provides a detailed list of scholarly collation
+                    tools (ibid. 305–316). For a comparative overview of tools that focus on version
+                    control instead of text collation, Wikipedia hosts an exhaustive list of file
+                    comparison software<sup class="footnote-ref" id="fnref-ftn9"><a href="#fn-ftn9" role="doc-noteref">9</a></sup>.</p>
+    </section>
+    <section id="div2">
+      <h2>Perspectives on text collation</h2>
+      <h3 id="div2.1">Preliminaries: text comparison and collation</h3>
+<p id="p4">Text comparison means <em>identifying differences</em>
+                        between two or more texts, by comparing them directly to each other. This
+                        technique is used in a broad range of scientific disciplines in which text
+                        is involved: in computer science for tracking changes in code; in
+                        jurisprudence for identifying relevant modifications of laws or contracts;
+                        even in bioinformatics for aligning DNA sequences (though DNA is not
+                        literally text) – just to give a few examples.</p>
+<p id="p5">Often used in authoring environments, text comparison generally
+                        follows functional purposes, such as when collaborative writing teams
+                        utilize it to revert unwanted or ill-intended modifications, in teaching and
+                        academic writing in order to check for plagiarism, or in code development to
+                        avoid conflicting changes. However, another use case of text comparison
+                        exists that aims at a better understanding of cultural processes. Scholars
+                        from all historical disciplines have an interest in retracing the creation
+                        and transmission of texts in order to establish connections or divergences
+                        between them. In textual criticism, the epistemic process of text comparison
+                        is called <em>collation</em> (to collate: from Latin collatus, “to bring
+                        together and compare, examine critically as to agreement“; cf. Plachta 2013:
+                        173).</p>
+<p id="p6">The following two sections engage with divergent understandings
+                        of <em>text</em>: In computer science, text is understood as a linear
+                        sequence of characters stored in an electronic document (file), while in
+                        philology, text is interpreted on multiple dimensions, for example by
+                        distinguishing text as a single physical document from text as an abstract
+                        idea (for a comprehensive theory of text models, see Sahle 2013: 45–60).
+                        These two concepts operate on different levels, and a philological text
+                        collation tool needs to build a bridge between technical and scholarly
+                        understanding.</p>
+<h3 id="div2.2">Philological aspects</h3>
+<h4 id="div2.2.1">a) Textual criticism</h4>
+<p id="p7">
+                     <figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="Scheme of descent of the manuscripts of
+                                    Pseudo-Apuleius Herbarius, in: Ernst Howald and Henry E.
+                                    Sigerist: Antonii Musae De herba vettonica liber, Leipzig
+                                        1927.10
+                        " loading="lazy"><figcaption>Fig. 1: Scheme of descent of the manuscripts of
+                                    Pseudo-Apuleius Herbarius, in: Ernst Howald and Henry E.
+                                    Sigerist: Antonii Musae De herba vettonica liber, Leipzig
+                                        1927.<sup class="footnote-ref" id="fnref-ftn10"><a href="#fn-ftn10" role="doc-noteref">10</a></sup>
+                        </figcaption></figure> Text collation is a technique used in <em>textual
+                                criticism</em>, which aims at retracing the genesis and the
+                            history of texts. It plays a major role when uncovering developments and
+                            dissemination of thoughts, ideas and concepts represented within texts.
+                            As sub-disciplines, the study of the <em>textual genesis</em>
+                            focuses on the process of creation of a textual work, while the study of
+                            the <em>textual history</em> focuses on modifications of the text in
+                            the course of its subsequent transmissions. It is not unusual, for
+                            instance, that a philologist consults an immense number of copies and
+                            related sources while engaging in the study of the history of one text;
+                            in philology, the manuscript transmission is often represented as a
+                            stemma (referring to Karl Lachmann; Plachta 2013: 29–31), a tree-like
+                            figure which points out relationships between sources (see <a href="#img1" class="crossref">Fig. 1</a>).</p>
+<h4 id="div2.2.2">b) Traditional methods</h4>
+<p id="p8">
+                     <figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="Example of a critical apparatus, as in Die
+                                    Metaphysik des Aristoteles, ed. by Albert Schwegler, Tübingen
+                                    1847, p. 1;11
+                                    ellipsis and highlighting added by the reviewer." loading="lazy"><figcaption>Fig. 2: Example of a critical apparatus, as in Die
+                                    Metaphysik des Aristoteles, ed. by Albert Schwegler, Tübingen
+                                    1847, p. 1;<sup class="footnote-ref" id="fnref-ftn11"><a href="#fn-ftn11" role="doc-noteref">11</a></sup>
+                                    ellipsis and highlighting added by the reviewer.</figcaption></figure> Traditionally, philological text collation is performed
+                            manually. One text is placed along the other, and an editor compares
+                            them word by word and letter by letter. Changes are catalogued in a
+                                <em>critical apparatus</em> (see <a href="#img2" class="crossref">Fig. 2</a>): A typical entry starts with the
+                            variant’s position (usually line or paragraph number), followed by the
+                            lemma of the base text often delimited by a closing square bracket ‘]’.
+                            Then follows the variant text itself and finally the corresponding sigla
+                            of the sources (see <a href="#img2" class="crossref">Fig. 2</a>,
+                            highlighted areas). Due to possible human errors, each version should
+                            ideally be collated at least two times by independent editors. While
+                            this method guarantees high reliability, it does cost a lot of time and
+                            effort.</p>
+<p id="p9">Editors need to establish clear guidelines to define the
+                            phenomena of interest for future users of an edition and those that will
+                            be explicitly disregarded during the collation. This is also an economic
+                            decision: in many cases, tracking of graphemic variance (e.g. æ/ä) or
+                            regular orthography (e.g. color/colour) requires immense additional
+                            resources. Even if such variants are potentially interesting for later
+                            studies, the required human effort is often not justifiable.
+                            Furthermore, the more details have to be tracked, the more human errors
+                            might increase.</p>
+<p id="p10">There are various conventional methods to present the
+                            results of a given text collation in printed editions, while digitally
+                            based presentations are still in development. Independently from the
+                            media, classical scholarly editions prefer a <em>critical
+                                apparatus</em>: one witness or the established critical text is
+                            chosen as <em>base-text</em>, while all variants are presented in
+                            footnotes or endnotes (Plachta 2013: 100–102). A more visual
+                            presentation mode is <em>synopsis</em>: all collated texts are
+                            presented in parallel, either in vertical or horizontal order (Plachta
+                            2013: 106–111).</p>
+<h4 id="div2.2.3">c) Advantages of digital tools</h4>
+<p id="p11">Digital tools can help. First, automatic collation can be
+                            significantly faster, if all witnesses are already fully transcribed.
+                            Philologists could focus their attention on semantics and leave the
+                            tedious letter-by-letter-collation to the machine. Or, argued from a
+                            positive perspective, the time and energy saved by automatic collation
+                            can be fully used for interpreting and refining the results.</p>
+<p id="p12">Second, an automatic collation process would always produce
+                            the same result, thus is more reliable than a human produced collation.
+                            Furthermore, during the process of collating, humans naturally tend to
+                            produce individual interpretations and need to make assumptions on a
+                            writer’s or scribe’s possible intentions (Plachta 2013: 115–121).
+                            Instead, computers do not interpret, unless instructed to, but focus
+                            exclusively on comparing the texts. These two very different competences
+                            – precision on the one hand and interpretation on the other – could be
+                            utilized to divide the process into an automated collation layer and a
+                            human interpretation layer.</p>
+<p id="p13">
+                     <figure id="img3" class="review-figure"><img src="pictures/picture-3.png" alt="English Bible Variants of Genesis 1,1,
+                                    visualized by BibleViz.12
+                        " loading="lazy"><figcaption>Fig. 3: English Bible Variants of Genesis 1,1,
+                                    visualized by BibleViz.<sup class="footnote-ref" id="fnref-ftn12"><a href="#fn-ftn12" role="doc-noteref">12</a></sup>
+                        </figcaption></figure> Third, digital tools can also help to create presentations
+                            dynamically, for example in graph based visualizations (see <a href="#img3" class="crossref">Fig. 3</a>). Some digital
+                            environments even leave the choice of a visualization method and
+                            base-text to the user, and offer analytic tools to refine philological
+                            findings significantly beyond mere collation results (Rieder et al.
+                            2012: 73–75). The creation of user-configurable visualizations is
+                            supported by a basic digital paradigm: separating the visual
+                            presentation (e.g. HTML) from the encoded representation (e.g. XML).</p>
+<h3 id="div2.3">Technical aspects</h3>
+<h4 id="div2.3.1">a) Types of textual variation</h4>
+<p id="p14">Analyzing differences between texts implies awareness about
+                            which type of variation can actually occur. Given two sequences A and B,
+                            the two basic cases of textual difference can be described as: <ul><li>addition (B contains a sequence C which does not exist in A),
+                                    e.g. read =&gt; read<em>ing</em>
+                        </li><li>deletion (A contains a sequence C which does not exist in B),
+                                    e.g. read<em>ing</em> =&gt; read</li></ul>
+                  </p>
+<p id="p15">Two more complex categories of variation are: <ul><li>substitution (A and B contain different sequences at the same
+                                    place), e.g. w<em>he</em>ther/w<em>ea</em>ther</li><li>transposition (A and B contain the same sequence at different
+                                    places), e.g. <em>p</em>lums/lum<em>p</em>s</li></ul>
+                  </p>
+<p id="p16">Identifying substitution and transposition is less trivial
+                            than additions and deletions (for an analysis on the transposition
+                            problem, see Schöch 2016). Both substitution and transposition can also
+                            be interpreted as successive additions and deletions, and this ambiguity
+                            often makes it difficult to decide what the original intention actually
+                            was. It is a philologist’s task to produce a well-founded and weighted
+                            interpretation of a scribe’s possible intentions or error’s causes. Here
+                            lies a watershed between the different procedures for identifying
+                            substitutions or transpositions in philology and computer science: a
+                            textual scholar decides by personal knowledge and experience, an
+                            algorithm by formal models.</p>
+<h4 id="div2.3.2">b) Technical approaches</h4>
+<p id="p17">The first algorithms for text comparison were invented in
+                            the 1960s. The most popular example is called Levenshtein Distance
+                            (Levenshtein 1966) and expresses textual difference as ‘edit distance’,
+                            which is the calculus of the minimal number of characters that need to
+                            be added, deleted or substituted to transform sequence A into sequence
+                            B. In the 1970s, it was the Hunt-McIlroy-Algorithm which solved the
+                            longest common subsequence problem, and revolutionized file comparison
+                            when it was implemented for the Unix command ‘diff’ (Hunt and Mcllroy
+                            1976), capable of identifying and describing differences line wise (not
+                            only character wise) in human and machine readable format. Larry Walls
+                            invented ‘patch’ in the 1980s, a Unix program capable of reverting
+                            changes by saving the difference in a separate file (“Patch” 2019).
+                            These algorithms or optimized variations of them have been in use until
+                            today.</p>
+<p id="p18">Programming linguists and philologists have implemented
+                            collation tools since the 1960s. Collating long texts turned out to be a
+                            complex scenario, with some major developments around 1990 (Spadini
+                            2016: 112–116). In 2009, a working group presented an abstract framework
+                            for complex text collation procedures, which was later called
+                            ‘Gothenburg model’<sup class="footnote-ref" id="fnref-ftn13"><a href="#fn-ftn13" role="doc-noteref">13</a></sup>.
+                            It distinguishes five different computing stages (tokenization,
+                            normalization, alignment, analysis, and visualization). Nassourou (2013)
+                            proposed to extend this model by a sixth, interpretative layer. It is
+                            important to be at least aware of the existence and the functions of
+                            these layers, in order to better understand differences between
+                            individual tools, their workflows, and possibly their configuration
+                            options – and to better interpret the results.</p>
+<h4 id="div2.3.3">c) General preliminaries</h4>
+<p id="p19">The following questions should be considered before starting
+                            the collation procedure: <ul><li>What is the <em>smallest unit (token)</em> of a compared
+                                    sequence? Is it a letter, a word, a phrase or even a
+                                    paragraph?</li><li>Should <em>normalization</em> rules apply? Collation can
+                                    be strictly character based, but often it is expected that
+                                    specific differences are ignored, e.g. whitespace (sequences of
+                                    more than one whitespace character are usually treated as one),
+                                    abbreviations (e.g. ‘&amp;’ as equivalent of ‘and’), spelling,
+                                    or graphemics.</li><li>Should <em>presentational or rendering aspects</em> be
+                                    included? In electronic texts, these are usually recorded in
+                                    markup (as in xml, html, markdown, latex and others). In TEI, a
+                                    typical use case would be the attribute
+                                    <code>@rend</code>.</li><li>Should collation also take the <em>formal structure</em>
+                                    of the documents into account? E.g. in XML, should the algorithm
+                                    compare every node, or focus on specified elements?</li><li>Should subsequent additions and deletions automatically be
+                                    interpreted as <em>substitutions?</em>
+                        </li><li>Is it required to identify <em>transpositions</em> as
+                                    well?</li></ul>
+                  </p>
+    </section>
+    <section id="div3">
+      <h2>Review procedure</h2>
+      <h3 id="div3.1">Method</h3>
+<p id="p20">On the one hand, the review aims at pointing out the individual
+                        strengths and specific qualities of each of the three presented tools. On
+                        the other hand, the review should also cover general aspects systematically.
+                        To this aim, a short list of basic features that helps to conduct this task,
+                        obligatory and non-obligatory, is presented first. All tools were tested
+                        with the same examples.</p>
+<h3 id="div3.2">Requirements</h3>
+<p id="p21">The list of requirements contains both <em>obligatory
+                            features</em>, which are expected by each of the tested tools, and
+                            <em>non-obligatory features</em>, which are understood as additional
+                        ones. <ol><li>web interface for uploading two or more documents (preferably with
+                                TEI support)</li><li>initiation of a text collation procedure <ul><li>non-obligatory: flexible collation parameters (e.g. word
+                                        or letter based, normalization, etc.)</li><li>non-obligatory: good performance with very large portions
+                                        of text</li></ul>
+                     </li><li>identification of basic types of textual difference (see section
+                                on <a href="#div2.3.2" class="crossref">technical
+                                    approaches</a>) <ul><li>non-obligatory: identification of sections of transposed
+                                        text</li><li>non-obligatory: automatic classification of variants in
+                                        systematic groups</li></ul>
+                     </li><li>browser-based visualization of the results (e.g. synopsis or
+                                apparatus, see also section on <a href="#div2.2.2" class="crossref">traditional methods</a>)</li><li>results export in any format (preferably TEI apparatus
+                                encoded)</li><li>open source code available</li><li>non-obligatory: easily accessible and free of charge (at least for
+                                basic services)</li></ol>
+               </p>
+<h3 id="div3.3">Examples</h3>
+<p id="p22">Although the selected tools were all intended to work as generic
+                        solutions, they have been developed from individual starting points or
+                        specific methodological perspectives on text analysis. Furthermore, there is
+                        a great variety of possible use cases – diversified by languages, epochs,
+                        genres, individual styles – which are too manifold to be adequately
+                        represented within the scope of this review. For this review, examples were
+                        chosen which are capable of demonstrating the general functionalities of the
+                        tools, while the suitability for specific use cases needs to be tested by
+                        the individual users themselves.</p>
+<p id="p23">Two sets of texts have been used to test the tools:<sup class="footnote-ref" id="fnref-ftn14"><a href="#fn-ftn14" role="doc-noteref">14</a></sup>
+                  <ul><li>a constructed dummy text, which is based on filler texts and
+                                covers the basic scenarios of textual variance (see section on types
+                                of <a href="#div2.3.1" class="crossref">textual
+                                variation</a>).</li><li>a real example and was taken from The Shakespeare Quartos
+                                    Archive<sup class="footnote-ref" id="fnref-ftn15"><a href="#fn-ftn15" role="doc-noteref">15</a></sup>.
+                                Shakespeare’s <em>Hamlet</em>, written between 1601 and 1602, is
+                                available in many printed versions which were digitized,
+                                transcribed, TEI-encoded and published under a Creative Common
+                                License (CC BY-NC 2.0). For testing on different complexity levels,
+                                another two versions of the documents were produced for this review:
+                                A smaller file containing only act 3, scene 1 (‘To be, or not to
+                                be’) with original, complex encoding, and another file with a
+                                simplified baseline encoding.</li></ul>
+               </p>
+    </section>
+    <section id="div4">
+      <h2>Juxta Web Service</h2>
+      <h3 id="div4.1">a) Introduction</h3>
+<p id="p24">Juxta (<a href="http://www.juxtacommons.org/" target="_blank" rel="noopener">http://www.juxtacommons.org/</a>, tested version: 1.8.3-BETA) is a
+                        text collation software produced by the University of Virginia in 2009. It
+                        was developed into the web application ‘Juxta Web Service’ by the Networked
+                        Infrastructure for Nineteenth-Century Electronic Scholarship (NINES)<sup class="footnote-ref" id="fnref-ftn16"><a href="#fn-ftn16" role="doc-noteref">16</a></sup>
+                        and Performant Software with support from Gregor Middell and Ronald Dekker.
+                        It received the Google Digital Humanities Award<sup class="footnote-ref" id="fnref-ftn17"><a href="#fn-ftn17" role="doc-noteref">17</a></sup>
+                        in 2010 and was originally intended to become a part of Google Books. The
+                        development seems to have been discontinued in 2014 (no updates since then),
+                        and the website presents itself as ‘beta’. However, Juxta Web Service is
+                        still active, and the code is available on Github<sup class="footnote-ref" id="fnref-ftn18"><a href="#fn-ftn18" role="doc-noteref">18</a></sup>
+                        under an Apache 2.0 license.</p>
+<h3 id="div4.2">b) Workflow</h3>
+<p id="p25">Juxta Web Service requires an account which can be created
+                        online free of charge with a few clicks. The collation procedure follows
+                        three steps: First, the user uploads two or more files that he/she wishes to
+                        collate and that will appear as ‘sources’ in the dashboard. Juxta WS accepts
+                        a broad range of input formats, such as TXT, XML, HTML, DOC, RTF, PDF and
+                        EPUB. The documents can also be retrieved from a URL or pasted into a text
+                        field (and, as a special feature, it is even possible to refer to Wikipedia
+                        articles and their revisions). If desired, source files can be reformatted
+                        (there is also an XML indent function) and edited directly in the browser,
+                        and saved as a new source. Secondly, each source needs to be prepared as
+                        ‘witness’. This means that a distinct name needs to be assigned to each
+                        source, while the text is being tokenized automatically in the background.
+                        The whole process becomes transparent and can also be modified in the ‘XML
+                        View’, which displays the XSLT transformation templates. For example, Juxta
+                        WS omits all elements which are not on the TEI block level (e.g. highlights)
+                        by default, unless this behavior is changed. Finally, the user selects two
+                        or more witnesses to form a ‘comparison set’. For the collation process, the
+                        user can define how punctuation, character case, hyphenation and line breaks
+                        should be handled.</p>
+<h3 id="div4.3">c) Output</h3>
+<p id="p26">
+                  <figure id="img4" class="review-figure"><img src="pictures/picture-4.png" alt="Example for Juxta Web Service’s Heat Map." loading="lazy"><figcaption>Fig. 4: Example for Juxta Web Service’s Heat Map.</figcaption></figure>
+                  <figure id="img5" class="review-figure"><img src="pictures/picture-5.png" alt="Example for Juxta Web Service’s Side-by-side
+                                View’." loading="lazy"><figcaption>Fig. 5: Example for Juxta Web Service’s Side-by-side
+                                View’.</figcaption></figure> Juxta Web Service presents the result of the collation in a number
+                        of different views. The ‘Heat Map’ displays the base text with highlighted
+                        differences (see <a href="#img4" class="crossref">Fig. 4</a>). The base
+                        text can be changed dynamically, and each single variant can be annotated
+                        manually. The ‘Side-by-side View’ is a synoptic view of two selected
+                        witnesses, with an optional ‘Histogram’ (see <a href="#img5" class="crossref">Fig. 5</a>). Finally, the integrated Versioning
+                            Machine<sup class="footnote-ref" id="fnref-ftn19"><a href="#fn-ftn19" role="doc-noteref">19</a></sup>
+                        provides a user-configurable synoptic view which is intended to display two
+                        or more collated witnesses simultaneously.</p>
+<p id="p27">
+                  <figure id="img6" class="review-figure"><img src="pictures/picture-6.png" alt="Example for Juxta Web Service’s TEI view and
+                                export." loading="lazy"><figcaption>Fig. 6: Example for Juxta Web Service’s TEI view and
+                                export.</figcaption></figure> The results can be exported in various formats, e.g. a TEI encoded
+                        version following the parallel segmentation method, and ready for further
+                        use (see <a href="#img6" class="crossref">Fig. 6</a>). Also HTML or
+                        DOCX output is possible, including a classical apparatus which follows a
+                        simple output of the base text.</p>
+<h3 id="div4.4">d) Summary</h3>
+<p id="p28">Juxta Web Service’s in-depth and thoughtfully developed features
+                        – although some of them remained in the experimental stage – make it a
+                        powerful tool. It offers a well-written documentation<sup class="footnote-ref" id="fnref-ftn20"><a href="#fn-ftn20" role="doc-noteref">20</a></sup>
+                        with a thorough explanation of all features. During the testing for this
+                        review, Juxta WS sporadically appeared to suffer from performance issues.
+                        The nature of the problem remained unclear, however it seemed to be related
+                        either to markup complexity or text length. Users should consider that
+                        currently, the Juxta Web Service is minimally maintained.</p>
+    </section>
+    <section id="div5">
+      <h2>LERA</h2>
+      <h3 id="div5.1">a) Introduction</h3>
+<p id="p29">LERA (<a href="https://lera.uzi.uni-halle.de/" target="_blank" rel="noopener">https://lera.uzi.uni-halle.de/</a>, tested version: 1.1.0.21) is an
+                        acronym for: ‘Locate, Explore, Retrace and Apprehend complex text variants’.
+                        It is a text collation software which was developed into a web based tool by
+                        Marcus Pöckelmann. It is part of the project SADA<sup class="footnote-ref" id="fnref-ftn21"><a href="#fn-ftn21" role="doc-noteref">21</a></sup>
+                        (‘Semi-automatische Differenzanalyse von komplexen Textvarianten’), which
+                        focuses on analyzing text variants at a larger scale. SADA is located at the
+                        University of Halle-Wittenberg (Germany) and was funded by the Federal
+                        Ministry of Education and Research from 2012 to 2015. LERA, as one of its
+                        parts, was designed in close collaboration with researchers from the
+                        humanities, and it received a poster award<sup class="footnote-ref" id="fnref-ftn22"><a href="#fn-ftn22" role="doc-noteref">22</a></sup>
+                        in 2016 at the DHd conference<sup class="footnote-ref" id="fnref-ftn23"><a href="#fn-ftn23" role="doc-noteref">23</a></sup>
+                        in Leipzig. The code repository is currently not accessible for the public,
+                        however it is planned to publish it in accordance with academic Open Science
+                        policies.</p>
+<h3 id="div5.2">b) Workflow</h3>
+<p id="p30">LERA can be tried online with a few sample texts. An individual
+                        instance with full functionality is available on personal request. After
+                        login, the user can upload two or more ‘documents’ for collation. During
+                        this procedure, the user assigns a siglum and a title to each document, and
+                        optionally sets language, segmentation method, hyphenation handling, and
+                        linguistic annotation. LERA works smoothly with XML, and all settings can be
+                        changed at different stages of the process. In a second phase, the user
+                        selects a set of documents for collation, which will then be displayed as
+                        ‘edition’.</p>
+<h3 id="div5.3">c) Output</h3>
+<p id="p31">
+                  <figure id="img7" class="review-figure"><img src="pictures/picture-7.png" alt="LERA, synoptic view with CATview (upper section) and
+                                highlighted differences." loading="lazy"><figcaption>Fig. 7: LERA, synoptic view with CATview (upper section) and
+                                highlighted differences.</figcaption></figure>
+                  <figure id="img8" class="review-figure"><img src="pictures/picture-8.png" alt="LERA, synoptic view with identic variants
+                                highlighted." loading="lazy"><figcaption>Fig. 8: LERA, synoptic view with identic variants
+                                highlighted.</figcaption></figure> LERA’s complex working environment offers a broad range of tools
+                        and features for text collation. The basic structure is a synoptic view of
+                        all documents, which can be customized with a rich selection of parameters
+                        and visual features. Additions, deletions, and substitutions can be color
+                        highlighted (see <a href="#img7" class="crossref">Fig. 7</a>);
+                        alternatively, for collation of more than two texts, colors can be used to
+                        highlight variants in the texts which are identical in two versions (see
+                            <a href="#img8" class="crossref">Fig. 8</a>) or exist only in one
+                        version. Detailed filter rules for normalization can be applied and changed
+                        on the fly. The most important distinctive feature of LERA is probably the
+                        section alignment, which is a feature to refine the results of the automatic
+                        collation of longer texts. Additionally, a navigation tool called
+                            CATview<sup class="footnote-ref" id="fnref-ftn24"><a href="#fn-ftn24" role="doc-noteref">24</a></sup>
+                        helps to browse through the text by highlighting each section as one square,
+                        which is colored according to the frequency of changes in that section. A
+                        word cloud is also available. Search terms are highlighted in the synoptic
+                        view, in CATview and in the word cloud simultaneously, which is very helpful
+                        for orientation (Barabucci 2016). The results can also be downloaded in
+                        export formats such as PDF, TEX and HTML.</p>
+<h3 id="div5.4">d) Summary</h3>
+<p id="p32">LERA is an impressively coherent suite of tools for text
+                        alignment and collation which allows the user to flexibly combine tools and
+                        parameters for individual use cases. Two things are still on the wish list:
+                        TEI export (or another structured format like JSON) and a public code
+                        repository. The project is likely to be maintained, as it is essential for
+                        at least one ongoing large research project.</p>
+    </section>
+    <section id="div6">
+      <h2>Variance Viewer</h2>
+      <h3 id="div6.1">a) Introduction</h3>
+<p id="p33">Variance Viewer (<a href="http://variance-viewer.informatik.uni-wuerzburg.de/Variance-Viewer/" target="_blank" rel="noopener">http://variance-viewer.informatik.uni-wuerzburg.de/Variance-Viewer/</a>,
+                        tested version as of June 2019) is a web application for text collation
+                        which was developed by Nico Balbach at the Department for Artificial
+                        Intelligence and Applied Computer Science of the University of Würzburg
+                        (Germany) in 2018. The idea for its development was initiated by a group of
+                        researchers from an academic working group for digital editions<sup class="footnote-ref" id="fnref-ftn25"><a href="#fn-ftn25" role="doc-noteref">25</a></sup>.
+                        The goal was to build a generic tool which conducts common text collation
+                        tasks for different research projects. The code is available on GitHub<sup class="footnote-ref" id="fnref-ftn26"><a href="#fn-ftn26" role="doc-noteref">26</a></sup>
+                        under GPL 3.0 license.</p>
+<h3 id="div6.2">b) Workflow</h3>
+<p id="p34">Variance Viewer can be used without an account. The user can
+                        directly upload (exactly) two files to collate on a simple one page dialogue
+                        website. Accepted formats are only XML (by default) and TXT (as fallback).
+                        The user can upload a configuration file with customized settings (the
+                        GitHub documentation page<sup class="footnote-ref" id="fnref-ftn27"><a href="#fn-ftn27" role="doc-noteref">27</a></sup>
+                        explains exactly how to set up an individual configuration file). This is
+                        crucial when adopting Variance Viewer to individual use cases. For example,
+                        it is possible to modify the list of XML elements whose content will be
+                        compared: By default, these are only <code>&lt;p&gt;</code> and
+                            <code>&lt;head&gt;</code>; all contents outside of these elements will
+                        be excluded. The configuration file also allows the user to define
+                        normalization rules for graphemic variance, for punctuation and
+                        abbreviations.</p>
+<h3 id="div6.3">c) Output</h3>
+<p id="p35">
+                  <figure id="img9" class="review-figure"><img src="pictures/picture-9.png" alt="Variance Viewer, synoptic output." loading="lazy"><figcaption>Fig. 9: Variance Viewer, synoptic output.</figcaption></figure> The web service operates quickly and displays a visualization of
+                        the collation result nearly instantly. The most distinctive feature of
+                        Variance Viewer is the automatic classification of variants. The tool
+                        identifies general content (by default), punctuation, graphemics,
+                        abbreviation, typography (depending on the TEI attribute
+                            <code>hi/@rend</code>), and separation (whitespace), and visualizes
+                        these with a color code (see <a href="#img9" class="crossref">Fig.
+                            9</a>). Color shades make clear whether there is only one different
+                        character in a token (light) or more than one (dark). Each feature can be
+                        switched on and off by using respective buttons, and it is possible to adapt
+                        the visualization of the results by using CSS properties. This makes
+                        Variance Viewer an excellent tool for visual analysis.</p>
+<p id="p36">
+                  <figure id="img10" class="review-figure"><img src="pictures/picture-10.png" alt="Variance Viewer, collation of typographic features
+                                (other deactivated)." loading="lazy"><figcaption>Fig. 10: Variance Viewer, collation of typographic features
+                                (other deactivated).</figcaption></figure> A unique feature of Variance Viewer is its ability to identify
+                        presentational differences, e.g. as typically described in
+                            <code>@rend</code>-attributes. While other collation tools only work on
+                        plain text level, Variance Viewer analyzes typographic aspects even if the
+                        underlying text is identical (see <a href="#img10" class="crossref">Fig.
+                            10</a>). Currently, this is implemented for the TEI attribute
+                            <code>@rend</code> only, but could potentially be extended to other
+                        attributes.</p>
+<p id="p37">The result is downloadable in TEI/XML format, with variants
+                        encoded in parallel segmentation, using elements <code>&lt;lem&gt;</code>
+                        and <code>&lt;rdg&gt;</code> for variants in the first and second text
+                        respectively, while the variant classification is recorded into the
+                        attribute <code>@type</code> of the <code>&lt;app&gt;</code> element. The
+                        TEI apparatus needs a manual check for some minor whitespace issues. Other
+                        available formats are JSON (according to a data scheme for another tool
+                        called Athen<sup class="footnote-ref" id="fnref-ftn28"><a href="#fn-ftn28" role="doc-noteref">28</a></sup>:
+                        ‘Annotation and Text Highlighting ENvironment’) or PDF.</p>
+<h3 id="div6.4">d) Summary</h3>
+<p id="p38">Variance Viewer does an excellent job in handling the TEI input.
+                        The configuration options are powerful and make Variance Viewer an excellent
+                        generic tool. On the output side, it must be mentioned that the downloadable
+                        TEI document is not perfectly schema valid in case a variant occurs within
+                        an element that does not allow <code>&lt;app&gt;</code> as child, e.g.
+                        within <code>&lt;locus&gt;</code>. This is probably not problematic for most
+                        use cases, but still needs to be taken into account. The tool is well-suited
+                        for inclusion in a workflow at a relatively early stage, e.g. after
+                        transcription and base encoding are completed, but before deeper semantic
+                        tagging takes place.</p>
+    </section>
+    <section id="div7">
+      <h2>Discussion</h2>
+      <h3 id="div7.1">Conclusions</h3>
+<p id="p39">According to the requirements, all tools provided a web
+                        interface for document upload (feature 1) and starting a collation procedure
+                        (feature 2), and all of them offer options for individual configurations.
+                        The tools’ approaches are very different in this respect: While LERA and
+                        Juxta Web Service both offer extremely granular interfaces, Variance Viewer
+                        offers high flexibility through an uploadable configuration file.
+                        Performance with large portions of text is adequate, but the tools cause
+                        heavy load on the client side, as they all load the complete collation
+                        result into the browser (instead of smaller portions).</p>
+<p id="p40">All tools were able to identify additions, deletions and
+                        substitutions correctly (feature 3), while transposition is obviously an
+                        interpretative issue and needs further analysis or manual editing, as
+                        supported by LERA.</p>
+<p id="p41">Furthermore, all tools offer a parallel synopsis view with
+                        variants highlighted (feature 4). Juxta Web Service and LERA both offer a
+                        helpful exploration tool for easy navigation through longer texts with
+                        Histogram and CATview. Concerning analysis, Variance Viewer has not only
+                        developed an interesting approach to classify variants automatically, but it
+                        can also detect presentational variants, which is most useful for collating
+                        texts with complex typography.</p>
+<p id="p42">Concerning output formats (feature 5), there is still much to be
+                        achieved. Although a schema valid TEI output is available in Juxta Web
+                        Service and Variance Viewer, the methods used to structure collation results
+                        in XML are very diverse. In each, case it will be necessary to revise the
+                        TEI code and adopt it to one’s own practice. The same applies to other
+                        output formats, especially presentational formats, but none of the tools
+                        offers options to configure PDF and HTML, so that the usefulness of these
+                        routines is questionable.</p>
+<p id="p43">It is positive that the source code of all tools is available
+                        (or planned to be) on public repositories (feature 6), so projects have a
+                        chance to review or reuse the code and to customize it for their own
+                        purposes. Usage of the tools is relatively easy and free of charge, as long
+                        as no special implementations are required (feature 7). Concerning
+                        accessibility, Variance Viewer follows an interesting lightweight concept,
+                        as it does not require any user management nor authentication, while LERA
+                        and Juxta Web Service require individual accounts and bind users to their
+                        web service.</p>
+<h3 id="div7.2">Outlook</h3>
+<p id="p44">The most debatable aspect of the TEI output routines is that all
+                        tools offer only <em>parallel segmentation</em> (TEI Guidelines,
+                            12.2.3<sup class="footnote-ref" id="fnref-ftn29"><a href="#fn-ftn29" role="doc-noteref">29</a></sup>)
+                        as encoding method. To merge all collated documents into one without
+                        disintegrating schema rules and element hierarchy (not to mention whitespace
+                        issues) is an extremely difficult task, and the tools solve this by deleting
+                        much of the markup, resulting in a simplified apparatus file with all extra
+                        features subtracted. It would be an alternative to implement an output as
+                            <em>standoff apparatus</em>, either with the double endpoint
+                        attachment (TEI Guidelines, 12.2.2<sup class="footnote-ref" id="fnref-ftn30"><a href="#fn-ftn30" role="doc-noteref">30</a></sup>)
+                        or with the location referenced method (TEI Guidelines, 12.2.1<sup class="footnote-ref" id="fnref-ftn31"><a href="#fn-ftn31" role="doc-noteref">31</a></sup>),
+                        while the source documents could remain unmodified (as also in
+                        graph-oriented text models, see Bleeker et al. 2018). The only condition
+                        would be granular encoding with <code>@xml:id</code> on each token, or
+                        corresponding milestones. A TEI apparatus based on one of these methods
+                        would create a much more reliable encoding and make further presentation
+                        routines easier to process (as discussed by Cayless et al. 2019). An
+                        advantage of parallel encoding is that it is easier to manually encode it in
+                        standard XML editors.</p>
+<p id="p45">Concerning visualization and analysis, it should be mentioned
+                        that there are other tools which could cover this function independently. To
+                        give an example, TEICat<sup class="footnote-ref" id="fnref-ftn32"><a href="#fn-ftn32" role="doc-noteref">32</a></sup>
+                        by M. Burghart offers a great alternative. Of course, Juxta Web Service,
+                        LERA, and Variance Viewer are developed as all-in-one solutions, and are
+                        optimized to their individual approach to text collation. However, thinking
+                        of the “separation of concerns”, as mentioned in the Gothenburg model, it
+                        seems desirable to move towards a <em>modular workflow</em> with more
+                        than one tool involved, in order to separate the collation process from
+                        analysis, visualization, and export. This would allow the possibility to to
+                        develop software independently for each task, which would support more
+                        generic and more detailed solutions. It would also be possible to design
+                        combined workflows, like for example, Juxta Web Service’s TEI output
+                        routine, LERA’s alignment tool and Variance Viewer’s classification
+                        algorithm. This would require a solid exchange format, which is not covered
+                        by the TEI apparatus, and probably should be covered on a more abstract
+                        level.</p>
+<p id="p46">For the workflow of an edition, it is not only important to
+                        decide which tool suits the individual requirements, but also to decide the
+                            <em>role of the tool</em> in the workflow: which task(s) should it
+                        fulfill, and which tasks are better done manually and/or by using other
+                        tools? In the current state of the tools, it is a good idea to use collation
+                        tools at a relatively early stage, after all versions of a text have been
+                        transcribed and checked for reliability (because any mistake will affect the
+                        collation result), but before further semantic or presentational tagging is
+                        applied (because of potential markup obliteration). Because a generic
+                        solution is unlikely to exist in the near future, it is advisable to rely on
+                        a wise combination of independent but interoperable tools and open
+                        services.</p>
+    </section>
+
+    <section id="bibliography" class="review-bibliography">
+      <h2>Bibliography</h2>
+      <ol class="bib-list">
+        <li>“Patch (Unix).” 2019. In <em>Wikipedia</em>. <a href="https://web.archive.org/web/20190623101231/https://en.wikipedia.org/wiki/Patch_(Unix)" target="_blank" rel="noopener">https://web.archive.org/web/20190623101231/https://en.wikipedia.org/wiki/Patch_(Unix)</a>.</li>
+        <li>Barabucci, G. 2016. “CATview.” <em>Digital Medievalist</em>, 10
+                        (September 25, 2016). <a href="http://doi.org/10.16995/dm.57" target="_blank" rel="noopener">http://doi.org/10.16995/dm.57</a>.</li>
+        <li>Bleeker, E., Buitendijk, B, Haentjens, R., et al. 2018. “Including XML
+                        Markup in the Automated Collation of Literary Text.” <em>XML Prague 2018
+                            Conference Proceedings</em>, pp. 77–95. <a href="https://archive.xmlprague.cz/2018/files/xmlprague-2018-proceedings.pdf" target="_blank" rel="noopener">https://archive.xmlprague.cz/2018/files/xmlprague-2018-proceedings.pdf</a>.</li>
+        <li>Bremer, T., Molitor, P., Pöckelmann, M., et al. 2015. “Zum Einsatz
+                        digitaler Methoden bei der Erstellung und Nutzung genetischer Editionen
+                        gedruckter Texte mit verschiedenen Fassungen. Das Fallbeispiel der Histoire
+                        philosophique des deux Indes von Guillaume-Thomas Raynal.”
+                            <em>Editio</em>, 29,1 (December 15, 2015), pp. 29–51. <a href="https://doi.org/10.1515/editio-2015-004" target="_blank" rel="noopener">https://doi.org/10.1515/editio-2015-004</a>.</li>
+        <li>Cayless, H., Beshero-Bondar, E., Vigilanti, R. et al. 2019. “Document
+                        Modeling with the TEI Critical Apparatus.” (Panel) <em>TEI 2019, What is
+                            text, really? TEI and beyond</em>, September 16–20, University of
+                        Graz, Austria. Book of Abstracts, pp. 168–170. <a href="https://graz-2019.tei-c.org/files/BoATEI2019.pdf" target="_blank" rel="noopener">https://graz-2019.tei-c.org/files/BoATEI2019.pdf</a>.</li>
+        <li>Hunt, J. W., and M. D. McIlroy. 1976. “An Algorithm for Differential File
+                        Comparison.” <em>Computing Science Technical Report</em> (Bell
+                        Laboratories), no. 41.</li>
+        <li>Levenshtein, V. I. 1966. “Binary Codes Capable of Correcting Deletions,
+                        Insertions and Reversals.” <em>Soviet Physics Doklady</em> 10 (8):
+                        707–710.</li>
+        <li>Nassourou, M. 2013. <em>Computer-Supported Textual Criticism. Theory,
+                            Automatic Reconstruction of an Archetype</em>. Norderstedt: Books on
+                        Demand.</li>
+        <li>Nury, E. L. 2018. <em>Automated Collation and Digital Editions From
+                            Theory to Practice</em>. London: King’s College (PhD Thesis). <a href="https://kclpure.kcl.ac.uk/portal/files/105283803/2018_Nury_Elisa_1337422_ethesis.pdf" target="_blank" rel="noopener">https://kclpure.kcl.ac.uk/portal/files/105283803/2018_Nury_Elisa_1337422_ethesis.pdf</a>.</li>
+        <li>Plachta, B. 2013. <em>Editionswissenschaft. Eine Einführung in Methode
+                            und Praxis der Edition neuerer Texte</em>. Stuttgart: Reclam (1st
+                        edition: 1997).</li>
+        <li>Rieder, B., Röhle, T. 2012. “Digital Methods: Five Challenges.” in Berry,
+                        D. (ed.) <em>Understanding Digital Humanities</em>. Basingstoke:
+                        Palgrave Macmillan, pp. 67–84.</li>
+        <li>Sahle, P. 2013. <em>Digitale Editionsformen. Zum Umgang mit der
+                            Überlieferung unter den Bedingungen des Medienwandels</em>. Teil 3:
+                            <em>Textbegriffe und Recodierung</em>. Norderstedt: Books on
+                        Demand.</li>
+        <li>Schöch, C. 2016. “Detecting Transpositions when Comparing Text Versions
+                        using CollateX.” <em>The Dragonfly’s Gaze. Computational analysis of
+                            literary texts</em> (August 29, 2016). <a href="https://dragonfly.hypotheses.org/954" target="_blank" rel="noopener">https://dragonfly.hypotheses.org/954</a>.</li>
+        <li>Spadini, E. 2016. <em>Studi sul “Lancelot” en prose</em>. Roma:
+                        Sapienza Università (PhD Thesis). <a href="http://hdl.handle.net/11573/1307347" target="_blank" rel="noopener">http://hdl.handle.net/11573/1307347</a>.</li>
+      </ol>
+    </section>
+
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        <li id="fn-ftn1" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20190623095209/http://juxtacommons.org/" target="_blank" rel="noopener">https://web.archive.org/web/20190623095209/http://juxtacommons.org/</a>.
+          <a href="#fnref-ftn1" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn2" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20190623095243/https://sada.uzi.uni-halle.de/" target="_blank" rel="noopener">https://web.archive.org/web/20190623095243/https://sada.uzi.uni-halle.de/</a>.
+          <a href="#fnref-ftn2" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn3" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20190623095317/http://variance-viewer.informatik.uni-wuerzburg.de/Variance-Viewer/" target="_blank" rel="noopener">https://web.archive.org/web/20190623095317/http://variance-viewer.informatik.uni-wuerzburg.de/Variance-Viewer/</a>.
+          <a href="#fnref-ftn3" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn4" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20190623100318/http://www.tustep.uni-tuebingen.de/" target="_blank" rel="noopener">https://web.archive.org/web/20190623100318/http://www.tustep.uni-tuebingen.de/</a>.
+          <a href="#fnref-ftn4" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn5" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20190623100347/http://cte.oeaw.ac.at/" target="_blank" rel="noopener">https://web.archive.org/web/20190623100347/http://cte.oeaw.ac.at/</a>.
+          <a href="#fnref-ftn5" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn6" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20190623100429/http://v-machine.org/" target="_blank" rel="noopener">https://web.archive.org/web/20190623100429/http://v-machine.org/</a>.
+          <a href="#fnref-ftn6" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn7" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20190623100455/https://www.oxygenxml.com/" target="_blank" rel="noopener">https://web.archive.org/web/20190623100455/https://www.oxygenxml.com/</a>.
+          <a href="#fnref-ftn7" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn8" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20190623100521/https://collatex.net/" target="_blank" rel="noopener">https://web.archive.org/web/20190623100521/https://collatex.net/</a>.
+          <a href="#fnref-ftn8" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn9" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20190623100548/https://en.wikipedia.org/wiki/Comparison_of_file_comparison_tools" target="_blank" rel="noopener">https://web.archive.org/web/20190623100548/https://en.wikipedia.org/wiki/Comparison_of_file_comparison_tools</a>.
+          <a href="#fnref-ftn9" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn10" class="footnote-item">
+          Source: Wikimedia Commons, <a href="https://web.archive.org/web/20190623100701/https://commons.wikimedia.org/wiki/File:Howald-sigerist.png" target="_blank" rel="noopener">https://web.archive.org/web/20190623100701/https://commons.wikimedia.org/wiki/File:Howald-sigerist.png</a>.
+          <a href="#fnref-ftn10" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn11" class="footnote-item">
+          Source: Austrian National
+                                        Library, <a href="https://web.archive.org/web/20190623100731/http://digital.onb.ac.at/OnbViewer/viewer.faces?doc=ABO_%2BZ165001600" target="_blank" rel="noopener">https://web.archive.org/web/20190623100731/http://digital.onb.ac.at/OnbViewer/viewer.faces?doc=ABO_%2BZ165001600</a>.
+          <a href="#fnref-ftn11" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn12" class="footnote-item">
+          Source: Holy Bible,
+                                            <a href="https://web.archive.org/web/20190623100936/http://www.informatik.uni-leipzig.de:8080/HolyBible/" target="_blank" rel="noopener">https://web.archive.org/web/20190623100936/http://www.informatik.uni-leipzig.de:8080/HolyBible/</a>.
+          <a href="#fnref-ftn12" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn13" class="footnote-item">
+          
+                        <a href="https://web.archive.org/web/20190623101257/https://collatex.net/doc/" target="_blank" rel="noopener">https://web.archive.org/web/20190623101257/https://collatex.net/doc/</a>.
+          <a href="#fnref-ftn13" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn14" class="footnote-item">
+          Test datasets and result files are available at <a href="https://doi.org/10.5281/zenodo.3582919" target="_blank" rel="noopener">https://doi.org/10.5281/zenodo.3582919</a>.
+          <a href="#fnref-ftn14" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn15" class="footnote-item">
+          
+                           <a href="https://web.archive.org/web/20190623101337/http://www.quartos.org/" target="_blank" rel="noopener">https://web.archive.org/web/20190623101337/http://www.quartos.org/</a>.
+          <a href="#fnref-ftn15" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn16" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20191210132222/https://nines.org/" target="_blank" rel="noopener">https://web.archive.org/web/20191210132222/https://nines.org/</a>.
+          <a href="#fnref-ftn16" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn17" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20160322021224/http://www.juxtasoftware.org/juxta-receives-google-digital-humanities-award/" target="_blank" rel="noopener">https://web.archive.org/web/20160322021224/http://www.juxtasoftware.org/juxta-receives-google-digital-humanities-award/</a>.
+          <a href="#fnref-ftn17" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn18" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20190623101516/https://github.com/performant-software/juxta-service" target="_blank" rel="noopener">https://web.archive.org/web/20190623101516/https://github.com/performant-software/juxta-service</a>.
+          <a href="#fnref-ftn18" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn19" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20190808035558/http:/v-machine.org/" target="_blank" rel="noopener">https://web.archive.org/web/20190808035558/http:/v-machine.org/</a>.
+          <a href="#fnref-ftn19" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn20" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20190623101547/http://www.juxtacommons.org/guide" target="_blank" rel="noopener">https://web.archive.org/web/20190623101547/http://www.juxtacommons.org/guide</a>.
+          <a href="#fnref-ftn20" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn21" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20190623101615/https://www.informatik.uni-halle.de/ti/forschung/ehumanities/sada/" target="_blank" rel="noopener">https://web.archive.org/web/20190623101615/https://www.informatik.uni-halle.de/ti/forschung/ehumanities/sada/</a>.
+          <a href="#fnref-ftn21" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn22" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20190623101638/http://dhd2016.de/node/135" target="_blank" rel="noopener">https://web.archive.org/web/20190623101638/http://dhd2016.de/node/135</a>.
+          <a href="#fnref-ftn22" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn23" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/201906231017/http://dhd2016.de/" target="_blank" rel="noopener">https://web.archive.org/web/201906231017/http://dhd2016.de/</a>.
+          <a href="#fnref-ftn23" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn24" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20190924161742/https:/catview.uzi.uni-halle.de/" target="_blank" rel="noopener">https://web.archive.org/web/20190924161742/https:/catview.uzi.uni-halle.de/</a>.
+          <a href="#fnref-ftn24" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn25" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20190623101812/https://www.uni-wuerzburg.de/zpd/services-aktivitaeten/ak-digitale-edition/" target="_blank" rel="noopener">https://web.archive.org/web/20190623101812/https://www.uni-wuerzburg.de/zpd/services-aktivitaeten/ak-digitale-edition/</a>.
+          <a href="#fnref-ftn25" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn26" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20190623101834/https://github.com/NesbiDevelopment/Variance-Viewer" target="_blank" rel="noopener">https://web.archive.org/web/20190623101834/https://github.com/NesbiDevelopment/Variance-Viewer</a>.
+          <a href="#fnref-ftn26" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn27" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20190623101834/https://github.com/NesbiDevelopment/Variance-Viewer" target="_blank" rel="noopener">https://web.archive.org/web/20190623101834/https://github.com/NesbiDevelopment/Variance-Viewer</a>.
+          <a href="#fnref-ftn27" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn28" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20190623101915/http://www.is.informatik.uni-wuerzburg.de/research-tools-download/athen/" target="_blank" rel="noopener">https://web.archive.org/web/20190623101915/http://www.is.informatik.uni-wuerzburg.de/research-tools-download/athen/</a>.
+          <a href="#fnref-ftn28" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn29" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20190623102042/https://tei-c.org/release/doc/tei-p5-doc/de/html/TC.html#TCAPPS" target="_blank" rel="noopener">https://web.archive.org/web/20190623102042/https://tei-c.org/release/doc/tei-p5-doc/de/html/TC.html#TCAPPS</a>.
+          <a href="#fnref-ftn29" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn30" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20191210142035/https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html" target="_blank" rel="noopener">https://web.archive.org/web/20191210142035/https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html</a>.
+          <a href="#fnref-ftn30" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn31" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20191210142025/https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html" target="_blank" rel="noopener">https://web.archive.org/web/20191210142025/https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html</a>.
+          <a href="#fnref-ftn31" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn32" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20190623102405/http://teicat.huma-num.fr/" target="_blank" rel="noopener">https://web.archive.org/web/20190623102405/http://teicat.huma-num.fr/</a>.
+          <a href="#fnref-ftn32" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+      </ol>
+    </section>
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{collationtools,
+  author    = {Roeder, Torsten},
+  title     = {Juxta Web Service, LERA, and Variance Viewer. Web based collation tools for
+                    TEI},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {11},
+  year      = {2020},
+  doi       = {10.18716/ride.a.11.5},
+  url       = {https://doi.org/10.18716/ride.a.11.5},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Roeder, Torsten
+TI  - Juxta Web Service, LERA, and Variance Viewer. Web based collation tools for
+                    TEI
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 11
+PY  - 2020
+DA  - 2020/01
+DO  - 10.18716/ride.a.11.5
+UR  - https://doi.org/10.18716/ride.a.11.5
+PB  - Institut für Dokumentologie und Editorik e. V.
+LA  - en
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Roeder, T. (2020). Juxta Web Service, LERA, and Variance Viewer. Web based collation tools for
+                    TEI. RIDE – A review journal for digital editions and resources, (11). https://doi.org/10.18716/ride.a.11.5</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Roeder, Torsten. &#34;Juxta Web Service, LERA, and Variance Viewer. Web based collation tools for
+                    TEI.&#34; RIDE – A review journal for digital editions and resources, no. 11, 2020. https://doi.org/10.18716/ride.a.11.5.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Roeder, Torsten. &#34;Juxta Web Service, LERA, and Variance Viewer. Web based collation tools for
+                    TEI.&#34; RIDE – A review journal for digital editions and resources, no. 11 (2020). https://doi.org/10.18716/ride.a.11.5.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/collationtools/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

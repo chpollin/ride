@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Review of confessio.ie, or Practical Thoughts on Digital Editing in Classics &mdash; RIDE</title>
+  <meta name="description" content="
+            The Hypertext Stack Project (confessio.ie), which digitizes Bieler’s 1950/51 print
+               edition of Patrick of Ireland’s letters, is one of few critical digital editions in
+ ...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="A Review of confessio.ie, or Practical Thoughts on Digital Editing in Classics">
+  <meta property="og:description" content="
+            The Hypertext Stack Project (confessio.ie), which digitizes Bieler’s 1950/51 print
+               edition of Patrick of Ireland’s letters, is one of few critical digital editions in
+ ...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/patrick-confessio/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/patrick-confessio/">
+<meta name="DC.title" content="A Review of confessio.ie, or Practical Thoughts on Digital Editing in Classics">
+<meta name="DC.creator" content="Yannick Brandenburg">
+<meta name="DC.date" content="2020-12">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.13.5"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="en">
+
+<meta name="citation_title" content="A Review of confessio.ie, or Practical Thoughts on Digital Editing in Classics">
+<meta name="citation_author" content="Yannick Brandenburg">
+<meta name="citation_doi" content="10.18716/ride.a.13.5"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2020-12">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/patrick-confessio/patrick-confessio.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "A Review of confessio.ie, or Practical Thoughts on Digital Editing in Classics",
+  "author": [{"@type": "Person", "name": "Yannick Brandenburg", "url": "https://orcid.org/0000-0002-3429-3118"}],
+  "datePublished": "2020-12",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.13.5"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e.V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">Introduction</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">Aims</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">Scope and Contents</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">Usability</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div5" class="toc-link">Technology and Applying TEI</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div6" class="toc-link">Conclusion: Confessio.ie As A Pioneer</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#bibliography" class="toc-link">Bibliography</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#footnotes" class="toc-link">Notes</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>December 2020</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.13.5" rel="external">10.18716/ride.a.13.5</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-13/">
+        <span class="badge badge-editions">SE</span>
+        Issue 13
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>EN</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/patrick-confessio/patrick-confessio.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/patrick-confessio/patrick-confessio-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="en">
+    <header class="review-header">
+      <a href="/issues/issue-13/" class="review-issue-link">
+        <span class="badge badge-editions">SE</span>
+        Issue 13: Digital Scholarly Editions
+      </a>
+
+      <h1>A Review of confessio.ie, or Practical Thoughts on Digital Editing in Classics</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Yannick Brandenburg&nbsp;<a href="https://orcid.org/0000-0002-3429-3118" class="orcid-link" rel="external" aria-label="ORCID profile"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" width="16" height="16"></a>        </span>
+      </div>
+
+      <div class="review-affiliation">University of Cologne, Cologne, Germany</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="https://www.confessio.ie/#" rel="external">The Saint Patrick’s Confessio Hypertext Stack Project</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">Introduction</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">Aims</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">Scope and Contents</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">Usability</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div5" class="toc-link">Technology and Applying TEI</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div6" class="toc-link">Conclusion: Confessio.ie As A Pioneer</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#bibliography" class="toc-link">Bibliography</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#footnotes" class="toc-link">Notes</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>December 2020</span>
+<span><a href="https://doi.org/10.18716/ride.a.13.5" rel="external">DOI</a></span><a href="/reviews/patrick-confessio/patrick-confessio.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/patrick-confessio/patrick-confessio-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>The Hypertext Stack Project (confessio.ie), which digitizes Bieler’s 1950/51 print
+               edition of Patrick of Ireland’s letters, is one of few critical digital editions in
+               classical scholarship. Hence, besides supplying much supporting material such as
+               translations or images of manuscripts, it aims to serve as a model for digitally
+               editing (late) ancient texts. Confessio.ie succeeds at showing that TEI can be
+               applied to classical texts as well, which has been doubted, and paves the way for a
+               more hypertextual understanding of a textual tradition. The project has worked out a
+               by and large suitable layout for a digital edition of a text with a medieval
+               manuscript tradition. However, future editors will need to give deeper thought to
+               matters such as accurately encoding and presenting an apparatus criticus and
+               improving the user friendliness of the interface. Further, because of inaccuracies in
+               the digital apparatus users will want to exploit confessio.ie’s rich resources not
+               instead of, but only next to Bieler’s print edition.</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>Introduction</h2>
+      <p id="p1">Patrick of Ireland, who in the fifth century evangelized the Irish, in
+               modern-day popular culture arguably counts among the most well-known, certainly among
+               the most influential Christian saints. About his life and deeds legends circulate,
+               many of which find their origin in a seventh-century Life of Patrick written by the
+               Irish monk, Muirchú. Two Latin texts have come down to us from Late Antiquity that
+               can undoubtedly be attributed to Patrick himself: the so-called
+                  <em>Confessio</em> and the <em>Epistola</em>. Both of them are written in
+               epistolary form and are united in the tradition as the first and second books,
+               respectively, of the <em>Libri Epistolarum Sancti Patricii Episcopi</em>. These
+               letters have been edited in one of the few editions of ancient texts that come close
+               to being definitive, by Ludwig Bieler (Bieler 1950; Bieler 1951).<sup class="footnote-ref" id="fnref-ftn1"><a href="#fn-ftn1" role="doc-noteref">1</a></sup>
+            </p>
+<p id="p2">The project under review here, called ‘Saint Patrick’s
+                  <em>Confessio</em> Hypertext Stack Project’ (in short: confessio.ie, or
+               ‘HyperStack’), aims at enabling everyone, not least those not to form part of the
+               scholarly community, to “read what St Patrick actually wrote <em>in his own
+                  words</em>” (italics original). It is Bieler’s edition which is at its core.
+               Both Bieler’s work and confessio.ie are related to the same larger project, the
+               Dictionary of Medieval Latin from Celtic Sources (DMLCS)<sup class="footnote-ref" id="fnref-ftn2"><a href="#fn-ftn2" role="doc-noteref">2</a></sup>
+               of the Royal Irish Academy: Bieler’s reprint of 1993 has been published as Ancillary
+               Publications IV of the DMLCS.</p>
+<p id="p3">Confessio.ie came into being as an initiative by the DMLCS and its
+               editor, Anthony Harvey, who acted as the principal investigator. Most of the work has
+               been carried out by the post-doctoral researcher, Franz Fischer, between 2008 and
+               2011. They have been supported by a number of short- to mid-term-interns. For the
+               technical realization, the project relied on the Digital Humanities Observatory of
+               the Royal Irish Academy.<sup class="footnote-ref" id="fnref-ftn3"><a href="#fn-ftn3" role="doc-noteref">3</a></sup>
+               The Royal Irish Academy has funded the project and is now responsible for its
+               curation and long-term sustainment. As the ongoing DMLCS project has been put in
+               charge of that, the long-term availability of confessio.ie is reasonably safe.
+               However, there is no guidance how to cite the digital edition.</p>
+<p id="p4">Confessio.ie was launched already in September 2011.<sup class="footnote-ref" id="fnref-ftn4"><a href="#fn-ftn4" role="doc-noteref">4</a></sup> There are a
+               number of reasons why it still appears worthwhile to review this resource after
+               almost a decade has passed. First, confessio.ie is to date the most comprehensive
+               venture to produce a digital critical edition within classical philology, and one of
+               only a handful of by and large successful editions in this field.<sup class="footnote-ref" id="fnref-ftn5"><a href="#fn-ftn5" role="doc-noteref">5</a></sup>
+               Confessio.ie may thus be approached as a model by anyone who considers producing a
+               digital scholarly edition of a classical text. Second, it stands out among digital
+               scholarly editions due to its outreach focus. Third, within Classics and apart from
+               discussions of digital editions as such (e.g., Monella 2018, 143), confessio.ie still
+               tends to be largely neglected as a critical edition.</p>
+    </section>
+    <section id="div2">
+      <h2>Aims</h2>
+      <p id="p5">The ‘HyperStack’ aims to serve both the scholarly community and the wider
+               public. For the former, it strives to be a prime digital tool for textual research on
+               Patrick. For the latter, it aims to disseminate information about the historical
+               Patrick as he emerges from his writings. This two-fold objective led the project to
+               assemble a vast number of different, if mostly textual documents that bear on Patrick
+               and his writings.</p>
+<p id="p6">Confessio.ie centers around a ‘hypertextual’ approach to its text(s)
+               (Lavagnino 1997). This means, the text is not just regarded as one Latin text
+               transmitted in different forms, but as a multi-layered entity consisting of many
+               other things besides it (which still forms the core): Manuscripts, translations,
+               earlier and recent editions and the like all form part of the same hypertext (van
+               Zundert 2016, 103). Confessio.ie has been set up with this uniquely digital approach
+               in mind (Fischer 2013, 82–84).</p>
+<p id="p7">In terms of academic outreach, the prime goal of the project is “to give
+               Irish society as direct access as possible to the historical Patrick”.<sup class="footnote-ref" id="fnref-ftn6"><a href="#fn-ftn6" role="doc-noteref">6</a></sup>
+               Apart from providing translations into various languages, the project group therefore
+               have intended to provide the reader with much supporting material. Articles und other
+               texts on the website address issues such as the context in which Patrick wrote<sup class="footnote-ref" id="fnref-ftn7"><a href="#fn-ftn7" role="doc-noteref">7</a></sup>
+               and, perhaps even more importantly, where the widespread legends about the Irish
+               patron come from (see below on supplements).</p>
+<p id="p8">When it comes to confessio.ie as a research tool, the project aims on the
+               one hand to make the information contained in Bieler’s editions digitally
+                  available.<sup class="footnote-ref" id="fnref-ftn8"><a href="#fn-ftn8" role="doc-noteref">8</a></sup>
+               On the other hand, it enables researchers to directly access images of all eight
+               extant manuscripts and a number of relevant publications. Confessio.ie wants to be
+               the one place where all the important (textual) information on Patrick’s works is
+               collected. But the project has yet another, farther reaching aim, as it aims to be a
+               “case study of how to deal with text transmission and how to deal with the academic
+               heritage of the print era”.<sup class="footnote-ref" id="fnref-ftn9"><a href="#fn-ftn9" role="doc-noteref">9</a></sup>
+            </p>
+    </section>
+    <section id="div3">
+      <h2>Scope and Contents</h2>
+      <p id="p9">
+               <figure id="img1" class="review-figure"><img src="pictures/picture-1.png" alt="The start page of confessio.ie." loading="lazy"><figcaption>Fig. 1: The start page of confessio.ie.</figcaption></figure> Confessio.ie features an enormous, and mostly well chosen, range of
+               material that is of interest to scholars and non-scholars alike. The project’s
+               website is well structured and particularly strong in guiding the visitor straight to
+               the textual version she needs. The focus of the home page’s presentation is the text
+               of Patrick’s <em>Confessio</em>: There, the user immediately encounters the
+               text’s first paragraph in an English translation and is at the same time invited to
+               read on in a language of her choice (<a href="#img1" class="crossref">see fig.
+                  1</a>). By this means, confessio.ie strongly signals that the <em>text</em>
+               of Patrick’s work is the centerpiece of the project.</p>
+<p id="p10">If the user does not follow the suggestion to immediately read on, she
+               can approach the self-explaining, well laid out top menu. This will lead her to
+               ‘confessio/epistola’, ‘manuscripts/prints’, ‘special features’, and an ‘about’
+               section. Less highlighted are a useful introductory video<sup class="footnote-ref" id="fnref-ftn10"><a href="#fn-ftn10" role="doc-noteref">10</a></sup> and a link to the publishing house’s offer to
+               purchase confessio.ie’s original English translation of the <em>Confessio</em>
+               (McCarthy 2011).</p>
+<p id="p11">Much material is downloadable in the ‘downloads’ subsection of the
+               ‘special features’ section. One finds (1) XML files of the critical edition of the
+               Confessio and of the draft of the Epistola, (2) of all translations, (3) of the
+               manuscript descriptions, and (4) PDF files of the editions, transcriptions and
+               facsimiles used in setting up confessio.ie.</p>
+<h3 id="div3.1">Confessio.ie as a digital scholarly edition</h3>
+<p id="p12">The heart of the project is the digital edition of Patrick’s
+                     <em>Confessio</em>, somewhat less so of his <em>Epistola</em> (I will
+                  come to this point). The digital edition, as indicated above, is principally a
+                  digitization of Bieler’s edition and commentary from 1950/51.<sup class="footnote-ref" id="fnref-ftn11"><a href="#fn-ftn11" role="doc-noteref">11</a></sup> In the download section
+                  users can access a PDF of this edition (Bieler 1993), which is helpful for those
+                  who want to compare the digital to the printed version and to access all its
+                  material that does not feature on confessio.ie, such as indices or an
+                  introduction.</p>
+<p id="p13">For years now, and already when confessio.ie came into being, the
+                  well-known TEI P5 guidelines have been the standard rules for encoding a digital
+                  scholarly edition (TEI Consortium 2019). The project team adhere to the principles
+                  laid out therein and have written their files in XML. Most philologists and
+                  historians, however, are likely to be more interested in the user interface of
+                  this digital edition. The main question they will ask is: Does confessio.ie
+                  address what a scholar (reasonably or not) expects from an edition of a classical
+                  text?</p>
+<p id="p14">
+                  <figure id="img2" class="review-figure"><img src="pictures/picture-2.png" alt="The layout of the digital edition." loading="lazy"><figcaption>Fig. 2: The layout of the digital edition.</figcaption></figure> The layout of the digital edition is as straightforward as it is helpful
+                     (<a href="#img2" class="crossref">see fig. 2</a>). The main text,
+                  including the critical sigla known from printed editions<sup class="footnote-ref" id="fnref-ftn12"><a href="#fn-ftn12" role="doc-noteref">12</a></sup> and bible quotations in italics, is
+                  on the center-right. The <em>Confessio</em> is split into the 62 paragraphs of
+                  Bieler’s edition, each of which is presented on a separate page. The resulting
+                  text length per page is easily digestible. Most paragraphs are, on today’s
+                  ordinary desktop screens, easily presented in whole. Above the text, one finds the
+                  title of the respective work (‘I. CONFESSIO’), the number of the paragraph, and a
+                  search function. The search is explained in the FAQ (see below); it will search
+                  the main text and each of the apparatuses/commentaries. Nothing more advanced than
+                  the search for strings is supported.</p>
+<p id="p15">Additional and commendable features can be found below the text.
+                  Here, users can immediately access other versions of the same text they are
+                  reading in Latin: introductory sections and images of each of the manuscripts and
+                  earlier editions; and the relevant passage in each of the translations available
+                  on confessio.ie. Regrettably though, except for the manuscripts (only via the
+                  apparatus criticus!), confessio.ie is unable to display text/edition and
+                  image/translation at the same time; and manuscripts are not aligned on any level
+                  below page/column (see below).</p>
+<p id="p16">Although all of this is useful in its own right, scholars will find
+                  the left-hand column the most important one. Here, all three apparatuses from
+                  Bieler’s edition are presented: an apparatus criticus, an apparatus fontium, and
+                  an apparatus biblicus (in this order, which by reasonably deviating from Bieler’s
+                  order (sources, critical, bible) gives the critical apparatus the prominence it
+                  deserves). Bieler’s commentary is to be found here too; technically, it has been
+                  treated just like the apparatuses.</p>
+<p id="p17">In the default view, none of the apparatuses is opened. As all of
+                  them are displayed next to each paragraph page – whether they contain information
+                  or not –, users have to open them individually (or keep them open from the start
+                  when navigating through the text) in order to find out if there is any information
+                  stored in the respective apparatus in the respective paragraph. Especially the
+                  apparatus fontium is not present on many of Bieler’s pages and thus in the digital
+                  version it is oftentimes empty. At times I find it a bit distracting to still have
+                  it on display all the time.</p>
+<p id="p18">
+                  <figure id="img3" class="review-figure"><img src="pictures/picture-3.png" alt="Alignment." loading="lazy"><figcaption>Fig. 3: Alignment.</figcaption></figure> The alignment of apparatuses and text are well done. In writing the XML
+                  files, each word of Patrick’s text has been automatically given a unique ID. This
+                  ID is named after the page, line, and word-in-line numbers of White’s edition
+                  (White 1905), which are also used by Bieler. This allows for an impressively
+                  reliable, detailed alignment of text and apparatus. When hovering over an
+                  apparatus entry, the corresponding text is highlighted (<a href="#img3" class="crossref">see fig. 3</a>). All apparatuses and the commentary are
+                  highlighted in the same visual way.</p>
+<p id="p19">However, when the mouse hovers over the text, the corresponding
+                  sections of the apparatuses are not highlighted. It is not clear if the project
+                  team have consciously decided against this (and if they have, why). I for one
+                  would have preferred to have also the text direct me to the apparatuses, which
+                  would facilitate work when compared to the printed book (Caria and Mathiak 2018,
+                  274).</p>
+<p id="p20">
+                  <figure id="img4" class="review-figure"><img src="pictures/picture-4.png" alt="Ms Paris lat. 17626 in the text view." loading="lazy"><figcaption>Fig. 4: Ms Paris lat. 17626 in the text view.</figcaption></figure> How the critical apparatus is set up to deal with manuscripts, sigla,
+                  and other abbreviations, is a great help.<sup class="footnote-ref" id="fnref-ftn13"><a href="#fn-ftn13" role="doc-noteref">13</a></sup> This is achieved
+                  by two means. First, in the apparatuses, it is easy to identify all kinds of
+                  abbreviations, including sigla of manuscripts and even sigla of groups of
+                  manuscripts. All manuscript group sigla are resolved when hovering over them.
+                  Abbreviations of modern literature and ancient works are hyperlinked to the
+                  respective bibliography or abbreviation list entries. Second, all manuscript
+                  sigla, when clicked, will load an image of the relevant page of the manuscript
+                  just above the main text of the <em>Confessio</em> (<a href="#img4" class="crossref">see fig. 4</a>), and thus allow direct access to the
+                  sources.</p>
+<p id="p21">
+                  <figure id="img5" class="review-figure"><img src="pictures/picture-5.png" alt="The apparatus criticus." loading="lazy"><figcaption>Fig. 5: The apparatus criticus.</figcaption></figure> Yet there is a major disadvantage in how the apparatuses are visualized,
+                  which makes them appear to lack structure and makes them hard to follow: They fail
+                  to signal where an entry starts and where it ends. For example, in
+                     <em>Confessio</em> 52 the fourth entry in Bieler runs: ‘nihilominus:
+                  nihilhominum P. nihil δ’. <a href="#img5" class="crossref">Fig. 5</a> shows
+                  how this is visualized in the digital edition. It is not intuitively clear that
+                     <em>nihil</em> belongs to the entry in the line above (esp. when compared
+                  to the first, not indented line, which exhibits three – actually four, because
+                  ‘mercedem dabam V’ belongs here, too – individual entries). Neither is it
+                  intuitively understandable, why some lines (or entries) are indented and some are
+                  not, or indeed where an entry starts (how to tell from the layout where, e.g., the
+                  entry ‘auidisse V. audissime P.’ starts and ends?).</p>
+<p id="p22">The reason for this easily avoidable shortcoming is a decision the
+                  project team have made about the details of their XML files. They have transformed
+                  Bieler’s apparatus into XML as follows, by using the paragraph tag
+                     <code>&lt;p&gt;</code> (simplified):
+                  <code>&lt;note&gt;&lt;p&gt;</code>nihilominus: nihilhominum <code>&lt;ref
+                     type="witness"&gt;</code>P<code>&lt;/ref&gt;</code>.<code>&lt;/p&gt;&lt;p&gt;</code>nihil
+                     <code>&lt;ref type="witness"&gt;</code>Î´<sup class="footnote-ref" id="fnref-ftn14"><a href="#fn-ftn14" role="doc-noteref">14</a></sup>
+                  <code>&lt;/ref&gt;</code>.<code>&lt;/p&gt;&lt;/note&gt;</code>. But those entries
+                  which exhibit only a single variant transmitted in a single manuscript or family
+                  of manuscripts lack a <code>&lt;p&gt;</code> tag: e.g.,
+                  <code>&lt;note&gt;</code>cupiebam <code>&lt;ref
+                     type="witness"&gt;</code>Î´<code>&lt;/ref&gt;</code>.<code>&lt;/note&gt;</code>.
+                  Now, when it comes to representation on screen, this use of <code>&lt;p&gt;</code>
+                  has the unfortunate consequences that the entry ‘nihilominus … nihil δ’ has a line
+                  break in between and thus lacks the appearance of a continuous entry. Nor is it,
+                  e.g., clear that ‘me cum’ starts a new entry which runs until ‘mecum et P’ in the
+                  next line.</p>
+<p id="p23">
+                  <figure id="img6" class="review-figure"><img src="pictures/picture-6.png" alt="The commentary." loading="lazy"><figcaption>Fig. 6: The commentary.</figcaption></figure> In the same vein, the commentary looks crowded, although contentwise it
+                  isn’t. Technically the commentary is not treated differently from any of the
+                  apparatuses. Each entry is identified by a <code>&lt;note&gt;</code> tag. Each
+                  commentary entry is separated by an <code>&lt;ab&gt;</code> tag (in the print
+                  edition, they are not aligned to the text on any sub-paragraph level either). This
+                  is only rendered by a dash (—) which is hard to make out within the text of the
+                  commentary (<a href="#img6" class="crossref">see fig. 6</a>). This
+                  visualization makes the commentary quite difficult to read, at least for my eye.
+                  Other options, e.g., beginning a new paragraph or highlighting the lemma, would
+                  certainly find more appreciation.</p>
+<p id="p24">By and large, the digital edition of confessio.ie is a digitization
+                  of Bieler’s print edition. As text editions are the foundation of all further
+                  research in any philology, accuracy in informing readers about manuscript readings
+                  is indispensable (Reeve 2000, 200–201). In the case of confessio.ie, one will not
+                  ask for an accurate representation of the manuscript evidence, but of Bieler’s
+                  edition.</p>
+<p id="p25">In order to judge the reliability of the work, I have taken random
+                  samples. The main text has been well proofread and is, as far as I am aware, free
+                  of errors. It accurately reproduces even interpunction and italicization. This
+                  claim cannot unfortunately be held for the critical apparatus. The apparatus
+                  criticus is the centerpiece of a scholarly edition und its quality therefore can’t
+                  be neglected (Tarrant 2016, 128–40; Fischer 2019). In my samples, I have come
+                  across the following deviations from Bieler’s edition (I give Bieler’s reading
+                     first):<sup class="footnote-ref" id="fnref-ftn15"><a href="#fn-ftn15" role="doc-noteref">15</a></sup> 17 (239,22 White) <em>quidam</em> C] <em>quidam</em>
+                  G; 17 (239,26) <em>notam</em> C] <em>notam</em> G; 20 (241,15)
+                     <em>quandiu</em> D] <em>quamdiu</em> D; 20 (241,16)
+                     <em>mēbrorum</em>
+                  <sup class="footnote-ref" id="fnref-ftn16"><a href="#fn-ftn16" role="doc-noteref">16</a></sup> C]
+                     <em>mebrorum</em> C; 28 (244,7) <em>hiberionē</em> G]
+                     <em>hiberione</em> G; 46 (249,24) <em>postᵗergū</em> G]
+                     <em>postᵗergu</em> G.</p>
+<p id="p26">Confessio.ie further fails to inform the reader that D omits 20–21
+                  (242,1–3) <em>qui loquimini … annos</em> and that R is corrupt there
+                     (<em>qui loquitur … iterum</em>). There are also some rather minor errors
+                  of other types: 2 (236,2) <em>et</em> is aligned with <em>me</em> instead
+                  of <em>et</em> in the text (the error is in the XML file:
+                     <code>@target="#W.236.02.04"</code> should read
+                     <code>@target="#W.236.02.05"</code>). 17 (240,1–2) Bieler writes ‘<em>R
+                     mut</em>’, which is resolved on confessio.ie to ‘<em>R mutitlus</em>’
+                  [sic]. Despite all its merits in other fields, because of these errors and
+                  inaccuracies collectively, the digital edition of confessio.ie stays short of
+                  being reliable.</p>
+<h3 id="div3.2">The Epistola</h3>
+<p id="p27">While Patrick’s <em>Confessio</em> is the centerpiece of the
+                  ‘Saint Patrick’s <em>Confessio</em> Hypertext Stack Project’, they do not
+                  altogether neglect the second of his extant writings, the <em>Epistola</em>,
+                  also edited by Bieler and transmitted together with the <em>Confessio</em> in
+                  most manuscripts. In fact, confessio.ie offers almost as many translations of the
+                  as of the <em>Confessio</em> (although there is no German translation of the
+                     <em>Epistola</em>, but the <em>Confessio</em> was translated into
+                  German specifically for this project).</p>
+<p id="p28">There is no full digital edition of the <em>Epistola</em> on
+                  confessio.ie. There is a page which obviously was prepared for encompassing a
+                  full-grown edition of this text as taken from Bieler.<sup class="footnote-ref" id="fnref-ftn17"><a href="#fn-ftn17" role="doc-noteref">17</a></sup>
+                  But the XML file for the <em>Epistola</em>, which too is downloadable (see
+                  above), is hardly more than a draft from which to go on (just compare the roughly
+                  22,000 characters of the TEI header of the <em>Confessio</em> XML file to the
+                  mere 540 characters of the <em>Epistola</em> file!). It features only the
+                  whole text of the letter, all the words given their specific IDs, and the
+                  apparatus fontium has fully been encoded, thus arriving at being (as yet) no more
+                  than another uncritical edition on the web.</p>
+<h3 id="div3.3">Editorial Principles and Transmission</h3>
+<p id="p29">This is one of the weakest points in the digital edition. For any
+                  critical edition is reasonably expected to lay out their principles in terms of,
+                  e.g., method, orthography, normalization. It is equally necessary to say a word
+                  about the manuscript tradition, or at least where to find such information. In
+                  spite of the extensive information given in the ‘About the HyperStack project’
+                  section, there is hardly a word about any of this – and if it is, users have to
+                  collect the information from different parts of the web site by themselves.</p>
+<p id="p30">I will give two examples which I consider especially unfortunate. The
+                  first one is the stemma. Bieler was a philologist, and like most classicists a
+                  ‘Lachmannian’. This means, he went to quite some lengths in order to come up with
+                  a stemma, which in his case allows him, he claims, to go back to Patrick’s
+                  autograph, called Σ (Bieler 1950, 7–39). He comes up with an indirect tradition,
+                  Ψ, and three manuscript families of the direct tradition: D, V, and Φ comprising
+                  all remaining six witnesses. All of this is hardly remarked, let alone discussed,
+                  on confessio.ie. But can a critical edition, whether digital or not, really
+                  dispense with it? True, there is a short note saying “Bieler’s edition is an
+                  excellent attempt to reconstruct an approximate original of the
+                     <em>Confessio</em>, the archetype Σ” (‘About the HyperStack’, 4.1). And in
+                  the ‘Special Features/Key to Symbols and Abbreviations’ section there are scans of
+                  Bieler’s pedigrees, without being explained: Why there, and how is one looking for
+                  the relationships of the manuscripts supposed to find them? This necessary
+                  information is first too little and second too scattered. It would have sufficed,
+                  though, to explicitly refer the user to Bieler’s introduction for this kind of
+                  information.</p>
+<p id="p31">My second example concerns the alterations the confessio.ie team has
+                  made to Bieler’s edition. The text they use comes from the Archive of Celtic-Latin
+                  Literature, as documented in ‘About the HyperStack’ 4.2 (<a href="#ftn10" class="crossref">see note 10</a>). A user will however have to recur to the
+                  XML file of the Latin text (where she is not directed) in order to find out about
+                  the consequences. Only there (in the header, <code>&lt;notesStmt&gt;</code>),
+                  there is a detailed discussion, for example, about the use of u and v, stating:
+                  Bieler uses capital V and small capital u. Confessio.ie writes all consonants as
+                  v, all vowels as u. In the commentary then, the capitals are all written V. This
+                  is not a significant point in itself, but it is at the least not user friendly to
+                  hide this kind of information in an XML file without even directing there,
+                  especially when considering that many users will probably be either not ready or
+                  not able to open and read an XML file.</p>
+<h3 id="div3.4">Manuscripts and Editions</h3>
+<p id="p32">
+                  <figure id="img7" class="review-figure"><img src="pictures/picture-7.png" alt="Description and digital representation of the Book of
+                        Armagh." loading="lazy"><figcaption>Fig. 7: Description and digital representation of the Book of
+                        Armagh.</figcaption></figure> The project team must be congratulated for succeeding in being granted
+                  the rights to digitally reproduce images of all eight manuscripts. Noteworthily,
+                  for the first time they have made digitally available images of the pertaining
+                  sections of the famous ‘Book of Armagh’ (Dublin, TCD 52, <a href="#img7" class="crossref">see fig. 7</a>).<sup class="footnote-ref" id="fnref-ftn18"><a href="#fn-ftn18" role="doc-noteref">18</a></sup> Except for the two Salisbury manuscripts (221
+                  and 223), which had to be digitized from microfilms, all of them are
+                  high-resolution colour images.</p>
+<p id="p33">All manuscripts have been described by the project researcher, Franz
+                  Fischer. The descriptions and images of the manuscripts are easily accessible in a
+                  seperate ‘manuscripts/prints’ section. Their XML files are available for download
+                  from the downloads section. After an introduction containing information about the
+                  location, provenance, sigla (it is missing for Rouen 1391, which should be R),
+                  available images, and a copyright notice, there are useful sections of various
+                  detail on each manuscript’s content, physical description, history, and a
+                  bibliography.</p>
+<p id="p34">From the manuscripts pages, it is not possible to be directed to the
+                  pertinent sections of Patrick’s text. Although it is immensely useful to have the
+                  manuscripts at hand when reading the critical edition, users will find it less
+                  convenient that manuscripts are aligned to the text on page/column level only,
+                  rather than on the level of paragraphs or even words (see above). This forces them
+                  to spend a lot of time on searching the respective manuscript folium for the
+                  passage they want to see in the original manuscript. It is especially unfortunate,
+                  as confessio.ie claims that readers “are invited to find their way through the
+                  dense net of textual layers” and in this respect explicitly mentions the
+                  manuscript reproductions (‘About’, 2.2).</p>
+<p id="p35">
+                  <figure id="img8" class="review-figure"><img src="pictures/picture-8.png" alt="Description and digital representation of Ware’s
+                        edition." loading="lazy"><figcaption>Fig. 8: Description and digital representation of Ware’s
+                        edition.</figcaption></figure> The same holds, mutatis mutandis, for earlier editions. PDFs of all
+                  earlier editions are available for download (Ware 1656; Papebroch 1668; White
+                  1905; Bieler 1950/51), and, additionally, of a diplomatic transcription (Gwynn, E.
+                  1937) and a facsimile print (Gwynn, J. 1913) of the Book of Armagh. Interestingly,
+                  the copy of White’s edition used is the very one that Bieler used and annotated
+                  when he prepared his edition. The descriptions of the editions are far shorter and
+                  less structured than those of the manuscripts (<a href="#img8" class="crossref">see fig. 8)</a>.</p>
+<h3 id="div3.5">Translations</h3>
+<p id="p36">One of the most notable features of the project is the translations.
+                  The project team have included translations of the <em>Confessio</em> into
+                  English (McCarthy 2011), Irish (Mac Philibín 1961), Italian (Malaspina 1985),
+                  Brazilian Portuguese (dos Santos 2007), German (newly translated by project’s
+                  researcher, Franz Fischer), and English (Blank) Verse (Ferguson 1877–1886). There
+                  are translations of the <em>Epistola</em> into all of these languages but
+                  German. To have translations of Patrick’s texts in many languages accessibly
+                  available is obviously very useful. XML files of all the translations are
+                  available for download, which allows users to transform them into a format of
+                  their choice.</p>
+<p id="p37">As McCarthy’s new translation has been reviewed before (Ó Dochartaigh
+                  2012, 32) and the other ones have been published before, I can confine myself to
+                  Fischer’s German rendering of the <em>Confessio</em>. This is only the second
+                  translation into German; the first (and to-date only one of the
+                     <em>Epistola</em>) being Wotke 1940. Fischer has succeeded in writing a
+                  vivid, readable German translation. He is exceptionally strong at rendering the
+                  colloquial, paratactic, often anacoluthic style (cf., e.g., 12, 43).
+                  Misrepresentations and inaccuracies are few: e.g., 4 <em>ut didicimus</em> is
+                  rather ‘wie wir erkannt haben’ than ‘so ward es uns gelehrt’ (to say nothing of
+                  the form ‘ward’ in a 21ˢᵗ century translation), 11 <em>(epistola) non
+                     deserta</em> is hardly rendered appropriately by ‘nicht wohlfeil
+                  verfasst’.</p>
+<h3 id="div3.6">Supplements</h3>
+<p id="p38">As this review primarily focuses on the edition proper, I will here
+                  but list the impressive quantity of the secondary material, mostly aimed at
+                  non-experts in the field. There are (1) an introduction to Patrick’s writings (by
+                  David Kelly), (2) an uncritical Latin text and an English translation of Muirchú’s
+                     <em>Life of Patrick</em>, (3) the same of Tírechán’s
+                     <em>Collections</em>, (4) articles on how Muirchú and Tírechán cope with
+                  Patrick’s conversion (by Elizabeth Dawson), (5) on Tírechán (by Terry O’Hagan),
+                  (6) on Patrick’s representation in art (by Rachel Moss), (7) a novel ‘Seeking
+                  Patrick’ (by Derick Mockler), including an audio book, (8) an audio recording of
+                  the English translation of the <em>Confessio</em>. In addition, we are
+                  promised on line dictionary entries from the parent project, DMLCS, which have
+                  never been added.</p>
+<p id="p39">The project team have further set up an extensive bibliography on
+                  Patrick, which covers contributions until 2011.<sup class="footnote-ref" id="fnref-ftn19"><a href="#fn-ftn19" role="doc-noteref">19</a></sup>
+                  Most usefully, numerous entries (especially those that do not betray what they are
+                  concerned with in their titles) are furnished with notes indicating the topic,
+                  summarizing their main points of argument or relating them to other pertinent
+                  literature. If available, there are hyperlinks to any digital version of each
+                  entry.</p>
+    </section>
+    <section id="div4">
+      <h2>Usability</h2>
+      <p id="p40">In terms of usability, confessio.ie has several shortcomings, of which
+               the following are the most severe:<sup class="footnote-ref" id="fnref-ftn20"><a href="#fn-ftn20" role="doc-noteref">20</a></sup> first, the availability and accessibility of information. Often it
+               is not easy to spot the information one looks for. For example, few will suspect to
+               find Bieler’s pedigree, on which the edition is based, in the subsection ‘key to
+               symbols and abbreviations’ (as pointed out above, detailed discussion on how the
+               manuscripts relate to each other is altogether lacking). Second, the search function
+               is too limited to be of any help. Third, images of manuscripts, older editions and
+               the text of confessio.ie are not closely aligned.</p>
+<p id="p41">This shortcoming is not remedied by the FAQ. There are only two
+               questions: “How to use the electronic version of Bieler's Latin edition?” and “How to
+               use the manuscript viewer?”. They give only the most basic information and neither of
+               them addresses any details.</p>
+    </section>
+    <section id="div5">
+      <h2>Technology and Applying TEI</h2>
+      <p id="p42">The project team, thankfully, have made it easy to follow their major
+               technological paths and explained in detail which tools they used and why.<sup class="footnote-ref" id="fnref-ftn21"><a href="#fn-ftn21" role="doc-noteref">21</a></sup>
+               Much of this has no bearing on the digital edition as it is, but only on the
+               supplementary material and can thus be neglected here. The project has used the
+               fairly common content management system, Drupal, for organizing their data. The high
+               resolution images of the manuscripts are run by a specifically built browser-based
+               viewing application. This application, about which little information is available,
+               allows for sending ‘only a subset of the enormous image files to the browser’. As a
+               result, the images, despite their size, load very quickly and zooming works
+               impressively smooth.</p>
+<p id="p43">Perhaps more importantly, the digital edition is based on an XML file
+               that follows the TEI P5 standards, for obvious reasons not in the latest version (TEI
+               Consortium 2019). The XML file is easily downloadable (see above). The schema they
+               use, as appears from the XML file, is the then-standard TEI one (tei_all.rng, version
+                  1.7.0),<sup class="footnote-ref" id="fnref-ftn22"><a href="#fn-ftn22" role="doc-noteref">22</a></sup>
+               which allows for using all TEI tags.</p>
+<p id="p44">Encoding the apparatus criticus is in theory and practice the most
+               difficult, but arguably the most important part of a digital editor’s work. For the
+               TEI P5 guidelines expect such an apparatus to be more or less a repository of
+               variants (chapter 12). In classical philology, at least, the critical apparatus
+               serves many more purposes which philologists reasonably expect to be adequately
+               represented in a digital edition too (Damon 2016; Keeline 2017; Olson 2019). Thus,
+               the set-up of the apparatus criticus has been identified as the main (and in the view
+               of some, insurmountable) obstacle in applying TEI to classical texts (Damon 2016;
+               Fischer 2019, 213).<sup class="footnote-ref" id="fnref-ftn23"><a href="#fn-ftn23" role="doc-noteref">23</a></sup>
+            </p>
+<p id="p45">The HyperStack project has found a practical solution for coping with
+               this problem. Within the apparatus they use a <code>&lt;note&gt;</code> tag for each
+               apparatus entry (but no <code>&lt;app&gt;</code>, <code>&lt;lem&gt;</code>, or
+                  <code>&lt;rdg&gt;</code>). Whatever Bieler wrote as his own comments in the
+               apparatus, is rendered by an <code>&lt;emph&gt;</code> tag. This choice serves the
+               needs of humans quite well, for example in 4 (236,10–13), simplified:
+                  <code>&lt;note&gt;</code>omnia — principium
+                  <code>&lt;emph&gt;</code>deest<code>&lt;/emph&gt;
+                  &lt;ref&gt;</code>V<code>&lt;/ref&gt;</code>; <code>&lt;emph&gt;</code>quae
+               leguntur in<code>&lt;/emph&gt; &lt;ref&gt;</code>v<code>&lt;/ref&gt;</code>,
+                  <code>&lt;emph&gt;</code>coniecturae
+                  debentur<code>&lt;/emph&gt;</code>.<code>&lt;/note&gt;</code> . This procedure has
+               the advantage that trained humans can easily identify that V has a lacuna, which has
+               been filled in v by way of conjecturing. It has the severe disadvantage that this way
+               of encoding differs greatly from the actual standards set by TEI P5, which thus
+               cannot be exploited in its entirety.</p>
+    </section>
+    <section id="div6">
+      <h2>Conclusion: Confessio.ie As A Pioneer</h2>
+      <p id="p46">Confessio.ie is a pioneering project in the field of digital editions of
+               classical texts. As such, the project must be thanked for opening paths which will
+               ultimately lead to native digital, critical editions also of ancient and late ancient
+                  texts.<sup class="footnote-ref" id="fnref-ftn24"><a href="#fn-ftn24" role="doc-noteref">24</a></sup>
+               This is all the more important as research in classical philology, too, is turning
+               more and more digital. In this regard, it was a wise decision to take the
+               philological information from another source (Bieler’s edition) and to focus on its
+               digital implementation. The Royal Irish Academy is in charge of the long-term
+               sustainment of the project; hence its long-term availability is guaranteed.</p>
+<p id="p47">There are many commendable features of confessio.ie. The approach to
+               think of a transmitted text as a hypertext consisting of text, manuscripts, images,
+               editions, translations etc. is one of the major strengths of confessio.ie: There, <blockquote><p>[t]he relations between the texts and the contextualising information is
+                     described, but not expressed through the ‘hyper fabric’ of e.g. HTTP links.
+                     Even so, the Confessio is rather an exception to the rule—very few of today’s
+                     digital editions seem to be particularly concerned with the core ideal of
+                     hypertext as an expression of linked information, of process and
+                     context.</p><footer>van Zundert 2016, 103</footer></blockquote> This is something only a digital edition can do – although it will not be
+               feasible to use every hypertextual layer in each and every edition (Fischer 2017,
+               281). In an impressive manner, confessio.ie has collected and provided any kind of
+               textual information one may ask for about Patrick’s writings.</p>
+<p id="p48">Confessio.ie has also shown that using TEI is indeed an apt method for
+               creating digital editions of classical texts. Hence, there is no need to look for
+               something else: Classics can cope with the de facto standard, although the details of
+               how to encode an apparatus still are in need of a long-term solution (I doubt this
+               will be settled any time soon). Even more: They have given a very useful example of
+               how an edition and a digital apparatus criticus can be visualized.</p>
+<p id="p49">However, there are some points that future editors should give even more
+               attention to. First and foremost, and this holds for any edition, be it digital or
+               not, accuracy in representing text and manuscripts readings is indispensable. This
+               demand is self-evident, but it must be stressed again. As the apparatus of Bieler’s
+               edition is not always adequately represented, this is a major shortcoming of
+               confessio.ie and the reason why confessio.ie cannot be used instead of, but only in
+               comparison with, Bieler’s edition.</p>
+<p id="p50">For a critical edition to be recognized as such, it is likewise
+               necessary to include all relevant information about the textual transmission and
+               editorial principles. If this edition is digital, it will be helpful for all users to
+               have this information easily available on the website. As for user friendliness,
+               confessio.ie provides some obstacles for their users, especially in the alignment of
+               images, older editions and translations, and user guidance around the website. With
+               regard to these topics, future editors will be well advised to find out for
+               themselves how to do better.</p>
+<p id="p51">All in all, the ‘HyperStack project’ has impressively paved a route to a
+               more multi-layered understanding of a ‘classical text’. It has set a first usable
+               point of departure for digital editions of classical texts, and successfully provided
+               a first idea of how such texts can be transferred to the digital era.</p>
+    </section>
+
+    <section id="bibliography" class="review-bibliography">
+      <h2>Bibliography</h2>
+      <ol class="bib-list">
+        <li>Bieler, Ludwig. 1950. “<em>Libri Epistolarum Sancti Patricii Episcopi</em>:
+                  Introduction, Text and Commentary. Part I.” <em>Classica et Mediaevalia</em>
+                  11: 1–150.</li>
+        <li>Bieler, Ludwig. 1951. “<em>Libri Epistolarum Sancti Patricii Episcopi</em>:
+                  Introduction, Text and Commentary. Part II.” <em>Classica et Mediaevalia</em>
+                  12: 79–214.</li>
+        <li>Bieler, Ludwig. 1966. “<em>Libri Epistolarum Sancti Patricii Episcopi</em>.
+                  Addenda.” <em>Analecta Hibernica</em> 23: 313–15.</li>
+        <li>Bieler, Ludwig. 1993. <em>Libri Epistolarum Sancti Patricii Episcopi.
+                     Introduction, Text and Commentary</em>. Dublin.</li>
+        <li>Caria, Federico, and Brigitte Mathiak. 2018. “A Hybrid Focus Group for the
+                  Evaluation of Digital Scholarly Editions of Literary Authors.” In <em>Digital
+                     Scholarly Editions as Interfaces</em>, edited by Roman Bleier, Martina
+                  Bürgermeister, Helmut W. Klug, Frederike Neuber, and Gerlinde Schneider,
+                  267–85.</li>
+        <li>Damon, Cynthia. 2016. “Beyond Variants: Some Digital Desiderata for the
+                  Critical Apparatus of Ancient Greek and Latin Texts.” In Driscoll and Pierazzo
+                  2016, 201–18.</li>
+        <li>dos Santos, Dominique Vieira Coelho. 2007. “Tradução Os Livros Das Cartas Do
+                  Bispo São Patrício.” <em>Brathair</em> 7 (1): 107–36.</li>
+        <li>Driscoll, Matthew James, and Elena Pierazzo, eds. 2016. <em>Digital Scholarly
+                     Editing: Theories and Practices</em>. <a href="http://www.doabooks.org/doab?func=fulltext&rid=19695" target="_blank" rel="noopener">http://www.doabooks.org/doab?func=fulltext&amp;rid=19695</a>.</li>
+        <li>Ferguson, Samuel. 1877–1886. “On the Patrician Documents.” <em>The
+                     Transactions of the Royal Irish Academy</em> 27: 67–134.</li>
+        <li>Fischer, Franz. 2013. “<em>All Texts Are Equal, but…</em>: Textual
+                  Plurality and the Critical Text in Digital Scholarly Editions.”
+                     <em>Variants</em> 10: 77–92.</li>
+        <li>Fischer, Franz. 2017. “Digital Corpora and Scholarly Editions of Latin Texts:
+                  Features and Requirements of Textual Criticism.” <em>Speculum</em> 92:
+                  S266–S288.</li>
+        <li>Fischer, Franz. 2019. “Digital Classical Philology and the Critical Apparatus.”
+                  In <em>Digital Classical Philology: Ancient Greek and Latin in the Digital
+                     Revolution</em>, edited by Monica Berti, 203–19. Age of Access? Grundfragen
+                  der Informationsgesellschaft 10.</li>
+        <li>Franzini, Greta. 2012ff. “A Catalogue of Digital Editions.” <a href="https://web.archive.org/web/20191021072342/https://dig-ed-cat.acdh.oeaw.ac.at/" target="_blank" rel="noopener">https://web.archive.org/web/20191021072342/https://dig-ed-cat.acdh.oeaw.ac.at/</a>.</li>
+        <li>Gwynn, Edward. 1937. <em>Book of Armagh: The Patrician Documents</em>.
+                  Dublin.</li>
+        <li>Gwynn, John. 1913. <em>Liber Ardmachanus. The Book of Armagh</em>. Dublin,
+                  London.</li>
+        <li>Harvey, Anthony, and Jane Power. 2005. <em>The Non-Classical Lexicon of
+                     Celtic Latinity. Volume I: Letters A–H</em>.</li>
+        <li>Keeline, Tom. 2017. “The Apparatus Criticus in the Digital Age.” <em>The
+                     Classical Journal</em> 112 (3): 342–63.</li>
+        <li>Lavagnino, John. 1997. “Excerpted: Reading, Scholarship, and Hypertext
+                  Editions.” <em>The Journal of Electronic Publishing</em> 3 (1). <a href="https://doi.org/10.3998/3336451.0003.112" target="_blank" rel="noopener">https://doi.org/10.3998/3336451.0003.112</a>.</li>
+        <li>Mac Philibín, Liam. 1961. <em>Mise Pádraig: Nua-Aistriú Gaeilge Ar Scríbhinní
+                     Naomh Pádraig</em>. Dublin.</li>
+        <li>Malaspina, Elena. 1985. <em>Gli Scritti Di San Patrizio: Alle Origini Del
+                     Cristianesimo Irlandese</em>. Roma.</li>
+        <li>Mastronarde, Donald J. 2010ff. “Euripides Scholia.” <a href="https://web.archive.org/web/20191024172104/https://euripidesscholia.org/EurSchHome.html" target="_blank" rel="noopener">https://web.archive.org/web/20191024172104/https://euripidesscholia.org/EurSchHome.html</a>.</li>
+        <li>McCarthy, Padraig. 2011. <em>My Name Is Patrick. St Patrick’s
+                     Confessio</em>. Dublin: Royal Irish Academy.</li>
+        <li>Monella, Paolino Onofrio. 2018. “Why Are There No Comprehensively Digital
+                  Scholarly Editions of Classical Texts?” In <em>Digital Philology: New Thoughts
+                     on Old Questions</em>, edited by Adele Cipolla, 141–59. Padova:
+                  libreriauniversitaria.it. <a href="https://iris.unipa.it/retrieve/handle/10447/294132/580748/monella2018why.pdf" target="_blank" rel="noopener">https://iris.unipa.it/retrieve/handle/10447/294132/580748/monella2018why.pdf</a>.</li>
+        <li>Ó Dochartaigh, Caitríona. 2012. “Review of Anthony Harvey and Franz Fischer
+                  (Eds), the St Patrick’s Confessio Hypertext Stack. Dublin: Royal Irish Academy,
+                  2011. Pádraig McCarthy (Transl.), My Name Is Patrick. Dublin: Royal Irish Academy,
+                  2011.” <em>Óenach: FMRSI Reviews</em> 4 (1): 31–36.</li>
+        <li>Olson, S. Douglas. 2019. “Further Notes on the Apparatus Criticus.” <em>The
+                     Classical Journal</em> 114 (3): 330–44.</li>
+        <li>Papebroch, Daniel. 1668. “De Sancto Patricio Episcopo Apostolo Et Primate
+                  Hiberniae.” In <em>Acta Sanctorum, Martii II</em>, edited by Daniel Papebroch,
+                  517–92. Antwerp.</li>
+        <li>Reeve, Michael D. 2000. “Cuius in Usum? Recent and Future Editing.” <em>The
+                     Journal of Roman Studies</em> 90: 196–206.</li>
+        <li>Sahle, Patrick. 2008ff. “A Catalog of Digital Scholarly Editions, Version 3.0.”
+                     <a href="https://web.archive.org/web/20191021074341/http://www.digitale-edition.de/" target="_blank" rel="noopener">https://web.archive.org/web/20191021074341/http://www.digitale-edition.de/</a>.</li>
+        <li>Tarrant, Richard John. 2016. <em>Texts, Editors, and Readers: Methods and
+                     Problems in Latin Textual Criticism</em>.</li>
+        <li>TEI Consortium. 2019. “TEI P5: Guidelines for Electronic Text Encoding and
+                  Interchange. Version 3.6.0. Last Updated on 16th July 2019, Revision Daa3cc0b9.”
+                     <a href="http://www.tei-c.org/Guidelines/P5/" target="_blank" rel="noopener">http://www.tei-c.org/Guidelines/P5/</a>.</li>
+        <li>van Zundert, Joris. 2016. “Barely Beyond the Book?” In Driscoll and Pierazzo
+                  2016, 83–106.</li>
+        <li>Ware, James, ed. 1656. <em>S. Patricio, Qui Hibernos Ad Fidem Christi
+                     Convertit, Adscripta Opuscula, Quorum Aliqua Nunc Primum Ex Antiquis Mss.
+                     Codicibus in Lucem Emissa Sunt, Reliqua Recognita; Omnia Notis Ad Rem
+                     Historicam Et Antiquariam Spectantibus Illustrata</em>. London.</li>
+        <li>White, Newport J.D. 1905. “Libri Sancti Patricii: The Latin Writings of Saint
+                  Patrick.” <em>Proceedings of the Royal Irish Academy</em> 25: 201–326. <a href="https://www.archive.org/details/MN5141ucmf_2" target="_blank" rel="noopener">https://www.archive.org/details/MN5141ucmf_2</a>.</li>
+        <li>Wotke, Friedrich. 1940. <em>Das Bekenntnis Des Heiligen Patrick Und Sein
+                     Brief an Die Gefolgsleute Des Coroticus</em>.</li>
+      </ol>
+    </section>
+
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        <li id="fn-ftn1" class="footnote-item">
+          Collectively and under the same title, this work has been re-issued by the Irish
+                  Manuscripts Commission (Dublin 1952) and – together with Bieler 1966 –
+                  re-published by the Royal Irish Academy (Bieler 1993).
+          <a href="#fnref-ftn1" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn2" class="footnote-item">
+          Cf. the
+                  website of the DMLCS, <a href="https://web.archive.org/save/http://journals.eecs.qub.ac.uk/DMLCS/" target="_blank" rel="noopener">https://web.archive.org/save/http://journals.eecs.qub.ac.uk/DMLCS/</a>.
+                  Besides numerous spin-offs and ancillary papers, the first volume of the
+                  dictionary has been published, in form of an index (Harvey and Power 2005).
+          <a href="#fnref-ftn2" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn3" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20191104161426/https://www.ria.ie/research-projects/archive/digital-humanities-observatory" target="_blank" rel="noopener">https://web.archive.org/web/20191104161426/https://www.ria.ie/research-projects/archive/digital-humanities-observatory</a>.
+          <a href="#fnref-ftn3" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn4" class="footnote-item">
+          Only one review, to my knowledge, has been published (Ó Dochartaigh 2012); a more
+                  user centered approach is taken by Caria and Mathiak 2018.
+          <a href="#fnref-ftn4" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn5" class="footnote-item">
+          One may think of, e.g., Daniel Kiss’ Catullus Online, which however rightfully
+                  presents itself as a repertory rather than an edition (<a href="https://web.archive.org/web/20200818110425/http://www.catullusonline.org/CatullusOnline/index.php" target="_blank" rel="noopener">https://web.archive.org/web/20200818110425/http://www.catullusonline.org/CatullusOnline/index.php</a>),
+                  or the test edition of Galen in the Corpus Medicorum Graecorum project (<a href="https://web.archive.org/web/20191114230638/http://pom.bbaw.de/cmg/" target="_blank" rel="noopener">https://web.archive.org/web/20191114230638/http://pom.bbaw.de/cmg/</a>). The
+                  numerous projects within, e.g., digital epigraphy or papyrology, do not bear on
+                  this matter because they edit documents rather than texts transmitted in, at least
+                  potentially, more than one document. The same holds for scholia, which are
+                  extremely hard to transfer into a print edition (cf., e.g., Mastronarde 2010ff. or
+                  the Munich based project to edit glosses on Persius and Martianus Capella <a href="https://web.archive.org/web/20191021140937/https://www.mueze.uni-muenchen.de/editing_glosses/index.html" target="_blank" rel="noopener">https://web.archive.org/web/20191021140937/https://www.mueze.uni-muenchen.de/editing_glosses/index.html</a>).
+                  Useful tools for finding (one’s way through) digital editions not only of
+                  classical texts are two on line catalogues (Sahle 2008ff.; Franzini 2012ff.), and,
+                  with a scope far more narrow, that is encompassing only editions that are both
+                  critical and of Greek or Latin texts, <a href="https://web.archive.org/web/20191021080038/https://wiki.digitalclassicist.org/Digital_Critical_Editions_of_Texts_in_Greek_and_Latin" target="_blank" rel="noopener">https://web.archive.org/web/20191021080038/https://wiki.digitalclassicist.org/Digital_Critical_Editions_of_Texts_in_Greek_and_Latin</a>.
+          <a href="#fnref-ftn5" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn6" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20191024172507/https://www.confessio.ie/about/hyperstack#" target="_blank" rel="noopener">https://web.archive.org/web/20191024172507/https://www.confessio.ie/about/hyperstack#</a>.
+          <a href="#fnref-ftn6" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn7" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20191009105909/https://confessio.ie/more/article_kelly#" target="_blank" rel="noopener">https://web.archive.org/web/20191009105909/https://confessio.ie/more/article_kelly#</a>.
+          <a href="#fnref-ftn7" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn8" class="footnote-item">
+          Using the most up-to-date, most reliable edition in
+                  digital and digitization projects is, contrary to what one might reasonably
+                  expect, rather the exception than the rule, cf. e.g. the Library of Latin Texts
+                     (<a href="https://web.archive.org/web/20190215000000*/https://about.brepolis.net/library-of-latin-texts/" target="_blank" rel="noopener">https://web.archive.org/web/20190215000000*/https://about.brepolis.net/library-of-latin-texts/</a>),
+                  the Thesaurus Linguae Graecae (<a href="https://web.archive.org/web/20190924081450/http://stephanus.tlg.uci.edu/Iris/inst/csearch.jsp" target="_blank" rel="noopener">https://web.archive.org/web/20190924081450/http://stephanus.tlg.uci.edu/Iris/inst/csearch.jsp</a>)
+                  or the database of the Packhard Humanities Institute (<a href="https://web.archive.org/web/20190804110250/https://latin.packhum.org/index" target="_blank" rel="noopener">https://web.archive.org/web/20190804110250/https://latin.packhum.org/index</a>).
+          <a href="#fnref-ftn8" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn9" class="footnote-item">
+          
+                  <a href="https://web.archive.org/save/https://www.confessio.ie/about/hyperstack" target="_blank" rel="noopener">https://web.archive.org/save/https://www.confessio.ie/about/hyperstack</a>,
+                  section 5.2.
+          <a href="#fnref-ftn9" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn10" class="footnote-item">
+          Available from <a href="https://web.archive.org/save/https://www.youtube.com/watch?v=tBuXnQr4ZSM" target="_blank" rel="noopener">https://web.archive.org/save/https://www.youtube.com/watch?v=tBuXnQr4ZSM</a>
+                  and embedded into <a href="https://web.archive.org/save/https://www.confessio.ie/about/videointroduction#" target="_blank" rel="noopener">https://web.archive.org/save/https://www.confessio.ie/about/videointroduction#</a>.
+                  Unfortunately there is no link to this video on the website apart from the subpage
+                  referred to on the home page.
+          <a href="#fnref-ftn10" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn11" class="footnote-item">
+          Bieler’s text (only) had already at an earlier point been included into the
+                     Archive of Celtic-Latin Literature (ACLL) published by Brepols on behalf of
+                     DMCLS. I have not been able to access ACLL.
+          <a href="#fnref-ftn11" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn12" class="footnote-item">
+          Against the custom, but as quite common on the web and elsewhere these days,
+                     for additions confessio.ie does not use pointed brackets ⟨ ⟩, but
+                     greater/less-than-signs &lt; &gt;.
+          <a href="#fnref-ftn12" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn13" class="footnote-item">
+          For most traditional
+                     classicists, the opportunity to get (links to) manuscripts is probably the
+                     foremost advantage when it comes to digital editions.
+          <a href="#fnref-ftn13" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn14" class="footnote-item">
+           I. e., δ.
+          <a href="#fnref-ftn14" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn15" class="footnote-item">
+          I have not regularly checked if the deviations
+                     tacitly emend an error made by Bieler, but where I have, I found his readings
+                     confirmed.
+          <a href="#fnref-ftn15" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn16" class="footnote-item">
+          The XML files are encoded in UTF-8,
+                     so there should not have been technical constraints that prevented the project
+                     from using special characters of this kind. And cf., e.g., 41 (248,8)
+                        <em>sc̄orum</em>, 59 (252,13) <em>illū</em>.
+          <a href="#fnref-ftn16" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn17" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20191010185003/https://www.confessio.ie/etexts/epistola_latin" target="_blank" rel="noopener">https://web.archive.org/web/20191010185003/https://www.confessio.ie/etexts/epistola_latin</a>.
+          <a href="#fnref-ftn17" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn18" class="footnote-item">
+          There is a facsimile
+                     edition (Gwynn, J. 1913).
+          <a href="#fnref-ftn18" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn19" class="footnote-item">
+          
+                     <a href="https://web.archive.org/web/20191021082412/https://www.confessio.ie/more/bibliography_full#" target="_blank" rel="noopener">https://web.archive.org/web/20191021082412/https://www.confessio.ie/more/bibliography_full#</a>.
+          <a href="#fnref-ftn19" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn20" class="footnote-item">
+          Similarly, participants in a
+                  recent study on the usability of digital scholarly editions repeatedly signalled
+                  they had experienced difficulties in navigating confessio.ie (Caria and Mathiak
+                  2018).
+          <a href="#fnref-ftn20" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn21" class="footnote-item">
+          
+                  <a href="https://web.archive.org/web/20191022093209/https://www.confessio.ie/about/technologies" target="_blank" rel="noopener">https://web.archive.org/web/20191022093209/https://www.confessio.ie/about/technologies</a>.
+          <a href="#fnref-ftn21" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn22" class="footnote-item">
+          Available from <a href="https://web.archive.org/web/20191021151220/https://tei-c.org/Vault/P5/1.7.0/xml/tei/custom/schema/relaxng/tei_all.rng" target="_blank" rel="noopener">https://web.archive.org/web/20191021151220/https://tei-c.org/Vault/P5/1.7.0/xml/tei/custom/schema/relaxng/tei_all.rng</a>.
+          <a href="#fnref-ftn22" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn23" class="footnote-item">
+          A different approach is taken by the Digital
+                  Latin project, cf. <a href="https://web.archive.org/web/20191022092921/https://digitallatin.github.io/guidelines/LDLT-Guidelines.html" target="_blank" rel="noopener">https://web.archive.org/web/20191022092921/https://digitallatin.github.io/guidelines/LDLT-Guidelines.html</a>.
+          <a href="#fnref-ftn23" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn24" class="footnote-item">
+          In this regard, much is to be expected from the Library
+                  of Digital Latin Texts (LDLT) project, which appears to approach a state where it
+                  can actually be used as a proper editing tool: <a href="https://web.archive.org/web/20191022093057/https://digitallatin.org/library-digital-latin-texts" target="_blank" rel="noopener">https://web.archive.org/web/20191022093057/https://digitallatin.org/library-digital-latin-texts</a>.
+          <a href="#fnref-ftn24" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+      </ol>
+    </section>
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{patrick-confessio,
+  author    = {Brandenburg, Yannick},
+  title     = {A Review of confessio.ie, or Practical Thoughts on Digital Editing in Classics},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {13},
+  year      = {2020},
+  doi       = {10.18716/ride.a.13.5},
+  url       = {https://doi.org/10.18716/ride.a.13.5},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Brandenburg, Yannick
+TI  - A Review of confessio.ie, or Practical Thoughts on Digital Editing in Classics
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 13
+PY  - 2020
+DA  - 2020/12
+DO  - 10.18716/ride.a.13.5
+UR  - https://doi.org/10.18716/ride.a.13.5
+PB  - Institut für Dokumentologie und Editorik e.V.
+LA  - en
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Brandenburg, Y. (2020). A Review of confessio.ie, or Practical Thoughts on Digital Editing in Classics. RIDE – A review journal for digital editions and resources, (13). https://doi.org/10.18716/ride.a.13.5</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Brandenburg, Yannick. &#34;A Review of confessio.ie, or Practical Thoughts on Digital Editing in Classics.&#34; RIDE – A review journal for digital editions and resources, no. 13, 2020. https://doi.org/10.18716/ride.a.13.5.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Brandenburg, Yannick. &#34;A Review of confessio.ie, or Practical Thoughts on Digital Editing in Classics.&#34; RIDE – A review journal for digital editions and resources, no. 13 (2020). https://doi.org/10.18716/ride.a.13.5.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/patrick-confessio/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>

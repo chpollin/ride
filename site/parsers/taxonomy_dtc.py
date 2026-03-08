@@ -26,10 +26,14 @@ def parse_dtc_taxonomy(taxonomy: etree._Element) -> Questionnaire:
 def _parse_section(cat: etree._Element) -> QuestionnaireSection | None:
     """Parse a top-level section category."""
     cat_descs = cat.findall("tei:catDesc", NS)
-    if not cat_descs:
-        return None
-
-    section_name = _text(cat_descs[0])
+    if cat_descs:
+        section_name = _text(cat_descs[0])
+    else:
+        # DTC top-level categories use xml:id instead of catDesc
+        xml_id = cat.get("{http://www.w3.org/XML/1998/namespace}id", "")
+        if not xml_id:
+            return None
+        section_name = xml_id.replace("_", " ").title()
 
     items = []
     for child_cat in cat.findall("tei:category", NS):
@@ -48,7 +52,24 @@ def _parse_question(cat: etree._Element) -> QuestionnaireItem | None:
     xml_id = cat.get("{http://www.w3.org/XML/1998/namespace}id", "")
     cat_descs = cat.findall("tei:catDesc", NS)
     if not cat_descs:
-        return None
+        # Container item without catDesc: use xml:id as label, recurse children
+        children = cat.findall("tei:category", NS)
+        if not children:
+            return None
+        child_items = []
+        for child in children:
+            item = _parse_question(child)
+            if item:
+                child_items.append(item)
+        if not child_items:
+            return None
+        label = xml_id.replace("_", " ").title()
+        return QuestionnaireItem(
+            id=xml_id,
+            label=label,
+            value=any(c.value for c in child_items),
+            children=child_items,
+        )
 
     label = _text(cat_descs[0])
     catalogue_ref = ""
@@ -61,7 +82,33 @@ def _parse_question(cat: etree._Element) -> QuestionnaireItem | None:
 
     children = cat.findall("tei:category", NS)
     if not children:
-        return None
+        # Freetext item: answer stored in catDesc (typically catDesc[2]) via <num>
+        selected_value = None
+        gloss = ""
+        for cd in cat_descs:
+            num = cd.find("tei:num[@type='boolean']", NS)
+            if num is not None:
+                selected_value = num.get("value", "0") == "1"
+            gloss_el = cd.find("tei:gloss", NS)
+            if gloss_el is not None:
+                g = _text(gloss_el)
+                if g:
+                    gloss = g
+            desc_el = cd.find("tei:desc", NS)
+            if desc_el is not None:
+                d = _text(desc_el)
+                if d:
+                    gloss = d
+        value_label = "Yes" if selected_value is True else ("No" if selected_value is False else "")
+        return QuestionnaireItem(
+            id=xml_id,
+            label=label,
+            description=description,
+            catalogue_ref=catalogue_ref,
+            value=selected_value,
+            value_label=value_label,
+            gloss=gloss,
+        )
 
     selected_value = None
     selected_label = ""

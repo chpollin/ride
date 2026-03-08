@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tustep. Review of the Tübinger System von
+                    Textverarbeitungs-Programmen &mdash; RIDE</title>
+  <meta name="description" content="
+            This review deals with the Tübinger System von Textverarbeitungs-Programmen
+                    called TUSTEP. It describes some of the principal functions of TUSTEP, outlines
+       ...">
+
+  <meta property="og:site_name" content="RIDE">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Tustep. Review of the Tübinger System von
+                    Textverarbeitungs-Programmen">
+  <meta property="og:description" content="
+            This review deals with the Tübinger System von Textverarbeitungs-Programmen
+                    called TUSTEP. It describes some of the principal functions of TUSTEP, outlines
+       ...">
+<meta property="og:url" content="https://ride.i-d-e.de/reviews/tustep/">
+<link rel="canonical" href="https://ride.i-d-e.de/reviews/tustep/">
+<meta name="DC.title" content="Tustep. Review of the Tübinger System von
+                    Textverarbeitungs-Programmen">
+<meta name="DC.creator" content="Christian Griesinger">
+<meta name="DC.date" content="2020-01">
+<meta name="DC.identifier" content="doi:10.18716/ride.a.11.2"><meta name="DC.rights" content="CC-BY 4.0">
+<meta name="DC.language" content="en">
+
+<meta name="citation_title" content="Tustep. Review of the Tübinger System von
+                    Textverarbeitungs-Programmen">
+<meta name="citation_author" content="Christian Griesinger">
+<meta name="citation_doi" content="10.18716/ride.a.11.2"><meta name="citation_journal_title" content="RIDE - A review journal for digital editions and resources">
+<meta name="citation_publication_date" content="2020-01">
+<meta name="citation_pdf_url" content="https://ride.i-d-e.de/reviews/tustep/tustep.pdf">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Tustep. Review of the T\u00fcbinger System von\n                    Textverarbeitungs-Programmen",
+  "author": [{"@type": "Person", "name": "Christian Griesinger"}],
+  "datePublished": "2020-01",
+"identifier": {"@type": "PropertyValue", "propertyID": "DOI", "value": "10.18716/ride.a.11.2"},  "publisher": {"@type": "Organization", "name": "Institut für Dokumentologie und Editorik e. V."},
+  "isPartOf": {"@type": "Periodical", "name": "RIDE - A review journal for digital editions and resources"},
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+  <link rel="preload" href="/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/print.css" media="print">
+<link rel="stylesheet" href="/css/review.css">
+
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}})();
+  </script>
+</head>
+<body>
+<div class="reading-progress" aria-hidden="true">
+  <div class="reading-progress-bar"></div>
+</div>
+
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="RIDE Home">
+        <img src="/img/ride-logo.svg" alt="" width="120" height="40">
+        <span class="nav-logo-text">RIDE</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul id="nav-menu" class="nav-links" role="list">
+        <li><a href="/issues/" aria-current="page">Issues</a></li>
+        <li><a href="/data/">Data</a></li>
+        <li><a href="/reviewers/">Reviewers</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/search/" class="nav-search" aria-label="Search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nav-search-label">Search</span></a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon-sun" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+  <main id="main-content" class="review-layout">
+<div class="review-wrapper">
+<aside class="review-sidebar" aria-label="Article navigation">
+  <nav class="sidebar-toc" aria-label="Table of contents">
+    <h2 class="sidebar-heading">Contents</h2>
+    <ol class="toc-list" role="list">
+      <li class="toc-item toc-level-2">
+        <a href="#abstract" class="toc-link">Abstract</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div1" class="toc-link">General introduction</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div2" class="toc-link">What is TUSTEP capable of</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div3" class="toc-link">How to work with TUSTEP</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div4" class="toc-link">What are the downsides of TUSTEP</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div5" class="toc-link">Where to find help</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#div6" class="toc-link">Conclusion</a>
+      </li>
+      <li class="toc-item toc-level-2">
+        <a href="#footnotes" class="toc-link">Notes</a>
+      </li>
+    </ol>
+  </nav>
+
+<div class="review-meta-panel">
+  <h2 class="sidebar-heading">Info</h2>
+  <dl class="meta-list">
+    <dt>Published</dt>
+    <dd>Januar 2020</dd>
+
+    <dt>DOI</dt>
+    <dd><a href="https://doi.org/10.18716/ride.a.11.2" rel="external">10.18716/ride.a.11.2</a></dd>
+
+    <dt>Issue</dt>
+    <dd>
+      <a href="/issues/issue-11/">
+        <span class="badge badge-tools">TE</span>
+        Issue 11
+      </a>
+    </dd>
+
+    <dt>Language</dt>
+    <dd>EN</dd>
+  </dl>
+
+  <div class="meta-downloads">
+    <h3 class="sidebar-subheading">Downloads</h3>
+    <a href="/reviews/tustep/tustep.pdf" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      PDF
+    </a>
+    <a href="/reviews/tustep/tustep-tei.xml" class="btn btn-download" download>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      TEI/XML
+    </a>
+  </div>
+
+  <button class="btn btn-cite" aria-expanded="false" aria-controls="citation-box">Cite</button>
+</div></aside>
+  <article class="review-article" lang="en">
+    <header class="review-header">
+      <a href="/issues/issue-11/" class="review-issue-link">
+        <span class="badge badge-tools">TE</span>
+        Issue 11: Tools and Environments
+      </a>
+
+      <h1>Tustep. Review of the Tübinger System von
+                    Textverarbeitungs-Programmen</h1>
+
+      <div class="review-authors">
+        <span class="review-author">
+          Christian Griesinger        </span>
+      </div>
+
+      <div class="review-affiliation">University of Wuppertal, Wuppertal, Germany</div>
+
+      <div class="review-resource">
+        <strong>Reviewed:</strong>
+<a href="https://www.tustep.uni-tuebingen.de/" rel="external">Tustep - Tübinger System von Textverarbeitungs-Programmen</a>      </div>
+    </header>
+
+    <details class="mobile-toc">
+      <summary>Table of Contents</summary>
+      <ol class="toc-list" role="list">
+        <li class="toc-item toc-level-2">
+          <a href="#abstract" class="toc-link">Abstract</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div1" class="toc-link">General introduction</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div2" class="toc-link">What is TUSTEP capable of</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div3" class="toc-link">How to work with TUSTEP</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div4" class="toc-link">What are the downsides of TUSTEP</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div5" class="toc-link">Where to find help</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#div6" class="toc-link">Conclusion</a>
+        </li>
+        <li class="toc-item toc-level-2">
+          <a href="#footnotes" class="toc-link">Notes</a>
+        </li>
+      </ol>
+    </details>
+
+    <div class="mobile-meta">
+      <span>Januar 2020</span>
+<span><a href="https://doi.org/10.18716/ride.a.11.2" rel="external">DOI</a></span><a href="/reviews/tustep/tustep.pdf" download class="btn btn-sm">PDF</a><a href="/reviews/tustep/tustep-tei.xml" download class="btn btn-sm">XML</a>    </div>
+
+    <section id="abstract" class="review-abstract">
+      <h2>Abstract</h2>
+      
+            <p>This review deals with the Tübinger System von Textverarbeitungs-Programmen
+                    called TUSTEP. It describes some of the principal functions of TUSTEP, outlines
+                    sample use cases and shows benefits and downsides. While TUSTEP is one of the
+                    oldest and long-lasting applications in the area of text processing, its
+                    flexibility and functional scope make it worth to consider for present and
+                    future scientific projects dealing with text edition, manipulation and
+                    publishing.</p>
+         
+    </section>
+
+    <section id="div1">
+      <h2>General introduction</h2>
+      <p id="p1">TUSTEP is a software toolbox or environment designed for the Digital
+                    Humanities. It has been under constant development since 1966, bearing the name
+                    of TUSTEP since 1978. It was located at the Zentrum für Datenverarbeitung (ZDV)
+                    of the University of Tübingen until 2003 and is since then the responsibility of
+                    the International TUSTEP User Group (ITUG).<sup class="footnote-ref" id="fnref-ftn1"><a href="#fn-ftn1" role="doc-noteref">1</a></sup>
+            </p>
+<p id="p2">The program authors, Wilhelm Ott and Kuno Schälkle, still update and
+                    develop the program, issuing a new version approximately each year. TUSTEP 2018
+                    is the latest stable version for production at the moment.</p>
+<p id="p3">This version and older versions may be downloaded, installed and used
+                    for free. They are compatible with Windows, Linux and Mac operating systems and
+                    I found the installation to be straightforward.<sup class="footnote-ref" id="fnref-ftn2"><a href="#fn-ftn2" role="doc-noteref">2</a></sup> This review is based upon the Windows version.<sup class="footnote-ref" id="fnref-ftn3"><a href="#fn-ftn3" role="doc-noteref">3</a></sup> On Windows, it is sufficient to open
+                    the installation file and choose a folder for installation. It is recommended to
+                    additionally install GhostScript and/or GhostView<sup class="footnote-ref" id="fnref-ftn4"><a href="#fn-ftn4" role="doc-noteref">4</a></sup>
+                    because Windows and TUSTEP do not have a native support for Postscript-files
+                    (.ps) and these are mandatory when it comes to typesetting. For MAC and Linux,
+                    this step is usually not necessary.</p>
+<p id="p4">While TUSTEP is normally installed on a personal computer, it is also
+                    possible to run it on a Linux Server and there have even been successful
+                    experiments to run the software on Raspberry Pis.<sup class="footnote-ref" id="fnref-ftn5"><a href="#fn-ftn5" role="doc-noteref">5</a></sup>
+                    The whole source code is provided in open access and may be modified and
+                    compiled under a BSD-license.</p>
+<p id="p5">Being a software toolbox, TUSTEP does not have a single purpose,
+                    functionality or area of application ‒ except that it is designed to work with
+                    texts. As will be explained in more detail in the next section, TUSTEP consists
+                    of a variety of modules, each of which being designed for its specific task.
+                    Those modules can be combined almost freely by the user to create very complex
+                    workflows, so that the program suits the users’ individual needs. With regard to
+                    digital scholarly editions, TUSTEP supports all steps of a typical editorial
+                    workflow: From transcription to collation, from the constitution of critical
+                    texts with up to nine apparatus levels to the creation of indices and
+                    concordances, from professional typesetting to converting a text into any
+                    desired plain text file format.</p>
+    </section>
+    <section id="div2">
+      <h2>What is TUSTEP capable of</h2>
+      <p id="p6">As said above, TUSTEP consists of individual modules also referred to
+                    as commands. There are currently 54 commands in TUSTEP. Each has a German and an
+                    alternative English alias that consists of a leading "#", the command name and a
+                    variable number of parameters. For example, there is a command for copying the
+                    contents of one file into another. The name of this command is
+                        <code>#KOPIERE</code> (or <code>#COPY</code> in English). As shown below, it
+                    has a few comma separated parameters: "quelle" (source) and "ziel" (destination)
+                    ask for filenames, "modus" (mode) and "loeschen" (delete) ask in a short
+                    notation ("+" for yes, "-" for no) whether the line numbers of the file should
+                    be recounted or the destination file overwritten: <figure id="code1" class="review-figure"><img src="" alt="" loading="lazy"><figcaption></figcaption></figure>
+            </p>
+<p id="p7">The order of the parameters can be altered if one wishes to, but
+                    there is a standard order. TUSTEP comes with a command-line based user interface
+                    which is described in more detail below. The user tells TUSTEP the commands to
+                    be executed by typing them into the command line. In order to save a lot of
+                    typing, any command may be abbreviated after the second letter at the latest and
+                    all parameters names may be omitted if the standard order is observed. The above
+                    command may also look like this: <figure id="code2" class="review-figure"><img src="" alt="" loading="lazy"><figcaption></figcaption></figure>
+            </p>
+<p id="p8">Both notations do the same thing: Copy the contents of "file_a" into
+                    "file_b", recount the line numbers and overwrite the former contents of
+                    "file_b". It is possible to combine the short hand notation with the full
+                    notation.</p>
+<p id="p9">One benefit of TUSTEP lies in the extensive functionality of its
+                    commands. While copying a file, the user may simultaneously want to manipulate
+                    the contents of that file. Let’s suppose, there is a certain XML or SGML tagset
+                    in "file_a" that should be converted to TEI-XML. The command accepts additional
+                    parameters (here between "*" and "*eof" ‒ eof standing for "end of file"):
+                        <figure id="code3" class="review-figure"><img src="" alt="" loading="lazy"><figcaption></figcaption></figure>
+            </p>
+<p id="p10">The parameter "XX" exchanges strings with other strings. It also
+                    accepts string patterns, so it is possible to compress these two lines of
+                    parameters into one by making the backslash optional.<sup class="footnote-ref" id="fnref-ftn6"><a href="#fn-ftn6" role="doc-noteref">6</a></sup> But this is not the only
+                    possible parameter. There are dozens for <code>#KOPIERE</code> that can be
+                    combined. One of them, for example, selects only lines in a file which meet
+                    certain criteria (e. g. contain a specific string), exchanges some parts of that
+                    string, adds consecutive numbers at the beginning of the line and introduces
+                    some tags. By this procedure, it would be easy to search for strings in a text
+                    and give all search results back as a numbered result set in XML, HTML or any
+                    other text format ‒ perhaps you need a comma separated list to use in Excel or
+                    to import into a SQL-Database? That would be no problem.</p>
+<p id="p11">Aside from <code>#KOPIERE</code>, TUSTEP contains a variety of
+                    commands for editing a text (<code>#EDIERE</code>), indexing a text
+                        (<code>#RVORBREITE</code> ‒ prepare a registry by breaking down the texts
+                    into tokens, <code>#SORTIERE</code> ‒ sort the tokens by any alphabetical or
+                    numerical order and <code>#RAUFBEREITE</code> ‒ sum up the tokens into the
+                    registry entries with or without references), comparing two or more texts with
+                    each other (<code>#VERGLEICHE</code> and <code>#VAUFBEREITE</code>) or typeset a
+                    text (<code>#SATZ</code>). In digital scholarly editions, these are all very
+                    important features. Some of them will be discussed here below. </p>
+<p id="p12">
+               <code>#EDIERE</code> opens a text editor in which the user can edit a text file
+                    with up to 2 Gigabyte size. TUSTEP opens a file of this size in the same amount
+                    of time as a file of one kilobyte. While editors in office suits (Microsoft
+                    Word, Libre Office Writer etc.) and many programming editors (like Notepad++,
+                    Oxygen XML Editor) load the whole file at once, TUSTEP only loads as many lines
+                    as fit on the screen. The user can navigate "screen by screen" or jump to any
+                    particular part of that file without losing much time on scrolling or buffering
+                    the whole file. The editor comes with a pattern matching syntax (similar to
+                    regular expressions) in order to search for inflection forms or suffixes. It
+                    supports individual shortcuts, syntax highlighting and has the ability to
+                    perform user defined macros.</p>
+<p id="p13">
+               <code>#VERGLEICHE</code> can perform a comparison of multiple texts, as many as
+                    the user wants, by comparing each text with a base text.
+                        <code>#VAUFBEREITE</code> generates a formatted list of the differences
+                    between these texts. These two commands can be used for collating text
+                    witnesses, or to compare the changes made in previous working sessions ‒ which
+                    is very useful when it comes to correcting. By adding parameters, it is possible
+                    to specify for every single comparison what is considered to be important or
+                    unimportant.</p>
+<p id="p14">Automatically creating indices with <code>#RVORBEREITE</code>,
+                        <code>#SORTIERE</code> and <code>#RAUFBEREITE</code> is important for
+                    checking an edited text in search of errors or to create registers of persons
+                    and places. The fact that the creation of indices is broken down into three
+                    separate steps makes it very flexible. In every step, parameters can be added
+                    that, for instance, control which parts of a text are indexed, how the word
+                    forms are sorted and how they are summarized.</p>
+<p id="p15">Finally, one of the most important features in TUSTEP is
+                        <code>#SATZ</code>, which enables to professionally typeset texts with or
+                    without footnotes, critical apparatus, illustrations, and thus prepare them for
+                    publication. In a review, it would be impossible to give a comprehensive
+                    description of this module alone, but at least I want to give an impression of
+                    its features. In the TUSTEP handbook, over 200 pages are dedicated to describe
+                    the functional scope of <code>#SATZ</code>, which includes native support for
+                    many alphabets like Latin, Greek, Coptic, Hebrew, Arabian or Russian, and give,
+                    for instance, the possibility to place any arbitrary superscript or subscript
+                    letter over or under another one.<sup class="footnote-ref" id="fnref-ftn7"><a href="#fn-ftn7" role="doc-noteref">7</a></sup>
+            </p>
+<p id="p16">While it is nice to have a separate command for each purpose,
+                    research projects and especially editorial enterprises need more complex
+                    workflows, in which many steps have to be executed successively. So it would be
+                    very uncomfortable to type in the commands every time. In TUSTEP, the user can
+                    therefore create her/his own workflows by writing the commands needed into a
+                    temporary or permanent file and execute this file over and over again. This
+                    gives the ability to the user to create a customized program. It is also
+                    possible to execute such a file with variables to adapt the program at each
+                    execution. The user may furthermore save the interim results or create protocols
+                    for every step to analyze them later. A sample program may look like this (I
+                    have omitted all specifications just to show the concept). My comments are
+                    behind the two slashes:</p>
+<p id="p17">
+               <figure id="code4" class="review-figure"><img src="" alt="" loading="lazy"><figcaption></figcaption></figure> TUSTEP is also equipped with a modern scripting language called
+                    TUSCRIPT. After writing TUSTEP-commands into a file, it is possible to control
+                    the workflow with structures from TUSCRIPT, like if-then-queries, loops and a
+                    variety of predefined functions. The scripting language allows to largely
+                    automatize the workflows.</p>
+<p id="p18">But what is more important: TUSTEP gives to the user the possibility
+                    to create new and more complex tools (i. e. new programs) out of the pieces of
+                    software in the toolbox. Hence the true power of TUSTEP does not lie in the
+                    functionality of its single components, but in their flexibility and the
+                    possibility to combine them as needed to find customized solutions for specific
+                    and new problems. It is a major feature of TUSTEP that the user is able to
+                    import and export their data or edition materials at any time from and into any
+                    plain text format with any desired markup (for example custom XML or TEI-XML).
+                    Hence, the results of a TUSTEP based workflow can be processed further in other
+                    applications, and vice versa results from other applications can be processed
+                    with TUSTEP.</p>
+<p id="p19"> While many applications work with a specific markup, for example
+                    XML-tags, TUSTEP does not need a fixed markup, except when it comes to
+                    typesetting. When typesetting a text with <code>#SATZ</code>, the typesetting
+                    engine needs specific control instructions. But the user can tell
+                        <code>#SATZ</code> which elements of the markup should be converted into
+                    which control instructions.</p>
+    </section>
+    <section id="div3">
+      <h2>How to work with TUSTEP</h2>
+      <p id="p20">
+               <figure id="img1" class="review-figure"><img src="pictures/picture-1.jpg" alt="TUSTEP starting screen to create a session." loading="lazy"><figcaption>Fig. 1: TUSTEP starting screen to create a session.</figcaption></figure> When starting the program for the first time, the screen leads the
+                    user to a menu (see <a href="#img1" class="crossref">Fig. 1</a>) for
+                    creating a "Sitzung" (session). A session ‒ one may think of as the project’s
+                    default directory or root directory on the user hard drive ‒ is a security
+                    concept and one that forces to keep order in the files. All files of a project
+                    have to be in this directory (or in sub-directories) to enable access to a
+                    TUSTEP session.<sup class="footnote-ref" id="fnref-ftn8"><a href="#fn-ftn8" role="doc-noteref">8</a></sup> A session stores much
+                    information about actions in temporal files (for example the last commands
+                    typed, the last files opened, the individual shortcuts chosen for this
+                    particular project) ‒ but it will never send this or any other information
+                    automatically over the internet.<sup class="footnote-ref" id="fnref-ftn9"><a href="#fn-ftn9" role="doc-noteref">9</a></sup> Thus it
+                    is not only recommended but safe to create a session for each project one is
+                    working on. With the creation of a session, it is also possible create a desktop
+                    icon, that would start that particular session.</p>
+<p id="p21">
+               <figure id="img2" class="review-figure"><img src="pictures/picture-2.jpg" alt="Starting screen of the session." loading="lazy"><figcaption>Fig. 2: Starting screen of the session.</figcaption></figure> Once TUSTEP is open with a session, the starting screen (see <a href="#img2" class="crossref">Fig. 2</a>) pops up showing the command
+                    line at the bottom where the user can enter commands directly. In the blue field
+                    above, TUSTEP gives information about the program version and feedback on the
+                    commands entered. This includes error messages and notifications of success.</p>
+<p id="p22">
+               <figure id="img3" class="review-figure"><img src="pictures/picture-3.jpg" alt="The TUSTEP editor." loading="lazy"><figcaption>Fig. 3: The TUSTEP editor.</figcaption></figure> If the user types the command <code>#EDIERE</code> (or <code>#e</code>
+                    in short) into the command line and hits enter, the TUSTEP editor opens an empty
+                    file. The editor screen has three main parts (as shown in <a href="#img3" class="crossref">Fig. 3</a>): A field for the line numbers on the left, a
+                    text field on the right and a command line at the bottom. While in many editors
+                    (like Oxygen XML editor or Notepad++) line numbers are just for display and are
+                    not an essential part of the file itself, TUSTEP’s own file format saves the
+                    line numbers inside the file. That is why it is necessary to import .xml or .txt
+                    or .rtf files into TUSTEP by converting them into the TUSTEP file format and
+                    exporting TUSTEP files back to other file formats: This adds (or eliminates) the
+                    line numbers which guarantee fast access to the file (as mentioned in the above
+                    section) and enable TUSTEP to load a reduced number of lines.</p>
+<p id="p23">The line numbers can also be used to imitate simple text structures.
+                    Three levels of line numbers are accepted, such as 200.098/54. This number can
+                    be interpreted as page number 200 and line number 98 referring to a printed
+                    book, with a third additional number for editorial additions like apparatus
+                    entries or notes on the text of the line.</p>
+<p id="p24">
+               <figure id="img4" class="review-figure"><img src="pictures/picture-4.jpg" alt="A TUSTEP file containing all of Jules Verne's
+                            novels." loading="lazy"><figcaption>Fig. 4: A TUSTEP file containing all of Jules Verne's
+                            novels.</figcaption></figure> It is also possible to have a text collection in one file, for example
+                    all novels written by Jules Verne, which are differentiated by the first number.
+                    In this way, the user would have easy access to each novel whilst having the
+                    possibility to search and edit all novels at once. <a href="#img4" class="crossref">Fig. 4</a> shows the beginning of Jules Verne’s <em>Reise
+                        zum Mittelpunkt der Erde</em> which is in this collection the 51st text,
+                    having line numbers beginning with the number 51. An information window showing
+                    the number of sentences in the file, among other information, is available. All
+                    novels by Jules Verne consume about 80 MB of hard drive space.</p>
+    </section>
+    <section id="div4">
+      <h2>What are the downsides of TUSTEP</h2>
+      <p id="p25">Since the software originally dates from the 1960s and the 1970s
+                    where mouse and touch screen were not common or even invented and screens had
+                    little resolution, TUSTEP has a concept of usage that is not very intuitive to
+                    those who got to know modern graphical user interfaces first. It takes some time
+                    to get used to the TUSTEP way of using a computer program. The method of
+                    entering commands, via command-line and not having drop-down menus, is in itself
+                    useful – I believe one could enter commands faster using the keyboard instead of
+                    using a mouse –, but it forces the users to rethink their habits to operate an
+                    application.</p>
+<p id="p26">As TUSTEP is a professional tool with numerous functionalities, it
+                    is not easy to use. The learning curve is quite steep at the beginning: Some
+                    weeks or even months are needed until working with TUSTEP takes up speed and one
+                    becomes familiar with all important functions. Furthermore, the technology used
+                    is TUSTEP-specific, thus the skills aquired cannot be reused in a different
+                    environment, unlike standards such as XQuery or XPath. On the other hand, within
+                    TUSTEP, once the user has learnt enough s/he can apply her or his knowledge to
+                    many projects, saving time. Also, with the skills to create, edit, analyze and
+                    typeset texts, one becomes less dependent on the skills of other persons.</p>
+<p id="p27">Another downside is that there are some peculiarities in TUSTEP. For
+                    example, file names may be only up to 12 characters long (plus up to four
+                    characters in the file extension). If the user wants to use longer file names,
+                    s/he has to either rename the files or use a workaround by defining the longer
+                    file names as variables known to the session, in order to use the variable names
+                    instead of the file names. This and other peculiarities are part of the
+                    inheritance of the program’s long history, which makes them understandable: but
+                    perhaps it is time to rethink these parts of TUSTEP for the future.</p>
+    </section>
+    <section id="div5">
+      <h2>Where to find help</h2>
+      <p id="p28">Due to the complexity of TUSTEP, it is recommended that beginners
+                    take an introductory course. The ITUG homepage informs about courses held at
+                    different universities in Germany, Switzerland and Austria. There is also the
+                    possibility to take a course within the scope of the annual ITUG conference.</p>
+<p id="p29">Apart from that, there is a TUSTEP wiki<sup class="footnote-ref" id="fnref-ftn10"><a href="#fn-ftn10" role="doc-noteref">10</a></sup>
+                    where beginners and advanced users find tutorials, help for troubleshooting and
+                    a series of sample programs for common problems. This is a good starting point,
+                    but if the tips in the wiki are insufficient to help you out, one can ask
+                    questions on the TUSTEP mailing list.<sup class="footnote-ref" id="fnref-ftn11"><a href="#fn-ftn11" role="doc-noteref">11</a></sup>
+                    In my experience, answers arrive within 24 hours and they normally solve the
+                    problem directly or give enough hints to find a solution. Although the TUSTEP
+                    community is quite small in comparison to other users software communities, I
+                    find it to be helpful, friendly and understanding; even the program authors will
+                    respond, particularly if the problem might indicate a bug.</p>
+<p id="p30">As mentioned before, there is a handbook coming with each version of
+                    TUSTEP lying in the installation folder. The handbook offers a complete
+                    description of TUSTEP’s features, but its terminology is quite abstract and it
+                    takes some time to get used to it. The time is not wasted though, because it
+                    gives an exhaustive overview of the functionalities and the parameters.
+                    Unfortunately, there is no up-to-date introduction in the form of a
+                        monograph.<sup class="footnote-ref" id="fnref-ftn12"><a href="#fn-ftn12" role="doc-noteref">12</a></sup>
+            </p>
+<p id="p31">Now, who uses TUSTEP? Over the decades many editorial projects have
+                    relied on the program. A list of ongoing and finished projects is available on
+                    the ITUG homepage;<sup class="footnote-ref" id="fnref-ftn13"><a href="#fn-ftn13" role="doc-noteref">13</a></sup>
+                    while this list is by far not comprehensive, it gives an impression of the
+                    variety of scientific contexts TUSTEP is used in.</p>
+    </section>
+    <section id="div6">
+      <h2>Conclusion</h2>
+      <p id="p32">TUSTEP is one of the oldest programs still in use in the Digital
+                    Humanities: it proves that software can survive more than just one decade. Many
+                    programs have come and gone in the time TUSTEP is around. Especially in the last
+                    few years so much software in the Digital Humanities has been developed and is
+                    in part already forgotten, because a new standard was introduced making the
+                    software obsolete, or a new version of an operating system was published and the
+                    software could not be run anymore, or a newer software was more powerful, so
+                    users had no need to use the older software.</p>
+<p id="p33">The fact that TUSTEP has survived since the 1960s may be an
+                    indication that the software is still powerful and competitive, and that it
+                    successfully runs on different platforms. Indeed, TUSTEP files from the past on
+                    a magnetic tape would still be readable by TUSTEP 2018 ‒ provided that you had a
+                    device that could still read a magnetic tape. So one may state that TUSTEP
+                    itself is sustainable and the developers have always tried to make the
+                    application compatible from one version to another.</p>
+<p id="p34">Even though some parts of TUSTEP have aged and could be renewed in
+                    the future, like the built-in text editor (that is one of 54 commands), in my
+                    opinion TUSTEP is worth being considered in new scientific projects dealing with
+                    texts or text editions. Because of the possibility to easily convert from and
+                    into different file formats, TUSTEP can also be used in combination with other
+                    software in a complementary and modular manner.</p>
+    </section>
+
+
+    <section id="footnotes" class="review-footnotes">
+      <h2>Notes</h2>
+      <ol class="footnotes-list">
+        <li id="fn-ftn1" class="footnote-item">
+          Cf. the ITUG
+                        homepage <a href="https://web.archive.org/web/20190919092455/http://www.itug.de" target="_blank" rel="noopener">https://web.archive.org/web/20190919092455/http://www.itug.de</a>.
+          <a href="#fnref-ftn1" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn2" class="footnote-item">
+          Cf. the
+                        TUSTEP homepage <a href="https://web.archive.org/web/20190919092632/http://www.tustep.uni-tuebingen.de" target="_blank" rel="noopener">https://web.archive.org/web/20190919092632/http://www.tustep.uni-tuebingen.de</a>.
+                        The author is currently doctoral student at the Universities of Bern and
+                        Trier and lecturer at the University of Wuppertal (<a href="https://web.archive.org/web/20190919092052/https://www.germanistik.uni-wuppertal.de/de/teilfaecher/aeltere-deutsche-literatur-im-europaeischen-kontext/personal/christian-griesinger.html" target="_blank" rel="noopener">https://web.archive.org/web/20190919092052/https://www.germanistik.uni-wuppertal.de/de/teilfaecher/aeltere-deutsche-literatur-im-europaeischen-kontext/personal/christian-griesinger.html</a>).
+                        He is TUSTEP-user since 2009 and user-developer since 2014. His research
+                        interests are Middle High German language, historical lexicography, edition
+                        philology and computer philology especially with TUSTEP, XML (TEI), SQL and
+                        PHP.
+          <a href="#fnref-ftn2" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn3" class="footnote-item">
+          It will not take into account other operating systems. The
+                        installation guides for Linux or MAC are available on the TUSTEP homepage,
+                        unfortunately only in German.
+          <a href="#fnref-ftn3" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn4" class="footnote-item">
+          Cf. the
+                        GhostScript homepage <a href="https://web.archive.org/web/20190919092731/https://www.ghostscript.com" target="_blank" rel="noopener">https://web.archive.org/web/20190919092731/https://www.ghostscript.com</a>.
+          <a href="#fnref-ftn4" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn5" class="footnote-item">
+          A
+                        demonstration of TUSTEP on Raspberry Pi was given at the 2018 ITUG
+                        Conference in Potsdam. See <a href="https://web.archive.org/web/20190919093206/http://www.bbaw.de/veranstaltungen/2018/oktober/LeibnizITUG" target="_blank" rel="noopener">https://web.archive.org/web/20190919093206/http://www.bbaw.de/veranstaltungen/2018/oktober/LeibnizITUG</a>.
+          <a href="#fnref-ftn5" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn6" class="footnote-item">
+          It
+                        should be noted however that the use of string and string patterns
+                        replacement for refactoring XML would only work if the XML file has a
+                        regular content, something which is not imposed by the XML syntax: one may
+                        thing for instance of extra whitespaces or changes in the order of the
+                        attributes, which would cause mismatches.
+          <a href="#fnref-ftn6" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn7" class="footnote-item">
+          TUSTEP supports Unicode;
+                        the fonts availability depends on the end user. For more information, see
+                            <a href="https://web.archive.org/web/20191210191210/http://www.tustep.uni-tuebingen.de/bi/bi99/bi997l1-unicode.pdf" target="_blank" rel="noopener">https://web.archive.org/web/20191210191210/http://www.tustep.uni-tuebingen.de/bi/bi99/bi997l1-unicode.pdf</a>,
+                        unfortunately only available in German.
+          <a href="#fnref-ftn7" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn8" class="footnote-item">
+          If files are to be shared, there is the
+                        possibility to create a remote session, where the files are stored on a
+                        server that all developers of a project have access to. TUSTEP sessions
+                        avoid maintenance issues by ensuring that only one session at a time can
+                        have writing access to a single file.
+          <a href="#fnref-ftn8" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn9" class="footnote-item">
+          Many applications (for
+                        example Microsoft Office or the Atom editor) send by default usage
+                        statistics, crash reports or other metrics (often referred to as diagnostic
+                        data) over the internet unless a user explicitly deactivates this
+                        functionality. In this review, of course, there is no room to discuss the
+                        pros and cons of programs sending usage information to their developers.
+                        Anyway, TUSTEP does not have a function to collect user data.
+          <a href="#fnref-ftn9" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn10" class="footnote-item">
+          Cf. the
+                        TUSTEP wiki <a href="https://web.archive.org/web/20190919093425/http://85.214.95.119/docuwiki/doku.php" target="_blank" rel="noopener">https://web.archive.org/web/20190919093425/http://85.214.95.119/docuwiki/doku.php</a>.
+          <a href="#fnref-ftn10" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn11" class="footnote-item">
+          The information for
+                        subscription to the mailing list on the ITUG homepage is available at <a href="https://web.archive.org/web/20181209212720/http://www.itug.de/tustep-liste/info-anmeldung.html" target="_blank" rel="noopener">https://web.archive.org/web/20181209212720/http://www.itug.de/tustep-liste/info-anmeldung.html</a>.
+          <a href="#fnref-ftn11" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn12" class="footnote-item">
+          The last book I am aware of is Peter Stahl
+                        TUSTEP für Einsteiger. It dates back to 1996 and has now become
+                        outdated.
+          <a href="#fnref-ftn12" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+        <li id="fn-ftn13" class="footnote-item">
+          Cf. the project section on the ITUG
+                        homepage <a href="https://web.archive.org/web/20190919093622/http://itug.de/projekte.html" target="_blank" rel="noopener">https://web.archive.org/web/20190919093622/http://itug.de/projekte.html</a>.
+          <a href="#fnref-ftn13" class="footnote-backref" aria-label="Back to text">&uarr;</a>
+        </li>
+      </ol>
+    </section>
+
+<div id="citation-box" class="citation-box" hidden>
+  <div class="citation-tabs" role="tablist" aria-label="Citation format">
+    <button role="tab"
+            id="tab-bibtex"
+            aria-controls="panel-bibtex"
+            aria-selected="true"
+            class="citation-tab is-active">
+      BibTeX
+    </button>
+    <button role="tab"
+            id="tab-ris"
+            aria-controls="panel-ris"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      RIS
+    </button>
+    <button role="tab"
+            id="tab-apa"
+            aria-controls="panel-apa"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      APA
+    </button>
+    <button role="tab"
+            id="tab-mla"
+            aria-controls="panel-mla"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      MLA
+    </button>
+    <button role="tab"
+            id="tab-chicago"
+            aria-controls="panel-chicago"
+            aria-selected="false"
+tabindex="-1"            class="citation-tab">
+      Chicago
+    </button>
+  </div>
+
+  <div role="tabpanel"
+       id="panel-bibtex"
+       aria-labelledby="tab-bibtex"
+       class="citation-panel"
+       tabindex="0">
+    <pre class="citation-content"><code>@article{tustep,
+  author    = {Griesinger, Christian},
+  title     = {Tustep. Review of the Tübinger System von
+                    Textverarbeitungs-Programmen},
+  journal   = {RIDE – A review journal for digital editions and resources},
+  number    = {11},
+  year      = {2020},
+  doi       = {10.18716/ride.a.11.2},
+  url       = {https://doi.org/10.18716/ride.a.11.2},
+}</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-bibtex">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-ris"
+       aria-labelledby="tab-ris"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>TY  - JOUR
+AU  - Griesinger, Christian
+TI  - Tustep. Review of the Tübinger System von
+                    Textverarbeitungs-Programmen
+T2  - RIDE – A review journal for digital editions and resources
+IS  - 11
+PY  - 2020
+DA  - 2020/01
+DO  - 10.18716/ride.a.11.2
+UR  - https://doi.org/10.18716/ride.a.11.2
+PB  - Institut für Dokumentologie und Editorik e. V.
+LA  - en
+ER  - </code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-ris">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-apa"
+       aria-labelledby="tab-apa"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Griesinger, C. (2020). Tustep. Review of the Tübinger System von
+                    Textverarbeitungs-Programmen. RIDE – A review journal for digital editions and resources, (11). https://doi.org/10.18716/ride.a.11.2</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-apa">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-mla"
+       aria-labelledby="tab-mla"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Griesinger, Christian. &#34;Tustep. Review of the Tübinger System von
+                    Textverarbeitungs-Programmen.&#34; RIDE – A review journal for digital editions and resources, no. 11, 2020. https://doi.org/10.18716/ride.a.11.2.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-mla">Copy</button>
+  </div>
+  <div role="tabpanel"
+       id="panel-chicago"
+       aria-labelledby="tab-chicago"
+       class="citation-panel is-hidden"
+       tabindex="0">
+    <pre class="citation-content"><code>Griesinger, Christian. &#34;Tustep. Review of the Tübinger System von
+                    Textverarbeitungs-Programmen.&#34; RIDE – A review journal for digital editions and resources, no. 11 (2020). https://doi.org/10.18716/ride.a.11.2.</code></pre>
+    <button class="btn btn-copy" data-copy-target="panel-chicago">Copy</button>
+  </div>
+</div>
+    <div class="review-factsheet-link">
+      <a href="/reviews/tustep/factsheet/" class="btn btn-primary">View Factsheet</a>
+    </div>
+  </article>
+</div>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="https://www.i-d-e.de/" class="footer-ide-link" rel="external">
+          Institut f&uuml;r Dokumentologie und Editorik
+        </a>
+        <p class="footer-tagline">RIDE &ndash; A review journal for digital editions and resources</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Journal</h3>
+        <ul role="list">
+          <li><a href="/issues/">Issues</a></li>
+          <li><a href="/data/">Data</a></li>
+          <li><a href="/reviewers/">Reviewers</a></li>
+          <li><a href="/search/">Search</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About</h3>
+        <ul role="list">
+          <li><a href="/about/">About RIDE</a></li>
+          <li><a href="/about/editorial-board/">Editorial Board</a></li>
+          <li><a href="/about/publishing-policy/">Publishing Policy</a></li>
+          <li><a href="/about/ethical-code/">Ethical Code</a></li>
+          <li><a href="/about/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul role="list">
+          <li><a href="/about/reviewing-criteria/">Reviewing Criteria</a></li>
+          <li><a href="https://github.com/i-d-e/ride" rel="external">GitHub Repository</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.4550707" rel="external">Zenodo Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-license">
+        Content licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC-BY 4.0</a>
+      </p>
+      <p class="footer-copyright">&copy; 2026 Institut f&uuml;r Dokumentologie und Editorik e.V.</p>
+    </div>
+  </div>
+</footer>
+  <script src="/js/theme.js" defer></script>
+<script src="/js/toc.js" defer></script>
+<script src="/js/footnotes.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
+</body>
+</html>
