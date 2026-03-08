@@ -11,27 +11,41 @@
 (function () {
   'use strict';
 
+  // Safely set text content without innerHTML XSS risk
+  function el(tag, className, text) {
+    var node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
   // --- Score distribution (single-series bar chart) ---
   var scoresEl = document.getElementById('chart-scores');
   if (scoresEl) {
     try {
       var data = JSON.parse(scoresEl.dataset.chart);
-      var maxVal = Math.max.apply(null, data.values) || 1;
-      var html = '<div class="chart-bars" role="img" aria-label="Score distribution">';
+      var maxVal = Math.max(1, Math.max.apply(null, data.values));
+      var wrapper = el('div', 'chart-bars');
+      wrapper.setAttribute('role', 'img');
+      wrapper.setAttribute('aria-label', 'Score distribution');
+
       for (var i = 0; i < data.labels.length; i++) {
         var pct = (data.values[i] / maxVal) * 100;
-        html +=
-          '<div class="chart-bar-group">' +
-            '<div class="chart-bar" style="height:' + pct + '%" ' +
-              'title="' + data.labels[i] + ': ' + data.values[i] + '">' +
-              '<span class="chart-bar-value">' + data.values[i] + '</span>' +
-            '</div>' +
-            '<span class="chart-bar-label">' + data.labels[i] + '</span>' +
-          '</div>';
+        var group = el('div', 'chart-bar-group');
+        var bar = el('div', 'chart-bar');
+        bar.style.height = pct + '%';
+        bar.title = data.labels[i] + ': ' + data.values[i];
+        bar.appendChild(el('span', 'chart-bar-value', data.values[i]));
+        group.appendChild(bar);
+        group.appendChild(el('span', 'chart-bar-label', data.labels[i]));
+        wrapper.appendChild(group);
       }
-      html += '</div>';
-      scoresEl.innerHTML = html;
-    } catch (e) { /* leave container empty, fallback table is available */ }
+
+      scoresEl.textContent = '';
+      scoresEl.appendChild(wrapper);
+    } catch (e) {
+      console.warn('chart-scores error:', e);
+    }
   }
 
   // --- Category breakdown (stacked horizontal bars) ---
@@ -39,25 +53,41 @@
   if (catEl) {
     try {
       var cdata = JSON.parse(catEl.dataset.chart);
-      var chtml = '<div class="chart-stacked" role="img" aria-label="Criteria breakdown">';
+      var stacked = el('div', 'chart-stacked');
+      stacked.setAttribute('role', 'img');
+      stacked.setAttribute('aria-label', 'Criteria breakdown');
+
       for (var j = 0; j < cdata.labels.length; j++) {
         var total = cdata.yes[j] + cdata.no[j] + cdata.na[j];
         if (total === 0) continue;
-        var yesPct = (cdata.yes[j] / total) * 100;
-        var noPct = (cdata.no[j] / total) * 100;
-        var naPct = (cdata.na[j] / total) * 100;
-        chtml +=
-          '<div class="chart-stacked-row">' +
-            '<span class="chart-stacked-label">' + cdata.labels[j] + '</span>' +
-            '<div class="chart-stacked-bar" title="Yes: ' + cdata.yes[j] + ', No: ' + cdata.no[j] + ', N/A: ' + cdata.na[j] + '">' +
-              '<div class="chart-seg chart-seg-yes" style="width:' + yesPct.toFixed(1) + '%"></div>' +
-              '<div class="chart-seg chart-seg-no" style="width:' + noPct.toFixed(1) + '%"></div>' +
-              '<div class="chart-seg chart-seg-na" style="width:' + naPct.toFixed(1) + '%"></div>' +
-            '</div>' +
-          '</div>';
+        var yesPct = ((cdata.yes[j] / total) * 100).toFixed(1);
+        var noPct = ((cdata.no[j] / total) * 100).toFixed(1);
+        var naPct = ((cdata.na[j] / total) * 100).toFixed(1);
+
+        var row = el('div', 'chart-stacked-row');
+        row.appendChild(el('span', 'chart-stacked-label', cdata.labels[j]));
+
+        var barContainer = el('div', 'chart-stacked-bar');
+        barContainer.title = 'Yes: ' + cdata.yes[j] + ', No: ' + cdata.no[j] + ', N/A: ' + cdata.na[j];
+
+        var segYes = el('div', 'chart-seg chart-seg-yes');
+        segYes.style.width = yesPct + '%';
+        var segNo = el('div', 'chart-seg chart-seg-no');
+        segNo.style.width = noPct + '%';
+        var segNa = el('div', 'chart-seg chart-seg-na');
+        segNa.style.width = naPct + '%';
+
+        barContainer.appendChild(segYes);
+        barContainer.appendChild(segNo);
+        barContainer.appendChild(segNa);
+        row.appendChild(barContainer);
+        stacked.appendChild(row);
       }
-      chtml += '</div>';
-      catEl.innerHTML = chtml;
-    } catch (e) { /* fallback table */ }
+
+      catEl.textContent = '';
+      catEl.appendChild(stacked);
+    } catch (e) {
+      console.warn('chart-categories error:', e);
+    }
   }
 })();

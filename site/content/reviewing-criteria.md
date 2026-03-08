@@ -1,5 +1,3 @@
-# Reviewing Criteria
-
 RIDE reviews are based on transparent, community-developed criteria published by
 the Institute for Documentology and Scholarly Editing (IDE). Each review category
 has its own catalogue of criteria:

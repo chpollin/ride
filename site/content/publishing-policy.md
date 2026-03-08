@@ -12,11 +12,11 @@ Authors do not transfer copyright to the publisher, they do not assign exclusive
 
 ## License
 
-RIDE publishes all content and gathered data under the CC-BY 4.0 license. For a summary of the license and the rights granted to you, please see: [creativecommons.org/licenses/by/4.0/](http://creativecommons.org/licenses/by/4.0/).
+RIDE publishes all content and gathered data under the CC-BY 4.0 license. For a summary of the license and the rights granted to you, please see: [creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/).
 
 ## Open Data
 
-All Reviews and questionnaires are available in XML/TEI and as PDF on [GitHub](https://github.com/i-d-e/ride) and [Zenodo](https://zenodo.org/record/4562966); the latter allows for citing the data in a specific version with an own DOI. Retrieval and re-use of the review metadata is also supported through an[ OAI-interface](https://ride.i-d-e.de/data/).
+All Reviews and questionnaires are available in XML/TEI and as PDF on [GitHub](https://github.com/i-d-e/ride) and [Zenodo](https://zenodo.org/record/4562966); the latter allows for citing the data in a specific version with an own DOI. Retrieval and re-use of the review metadata is also supported through an [OAI-interface](https://ride.i-d-e.de/data/).
 
 ## Ethics and Malpractice Statement
 

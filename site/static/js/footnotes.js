@@ -30,6 +30,11 @@
     popover.className = 'footnote-popover';
     popover.setAttribute('role', 'tooltip');
 
+    // Generate a unique ID for aria-describedby
+    var popoverId = 'fn-popover-' + fnId;
+    popover.id = popoverId;
+    ref.setAttribute('aria-describedby', popoverId);
+
     // Clone footnote content, removing the backref link
     var clone = fnItem.cloneNode(true);
     var backref = clone.querySelector('.footnote-backref');
@@ -45,11 +50,11 @@
     return popover;
   }
 
-  // Desktop: show on hover
-  var isTouchDevice = 'ontouchstart' in window;
+  // Use hover-capable media query instead of unreliable ontouchstart check
+  var canHover = window.matchMedia('(hover: hover)').matches;
 
   refs.forEach(function (ref) {
-    if (!isTouchDevice) {
+    if (canHover) {
       ref.addEventListener('mouseenter', function () {
         createPopover(ref);
       });
@@ -58,11 +63,12 @@
       });
     }
 
-    // Click: toggle popover (mobile) or follow link to footnote section
+    // Click: toggle popover (touch) or follow link to footnote section
     ref.addEventListener('click', function (e) {
-      if (isTouchDevice) {
-        // On mobile, first click shows popover, second follows link
+      if (!canHover) {
+        // On touch devices, first click shows popover, second follows link
         if (currentPopover && currentPopover.parentElement === (ref.closest('.footnote-ref') || ref)) {
+          ref.removeAttribute('aria-describedby');
           removePopover();
           // Let the default link behavior happen (scroll to footnote)
           return;

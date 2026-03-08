@@ -18,7 +18,7 @@
   function applyTheme(theme) {
     document.documentElement.dataset.theme = theme;
     btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-    localStorage.setItem(STORAGE_KEY, theme);
+    try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) { /* private browsing */ }
   }
 
   btn.addEventListener('click', function () {

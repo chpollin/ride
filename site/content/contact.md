@@ -1,5 +1,3 @@
-# Contact
-
 ## Managing Editors
 
 For questions, submissions, and feedback, please contact the managing editors of
