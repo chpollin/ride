@@ -1,1 +1,3 @@
 *.xpr
+_site/
+__pycache__/
