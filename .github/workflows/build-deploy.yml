@@ -1,0 +1,67 @@
+# Build the RIDE static site and deploy to GitHub Pages.
+#
+# Triggers:
+#   - Push to master (deploy)
+#   - Pull request to master (build-only, no deploy)
+#   - Manual workflow_dispatch
+#
+# The build step runs site/build.py, then Pagefind for client-side search.
+# Deploy uses the official GitHub Pages actions (artifact-based, no gh-pages branch).
+
+name: Build & Deploy
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deploy at a time; cancel in-progress runs on new push.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build site
+        run: python site/build.py --output _site --site-url "https://ride.i-d-e.de"
+
+      - name: Install Pagefind
+        run: npx pagefind@latest --site _site --glob "reviews/**/index.html"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
